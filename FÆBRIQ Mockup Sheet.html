@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FÆBRIQ — Draft Mockup Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#0d0d0d; --ink-900:#0a0a0a; --ink-800:#141417; --ink-700:#1b1b1f;
+    --line:#2a2a2a; --line-2:#383838;
+    --silver:#c0c0c0; --silver-hi:#d8d8d8; --silver-lo:#8a8a8a;
+    --text:#e8e8e8; --dim:#9a9a9a; --faint:#5f5f5f;
+    --accent:#4a9eff;
+    --c-coral:#e05a4e; --c-amber:#e08c30; --c-yellow:#c8b830;
+    --c-green:#4caf7a; --c-blue:#4a9eff; --c-purple:#9b6fd4;
+    --font-display:"Instrument Serif",Georgia,serif;
+    --font-body:"Archivo",-apple-system,sans-serif;
+    --font-mono:"JetBrains Mono",ui-monospace,monospace;
+    /* garments */
+    --g-black:#17181c; --g-cream:#e7e2d8; --g-indigo:#28304a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    background:var(--black);
+    color:var(--text);
+    font-family:var(--font-body);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+    background-size:54px 54px;
+  }
+  img{display:block;}
+
+  /* ---------- masthead ---------- */
+  .mast{
+    max-width:1360px;margin:0 auto;padding:64px 40px 30px;
+    display:flex;flex-direction:column;gap:26px;
+  }
+  .mast-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  .wordmark{
+    font-family:var(--font-display);font-weight:400;
+    font-size:64px;letter-spacing:0.06em;color:var(--silver);
+    line-height:0.9;
+  }
+  .mast-sub{font-family:var(--font-display);font-style:italic;font-size:23px;color:var(--dim);margin-top:6px;}
+  .mast-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--faint);text-transform:uppercase;text-align:right;line-height:2;}
+  .mast-meta b{color:var(--silver-lo);font-weight:500;}
+  .mast-rule{width:100%;height:auto;opacity:0.95;}
+
+  /* one-circuit rule banner */
+  .rulebar{
+    max-width:1360px;margin:0 auto;padding:0 40px;
+  }
+  .rulebar-inner{
+    border:1px solid var(--line);background:var(--ink-800);
+    padding:18px 24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+  }
+  .rulebar-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.18em;color:var(--c-blue);text-transform:uppercase;white-space:nowrap;}
+  .rulebar-txt{font-size:13.5px;color:var(--dim);max-width:760px;line-height:1.5;}
+  .rulebar-txt b{color:var(--text);font-weight:600;}
+  .rulebar-chip{margin-left:auto;width:200px;}
+
+  /* ---------- sections ---------- */
+  .wrap{max-width:1360px;margin:0 auto;padding:30px 40px 80px;}
+  .sec{margin-top:58px;}
+  .sec:first-child{margin-top:18px;}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+  .sec-num{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;color:var(--c-coral);}
+  .sec-title{font-family:var(--font-display);font-size:34px;color:var(--silver);letter-spacing:0.01em;line-height:1;}
+  .sec-note{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.06em;color:var(--faint);margin-left:auto;text-transform:uppercase;}
+
+  .grid{display:flex;flex-wrap:wrap;gap:22px;}
+
+  /* ---------- product card ---------- */
+  .card{
+    width:352px;background:var(--ink-800);border:1px solid var(--line);
+    display:flex;flex-direction:column;
+  }
+  .card.wide{width:100%;}
+  .stage{
+    position:relative;width:100%;height:392px;overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 50% 18%, #202026 0%, #16161a 60%, #101013 100%);
+  }
+  .stage.wide-stage{height:332px;}
+  .floor{
+    position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
+    width:62%;height:26px;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(0,0,0,0.55),transparent);
+    filter:blur(2px);
+  }
+  .prod{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .prod svg{overflow:visible;max-width:90%;height:auto;}
+
+  /* print overlay */
+  .art{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;}
+  .art .ln{font-family:var(--font-display);line-height:0.95;letter-spacing:0.005em;}
+  .art .circ{width:100%;height:auto;margin:7px 0;}
+  .art .tag{font-family:var(--font-mono);letter-spacing:0.14em;text-transform:uppercase;}
+
+  /* caption */
+  .cap{padding:15px 18px 17px;border-top:1px solid var(--line);display:block;}
+  .cap-row{display:flex;gap:12px;font-family:var(--font-mono);font-size:11px;line-height:1.45;align-items:baseline;}
+  .cap-row + .cap-row{margin-top:8px;}
+  .cap-k{color:var(--faint);letter-spacing:0.1em;min-width:62px;flex-shrink:0;}
+  .cap-v{color:var(--text);}
+  .cap-v.slg{color:var(--silver-hi);font-family:var(--font-display);font-size:15px;letter-spacing:0.01em;}
+  .swatch{display:inline-block;width:9px;height:9px;border-radius:2px;border:1px solid rgba(255,255,255,0.25);vertical-align:middle;margin-right:6px;transform:translateY(-1px);}
+
+  .footer{max-width:1360px;margin:0 auto;padding:10px 40px 90px;}
+  .footer-inner{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .footer p{font-family:var(--font-mono);font-size:11px;color:var(--faint);letter-spacing:0.06em;line-height:1.9;}
+  .footer .fw{font-family:var(--font-display);font-size:30px;color:var(--silver);letter-spacing:0.06em;}
+</style>
+</head>
+<body>
+
+  <header class="mast">
+    <div class="mast-top">
+      <div>
+        <div class="wordmark">FÆBRIQ</div>
+        <div class="mast-sub">Code It, Serve It.</div>
+      </div>
+      <div class="mast-meta">
+        <b>Draft Mockup Sheet</b><br />
+        Collection 01 · Queer Tech Merch<br />
+        One canonical circuit · all products
+      </div>
+    </div>
+    <img class="mast-rule" src="circuit.svg" alt="FÆBRIQ rainbow circuit" />
+  </header>
+
+  <div class="rulebar">
+    <div class="rulebar-inner">
+      <span class="rulebar-tag">// brand_rule.lock</span>
+      <span class="rulebar-txt"><b>One circuit, everywhere.</b> Every item in the range carries the single canonical rainbow circuit trace — never redrawn, never recolored — as the load-bearing mark of brand recognition. It divides, underlines, borders, or wraps. The slogan changes; the circuit does not.</span>
+      <img class="rulebar-chip" src="circuit.svg" alt="" />
+    </div>
+  </div>
+
+  <main class="wrap" id="sheet"></main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>FÆBRIQ — DRAFT v0.1<br />Slogans = editable smart layer<br />Circuit = locked brand asset</p>
+      <p style="text-align:right;">All artwork text fully editable<br />Mockups for layout review only<br />Not final print files</p>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="fw">FÆBRIQ</div>
+  </footer>
+
+<script>
+const CIRCUIT = 'circuit.svg';
+
+/* ============ garment + object silhouettes ============ */
+function tee(fill, shade){
+  return `<svg width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <path d="M104,54 C104,54 126,76 160,76 C194,76 216,54 216,54 L246,66 L298,116 L266,152 L248,140 L248,290 L72,290 L72,140 L54,152 L22,116 L74,66 Z"
+      fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <path d="M104,54 C126,80 194,80 216,54 L208,63 C190,84 130,84 112,63 Z" fill="${shade}" opacity="0.65"/>
+    <path d="M72,140 L72,290" stroke="${shade}" stroke-width="2" opacity="0.4" fill="none"/>
+    <path d="M248,140 L248,290" stroke="${shade}" stroke-width="2" opacity="0.4" fill="none"/>
+  </svg>`;
+}
+function hoodie(fill, shade){
+  return `<svg width="332" height="332" viewBox="0 0 332 332" aria-hidden="true">
+    <path d="M118,70 C118,40 214,40 214,70 L206,98 C190,74 142,74 126,98 Z" fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <path d="M126,98 C142,80 190,80 206,98 L206,112 C188,98 144,98 126,112 Z" fill="${shade}" opacity="0.5"/>
+    <path d="M120,92 L92,86 L60,100 L26,158 L58,188 L78,170 L78,296 L254,296 L254,170 L274,188 L306,158 L272,100 L240,86 L212,92 C212,118 120,118 120,92 Z"
+      fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <path d="M78,288 L254,288" stroke="${shade}" stroke-width="6" opacity="0.4"/>
+    <path d="M120,214 L212,214 L226,256 L106,256 Z" fill="none" stroke="${shade}" stroke-width="2" opacity="0.55"/>
+    <line x1="150" y1="108" x2="150" y2="168" stroke="${shade}" stroke-width="3"/>
+    <line x1="184" y1="108" x2="184" y2="168" stroke="${shade}" stroke-width="3"/>
+    <circle cx="150" cy="170" r="4" fill="${shade}"/>
+    <circle cx="184" cy="170" r="4" fill="${shade}"/>
+  </svg>`;
+}
+function phoneCase(fill){
+  return `<svg width="186" height="368" viewBox="0 0 186 368" aria-hidden="true">
+    <rect x="6" y="6" width="174" height="356" rx="38" fill="${fill}" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+    <rect x="20" y="20" width="58" height="58" rx="16" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="36" cy="38" r="9" fill="#0c0c0e" stroke="rgba(255,255,255,0.12)"/>
+    <circle cx="36" cy="60" r="9" fill="#0c0c0e" stroke="rgba(255,255,255,0.12)"/>
+    <circle cx="58" cy="49" r="9" fill="#0c0c0e" stroke="rgba(255,255,255,0.12)"/>
+    <circle cx="58" cy="27" r="4" fill="#1a1a1d"/>
+  </svg>`;
+}
+function sleeve(fill){
+  return `<svg width="408" height="288" viewBox="0 0 408 288" aria-hidden="true">
+    <rect x="8" y="14" width="392" height="260" rx="16" fill="${fill}" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+    <rect x="8" y="14" width="392" height="36" rx="16" fill="rgba(255,255,255,0.04)"/>
+    <line x1="8" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.10)"/>
+    <circle cx="372" cy="32" r="7" fill="none" stroke="rgba(255,255,255,0.22)"/>
+  </svg>`;
+}
+function lid(fill){
+  return `<svg width="420" height="280" viewBox="0 0 420 280" aria-hidden="true">
+    <rect x="10" y="8" width="400" height="258" rx="18" fill="${fill}" stroke="rgba(255,255,255,0.10)" stroke-width="2"/>
+    <rect x="190" y="266" width="40" height="6" rx="3" fill="rgba(255,255,255,0.10)"/>
+  </svg>`;
+}
+function notebook(fill, shade){
+  return `<svg width="246" height="332" viewBox="0 0 246 332" aria-hidden="true">
+    <rect x="34" y="10" width="200" height="312" rx="6" fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <rect x="34" y="10" width="20" height="312" rx="3" fill="rgba(0,0,0,0.25)"/>
+    <line x1="60" y1="10" x2="60" y2="322" stroke="${shade}" stroke-width="1.5" opacity="0.5"/>
+    <rect x="196" y="6" width="11" height="320" rx="2" fill="rgba(0,0,0,0.55)"/>
+  </svg>`;
+}
+function tote(fill, shade){
+  return `<svg width="300" height="332" viewBox="0 0 300 332" aria-hidden="true">
+    <path d="M58,100 L242,100 L252,318 L48,318 Z" fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <path d="M96,100 C96,52 112,30 124,30 M204,100 C204,52 188,30 176,30" fill="none" stroke="${shade}" stroke-width="9" opacity="0.9"/>
+    <path d="M124,30 C140,30 160,30 176,30" fill="none" stroke="${shade}" stroke-width="9" opacity="0.9"/>
+  </svg>`;
+}
+function mug(fill, shade){
+  return `<svg width="340" height="240" viewBox="0 0 340 240" aria-hidden="true">
+    <rect x="44" y="40" width="200" height="170" rx="14" fill="${fill}" stroke="${shade}" stroke-width="2"/>
+    <ellipse cx="144" cy="40" rx="100" ry="16" fill="${shade}" opacity="0.5"/>
+    <ellipse cx="144" cy="40" rx="86" ry="11" fill="#0c0c0e"/>
+    <path d="M244,80 C300,80 300,170 244,170" fill="none" stroke="${shade}" stroke-width="16"/>
+  </svg>`;
+}
+
+/* ============ print artwork (slogan + canonical circuit) ============ */
+// layout: 'divider' | 'under' | 'small' | 'badge' | 'corner' | 'edge' | 'side'
+function art(o){
+  const col = o.color || '#f0eee9';
+  const tagCol = o.tagColor || 'rgba(255,255,255,0.45)';
+  const lines = o.lines || [o.text];
+  const fs = o.size || 26;
+  const circW = o.circ != null ? o.circ : 100;
+  const lnHTML = lines.map(l=>`<div class="ln" style="font-size:${fs}px;color:${col};">${l}</div>`).join('');
+  const circ = `<img class="circ" src="${CIRCUIT}" style="width:${circW}%;" alt="" />`;
+  const tag = o.tag ? `<div class="tag" style="font-size:${o.tagSize||9}px;color:${tagCol};margin-top:6px;">${o.tag}</div>` : '';
+
+  let inner;
+  if(o.layout==='divider'){
+    inner = `<div class="ln" style="font-size:${fs}px;color:${col};">${lines[0]}</div>${circ}<div class="ln" style="font-size:${fs}px;color:${col};">${lines[1]||''}</div>${tag}`;
+  } else if(o.layout==='under'){
+    inner = `${lnHTML}${circ}${tag}`;
+  } else if(o.layout==='small'){
+    inner = `${lnHTML}${circ}`;
+  } else if(o.layout==='side'){
+    inner = `${circ}${lnHTML}`;
+  } else {
+    inner = `${lnHTML}${circ}${tag}`;
+  }
+  const st = o.zone || '';
+  return `<div class="art" style="${st}">${inner}</div>`;
+}
+
+/* ============ product renderer ============ */
+function render(p){
+  let prod='', overlay='';
+  const g = p.garment;
+  if(p.type==='tee'){ prod=tee(g.fill,g.shade); overlay=art(p.print); }
+  else if(p.type==='hoodie'){ prod=hoodie(g.fill,g.shade); overlay=art(p.print); }
+  else if(p.type==='phone'){ prod=phoneCase(g.fill); overlay=art(p.print); }
+  else if(p.type==='sleeve'){ prod=sleeve(g.fill); overlay=art(p.print); }
+  else if(p.type==='lid'){ prod=lid(g.fill); overlay=art(p.print); }
+  else if(p.type==='notebook'){ prod=notebook(g.fill,g.shade); overlay=art(p.print); }
+  else if(p.type==='tote'){ prod=tote(g.fill,g.shade); overlay=art(p.print); }
+  else if(p.type==='mug'){ prod=mug(g.fill,g.shade); overlay=art(p.print); }
+  else if(p.type==='sticker'){ prod=sticker(p); overlay=''; }
+
+  const floor = p.noFloor ? '' : '<div class="floor"></div>';
+  return `<div class="card">
+    <div class="stage">
+      ${floor}
+      <div class="prod">${prod}</div>
+      ${overlay}
+    </div>
+    ${caption(p)}
+  </div>`;
+}
+
+/* sticker shapes carry their own print inside */
+function sticker(p){
+  const s = p.sticker;
+  const col = s.color || '#f0eee9';
+  const fs = s.size || 22;
+  const text = (s.lines||[s.text]).map(l=>`<div class="ln" style="font-size:${fs}px;color:${col};line-height:0.98;">${l}</div>`).join('');
+  const circ = `<img class="circ" src="${CIRCUIT}" style="width:${s.circ||86}%;margin:8px 0;" alt="" />`;
+  let body;
+  if(s.shape==='rect'){
+    body = `<div style="position:relative;width:248px;padding:26px 22px;border-radius:18px;background:${s.bg};border:5px solid #f3f0ea;box-shadow:0 10px 26px rgba(0,0,0,0.5);text-align:center;">
+      ${text}${circ}<div class="tag" style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:0.14em;color:${s.dim||'rgba(255,255,255,0.4)'};margin-top:4px;">FÆBRIQ</div></div>`;
+  } else if(s.shape==='circle'){
+    body = `<div style="position:relative;width:228px;height:228px;border-radius:50%;background:${s.bg};border:5px solid #f3f0ea;box-shadow:0 10px 26px rgba(0,0,0,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+      ${text}${circ}<div class="tag" style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:0.16em;color:${s.dim||'rgba(255,255,255,0.4)'};">CODE · SERVE</div></div>`;
+  } else { // die-cut
+    body = `<div style="position:relative;display:inline-block;padding:22px 26px;background:${s.bg};border:6px solid #f3f0ea;border-radius:40px 14px 40px 14px;box-shadow:0 10px 26px rgba(0,0,0,0.5);text-align:center;transform:rotate(-3deg);">
+      ${text}${circ}</div>`;
+  }
+  return `<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;">${body}</div>`;
+}
+
+function caption(p){
+  const c=p.cap;
+  return `<div class="cap">
+    <div class="cap-row"><span class="cap-k">PRODUCT</span><span class="cap-v">${c.product}</span></div>
+    <div class="cap-row"><span class="cap-k">COLOR</span><span class="cap-v"><span class="swatch" style="background:${c.swatch}"></span>${c.color}</span></div>
+    <div class="cap-row"><span class="cap-k">SLOGAN</span><span class="cap-v slg">${c.slogan}</span></div>
+    <div class="cap-row"><span class="cap-k">CIRCUIT</span><span class="cap-v">${c.circuit}</span></div>
+  </div>`;
+}
+
+/* ============ garment presets ============ */
+const G = {
+  black:{fill:'var(--g-black)',shade:'#26272c'},
+  cream:{fill:'var(--g-cream)',shade:'#cfc8ba'},
+  indigo:{fill:'var(--g-indigo)',shade:'#3c4668'},
+};
+
+const WHITE='#f0eee9', INK='#16171b';
+
+/* ============ catalogue data (slogans = editable smart layer) ============ */
+const SECTIONS = [
+  { num:'01 / APPAREL', title:'Cut &amp; sewn', note:'circuit as divider · underline · small mark',
+    items:[
+      { type:'tee', garment:G.black,
+        print:{layout:'divider', lines:['Code It,','Serve It.'], size:26, circ:96,
+          zone:'top:39%;left:27%;width:46%;'},
+        cap:{product:'Unisex Tee — Front', color:'Black', swatch:'#17181c',
+          slogan:'“Code It, Serve It.”', circuit:'Divider between the two lines'} },
+      { type:'tee', garment:G.cream,
+        print:{layout:'under', lines:['Nonbinary but','strongly typed.'], size:20, color:INK, circ:94,
+          zone:'top:40%;left:24%;width:52%;'},
+        cap:{product:'Unisex Tee — Front', color:'Off-white', swatch:'#e7e2d8',
+          slogan:'“Nonbinary but strongly typed.”', circuit:'Underline beneath slogan'} },
+      { type:'tee', garment:G.indigo,
+        print:{layout:'under', lines:['Soft launch,','hard boundaries.'], size:20, color:WHITE, circ:94,
+          zone:'top:40%;left:24%;width:52%;'},
+        cap:{product:'Unisex Tee — Front', color:'Indigo (accent)', swatch:'#28304a',
+          slogan:'“Soft launch, hard boundaries.”', circuit:'Underline beneath slogan'} },
+      { type:'hoodie', garment:G.black,
+        print:{layout:'small', lines:['Currently in beta'], size:14, color:WHITE, circ:60, tag:'please be kind',
+          zone:'top:42%;left:31%;width:38%;'},
+        cap:{product:'Pullover Hoodie', color:'Black', swatch:'#17181c',
+          slogan:'“Currently in beta, please be kind.”', circuit:'Small chest mark under text'} },
+      { type:'hoodie', garment:G.cream,
+        print:{layout:'small', lines:['Neurospicy,','not user friendly.'], size:13, color:INK, circ:62,
+          zone:'top:41%;left:30%;width:40%;'},
+        cap:{product:'Pullover Hoodie', color:'Off-white', swatch:'#e7e2d8',
+          slogan:'“Neurospicy, not user friendly.”', circuit:'Small chest divider'} },
+      { type:'tee', garment:G.black,
+        print:{layout:'under', lines:['Evaluated by AI.','Approved by queers.'], size:19, color:WHITE, circ:100, tag:'/ back print',
+          zone:'top:36%;left:19%;width:62%;'},
+        cap:{product:'Unisex Tee — Back', color:'Black', swatch:'#17181c',
+          slogan:'“Evaluated by AI. Approved by queers.”', circuit:'Full-width border under back print'} },
+    ]},
+
+  { num:'02 / STICKERS + DECALS', title:'Peel &amp; stick', note:'circuit full-width · centered · die-cut wrap',
+    items:[
+      { type:'sticker', noFloor:true,
+        sticker:{shape:'rect', bg:'#15161a', color:WHITE, size:19, circ:88,
+          lines:['My gender expression','is a feature flag.']},
+        cap:{product:'Rounded-rect Label Sticker', color:'Black on white die-cut', swatch:'#15161a',
+          slogan:'“My gender expression is a feature flag.”', circuit:'Full-width underline inside label'} },
+      { type:'sticker', noFloor:true,
+        sticker:{shape:'circle', bg:'#15161a', color:WHITE, size:24, circ:74,
+          lines:['Code It,','Serve It.']},
+        cap:{product:'Circular Badge Sticker', color:'Black on white die-cut', swatch:'#15161a',
+          slogan:'“Code It, Serve It.”', circuit:'Straight trace across badge center'} },
+      { type:'sticker', noFloor:true,
+        sticker:{shape:'die', bg:'#15161a', color:WHITE, size:20, circ:90,
+          lines:['Quiet quitting,','loud coding.']},
+        cap:{product:'Die-cut Decal', color:'Black on white die-cut', swatch:'#15161a',
+          slogan:'“Quiet quitting, loud coding.”', circuit:'Trace runs through the cut shape'} },
+    ]},
+
+  { num:'03 / TECH CARRY', title:'Hardware skins', note:'circuit corner · edge-to-edge span',
+    items:[
+      { type:'phone', garment:{fill:'#1a1b20'},
+        print:{layout:'small', lines:['Low battery,','high expectations.'], size:12, color:WHITE, circ:80,
+          zone:'top:58%;left:30%;width:40%;'},
+        cap:{product:'Phone Case — Minimal', color:'Black', swatch:'#1a1b20',
+          slogan:'“Low battery, high expectations.”', circuit:'Small trace, lower corner'} },
+      { type:'phone', garment:{fill:'#28304a'},
+        print:{layout:'under', lines:['Running on','queer coded','prompts only.'], size:15, color:WHITE, circ:100,
+          zone:'top:30%;left:27%;width:46%;'},
+        cap:{product:'Phone Case — Loud', color:'Indigo (accent)', swatch:'#28304a',
+          slogan:'“Running on queer coded prompts only.”', circuit:'Spans full width, edge to edge'} },
+      { type:'sleeve', garment:{fill:'#1c1d22'},
+        print:{layout:'under', lines:['Version control,','not vibe control.'], size:24, color:WHITE, circ:70,
+          zone:'top:30%;left:16%;width:68%;'},
+        cap:{product:'Laptop Sleeve — Loud', color:'Charcoal', swatch:'#1c1d22',
+          slogan:'“Version control, not vibe control.”', circuit:'Edge-to-edge band under slogan'} },
+      { type:'lid', garment:{fill:'#1a1b20'},
+        print:{layout:'under', lines:['FÆBRIQ'], size:28, color:'var(--silver)', circ:46,
+          zone:'top:32%;left:30%;width:40%;'},
+        cap:{product:'Laptop Lid Decal', color:'Black', swatch:'#1a1b20',
+          slogan:'Wordmark lock-up', circuit:'Trace seated under the wordmark'} },
+    ]},
+
+  { num:'04 / PAPER GOODS', title:'Desk &amp; carry', note:'circuit along edge · full-width band',
+    items:[
+      { type:'notebook', garment:G.black,
+        print:{layout:'small', lines:['Processing feelings,','please hold.'], size:15, color:WHITE, circ:54,
+          zone:'top:58%;left:20%;width:60%;'},
+        cap:{product:'Notebook — Clean Cover', color:'Black', swatch:'#17181c',
+          slogan:'“Processing feelings, please hold.”', circuit:'Short trace above the wordmark, lower third'} },
+      { type:'notebook', garment:G.cream,
+        print:{layout:'under', lines:['Overcommitted.','Under debugged.'], size:18, color:INK, circ:80,
+          zone:'top:38%;left:18%;width:64%;'},
+        cap:{product:'Notebook — Band Cover', color:'Off-white', swatch:'#e7e2d8',
+          slogan:'“Overcommitted. Under debugged.”', circuit:'Full-width band across the middle'} },
+      { type:'tote', garment:{fill:'#d9d3c4',shade:'#bdb49f'},
+        print:{layout:'divider', lines:['Capitalism is a bug,','not a feature.'], size:16, color:INK, circ:88,
+          zone:'top:42%;left:18%;width:64%;'},
+        cap:{product:'Tote Bag', color:'Natural canvas', swatch:'#d9d3c4',
+          slogan:'“Capitalism is a bug, not a feature.”', circuit:'Divider between the two lines'} },
+      { type:'mug', garment:{fill:'#17181c',shade:'#34353a'},
+        print:{layout:'divider', lines:['Code It,','Serve It.'], size:22, color:WHITE, circ:70,
+          zone:'top:36%;left:18%;width:46%;'},
+        cap:{product:'Coffee Mug', color:'Black glaze', swatch:'#17181c',
+          slogan:'“Code It, Serve It.”', circuit:'Wraps the body as a divider'} },
+    ]},
+];
+
+/* ============ collection scenes ============ */
+function miniTee(g,lines,col,fs){
+  return `<div style="position:relative;width:210px;height:210px;display:flex;align-items:center;justify-content:center;">
+    <div style="transform:scale(0.62);">${tee(g.fill,g.shade)}</div>
+    <div class="art" style="top:32%;left:24%;width:52%;">
+      ${lines.map(l=>`<div class="ln" style="font-size:${fs}px;color:${col};">${l}</div>`).join('')}
+      <img class="circ" src="${CIRCUIT}" style="width:92%;" alt="" />
+    </div></div>`;
+}
+function miniWrap(svgFn,g,artHTML,w){
+  return `<div style="position:relative;width:${w}px;height:210px;display:flex;align-items:center;justify-content:center;">
+    <div style="transform:scale(0.6);">${svgFn}</div>${artHTML}</div>`;
+}
+function collectionScenes(){
+  // scene 1: tee + circular sticker + mug
+  const s1 = `<div style="display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;width:100%;height:100%;">
+    ${miniTee(G.black,['Code It,','Serve It.'],WHITE,18)}
+    <div style="position:relative;width:150px;height:150px;border-radius:50%;background:#15161a;border:5px solid #f3f0ea;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;box-shadow:0 10px 26px rgba(0,0,0,.5);">
+      <div class="ln" style="font-size:17px;color:#fff;line-height:0.98;">Nonbinary<br>but typed.</div>
+      <img class="circ" src="${CIRCUIT}" style="width:72%;margin-top:7px;" alt="">
+    </div>
+    <div style="position:relative;transform:scale(0.78);">${mug('#17181c','#34353a')}
+      <div class="art" style="top:36%;left:17%;width:46%;"><div class="ln" style="font-size:18px;color:#fff;">Serve It.</div><img class="circ" src="${CIRCUIT}" style="width:74%;" alt=""></div>
+    </div>
+  </div>`;
+  // scene 2: hoodie + notebook + phone
+  const s2 = `<div style="display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;width:100%;height:100%;">
+    <div style="position:relative;transform:scale(0.62);">${hoodie(G.black.fill,G.black.shade)}
+      <div class="art" style="top:32%;left:31%;width:38%;"><div class="ln" style="font-size:15px;color:#fff;">In beta</div><img class="circ" src="${CIRCUIT}" style="width:62%;" alt=""></div>
+    </div>
+    <div style="position:relative;transform:scale(0.74);">${notebook(G.cream.fill,G.cream.shade)}
+      <div class="art" style="top:40%;left:18%;width:64%;"><div class="ln" style="font-size:16px;color:${INK};">Overcommitted.</div><img class="circ" src="${CIRCUIT}" style="width:80%;" alt=""></div>
+    </div>
+    <div style="position:relative;transform:scale(0.8);">${phoneCase('#28304a')}
+      <div class="art" style="top:34%;left:12%;width:76%;"><div class="ln" style="font-size:13px;color:#fff;">Queer<br>coded</div><img class="circ" src="${CIRCUIT}" style="width:96%;" alt=""></div>
+    </div>
+  </div>`;
+  // scene 3: flat row of three stickers + tote
+  const s3 = `<div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;width:100%;height:100%;">
+    <div style="position:relative;transform:scale(0.78);">${tote('#d9d3c4','#bdb49f')}
+      <div class="art" style="top:42%;left:18%;width:64%;"><div class="ln" style="font-size:14px;color:${INK};">Capitalism is a bug,</div><img class="circ" src="${CIRCUIT}" style="width:86%;" alt=""><div class="ln" style="font-size:14px;color:${INK};">not a feature.</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div style="position:relative;width:230px;padding:16px 18px;border-radius:14px;background:#15161a;border:4px solid #f3f0ea;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.5);">
+        <div class="ln" style="font-size:16px;color:#fff;">Soft launch, hard boundaries.</div><img class="circ" src="${CIRCUIT}" style="width:86%;margin-top:6px;" alt=""></div>
+      <div style="position:relative;width:230px;padding:16px 18px;border-radius:14px;background:#e7e2d8;border:4px solid #f3f0ea;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.5);">
+        <div class="ln" style="font-size:16px;color:${INK};">Quiet quitting, loud coding.</div><img class="circ" src="${CIRCUIT}" style="width:86%;margin-top:6px;" alt=""></div>
+    </div>
+  </div>`;
+  const scenes = [
+    {html:s1, cap:'Tee · Badge sticker · Mug — black & off-white, “Code It, Serve It.” family'},
+    {html:s2, cap:'Hoodie · Notebook · Phone case — mixed slogans, full range feel'},
+    {html:s3, cap:'Tote · Sticker pack — flat-lay collection banner'},
+  ];
+  return scenes.map(sc=>`<div class="card wide">
+    <div class="stage wide-stage">${sc.html}</div>
+    <div class="cap"><div class="cap-row"><span class="cap-k">SCENE</span><span class="cap-v">${sc.cap}</span></div>
+    <div class="cap-row"><span class="cap-k">CIRCUIT</span><span class="cap-v">Present on every item in frame — the through-line of the set</span></div></div>
+  </div>`).join('');
+}
+
+/* ============ build ============ */
+const root = document.getElementById('sheet');
+let html='';
+for(const sec of SECTIONS){
+  html += `<section class="sec">
+    <div class="sec-head"><span class="sec-num">${sec.num}</span><h2 class="sec-title">${sec.title}</h2><span class="sec-note">${sec.note}</span></div>
+    <div class="grid">${sec.items.map(render).join('')}</div>
+  </section>`;
+}
+html += `<section class="sec">
+  <div class="sec-head"><span class="sec-num">05 / COLLECTION</span><h2 class="sec-title">Set scenes</h2><span class="sec-note">multi-product banners · one circuit throughout</span></div>
+  <div class="grid">${collectionScenes()}</div>
+</section>`;
+root.innerHTML = html;
+</script>
+</body>
+</html>

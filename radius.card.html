@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radius — stay sharp" subtitle="Corners are square. 2px is the maximum softening. Never pills." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 26px 24px; background: var(--bg-page); display:flex; gap: 22px; align-items:flex-end; }
+  .box { width: 96px; height: 70px; border: 1px solid var(--border-strong); background: var(--surface-card); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-top: 9px; display:block; text-align:center; }
+  .x { font-family: var(--font-mono); font-size: 11px; color: var(--fae-circuit-coral); }
+</style>
+</head>
+<body>
+  <div><div class="box" style="border-radius:0"></div><span class="lab">none · 0</span></div>
+  <div><div class="box" style="border-radius:1px"></div><span class="lab">xs · 1px</span></div>
+  <div><div class="box" style="border-radius:2px"></div><span class="lab">sm/md · 2px</span></div>
+  <div><div class="box" style="border-radius:999px; border-style:dashed; border-color:var(--fae-circuit-coral); opacity:.5"></div><span class="lab"><span class="x">✕</span> no pills</span></div>
+</body>
+</html>

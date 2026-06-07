@@ -1,0 +1,121 @@
+/* ============================================================
+   FÆBRIQ — Base layer
+   Element defaults + brand primitives (wordmark, circuit rule).
+   Tokens must be imported before this file.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-tight);
+}
+
+::selection {
+  background: var(--fae-accent);
+  color: var(--fae-black);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+a:hover { color: var(--link-hover); }
+
+/* ---- Display + headings ---- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  color: var(--text-heading);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-semi);
+  color: var(--text-heading);
+  margin: 0;
+}
+
+p { margin: 0; }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+hr {
+  border: 0;
+  border-top: var(--border-hairline-rule);
+  margin: var(--space-6) 0;
+}
+
+/* ============================================================
+   Brand primitives
+   ============================================================ */
+
+/* Wordmark lockup — silver serif, wide tracking */
+.fae-wordmark {
+  font-family: var(--font-display);
+  color: var(--text-display);
+  letter-spacing: var(--type-wordmark-spacing);
+  font-weight: var(--fw-regular);
+  line-height: 1;
+}
+
+/* Overline / kicker — mono caps, wide tracking */
+.fae-overline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Tagline lockup — CODE IT. SERVE IT. */
+.fae-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: var(--ls-wide);
+}
+
+/* The circuit rule — six rainbow hairlines with terminal nodes.
+   Drop <span class="fae-circuit-rule"></span> anywhere. */
+.fae-circuit-rule {
+  display: block;
+  width: 100%;
+  height: 14px;
+  background-image:
+    linear-gradient(var(--fae-circuit-coral),  var(--fae-circuit-coral)),
+    linear-gradient(var(--fae-circuit-amber),  var(--fae-circuit-amber)),
+    linear-gradient(var(--fae-circuit-yellow), var(--fae-circuit-yellow)),
+    linear-gradient(var(--fae-circuit-green),  var(--fae-circuit-green)),
+    linear-gradient(var(--fae-circuit-blue),   var(--fae-circuit-blue)),
+    linear-gradient(var(--fae-circuit-purple), var(--fae-circuit-purple));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position:
+    0 0, 0 2.5px, 0 5px, 0 7.5px, 0 10px, 0 12.5px;
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

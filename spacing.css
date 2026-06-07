@@ -1,0 +1,59 @@
+/* ============================================================
+   FÆBRIQ — Spacing, radius, border, shadow, motion
+   Sharp. Flat. No friendly rounding. Minimal elevation.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0:   0;
+  --space-1:   0.25rem;  /* 4 */
+  --space-2:   0.5rem;   /* 8 */
+  --space-3:   0.75rem;  /* 12 */
+  --space-4:   1rem;     /* 16 */
+  --space-5:   1.5rem;   /* 24 */
+  --space-6:   2rem;     /* 32 */
+  --space-7:   3rem;     /* 48 */
+  --space-8:   4rem;     /* 64 */
+  --space-9:   6rem;     /* 96 */
+  --space-10:  8rem;     /* 128 */
+
+  /* ---- Radius ----
+     Editorial = sharp. Corners stay square; 2px is the max
+     "softening" we allow on interactive chrome. Never pills. */
+  --radius-none: 0;
+  --radius-xs:   1px;
+  --radius-sm:   2px;
+  --radius-md:   2px;
+  --radius-pill: 0;   /* deliberately square — no friendly pills */
+
+  /* ---- Borders ---- */
+  --border-width:      1px;
+  --border-width-thick: 2px;
+  --border-hairline-rule: 1px solid var(--fae-line-700);
+
+  /* ---- Shadows ----
+     Almost none. Editorial depth comes from value, not blur.
+     One subtle drop for modals/menus only. */
+  --shadow-none: none;
+  --shadow-sm:   0 1px 0 0 rgba(0, 0, 0, 0.6);
+  --shadow-pop:  0 16px 48px -12px rgba(0, 0, 0, 0.85);
+  --shadow-inset-hairline: inset 0 0 0 1px var(--fae-line-700);
+
+  /* glow used ONLY for focus / accent edge — kept tight */
+  --glow-accent: 0 0 0 1px var(--fae-accent), 0 0 12px -2px rgba(74, 158, 255, 0.5);
+
+  /* ---- Layout ---- */
+  --container-max: 1240px; /* @kind other */
+  --container-wide: 1440px;
+  --gutter: var(--space-5);
+  --header-h: 72px;
+
+  /* ---- Motion ----
+     Restrained. Linear/standard easing. Fades + small moves.
+     No bounce, no spring, no playful overshoot. */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   400ms; /* @kind other */
+}

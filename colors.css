@@ -1,0 +1,77 @@
+/* ============================================================
+   FÆBRIQ — Color tokens
+   Dark editorial. Flat. Sharp. No gradients. No bright whites.
+   ============================================================ */
+
+:root {
+  /* ---- Core neutrals (the void) ---- */
+  --fae-black:        #0d0d0d;  /* primary background — the void */
+  --fae-ink-900:      #0a0a0a;  /* deepest, for wells / insets */
+  --fae-ink-800:      #141414;  /* raised surface / card */
+  --fae-ink-700:      #1c1c1c;  /* elevated surface / hover */
+  --fae-ink-600:      #262626;  /* hairline-adjacent fills */
+  --fae-line-700:     #2a2a2a;  /* default border / hairline */
+  --fae-line-600:     #383838;  /* stronger border / hover border */
+
+  /* ---- Silver (the wordmark) ---- */
+  --fae-silver:       #c0c0c0;  /* primary brand silver */
+  --fae-silver-hi:    #d8d8d8;  /* highlight edge */
+  --fae-silver-lo:    #8a8a8a;  /* shadow / muted silver */
+
+  /* ---- Text on dark ---- */
+  --fae-text:         #e8e8e8;  /* body text */
+  --fae-text-dim:     #9a9a9a;  /* secondary text */
+  --fae-text-faint:   #5f5f5f;  /* tertiary / captions / disabled */
+  --fae-text-ghost:   #3a3a3a;  /* watermark-level */
+
+  /* ---- Accent (terminal blue) ---- */
+  --fae-accent:       #4a9eff;  /* primary accent / links / focus */
+  --fae-accent-dim:   #3a7fcc;  /* pressed accent */
+  --fae-accent-ghost: rgba(74, 158, 255, 0.12); /* accent wash */
+
+  /* ---- Rainbow circuit (the trace) ---- */
+  --fae-circuit-coral:  #e05a4e;
+  --fae-circuit-amber:  #e08c30;
+  --fae-circuit-yellow: #c8b830;
+  --fae-circuit-green:  #4caf7a;
+  --fae-circuit-blue:   #4a9eff;
+  --fae-circuit-purple: #9b6fd4;
+
+  /* full sweep, for stops / borders-image / labels */
+  --fae-circuit-sweep: var(--fae-circuit-coral),
+                       var(--fae-circuit-amber),
+                       var(--fae-circuit-yellow),
+                       var(--fae-circuit-green),
+                       var(--fae-circuit-blue),
+                       var(--fae-circuit-purple);
+
+  /* ---- Status (kept muted, editorial — never neon) ---- */
+  --fae-success:      #4caf7a;
+  --fae-warning:      #e08c30;
+  --fae-danger:       #e05a4e;
+  --fae-info:         #4a9eff;
+
+  /* ============================================================
+     Semantic aliases — reference these in components
+     ============================================================ */
+  --bg-page:          var(--fae-black);
+  --bg-sunken:        var(--fae-ink-900);
+  --surface-card:     var(--fae-ink-800);
+  --surface-raised:   var(--fae-ink-700);
+  --surface-hover:    var(--fae-ink-700);
+
+  --border-hairline:  var(--fae-line-700);
+  --border-strong:    var(--fae-line-600);
+  --border-focus:     var(--fae-accent);
+
+  --text-display:     var(--fae-silver);
+  --text-heading:     var(--fae-text);
+  --text-body:        var(--fae-text);
+  --text-muted:       var(--fae-text-dim);
+  --text-faint:       var(--fae-text-faint);
+
+  --link:             var(--fae-accent);
+  --link-hover:       var(--fae-silver-hi);
+
+  --focus-ring:       var(--fae-accent);
+}

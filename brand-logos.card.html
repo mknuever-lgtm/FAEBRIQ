@@ -1,0 +1,90 @@
+<!-- @dsCard group="Brand" viewport="700x260" name="Logo lockups" subtitle="Primary wordmark, stacked mark, and AE monogram — canonical circuit" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-page); display:grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items:stretch; }
+  .cell { border: 1px solid var(--border-hairline); background: var(--bg-page); display:flex; flex-direction:column; }
+  .art { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 24px 20px; gap: 8px; }
+
+  /* lockup = circuit behind, wordmark floated over the trace */
+  .lockup {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .lockup img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .lockup .wm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--text-display);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    white-space: nowrap;
+    /* push trace through centre of cap-height, not middle of em-box */
+    margin-top: 0.15em;
+  }
+  .lockup .wm.lg  { font-size: 36px; }
+  .lockup .wm.md  { font-size: 24px; }
+  .lockup .wm.sm  { font-size: 42px; letter-spacing: 0.02em; } /* Æ */
+
+  .slg {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); padding: 8px 10px; border-top: 1px solid var(--border-hairline); }
+</style>
+</head>
+<body>
+
+  <!-- primary: full circuit, FÆBRIQ riding the trace -->
+  <div class="cell">
+    <div class="art">
+      <div class="lockup" style="max-width:300px;">
+        <img src="../assets/circuit.svg" alt="FÆBRIQ rainbow circuit" />
+        <span class="wm lg">FÆBRIQ</span>
+      </div>
+      <div class="slg">Code It, Serve It.</div>
+    </div>
+    <div class="lab">wordmark · primary</div>
+  </div>
+
+  <!-- stacked / social avatar -->
+  <div class="cell">
+    <div class="art">
+      <div class="lockup" style="max-width:200px;">
+        <img src="../assets/circuit.svg" alt="FÆBRIQ rainbow circuit" />
+        <span class="wm md">FÆBRIQ</span>
+      </div>
+      <div class="slg" style="font-size:8.5px;letter-spacing:0.18em;">Serve It.</div>
+    </div>
+    <div class="lab">stacked</div>
+  </div>
+
+  <!-- Æ monogram: just the glyph riding the short circuit -->
+  <div class="cell">
+    <div class="art">
+      <div class="lockup" style="max-width:160px;">
+        <img src="../assets/circuit.svg" alt="FÆBRIQ rainbow circuit" />
+        <span class="wm sm">Æ</span>
+      </div>
+    </div>
+    <div class="lab">Æ monogram</div>
+  </div>
+
+</body>
+</html>

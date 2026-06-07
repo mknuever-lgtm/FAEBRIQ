@@ -1,0 +1,22 @@
+<!-- @dsCard group="Spacing" viewport="700x190" name="Borders & elevation" subtitle="Depth from value, not blur. Hairlines do the work." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 26px 24px; background: var(--bg-page); display:flex; gap: 18px; align-items:stretch; }
+  .card { flex:1; padding: 16px; display:flex; flex-direction:column; justify-content:space-between; min-height: 110px; }
+  .t { font-family: var(--font-body); font-size: 14px; color: var(--text-body); }
+  .l { font-family: var(--font-mono); font-size: 9px; color: var(--text-faint); }
+  .hair { background: var(--surface-card); border: 1px solid var(--fae-line-700); }
+  .strong { background: var(--surface-card); border: 1px solid var(--fae-line-600); }
+  .pop { background: var(--surface-raised); border: 1px solid var(--fae-line-700); box-shadow: 0 16px 48px -12px rgba(0,0,0,.85); }
+</style>
+</head>
+<body>
+  <div class="card hair"><span class="t">Hairline</span><span class="l">1px · #2A2A2A</span></div>
+  <div class="card strong"><span class="t">Strong</span><span class="l">1px · #383838</span></div>
+  <div class="card pop"><span class="t">Pop (menus / modals)</span><span class="l">shadow-pop</span></div>
+</body>
+</html>

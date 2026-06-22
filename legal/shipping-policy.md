@@ -4,7 +4,7 @@
 
 **Last Updated: June 15, 2026**
 
-FÆBRIQ ships worldwide. Because every item is made to order through our print-on-demand partners, your total delivery time is made up of two parts: **production time** and **shipping time**.
+FÆBRIQ currently ships to the **United States and Canada**. Additional regions, including Europe, are coming soon. Because every item is made to order through our print-on-demand partners, your total delivery time is made up of two parts: **production time** and **shipping time**.
 
 ## 1. Production Time
 
@@ -17,12 +17,9 @@ Once your order leaves our fulfillment partner, estimated transit times are:
 | Destination | Estimated Transit |
 | --- | --- |
 | United States | 4–8 business days |
-| Europe | 5–10 business days |
-| United Kingdom | 4–9 business days |
-| Canada & Australia | 7–14 business days |
-| Rest of world | 10–20 business days |
+| Canada | 7–14 business days |
 
-These are estimates, not guarantees. Total delivery time = production time + shipping time.
+These are estimates, not guarantees. Total delivery time = production time + shipping time. We currently ship only within the United States and Canada — other regions will be added in the future.
 
 ## 3. Shipping Costs
 
@@ -34,7 +31,7 @@ Once your order ships, you will receive a confirmation email with tracking infor
 
 ## 5. Customs, Duties & Taxes
 
-International orders may be subject to import duties, taxes, and customs fees levied by the destination country. These charges are the responsibility of the recipient and are not included in the product or shipping price. FÆBRIQ has no control over these fees and cannot predict their amount.
+Orders shipped to Canada may be subject to import duties, taxes, and customs fees levied by Canadian authorities. These charges are the responsibility of the recipient and are not included in the product or shipping price. FÆBRIQ has no control over these fees and cannot predict their amount.
 
 ## 6. Incorrect Address
 

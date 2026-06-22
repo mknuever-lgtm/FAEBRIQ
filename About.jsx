@@ -23,7 +23,7 @@ function About() {
           <div style={{ display: "flex", gap: "10px", marginTop: "8px" }}>
             <Badge tone="green">Queer-owned</Badge>
             <Badge tone="blue">Print-on-demand</Badge>
-            <Badge tone="amber">Ships worldwide</Badge>
+            <Badge tone="amber">Ships US &amp; Canada</Badge>
           </div>
         </div>
       </div>

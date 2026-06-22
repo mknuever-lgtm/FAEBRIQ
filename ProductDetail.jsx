@@ -54,7 +54,7 @@ function ProductDetail({ product, onBack, onAdd }) {
             <Button variant="secondary" size="lg">♥</Button>
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "var(--text-faint)", letterSpacing: "0.06em" }}>
-            // free worldwide shipping over $80 · 30-day returns
+            // free US &amp; Canada shipping over $80 · 30-day returns
           </div>
         </div>
       </div>

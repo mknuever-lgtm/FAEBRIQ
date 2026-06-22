@@ -9,6 +9,6 @@ Four store policies, written for FÆBRIQ's print-on-demand model. Each file is r
 | Terms of Service | [terms-of-service.md](./terms-of-service.md) | Terms of service |
 | Shipping Policy | [shipping-policy.md](./shipping-policy.md) | Shipping policy |
 
-**Last Updated:** June 15, 2026 · **Contact:** hello@faebriq.com
+**Last Updated:** June 22, 2026 · **Contact:** support@faebriq.com
 
 > These policies are drafts for convenience and are not legal advice. Have them reviewed by a qualified professional before publishing, especially for jurisdiction-specific requirements (GDPR, CCPA, consumer-rights/cooling-off laws).

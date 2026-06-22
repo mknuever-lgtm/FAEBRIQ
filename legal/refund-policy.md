@@ -10,7 +10,7 @@ At FÆBRIQ, every item is made to order through our print-on-demand partners. Be
 
 We stand behind the quality of our products. If your order arrives damaged, defective, or with a printing error, we will gladly replace it or issue a refund at no cost to you.
 
-To be eligible, you must contact us at hello@faebriq.com within **30 days** of delivery and include:
+To be eligible, you must contact us at support@faebriq.com within **30 days** of delivery and include:
 
 - Your order number
 - A clear photograph of the damaged, defective, or misprinted item
@@ -20,7 +20,7 @@ Once your claim is approved, we will arrange a free replacement or a full refund
 
 ## 2. Wrong Item Received
 
-If you receive an item that differs from what you ordered (wrong design, size, or product), contact us at hello@faebriq.com within **30 days** of delivery with your order number and a photo. We will send the correct item at no additional charge.
+If you receive an item that differs from what you ordered (wrong design, size, or product), contact us at support@faebriq.com within **30 days** of delivery with your order number and a photo. We will send the correct item at no additional charge.
 
 ## 3. Non-Returnable Circumstances
 
@@ -41,8 +41,8 @@ Approved refunds are issued to your original payment method (Shopify Payments or
 
 ## 6. Order Changes & Cancellations
 
-Because items go into production quickly, we can only modify or cancel an order within **24 hours** of purchase. Contact us at hello@faebriq.com as soon as possible — after production begins, changes are no longer possible.
+Because items go into production quickly, we can only modify or cancel an order within **24 hours** of purchase. Contact us at support@faebriq.com as soon as possible — after production begins, changes are no longer possible.
 
 ## 7. Contact Us
 
-hello@faebriq.com
+support@faebriq.com

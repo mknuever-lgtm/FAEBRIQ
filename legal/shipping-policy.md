@@ -35,12 +35,12 @@ Orders shipped to Canada may be subject to import duties, taxes, and customs fee
 
 ## 6. Incorrect Address
 
-Please ensure your shipping address is correct at checkout. We are not responsible for orders shipped to an incorrectly provided address. If you notice an error, contact us at hello@faebriq.com within **24 hours** of ordering and we will do our best to help before production begins.
+Please ensure your shipping address is correct at checkout. We are not responsible for orders shipped to an incorrectly provided address. If you notice an error, contact us at support@faebriq.com within **24 hours** of ordering and we will do our best to help before production begins.
 
 ## 7. Lost, Delayed, or Stuck Shipments
 
-If your tracking has not updated for an extended period, or your order significantly exceeds the estimated delivery window, contact us at hello@faebriq.com with your order number. We will work with our fulfillment and shipping partners to locate your package or arrange a replacement where appropriate (see our Refund Policy).
+If your tracking has not updated for an extended period, or your order significantly exceeds the estimated delivery window, contact us at support@faebriq.com with your order number. We will work with our fulfillment and shipping partners to locate your package or arrange a replacement where appropriate (see our Refund Policy).
 
 ## 8. Contact Us
 
-hello@faebriq.com
+support@faebriq.com

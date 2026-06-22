@@ -56,4 +56,4 @@ We may update these Terms at any time. Changes take effect when posted to the Si
 
 ## 12. Contact Us
 
-hello@faebriq.com
+support@faebriq.com

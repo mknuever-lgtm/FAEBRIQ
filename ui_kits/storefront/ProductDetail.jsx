@@ -7,7 +7,7 @@ import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
  * Product detail — image well + buy column, sticky to the drop.
  */
 export function ProductDetail({ product, onBack, onAdd }) {
-  const p = product || { image: "/model-tee-new.png", meta: "TEE", title: "Deploying Identity v2.0", price: "CA$42", badge: "New Drop", badgeTone: "new" };
+  const p = product || { image: "/model-tee-new.png", meta: "HOODIE", title: "Deploying Identity v2.0", price: "CA$78", badge: "New Drop", badgeTone: "new" };
   const [size, setSize] = React.useState("M");
   const sizes = ["S", "M", "L", "XL"];
 

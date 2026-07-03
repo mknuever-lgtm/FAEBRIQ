@@ -28,7 +28,7 @@ export function Hero({ onShop }) {
         </div>
         {/* Right — image well */}
         <div style={{ position: "relative", background: "var(--bg-sunken)", borderLeft: "1px solid var(--border-hairline)", overflow: "hidden" }}>
-          <img src="/model-tee-new.png" alt="FÆBRIQ flagship tee on model" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.96 }} />
+          <img src="/model-hoodie-new.png" alt="FÆBRIQ Code It, Serve It. tee on model" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.96 }} />
           <div style={{ position: "absolute", bottom: "20px", left: "20px", fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-faint)" }}>
             FAE-TEE-001 · Premium cotton · S–XL
           </div>

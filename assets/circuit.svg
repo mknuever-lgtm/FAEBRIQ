@@ -1,12 +1,12 @@
 <svg viewBox="0 0 1832 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FÆBRIQ rainbow circuit trace">
   <defs>
     <linearGradient id="faeCircuitGrad" gradientUnits="userSpaceOnUse" x1="120" y1="270" x2="1712" y2="270">
-      <stop offset="0" stop-color="#E05A4E"></stop>
-      <stop offset="0.2" stop-color="#E08C30"></stop>
-      <stop offset="0.4" stop-color="#C8B830"></stop>
-      <stop offset="0.58" stop-color="#4CAF7A"></stop>
+      <stop offset="0" stop-color="#E8272A"></stop>
+      <stop offset="0.2" stop-color="#F47F20"></stop>
+      <stop offset="0.4" stop-color="#F9D426"></stop>
+      <stop offset="0.58" stop-color="#2AAA42"></stop>
       <stop offset="0.78" stop-color="#4A9EFF"></stop>
-      <stop offset="1" stop-color="#9B6FD4"></stop>
+      <stop offset="1" stop-color="#7B3FAA"></stop>
     </linearGradient>
   </defs>
   <g fill="none" stroke="url(#faeCircuitGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">

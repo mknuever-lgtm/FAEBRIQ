@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>FÆBRIQ — Shopify Product Images</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; flex-direction: column; gap: 40px; padding: 40px; align-items: center; }
+  .pg { width: 1080px; height: 1080px; position: relative; overflow: hidden; background: #0d0d0d; flex-shrink: 0; }
+  .cr { display: flex; gap: 3px; }
+  .cr span { flex: 1; display: block; }
+</style>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 56">
+  <rect width="80" height="56" fill="#0d0d0d"/>
+  <text x="40" y="30" font-family="serif" font-size="13" fill="#c0c0c0" text-anchor="middle" letter-spacing="2">FÆBRIQ</text>
+  <rect x="15" y="40" width="8" height="3" fill="#E8272A"/>
+  <rect x="25" y="40" width="8" height="3" fill="#F47F20"/>
+  <rect x="35" y="40" width="8" height="3" fill="#F9D426"/>
+  <rect x="45" y="40" width="8" height="3" fill="#2AAA42"/>
+  <rect x="55" y="40" width="8" height="3" fill="#1D5BBE"/>
+  <rect x="65" y="40" width="8" height="3" fill="#7B3FAA"/>
+</svg>
+</template>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     01 — HERO  |  Tee on model, split editorial
+     ══════════════════════════════════════════════════════════ -->
+<div class="pg" data-document-role="page" data-label="01 — Hero">
+
+  <!-- photo fills left ~65% -->
+  <img src="assets/model-hoodie-sm.png" style="position:absolute; top:0; left:0; width:700px; height:1080px; object-fit:cover; object-position:center top;"/>
+
+  <!-- right info panel -->
+  <div style="position:absolute; top:0; right:0; width:380px; height:1080px; background:#0d0d0d; display:flex; flex-direction:column; justify-content:space-between; padding:64px 48px 52px; border-left:1px solid #1c1c1c;">
+
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <img src="assets/wordmark.png" alt="FÆBRIQ" style="height:18px; opacity:0.85; align-self:flex-start;"/>
+      <div class="cr" style="height:3px;">
+        <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+        <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#3a3a3a;">Unisex Tee / 001</span>
+      <div style="font-family:'Instrument Serif',serif; font-size:52px; color:#c0c0c0; line-height:0.95; letter-spacing:0.01em;">Code it.<br/>Serve it.</div>
+      <div style="font-family:'Instrument Serif',serif; font-style:italic; font-size:15px; color:#4a4a4a; line-height:1.65; margin-top:8px;">100% ringspun cotton.<br/>DTG printed.<br/>XS – 3XL.</div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#c0c0c0; letter-spacing:0.04em;">$42</span>
+      <div style="height:1px; background:#1c1c1c;"></div>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:#2a2a2a;">Free shipping · Print on demand</span>
+    </div>
+
+  </div>
+
+  <!-- left edge circuit rule strip -->
+  <div class="cr" style="position:absolute; bottom:0; left:0; width:700px; height:4px;">
+    <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+    <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     02 — DETAIL  |  Cap close-up, dark editorial portrait
+     ══════════════════════════════════════════════════════════ -->
+<div class="pg" data-document-role="page" data-label="02 — Detail">
+
+  <!-- full bleed photo -->
+  <img src="assets/model-cap-sm.png" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%;"/>
+
+  <!-- top bar -->
+  <div style="position:absolute; top:0; left:0; right:0; padding:52px 56px 80px; background:linear-gradient(to bottom, rgba(10,10,10,0.82) 0%, transparent 100%);">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="cr" style="height:3px; width:100px;">
+          <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+          <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#c0c0c0;">Dad Cap</span>
+      </div>
+      <img src="assets/wordmark.png" alt="FÆBRIQ" style="height:16px; opacity:0.6; filter:brightness(0) invert(1);"/>
+    </div>
+  </div>
+
+  <!-- bottom info overlay -->
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:80px 56px 52px; background:linear-gradient(to top, rgba(10,10,10,0.92) 50%, transparent 100%);">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="font-family:'Instrument Serif',serif; font-size:44px; color:#c0c0c0; line-height:1; letter-spacing:0.02em;">FÆBRIQ<br/>Dad Cap</div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:8px;">
+        <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:14px; color:#5a5a5a;">Embroidered. Structured. Six-panel.</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#c0c0c0;">$38</span>
+      </div>
+      <div class="cr" style="height:3px; margin-top:4px;">
+        <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+        <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     03 — PHRASE  |  Typographic statement — pure graphic
+     ══════════════════════════════════════════════════════════ -->
+<div class="pg" data-document-role="page" data-label="03 — Phrase">
+
+  <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 80px 72px;">
+
+    <div style="width:100%; display:flex; flex-direction:column; gap:0;">
+      <!-- overline -->
+      <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#2e2e2e; margin-bottom:36px; display:block;">Flagship Print / Unisex Tee</span>
+
+      <!-- phrase -->
+      <div style="font-family:'Instrument Serif',serif; font-size:96px; color:#c0c0c0; line-height:0.92; letter-spacing:-0.01em; text-wrap:balance;">Please hold,<br/><span style="color:#7a7a7a;">I'm rebranding</span><br/>my identity.</div>
+
+      <!-- circuit rule -->
+      <div class="cr" style="height:5px; margin-top:44px; margin-bottom:28px;">
+        <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+        <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+      </div>
+
+      <!-- wordmark + price row -->
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <img src="assets/wordmark.png" alt="FÆBRIQ" style="height:16px; opacity:0.5;"/>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.12em; color:#3a3a3a;">$42 · FÆBRIQ.COM</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     04 — LIFESTYLE  |  Hoodie in alley, full bleed
+     ══════════════════════════════════════════════════════════ -->
+<div class="pg" data-document-role="page" data-label="04 — Lifestyle">
+
+  <!-- full bleed photo -->
+  <img src="assets/model-tee-sm.png" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;"/>
+
+  <!-- top-left brand mark -->
+  <div style="position:absolute; top:52px; left:52px;">
+    <img src="assets/wordmark.png" alt="FÆBRIQ" style="height:16px; opacity:0.5; filter:brightness(0) invert(1);"/>
+  </div>
+
+  <!-- bottom panel -->
+  <div style="position:absolute; bottom:0; left:0; right:0; padding:100px 56px 52px; background:linear-gradient(to top, rgba(8,8,8,0.95) 55%, transparent);">
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:#404040;">Pullover Hoodie / 002</span>
+      <div style="font-family:'Instrument Serif',serif; font-size:54px; color:#c0c0c0; line-height:0.92; letter-spacing:0.01em;">Deploying<br/>Identity V2.0</div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:6px;">
+        <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:14px; color:#484848;">400gsm fleece. Oversized fit.</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#c0c0c0;">$68</span>
+      </div>
+      <div class="cr" style="height:4px; margin-top:6px;">
+        <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+        <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     05 — COLLECTION  |  Flatlay, product grid
+     ══════════════════════════════════════════════════════════ -->
+<div class="pg" data-document-role="page" data-label="05 — Collection">
+
+  <!-- photo fills top ~68% -->
+  <img src="assets/flatlay-sm.png" style="position:absolute; top:0; left:0; width:100%; height:736px; object-fit:cover; object-position:center top;"/>
+
+  <!-- bottom info panel -->
+  <div style="position:absolute; bottom:0; left:0; right:0; height:344px; background:#0d0d0d; border-top:1px solid #1c1c1c; display:flex; flex-direction:column; justify-content:space-between; padding:40px 56px 52px;">
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#3a3a3a;">The Collection</span>
+        <div style="font-family:'Instrument Serif',serif; font-size:38px; color:#c0c0c0; line-height:1; letter-spacing:0.01em;">Engineered for<br/>the tech-nomad.</div>
+      </div>
+      <img src="assets/wordmark.png" alt="FÆBRIQ" style="height:16px; opacity:0.5; margin-top:4px;"/>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; gap:0; border-top:1px solid #1c1c1c; padding-top:14px;">
+        <div style="flex:1; display:flex; flex-direction:column; gap:4px; border-right:1px solid #1c1c1c; padding-right:20px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:#2e2e2e;">Tee</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#7a7a7a;">$42</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:4px; border-right:1px solid #1c1c1c; padding:0 20px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:#2e2e2e;">Hoodie</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#7a7a7a;">$68</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:4px; border-right:1px solid #1c1c1c; padding:0 20px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:#2e2e2e;">Cap</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#7a7a7a;">$38</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:4px; padding-left:20px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:#2e2e2e;">Tote</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#7a7a7a;">$28</span>
+        </div>
+      </div>
+      <div class="cr" style="height:4px;">
+        <span style="background:#E8272A;"></span><span style="background:#F47F20;"></span><span style="background:#F9D426;"></span>
+        <span style="background:#2AAA42;"></span><span style="background:#1D5BBE;"></span><span style="background:#7B3FAA;"></span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+</body>
+</html>

@@ -29,13 +29,13 @@
   --fae-accent-dim:   #3a7fcc;  /* pressed accent */
   --fae-accent-ghost: rgba(74, 158, 255, 0.12); /* accent wash */
 
-  /* ---- Rainbow circuit (the trace) ---- */
-  --fae-circuit-coral:  #e05a4e;
-  --fae-circuit-amber:  #e08c30;
-  --fae-circuit-yellow: #c8b830;
-  --fae-circuit-green:  #4caf7a;
-  --fae-circuit-blue:   #4a9eff;
-  --fae-circuit-purple: #9b6fd4;
+  /* ---- Rainbow pride mark — classic ROYGBIV (print-safe, embroidery-safe) ---- */
+  --fae-circuit-coral:  #E8272A;  /* red    */
+  --fae-circuit-amber:  #F47F20;  /* orange */
+  --fae-circuit-yellow: #F9D426;  /* yellow */
+  --fae-circuit-green:  #2AAA42;  /* green  */
+  --fae-circuit-blue:   #1D5BBE;  /* blue   */
+  --fae-circuit-purple: #7B3FAA;  /* purple */
 
   /* full sweep, for stops / borders-image / labels */
   --fae-circuit-sweep: var(--fae-circuit-coral),

@@ -11,17 +11,18 @@ const CIRCUIT = [
 
 /**
  * FÆBRIQ CircuitRule — the signature divider.
- * Six rainbow hairlines stacked with optional hollow terminal nodes.
- * The brand's load-bearing graphic device.
+ * Confirmed style (June 2026, Option 3): six equal segmented bands
+ * in a single row. Renders faithfully at any size, including
+ * embroidery and small print — unlike a smooth gradient trace.
+ * Never substitute with a CSS gradient.
  */
-export function CircuitRule({ nodes = true, gap = 5, width = "100%", align = "left", style = {}, ...rest }) {
-  const lines = CIRCUIT.length;
-  const height = (lines - 1) * gap + (nodes ? 6 : 1);
-
+export function CircuitRule({ gap = 4, height = 4, width = "100%", align = "left", style = {}, ...rest }) {
   return (
     <div
+      role="separator"
       style={{
-        position: "relative",
+        display: "flex",
+        gap: `${gap}px`,
         width,
         height: `${height}px`,
         marginLeft: align === "right" ? "auto" : 0,
@@ -30,34 +31,8 @@ export function CircuitRule({ nodes = true, gap = 5, width = "100%", align = "le
       {...rest}
     >
       {CIRCUIT.map((c, i) => (
-        <div
-          key={i}
-          style={{
-            position: "absolute",
-            top: `${i * gap + (nodes ? 3 : 0)}px`,
-            left: nodes ? "6px" : 0,
-            right: 0,
-            height: "1px",
-            background: c,
-          }}
-        />
+        <span key={i} style={{ flex: 1, background: c }} />
       ))}
-      {nodes &&
-        CIRCUIT.map((c, i) => (
-          <span
-            key={`n${i}`}
-            style={{
-              position: "absolute",
-              top: `${i * gap}px`,
-              left: 0,
-              width: "5px",
-              height: "5px",
-              borderRadius: "50%",
-              border: `1px solid ${c}`,
-              background: "var(--bg-page)",
-            }}
-          />
-        ))}
     </div>
   );
 }

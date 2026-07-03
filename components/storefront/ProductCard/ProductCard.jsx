@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge } from "../core/Badge.jsx";
+import { Badge } from "../../core/Badge/Badge.jsx";
 
 /**
  * FÆBRIQ ProductCard — storefront merch tile.

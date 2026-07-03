@@ -1,15 +1,19 @@
+import React from "react";
+import { Button } from "../../components/core/Button/Button.jsx";
+import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
+import { Badge } from "../../components/core/Badge/Badge.jsx";
+
 /**
  * Storefront hero — full-bleed flagship statement over the void.
  * Wordmark-scale serif headline, circuit rule, mono CTA row.
  */
-function Hero({ onShop }) {
-  const { Button, CircuitRule, Badge } = window.FBRIQDesignSystem_0e5da2;
+export function Hero({ onShop }) {
   return (
     <section style={{ position: "relative", borderBottom: "1px solid var(--border-hairline)" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", minHeight: "560px" }}>
         {/* Left — statement */}
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "64px 56px", gap: "28px" }}>
-          <Badge tone="new" dot>New Drop · Collection 02</Badge>
+          <Badge tone="new" dot>New Drop · Vol. 1</Badge>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "68px", lineHeight: 1.02, letterSpacing: "-0.01em", color: "var(--text-heading)", margin: 0, maxWidth: "12ch" }}>
             Please hold,<br />I'm rebranding<br /><span style={{ color: "var(--fae-silver)" }}>my identity.</span>
           </h1>
@@ -24,13 +28,12 @@ function Hero({ onShop }) {
         </div>
         {/* Right — image well */}
         <div style={{ position: "relative", background: "var(--bg-sunken)", borderLeft: "1px solid var(--border-hairline)", overflow: "hidden" }}>
-          <img src="../../assets/mockup-tee-model.png" alt="FÆBRIQ flagship tee on model" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.96 }} />
+          <img src="/model-tee-new.png" alt="FÆBRIQ flagship tee on model" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.96 }} />
           <div style={{ position: "absolute", bottom: "20px", left: "20px", fontFamily: "var(--font-mono)", fontSize: "10px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-faint)" }}>
-            FAE-TEE-001 · 6.5oz · XS–3XL
+            FAE-TEE-001 · Premium cotton · S–XL
           </div>
         </div>
       </div>
     </section>
   );
 }
-window.Hero = Hero;

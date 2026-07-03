@@ -1,11 +1,15 @@
+import React from "react";
+import { Button } from "../../components/core/Button/Button.jsx";
+import { Badge } from "../../components/core/Badge/Badge.jsx";
+import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
+
 /**
  * Product detail — image well + buy column, sticky to the drop.
  */
-function ProductDetail({ product, onBack, onAdd }) {
-  const { Button, Badge, CircuitRule } = window.FBRIQDesignSystem_0e5da2;
-  const p = product || { image: "../../assets/mockup-tee-model.png", meta: "TEE · 6.5 OZ", title: "Deploying Identity v2.0", price: "$35", badge: "New Drop", badgeTone: "new" };
+export function ProductDetail({ product, onBack, onAdd }) {
+  const p = product || { image: "/model-tee-new.png", meta: "TEE", title: "Deploying Identity v2.0", price: "CA$42", badge: "New Drop", badgeTone: "new" };
   const [size, setSize] = React.useState("M");
-  const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+  const sizes = ["S", "M", "L", "XL"];
 
   return (
     <section style={{ padding: "40px 56px 80px" }}>
@@ -25,7 +29,7 @@ function ProductDetail({ product, onBack, onAdd }) {
           <CircuitRule width={220} />
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "22px", color: "var(--text-body)" }}>{p.price}</div>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "15px", lineHeight: 1.7, color: "var(--text-muted)", margin: 0, maxWidth: "46ch" }}>
-            Premium heavyweight cotton, 6.5oz. Soft hand-feel, structured drape. Screen-quality DTG print that survives the laundromat in any timezone.
+            Premium heavyweight cotton. Soft hand-feel, structured drape. Screen-quality print that survives the laundromat in any timezone.
           </p>
 
           <div>
@@ -54,11 +58,10 @@ function ProductDetail({ product, onBack, onAdd }) {
             <Button variant="secondary" size="lg">♥</Button>
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "var(--text-faint)", letterSpacing: "0.06em" }}>
-            // free worldwide shipping over $80 · 30-day returns
+            // made to order · ships from Canada
           </div>
         </div>
       </div>
     </section>
   );
 }
-window.ProductDetail = ProductDetail;

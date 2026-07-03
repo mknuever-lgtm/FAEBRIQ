@@ -1,19 +1,20 @@
+import React from "react";
+import { ProductCard } from "../../components/storefront/ProductCard/ProductCard.jsx";
+import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
+
 const PRODUCTS = [
-  { id: "p1", image: "../../assets/mockup-tee-model.png", meta: "TEE · 6.5 OZ", title: "Deploying Identity v2.0", price: "$35", badge: "New Drop", badgeTone: "new" },
-  { id: "p2", image: "../../assets/mockup-sleeve.png", meta: "SLEEVE · 13\"", title: "Carry Protocol", price: "$42", badge: "Limited", badgeTone: "purple" },
-  { id: "p3", image: "../../assets/mockup-stickers.png", meta: "STICKER PACK · ×6", title: "Commit Messages", price: "$12", badge: null },
-  { id: "p4", image: "../../assets/mockup-flatlay.png", meta: "TEE · 6.5 OZ", title: "Serve It Black", price: "$35", badge: null },
-  { id: "p5", image: "../../assets/mockup-tee-flat.png", meta: "TEE · 6.5 OZ", title: "Rebrand In Progress", price: "$35", badge: "Sold Out", badgeTone: "sold" },
-  { id: "p6", image: "../../assets/mockup-sleeve-desk.png", meta: "SLEEVE · 15\"", title: "Nomad Edition", price: "$46", badge: null },
+  { id: "p1", image: "/model-tee-new.png", meta: "TEE", title: "Deploying Identity v2.0", price: "CA$42", badge: "New Drop", badgeTone: "new" },
+  { id: "p2", image: "/model-hoodie-new.png", meta: "HOODIE", title: "Please Hold, I'm Rebranding", price: "CA$78", badge: null },
+  { id: "p3", image: "/model-cap-new.png", meta: "CAP", title: "Circuit Cap", price: "CA$34", badge: null },
+  { id: "p4", image: "/model-flatlay-new.png", meta: "STICKER · ×3", title: "The Full Drop", price: "CA$11", badge: "Bundle", badgeTone: "purple" },
 ];
 
 /**
- * Collection grid — filter rail + 3-up product grid.
+ * Collection grid — filter rail + product grid.
  */
-function CollectionGrid({ onOpen }) {
-  const { ProductCard, CircuitRule } = window.FBRIQDesignSystem_0e5da2;
+export function CollectionGrid({ onOpen }) {
   const [filter, setFilter] = React.useState("All");
-  const filters = ["All", "Tees", "Sleeves", "Stickers"];
+  const filters = ["All", "Tees", "Hoodies", "Accessories"];
 
   return (
     <section style={{ padding: "64px 56px" }}>
@@ -39,7 +40,7 @@ function CollectionGrid({ onOpen }) {
           ))}
         </div>
       </div>
-      <CircuitRule width="100%" nodes={false} style={{ margin: "0 0 32px" }} />
+      <CircuitRule width="100%" style={{ margin: "0 0 32px" }} />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
         {PRODUCTS.map((p) => (
           <ProductCard key={p.id} {...p} onClick={() => onOpen && onOpen(p)} />
@@ -48,4 +49,3 @@ function CollectionGrid({ onOpen }) {
     </section>
   );
 }
-window.CollectionGrid = CollectionGrid;

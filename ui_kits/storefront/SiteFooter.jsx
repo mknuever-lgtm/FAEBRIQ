@@ -1,10 +1,14 @@
+import React from "react";
+import { Input } from "../../components/core/Input/Input.jsx";
+import { Button } from "../../components/core/Button/Button.jsx";
+import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
+
 /**
  * Storefront footer — wordmark, link columns, newsletter, circuit cap.
  */
-function SiteFooter() {
-  const { Input, Button, CircuitRule } = window.FBRIQDesignSystem_0e5da2;
+export function SiteFooter() {
   const cols = [
-    { h: "Shop", items: ["Tees", "Sleeves", "Stickers", "Gift cards"] },
+    { h: "Shop", items: ["Tees", "Hoodies", "Stickers", "Accessories"] },
     { h: "Brand", items: ["About", "Journal", "Sustainability", "Sizing"] },
     { h: "Support", items: ["Shipping", "Returns", "Contact", "FAQ"] },
   ];
@@ -42,4 +46,3 @@ function SiteFooter() {
     </footer>
   );
 }
-window.SiteFooter = SiteFooter;

@@ -1,8 +1,11 @@
+import React from "react";
+import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
+import { Badge } from "../../components/core/Badge/Badge.jsx";
+
 /**
  * About section — editorial brand statement over the void, two columns.
  */
-function About() {
-  const { CircuitRule, Badge } = window.FBRIQDesignSystem_0e5da2;
+export function About() {
   return (
     <section style={{ padding: "80px 56px", borderTop: "1px solid var(--border-hairline)", background: "var(--bg-sunken)" }}>
       <div style={{ display: "grid", gridTemplateColumns: "0.8fr 1.2fr", gap: "64px", alignItems: "start", maxWidth: "1100px", margin: "0 auto" }}>
@@ -30,4 +33,3 @@ function About() {
     </section>
   );
 }
-window.About = About;

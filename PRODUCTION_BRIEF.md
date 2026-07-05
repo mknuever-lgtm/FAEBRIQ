@@ -16,7 +16,7 @@ Fonts (confirmed): **Instrument Serif** for statement pieces (Code It Serve It, 
 | Hoodie | Deploying Identity v2.0 | Mono | `assets/print-art/hoodie-deploying-identity.png` | DTG | CA$78 |
 | Hoodie | Off The Clock. Still Iconic. | Instrument Serif | `assets/print-art/hoodie-off-the-clock.png` | DTG | CA$78 |
 | Tote | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/print-art/tote-please-hold.png` | DTG | TBD |
-| Mug (new design) | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/mug-please-hold.png` | Sublimation wrap | TBD — see note |
+| Mug (replaces Silver Wordmark art) | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/mug-please-hold.png` | Sublimation wrap | CA$16.99 / CA$19.99 (11oz/15oz, unchanged) |
 | Cap — slim dad cap | GAGGED | Bold blocky | `assets/print-art/cap-gagged-slim.png` | Embroidery | CA$34 |
 | Cap — slim dad cap | SERVED. | Bold blocky | `assets/print-art/cap-served-slim.png` | Embroidery | CA$34 |
 | Cap — structured/5-panel | GAGGED | Bold blocky | `assets/print-art/cap-gagged-structured.png` | Embroidery | CA$34 |
@@ -49,7 +49,7 @@ More can be generated the same way (HTML + Playwright render) for any tagline �
 ## 5. Mug & tote — new this revision
 
 - **Mug:** `assets/mug-please-hold.png` is sized for a mug-wrap-safe centered layout (avoid handle-adjacent edges). Needs a sublimation/wrap print method in Printify.
-  ⚠️ There is already a live mug product on Shopify — "FÆBRIQ Pride Circuit Ceramic Mug — Silver Wordmark" (CA$16.99 / CA$19.99, 11oz/15oz) — a different design (wordmark only, no phrase). This new "Please Hold" art is either a **second mug SKU** or a **replacement design** for the existing one — confirm which before publishing so pricing/listing isn't duplicated by accident.
+  **Confirmed: replaces the existing "Silver Wordmark" mug art**, not a new SKU. Swap the print file on `gid://shopify/Product/7681278017603` ("FÆBRIQ Pride Circuit Ceramic Mug — Silver Wordmark") to `assets/mug-please-hold.png`. Keep the existing price points (CA$16.99 / CA$19.99, 11oz/15oz) unless a reprice is wanted — consider renaming the listing to drop "Silver Wordmark" once the art changes, since that name describes the old design.
 - **Tote:** `assets/print-art/tote-please-hold.png` — same art, larger canvas tote-tile size. DTG or screen-print depending on the blank.
 
 ## 6. Stickers
@@ -84,4 +84,4 @@ Follow the brand rules: black void background, cool grade, on-model is non-negot
 - Full 5-image sets (Hero/Detail/Lifestyle/Collection) for every SKU beyond the two Phrase images above
 
 ---
-v2 — supersedes the chat-only brief. Font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts). Mug + Phrase images added this revision.
+v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.

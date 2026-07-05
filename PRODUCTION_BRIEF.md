@@ -49,7 +49,8 @@ More can be generated the same way (HTML + Playwright render) for any tagline �
 ## 5. Mug & tote — new this revision
 
 - **Mug:** `assets/mug-please-hold.png` is sized for a mug-wrap-safe centered layout (avoid handle-adjacent edges). Needs a sublimation/wrap print method in Printify.
-  **Confirmed: replaces the existing "Silver Wordmark" mug art**, not a new SKU. Swap the print file on `gid://shopify/Product/7681278017603` ("FÆBRIQ Pride Circuit Ceramic Mug — Silver Wordmark") to `assets/mug-please-hold.png`. Keep the existing price points (CA$16.99 / CA$19.99, 11oz/15oz) unless a reprice is wanted — consider renaming the listing to drop "Silver Wordmark" once the art changes, since that name describes the old design.
+  **Confirmed: replaces the existing "Silver Wordmark" mug art**, not a new SKU. This product is **Printify-linked** (`printify_custom.printify_product_id = 6a14e7a6cb8516b5720c68fb` on `gid://shopify/Product/7681278017603`) — its own Shopify description already reads "Please Hold, I'm Rebranding My Identity," so the copy update happened but the art didn't. **The image MUST be swapped in Printify, not uploaded directly to Shopify** — Printify's periodic sync back to Shopify will overwrite any image set manually there. Keep the existing price points (CA$16.99 / CA$19.99, 11oz/15oz) unless a reprice is wanted — consider renaming the listing to drop "Silver Wordmark" once the art changes, since that name describes the old design.
+  This same rule applies to every other SKU in this brief: all are Printify-fulfilled, so **every image swap in §1 goes through Printify**, never a direct Shopify image upload.
 - **Tote:** `assets/print-art/tote-please-hold.png` — same art, larger canvas tote-tile size. DTG or screen-print depending on the blank.
 
 ## 6. Stickers

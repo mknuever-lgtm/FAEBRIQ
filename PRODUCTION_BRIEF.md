@@ -17,10 +17,8 @@ Fonts (confirmed): **Instrument Serif** for statement pieces (Code It Serve It, 
 | Hoodie | Off The Clock. Still Iconic. | Instrument Serif | `assets/print-art/hoodie-off-the-clock.png` | DTG | CA$78 |
 | Tote | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/print-art/tote-please-hold.png` | DTG | TBD |
 | Mug (replaces Silver Wordmark art) | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/mug-please-hold.png` | Sublimation wrap | CA$16.99 / CA$19.99 (11oz/15oz, unchanged) |
-| Cap — slim dad cap | GAGGED | Bold blocky | `assets/print-art/cap-gagged-slim.png` | Embroidery | CA$34 |
-| Cap — slim dad cap | SERVED. | Bold blocky | `assets/print-art/cap-served-slim.png` | Embroidery | CA$34 |
-| Cap — structured/5-panel | GAGGED | Bold blocky | `assets/print-art/cap-gagged-structured.png` | Embroidery | CA$34 |
-| Cap — structured/5-panel | SERVED. | Bold blocky | `assets/print-art/cap-served-structured.png` | Embroidery | CA$34 |
+| Cap — slim dad cap | FÆBRIQ wordmark | Bold blocky | `assets/print-art/cap-wordmark-slim.png` | Embroidery | CA$34 |
+| Cap — structured/5-panel | FÆBRIQ wordmark | Bold blocky | `assets/print-art/cap-wordmark-structured.png` | Embroidery | CA$34 |
 | Sticker | 404: Straight Not Found | Bold number + mono | `assets/print-art/tee-404-straight-not-found.png` | Kiss-cut vinyl | CA$5 |
 
 ## 2. Standalone listing images (no photography needed)
@@ -41,10 +39,12 @@ More can be generated the same way (HTML + Playwright render) for any tagline �
 
 ## 4. Caps — two silhouettes, both done
 
-- **Slim/unstructured dad cap** (primary) — soft low crown, curved brim. Use the `-slim` files (smaller, discreet front hit).
-- **Structured/5-panel** (secondary) — bigger front real estate. Use the `-structured` files (larger, bolder front hit).
-- Both already use the embroidery-safe band (thicker segments, wider gaps than the print files) — no further tweaking needed before ordering.
-- Brand tie-in: front carries the one word only; tuck "Code It. Serve It." tiny on the back/strap if desired.
+**Final direction (superseding the earlier GAGGED/SERVED plan):** wordmark cap, segmented band above "FÆBRIQ" — matches the reference photo that sold the founder on execution quality, but built with the confirmed segmented band instead of the deprecated gradient line. GAGGED/SERVED were considered and dropped; the wordmark reads cleaner to strangers who don't yet know the brand, and keeps the cap visually consistent with the rest of the line (same band treatment).
+
+- **Slim/unstructured dad cap** (primary) — soft low crown, curved brim. Use `cap-wordmark-slim.png`.
+- **Structured/5-panel** (secondary) — bigger front real estate. Use `cap-wordmark-structured.png`.
+- Both use the embroidery-safe band (thicker segments, wider gaps than the print files) — no further tweaking needed before ordering.
+- The old `cap-gagged-*.png` / `cap-served-*.png` files are still in the repo but superseded — do not use for production.
 
 ## 5. Mug & tote — new this revision
 
@@ -91,9 +91,9 @@ Found and fixed live on 2026-07-05: four product descriptions still contained in
 - **Deploying Identity Hoodie** (`.../7707663302723`) — removed `[DRAFT, final hoodie print art pending]`
 - **Code It, Serve It. Hoodie** (`.../7707663335491`) — removed the same placeholder; also swapped "glitch-rainbow" language for "pride-circuit spine" to match the confirmed segmented-band aesthetic (not a gradient/glitch effect)
 - **Please Hold Tee** (`.../7707664187459`) — removed `[DRAFT, final tee print art pending]`; "subway line rainbow" → "pride-circuit spine" for the same reason
-- **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note ("Confirm Printify/Monster Digital blank before launch. First unit doubles as founder's personal cap..."); rewrote the front-design description from "AE ligature wordmark" (superseded) to **GAGGED** in bold block type, matching the confirmed cap decision — no brand wordmark on the front, punchline leads
+- **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note ("Confirm Printify/Monster Digital blank before launch. First unit doubles as founder's personal cap..."). Description went through two revisions: first to **GAGGED** (bold block type, no wordmark), then — after the founder reviewed a reference photo and reversed course — to the **final direction: FÆBRIQ wordmark + segmented band**, described in the current live description. See §4 for the full reasoning.
 
 These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
 
 ---
-v4 — Shopify copy cleanup: stripped customer-visible dev placeholders from 4 listings, corrected cap description to match the confirmed GAGGED design (see §10). v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.
+v5 — **Cap direction finalized**: wordmark + segmented band, replacing GAGGED/SERVED (see §4, §10). New files: `cap-wordmark-slim.png`, `cap-wordmark-structured.png`. Old `cap-gagged-*`/`cap-served-*` files remain in the repo but are superseded. v4 — Shopify copy cleanup: stripped customer-visible dev placeholders from 4 listings. v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.

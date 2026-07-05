@@ -84,5 +84,16 @@ Follow the brand rules: black void background, cool grade, on-model is non-negot
 - Second cap silhouette's on-model product photo (art is done; photo is not)
 - Full 5-image sets (Hero/Detail/Lifestyle/Collection) for every SKU beyond the two Phrase images above
 
+## 10. Shopify copy cleanup (done directly in Shopify, safe — no Printify conflict)
+
+Found and fixed live on 2026-07-05: four product descriptions still contained internal placeholder/dev text visible to customers.
+
+- **Deploying Identity Hoodie** (`.../7707663302723`) — removed `[DRAFT, final hoodie print art pending]`
+- **Code It, Serve It. Hoodie** (`.../7707663335491`) — removed the same placeholder; also swapped "glitch-rainbow" language for "pride-circuit spine" to match the confirmed segmented-band aesthetic (not a gradient/glitch effect)
+- **Please Hold Tee** (`.../7707664187459`) — removed `[DRAFT, final tee print art pending]`; "subway line rainbow" → "pride-circuit spine" for the same reason
+- **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note ("Confirm Printify/Monster Digital blank before launch. First unit doubles as founder's personal cap..."); rewrote the front-design description from "AE ligature wordmark" (superseded) to **GAGGED** in bold block type, matching the confirmed cap decision — no brand wordmark on the front, punchline leads
+
+These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
+
 ---
-v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.
+v4 — Shopify copy cleanup: stripped customer-visible dev placeholders from 4 listings, corrected cap description to match the confirmed GAGGED design (see §10). v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.

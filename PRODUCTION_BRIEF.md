@@ -4,22 +4,28 @@ Every SKU · which file · print method · placement · price · what's still ne
 
 Rainbow (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, segmented bands (6 equal blocks, gaps), never a gradient.
 
-Fonts (confirmed): **Instrument Serif** for statement pieces (Code It Serve It, It's Not A Bug, Off The Clock, Please Hold, mug/phrase headlines). **Mono** for Deploying Identity v2.0 and the 404 terminal subline/code. **Bold blocky** (not serif) on caps — a fine serif blurs in embroidery thread at that scale.
+Fonts (confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
 
 ## 1. Catalog at a glance
 
-| Product | Tagline | Font | File | Method | Price |
+Every tagline below ships in **two color variants** — Black-on-White (for lighter garments) and White-on-Black (for black garments, the default). Pick per garment color at Printify upload time.
+
+| Product | Tagline | File (white-on-black) | File (black-on-white) | Method | Price |
 |---|---|---|---|---|---|
-| Tee — HERO | 404: Straight Not Found | Bold number + mono | `assets/print-art/tee-404-straight-not-found.png` | DTG | CA$42 |
-| Tee | It's Not A Bug. It's Me. | Instrument Serif | `assets/print-art/tee-its-not-a-bug.png` | DTG | CA$42 |
-| Tee | Code It. Serve It. | Instrument Serif | `assets/print-art/tee-code-it-serve-it.png` | DTG | CA$42 |
-| Hoodie | Deploying Identity v2.0 | Mono | `assets/print-art/hoodie-deploying-identity.png` | DTG | CA$78 |
-| Hoodie | Off The Clock. Still Iconic. | Instrument Serif | `assets/print-art/hoodie-off-the-clock.png` | DTG | CA$78 |
-| Tote | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/print-art/tote-please-hold.png` | DTG | TBD |
-| Mug (replaces Silver Wordmark art) | Please Hold, I'm Rebranding My Identity | Instrument Serif | `assets/mug-please-hold.png` | Sublimation wrap | CA$16.99 / CA$19.99 (11oz/15oz, unchanged) |
-| Cap — slim dad cap | FÆBRIQ wordmark | Bold blocky | `assets/print-art/cap-wordmark-slim.png` | Embroidery | CA$34 |
-| Cap — structured/5-panel | FÆBRIQ wordmark | Bold blocky | `assets/print-art/cap-wordmark-structured.png` | Embroidery | CA$34 |
-| Sticker | 404: Straight Not Found | Bold number + mono | `assets/print-art/tee-404-straight-not-found.png` | Kiss-cut vinyl | CA$5 |
+| Tee — HERO | 404: Straight Not Found | `404-straight-not-found-white-on-black.jpg` | `404-straight-not-found-black-on-white.jpg` | DTG | CA$42 |
+| Tee | It's Not A Bug. It's Me. | `its-not-a-bug-its-me-white-on-black.jpg` | `its-not-a-bug-its-me-black-on-white.jpg` | DTG | CA$42 |
+| Tee | Code It. Serve It. | `code-it-serve-it-white-on-black.jpg` | `code-it-serve-it-black-on-white.jpg` | DTG | CA$42 |
+| Hoodie | Deploying Identity v2.0 | `deploying-identity-v2-white-on-black.jpg` | `deploying-identity-v2-black-on-white.jpg` | DTG | CA$78 |
+| Hoodie | Off The Clock. Still Iconic. | `off-the-clock-still-iconic-white-on-black.jpg` | `off-the-clock-still-iconic-black-on-white.jpg` | DTG | CA$78 |
+| Tote / Tee (new SKU — see §5a) | GAGGED | `gagged-white-on-black.jpg` | `gagged-black-on-white.jpg` | DTG | TBD |
+| Tote / Tee (new SKU — see §5a) | SERVED. | `served-white-on-black.jpg` | `served-black-on-white.jpg` | DTG | TBD |
+| Tote | Please Hold, I'm Rebranding My Identity | `please-hold-rebranding-identity-white-on-black.jpg` | `please-hold-rebranding-identity-black-on-white.jpg` | DTG | TBD |
+| Mug (replaces Silver Wordmark art) | Please Hold, I'm Rebranding My Identity | `assets/mug-please-hold.png` (own file, mug-wrap-safe crop) | — | Sublimation wrap | CA$16.99 / CA$19.99 (11oz/15oz, unchanged) |
+| Cap — slim dad cap | FÆBRIQ wordmark | `assets/print-art/cap-wordmark-slim.png` | — | Embroidery | CA$34 |
+| Cap — structured/5-panel | FÆBRIQ wordmark | `assets/print-art/cap-wordmark-structured.png` | — | Embroidery | CA$34 |
+| Sticker | 404: Straight Not Found | `404-straight-not-found-white-on-black.jpg` | — | Kiss-cut vinyl | CA$5 |
+
+All tagline files live in `assets/print-art/`. The cap and mug files are separate, purpose-built assets (not part of the two-color set) — see §4 and §5.
 
 ## 2. Standalone listing images (no photography needed)
 
@@ -28,42 +34,49 @@ Pure-typographic "Phrase" type images per the design handoff's 5-image spec (Her
 - `assets/phrase-404.png` — for the 404 tee listing
 - `assets/phrase-deploying-identity.png` — for the Deploying Identity hoodie listing
 
-More can be generated the same way (HTML + Playwright render) for any tagline — no external tool needed, ask for one.
+These predate the v6 all-serif rule and still use mono for "Deploying Identity" — cosmetic inconsistency only, not urgent to fix, but regenerate to match if convenient. More can be generated the same way (HTML + Playwright render) for any tagline — no external tool needed, ask for one.
 
 ## 3. Tees & hoodies — DTG settings
 
-- **Blank:** heavyweight black tee / fleece hoodie — match the CA$42/$78 positioning, not the cheapest blank.
-- **Print method:** DTG — renders the six-color band + fine serif/mono text cleanly on black. Not screen-print (too many colors).
-- **Placement:** front, centered, ~26–28cm wide. The 404 hero art is left-aligned by design — place as a large left-chest-to-center block, ~28–30cm wide, so the big `404` and the terminal subline both read.
+- **Blank:** heavyweight black (or white/light, if using a Black-on-White variant) tee / fleece hoodie — match the CA$42/$78 positioning, not the cheapest blank.
+- **Print method:** DTG — renders the six-color band + fine serif text cleanly on either garment color. Not screen-print (too many colors).
+- **Placement:** front, centered, ~26–28cm wide.
+- **Color variant:** use White-on-Black for black garments, Black-on-White for light garments — don't mix (white text is invisible on a white tee).
 - **Colors:** confirm the Printify preview shows the exact ROYGBIV band values above.
 
-## 4. Caps — two silhouettes, both done
+## 4. Caps — two silhouettes, unaffected by this revision
 
-**Final direction (superseding the earlier GAGGED/SERVED plan):** wordmark cap, segmented band above "FÆBRIQ" — matches the reference photo that sold the founder on execution quality, but built with the confirmed segmented band instead of the deprecated gradient line. GAGGED/SERVED were considered and dropped; the wordmark reads cleaner to strangers who don't yet know the brand, and keeps the cap visually consistent with the rest of the line (same band treatment).
+**Final direction:** wordmark cap, segmented band above "FÆBRIQ" — matches the reference photo that sold the founder on execution quality, built with the confirmed segmented band instead of a gradient line. GAGGED/SERVED were considered for the cap specifically and dropped — the wordmark reads cleaner to strangers who don't yet know the brand, and keeps the cap visually consistent with the rest of the line.
 
 - **Slim/unstructured dad cap** (primary) — soft low crown, curved brim. Use `cap-wordmark-slim.png`.
 - **Structured/5-panel** (secondary) — bigger front real estate. Use `cap-wordmark-structured.png`.
-- Both use the embroidery-safe band (thicker segments, wider gaps than the print files) — no further tweaking needed before ordering.
-- The old `cap-gagged-*.png` / `cap-served-*.png` files are still in the repo but superseded — do not use for production.
+- Both use the embroidery-safe band (thicker segments, wider gaps than the tagline print files) — no further tweaking needed before ordering.
 
-## 5. Mug & tote — new this revision
+## 5. Mug & tote
 
 - **Mug:** `assets/mug-please-hold.png` is sized for a mug-wrap-safe centered layout (avoid handle-adjacent edges). Needs a sublimation/wrap print method in Printify.
-  **Confirmed: replaces the existing "Silver Wordmark" mug art**, not a new SKU. This product is **Printify-linked** (`printify_custom.printify_product_id = 6a14e7a6cb8516b5720c68fb` on `gid://shopify/Product/7681278017603`) — its own Shopify description already reads "Please Hold, I'm Rebranding My Identity," so the copy update happened but the art didn't. **The image MUST be swapped in Printify, not uploaded directly to Shopify** — Printify's periodic sync back to Shopify will overwrite any image set manually there. Keep the existing price points (CA$16.99 / CA$19.99, 11oz/15oz) unless a reprice is wanted — consider renaming the listing to drop "Silver Wordmark" once the art changes, since that name describes the old design.
+  **Confirmed: replaces the existing "Silver Wordmark" mug art**, not a new SKU. This product is **Printify-linked** (`printify_custom.printify_product_id = 6a14e7a6cb8516b5720c68fb` on `gid://shopify/Product/7681278017603`). **The image MUST be swapped in Printify, not uploaded directly to Shopify** — Printify's periodic sync back to Shopify will overwrite any image set manually there. Keep the existing price points (CA$16.99 / CA$19.99, 11oz/15oz) unless a reprice is wanted; consider renaming the listing to drop "Silver Wordmark" once the art changes.
   This same rule applies to every other SKU in this brief: all are Printify-fulfilled, so **every image swap in §1 goes through Printify**, never a direct Shopify image upload.
-- **Tote:** `assets/print-art/tote-please-hold.png` — same art, larger canvas tote-tile size. DTG or screen-print depending on the blank.
+- **Tote:** use `please-hold-rebranding-identity-*.jpg` as the primary tote design (matches the zip's original naming — this set was delivered specifically for tote text/color adjustment). GAGGED and SERVED are also candidates for tote (see §5a).
+
+### 5a. GAGGED / SERVED — new SKUs, not yet priced or listed
+
+Per the founder: these are tee/tote designs now, **not** the cap (cap direction is settled — see §4). They don't map to any existing Shopify product yet. Open decisions before these go into Printify:
+- Which product(s) — tee only, tote only, or both?
+- Pricing — tee would likely be CA$42 (matching the other tees), tote TBD alongside the Please Hold tote.
+- New Shopify listing needed for each (title, description, tags) — none exists today.
 
 ## 6. Stickers
 
-- Kiss-cut vinyl, ~7–8cm wide. `tee-404-straight-not-found.png` works as-is — the terminal-error styling is made for a laptop lid. Consider a sticker sheet later (error-code deep cuts: 418 Teapot, 500 Serving Error, etc.).
+- Kiss-cut vinyl, ~7–8cm wide. `404-straight-not-found-white-on-black.jpg` works as-is — the terminal-error styling is made for a laptop lid. Consider a sticker sheet later (error-code deep cuts: 418 Teapot, 500 Serving Error, etc.), and possibly GAGGED/SERVED as small sticker call-outs too.
 
 ## 7. Exact click-path in Printify
 
-1. Catalog → pick the blank.
+1. Catalog → pick the blank (confirm garment color to pick the matching White-on-Black or Black-on-White file).
 2. Start designing → upload the matching file from §1.
 3. Position & size per §3–6. Check the print preview for band color + text sharpness.
-4. Select variants — tees/hoodies: S–XL, black only. Cap: one size per silhouette. Sticker/mug/tote: one size.
-5. Set price per §1. Printify shows the margin.
+4. Select variants — tees/hoodies: S–XL. Cap: one size per silhouette. Sticker/mug/tote: one size.
+5. Set price per §1 (or decide new pricing for GAGGED/SERVED, §5a).
 6. Publish to Shopify — lands as a draft with Printify's auto-mockup.
 7. In Shopify, swap in the Placeit on-model hero image (§8), then set the product Active.
 
@@ -83,6 +96,8 @@ Follow the brand rules: black void background, cool grade, on-model is non-negot
 - Placeit/Smartmockups compositing (no API access in this session)
 - Second cap silhouette's on-model product photo (art is done; photo is not)
 - Full 5-image sets (Hero/Detail/Lifestyle/Collection) for every SKU beyond the two Phrase images above
+- GAGGED/SERVED product/pricing decisions (§5a)
+- Regenerating the two Phrase images (§2) to match the v6 all-serif rule (cosmetic, low priority)
 
 ## 10. Shopify copy cleanup (done directly in Shopify, safe — no Printify conflict)
 
@@ -91,9 +106,11 @@ Found and fixed live on 2026-07-05: four product descriptions still contained in
 - **Deploying Identity Hoodie** (`.../7707663302723`) — removed `[DRAFT, final hoodie print art pending]`
 - **Code It, Serve It. Hoodie** (`.../7707663335491`) — removed the same placeholder; also swapped "glitch-rainbow" language for "pride-circuit spine" to match the confirmed segmented-band aesthetic (not a gradient/glitch effect)
 - **Please Hold Tee** (`.../7707664187459`) — removed `[DRAFT, final tee print art pending]`; "subway line rainbow" → "pride-circuit spine" for the same reason
-- **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note ("Confirm Printify/Monster Digital blank before launch. First unit doubles as founder's personal cap..."). Description went through two revisions: first to **GAGGED** (bold block type, no wordmark), then — after the founder reviewed a reference photo and reversed course — to the **final direction: FÆBRIQ wordmark + segmented band**, described in the current live description. See §4 for the full reasoning.
+- **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note. Description went through two revisions before landing on the final direction: **FÆBRIQ wordmark + segmented band** (see §4).
 
 These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
 
 ---
-v5 — **Cap direction finalized**: wordmark + segmented band, replacing GAGGED/SERVED (see §4, §10). New files: `cap-wordmark-slim.png`, `cap-wordmark-structured.png`. Old `cap-gagged-*`/`cap-served-*` files remain in the repo but are superseded. v4 — Shopify copy cleanup: stripped customer-visible dev placeholders from 4 listings. v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product (see §5). v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces (was mono/plain-sans in earlier drafts), mug + Phrase images added.
+v6 — **Adopted the founder-supplied 16-file print-art set as canonical**, replacing the old single-color-direction files. Every tagline now ships in both Black-on-White and White-on-Black. Dropped the mono exception for "Deploying Identity v2.0" — all taglines now use Instrument Serif uniformly. Added GAGGED and SERVED as new (unpriced, unlisted) tee/tote candidates — see §5a. Old files removed from the working tree: `tee-404-straight-not-found.png`, `tee-its-not-a-bug.png`, `tee-code-it-serve-it.png`, `hoodie-deploying-identity.png`, `hoodie-off-the-clock.png`, `tote-please-hold.png`, `cap-gagged-*.png`, `cap-served-*.png` (still in git history).
+
+v5 — Cap direction finalized: wordmark + segmented band, replacing GAGGED/SERVED for the cap specifically (see §4, §10). v4 — Shopify copy cleanup: stripped customer-visible dev placeholders from 4 listings. v3 — mug confirmed as a replacement for the existing Silver Wordmark SKU, not a new product. v2 superseded the chat-only brief: font corrected to Instrument Serif for statement pieces, mug + Phrase images added.

@@ -1,0 +1,33 @@
+<!-- @dsCard group="Core" viewport="700x220" name="Input" subtitle="Sharp text field with mono uppercase label and terminal-blue focus ring" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../../../styles.css" />
+<style>
+  body { margin: 0; padding: 26px; background: var(--bg-page); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing:.14em; text-transform:uppercase; color: var(--text-faint); margin-bottom: 14px; }
+  .row { display:flex; flex-wrap:wrap; gap: 16px; align-items:flex-start; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Input } = window.FBRIQDesignSystem_0e5da2;
+    function Demo() {
+      return (
+        <div className="row">
+          <Input label="Email" placeholder="you@domain.dev" style={{ width: "240px" }} />
+          <Input label="Discount" prefix="$" placeholder="0" style={{ width: "160px" }} />
+          <Input label="Promo code" hint="Invalid code" invalid style={{ width: "200px" }} />
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+  </script>
+</body>
+</html>

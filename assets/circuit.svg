@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1832 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FÆBRIQ rainbow circuit trace">
+  <defs>
+    <linearGradient id="faeCircuitGrad" gradientUnits="userSpaceOnUse" x1="120" y1="270" x2="1712" y2="270">
+      <stop offset="0" stop-color="#E8272A"></stop>
+      <stop offset="0.2" stop-color="#F47F20"></stop>
+      <stop offset="0.4" stop-color="#F9D426"></stop>
+      <stop offset="0.58" stop-color="#2AAA42"></stop>
+      <stop offset="0.78" stop-color="#4A9EFF"></stop>
+      <stop offset="1" stop-color="#7B3FAA"></stop>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#faeCircuitGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path d="M140 270 H1692"></path>
+    
+    <path d="M205 160 L300 270"></path>
+    <path d="M205 380 L300 270"></path>
+    
+    <path d="M905 270 V300 H940 V392"></path>
+    
+    <path d="M1010 270 V320 H1228"></path>
+    
+    <path d="M905 252 H1170" stroke-width="5" opacity="0.85"></path>
+    
+    <path d="M1627 160 L1532 270"></path>
+    <path d="M1627 380 L1532 270"></path>
+  </g>
+  
+  <circle cx="140" cy="270" r="21" fill="url(#faeCircuitGrad)"></circle>
+  <circle cx="1692" cy="270" r="21" fill="url(#faeCircuitGrad)"></circle>
+  
+  <g fill="#0d0d0d" stroke="url(#faeCircuitGrad)" stroke-width="6">
+    <circle cx="190" cy="150" r="13"></circle>
+    <circle cx="190" cy="390" r="13"></circle>
+    <circle cx="940" cy="408" r="13"></circle>
+    <circle cx="1246" cy="320" r="12"></circle>
+    <circle cx="1642" cy="150" r="13"></circle>
+    <circle cx="1642" cy="390" r="13"></circle>
+  </g>
+</svg>

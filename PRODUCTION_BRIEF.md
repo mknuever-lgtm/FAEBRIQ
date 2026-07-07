@@ -108,6 +108,18 @@ Found and fixed live on 2026-07-05: four product descriptions still contained in
 - **Please Hold Tee** (`.../7707664187459`) — removed `[DRAFT, final tee print art pending]`; "subway line rainbow" → "pride-circuit spine" for the same reason
 - **Circuit Cap** (`.../7707664973891`) — removed `[DRAFT, final embroidery art pending]` **and** an internal sourcing note. Description went through two revisions before landing on the final direction: **FÆBRIQ wordmark + segmented band** (see §4).
 
+## 11. Shopify catalog synced to v6 tagline map (2026-07-07)
+
+Text-only updates (title/description), no images/SKUs touched — those stay Printify's job per §5:
+
+- **Hoodie #2** (`.../7707663335491`) renamed from "Code It, Serve It." → **"Off The Clock. Still Iconic."** to match its brief slot.
+- **Tee** (`.../7707664187459`) repurposed from "Please Hold" → **"Code It. Serve It."** — this listing had no real photo/SKU yet, so relabeling was safe. (The other tee, "Deploying Identity v2.0" `.../7682131034179`, already has real Printify art/SKUs and was **left untouched** — it doesn't match any tee slot in the v6 table, since "Deploying Identity v2.0" is hoodie-only there. Renaming it would mismatch title against its live photo. Needs a founder decision: keep it as a bonus tee SKU, or retire once "It's Not A Bug" / "404" tees exist.)
+- **Totes** — consolidated 2 → 1. `.../7707665104963` renamed to **"Please Hold, I'm Rebranding My Identity" Tote** and its stale `[DRAFT]` copy cleaned up; the redundant "Deploying Identity v2.0" tote (zero content) was deleted.
+- **Mug** (`.../7681278017603`) renamed from "Silver Wordmark" → **"Please Hold, I'm Rebranding My Identity"**, description updated. Art swap is still a Printify task per §5.
+- **Stickers** — the 3 existing tagline stickers (Deploying Identity, Please Hold, Code It Serve It) were **left untouched** for the same reason as the tee above: they already have real Printify-linked art matching their current titles. The brief's "404: Straight Not Found" sticker is a separate, not-yet-created listing.
+- **Sticker bundle** (`.../7682175238211`) renamed to "Sticker Bundle — The Full Drop", restructured with a **Bundle Size** option: 3-Pack ($11, existing) and new 5-Pack ($16 — best per-sticker price, ships today using 2 duplicate designs until 404/GAGGED/SERVED stickers exist). All 3 single-sticker listings' copy updated to position stickers as an apparel add-on.
+- Duplicate cap listing ("Technical Cap V1.0") and the stray "General Clothes example products" collection were deleted earlier in this pass — no real content in either.
+
 These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
 
 ---

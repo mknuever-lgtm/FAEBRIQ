@@ -120,6 +120,21 @@ Text-only updates (title/description), no images/SKUs touched — those stay Pri
 - **Sticker bundle** (`.../7682175238211`) renamed to "Sticker Bundle — The Full Drop", restructured with a **Bundle Size** option: 3-Pack ($11, existing) and new 5-Pack ($16 — best per-sticker price, ships today using 2 duplicate designs until 404/GAGGED/SERVED stickers exist). All 3 single-sticker listings' copy updated to position stickers as an apparel add-on.
 - Duplicate cap listing ("Technical Cap V1.0") and the stray "General Clothes example products" collection were deleted earlier in this pass — no real content in either.
 
+## 12. Sticker consolidation — one product page, pick 1-of-5 designs (founder action required)
+
+Founder wants a single sticker product page where the customer picks the design (currently 3, eventually 5: Deploying Identity v2.0, Please Hold, Code It Serve It, plus 404 and one of GAGGED/SERVED once those exist) crossed with the existing Size option.
+
+**Why this can't be done as a Shopify-side merge:** each of the 3 existing sticker listings is a *separate* Printify-linked product (`printify_custom.printify_product_id` is unique per listing — confirmed via metafield). Merging them into one Shopify product would strip the Printify link from 2 of the 3 designs, breaking fulfillment for whichever designs don't keep the surviving link.
+
+**Correct path — rebuild in Printify as one product:**
+1. In Printify, start a **new** product on the sticker blank (don't edit the 3 existing ones).
+2. Add a custom variant option — call it **"Design"** — alongside the existing **Size** option, with values for however many designs are ready (start with the 3 that already have art).
+3. Use Printify's per-variant artwork assignment (select the variant group for each Design value, apply that design's print file) so each Design × Size combination maps to the correct file.
+4. Publish → syncs to Shopify as **one new draft product** with a Design + Size variant matrix.
+5. Ping the agent (or just say so next session) to delete the 3 legacy single-design sticker listings and update the sticker bundle's copy/links to point at the new consolidated product.
+
+Exact menu labels may vary by Printify's editor version — look for "Variants" and an "apply design to selected variants" style control if "Design" isn't offered as a preset option name.
+
 These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
 
 ---

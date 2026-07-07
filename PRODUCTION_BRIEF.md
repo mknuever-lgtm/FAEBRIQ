@@ -135,6 +135,8 @@ Founder wants a single sticker product page where the customer picks the design 
 
 Exact menu labels may vary by Printify's editor version — look for "Variants" and an "apply design to selected variants" style control if "Design" isn't offered as a preset option name.
 
+**Update 2026-07-07:** the 3 legacy single-design sticker listings (Deploying Identity, Please Hold, Code It Serve It) have been **deleted** from Shopify per founder decision. Current sticker lineup is **bundle-only** — "FÆBRIQ Sticker Bundle — The Full Drop" (3-Pack $11 / 5-Pack $16). Founder is still finishing that product in Printify (not yet published). A separate single-sticker product (pick 1-of-N designs) is planned for later, once the founder builds it in Printify the same way (Design × Size variant option).
+
 These were description/copy edits only (title, descriptionHtml) — no images touched, consistent with §9's rule that images must go through Printify.
 
 ---

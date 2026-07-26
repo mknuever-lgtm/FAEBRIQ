@@ -4,7 +4,7 @@ Storefront top navigation — silver wordmark left, mono nav center, cart right,
 <SiteHeader
   active="Shop"
   cartCount={2}
-  announcement="Free worldwide shipping over $80 · Code it. Serve it."
+  announcement="Free US & Canada shipping over $80 · Code it. Serve it."
   onNav={(t) => goto(t)}
 />
 ```

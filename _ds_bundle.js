@@ -716,7 +716,7 @@ function About() {
     tone: "blue"
   }, "Print-on-demand"), /*#__PURE__*/React.createElement(Badge, {
     tone: "amber"
-  }, "Ships worldwide")))));
+  }, "Ships US & Canada")))));
 }
 window.About = About;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/About.jsx", error: String((e && e.message) || e) }); }
@@ -1111,7 +1111,7 @@ function ProductDetail({
       color: "var(--text-faint)",
       letterSpacing: "0.06em"
     }
-  }, "// free worldwide shipping over $80 \xB7 30-day returns"))));
+  }, "// free US & Canada shipping over $80 \xB7 30-day returns"))));
 }
 window.ProductDetail = ProductDetail;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/ProductDetail.jsx", error: String((e && e.message) || e) }); }

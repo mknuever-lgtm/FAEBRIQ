@@ -58,7 +58,7 @@ export function ProductDetail({ product, onBack, onAdd }) {
             <Button variant="secondary" size="lg">♥</Button>
           </div>
           <div style={{ fontFamily: "var(--font-mono)", fontSize: "11px", color: "var(--text-faint)", letterSpacing: "0.06em" }}>
-            // made to order · ships from Canada
+            // made to order · ships to US &amp; Canada
           </div>
         </div>
       </div>

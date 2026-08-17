@@ -16,7 +16,7 @@ Printify requires transparent PNG print files at ~4500px. Source design files cu
 
 ## 4. Brand voice
 
-Check this repo's design system files (`components/`, guideline cards, tokens) before writing any copy or making design decisions. Don't invent style choices that conflict with what's already documented here.
+Load `faebriq-brand-kit/SKILL.md` (and its `references/` files) before writing any FÆBRIQ copy, generating images, or making design decisions — it covers voice, visual identity, color/type tokens, and sample copy. Also check this repo's design system files (`components/`, guideline cards, tokens) for implementation-level detail. Don't invent style choices that conflict with what's already documented here.
 
 ## 5. Memory logging
 

@@ -18,10 +18,11 @@ Premium **queer + developer streetwear** built on one idea: **"Identity is a bui
 - DO: "Subtle enough for stand-up, loud enough for the right people." DON'T: exclamation-hype, "shop now!!!", corporate allyship platitudes.
 
 ## 3. Visual identity
-- **Ground:** near-black `#0B0B0D` (garments: true black). Text: white `#FFFFFF`.
-- **Signature motif — the Pride Circuit bar:** a **slim, hard-edged 6-stripe** bar (NOT a gradient): `#E40303` `#FF8C00` `#FFED00` `#008026` `#24408E` `#732982`. Keep it thin and understated.
-- **Typography:** **Playfair Display (serif)** = primary/display (wordmark, phrases, headings). A clean **geometric sans** = small-format / embroidery / UI labels (e.g., the cap).
-- WARNING — NOT the brand: terracotta `#C45500`, the "MKGH" palette, Instrument-Serif-only, or Etsy. Those are retired/wrong. Ignore any older skill or file that references them.
+- **Ground:** near-black `#0D0D0D` (garments: true black). Body text: `#E8E8E8` (not pure white — no bright whites).
+- **Signature motif — the Pride Circuit bar:** a **slim, hard-edged 6-stripe** bar (NOT a gradient), desaturated for editorial/dark-tech restraint rather than pure flag hex: `#E8272A` `#F47F20` `#F9D426` `#2AAA42` `#1D5BBE` `#7B3FAA`. Keep it thin and understated — a signature strip, not the everyday accent.
+- **Typography:** **Instrument Serif** = primary/display (wordmark, phrases, headings) — set with `+0.06em` tracking on the wordmark. **Archivo** = body/UI copy. **JetBrains Mono** = terminal-style labels, prices, SKUs, captions.
+- **Interactive accent:** terminal blue `#4A9EFF` — the one functional/interactive color (links, buttons, focus states). Deliberately *not* a pride-flag color: keeps the rainbow bar special-occasion, not wallpaper. Ties to the "code/terminal" identity.
+- WARNING — NOT the brand: terracotta `#C45500`, the "MKGH" palette, Playfair Display, pure/unmuted flag hex as the primary accent, or Etsy. Those are retired/wrong. Ignore any older skill or file that references them. (Decided 2026-08-19, after a direct side-by-side comparison — see `MEMORY.md`.)
 
 ## 4. Image aesthetic (renders/photos)
 Matte-black studio background, dramatic low-key side lighting, deep soft shadows, rim light, shallow depth of field, macro focus on the print/embroidery, moody high-end e-commerce, photorealistic, no text overlays. On-model shots: stylish androgynous models, minimal settings. Keep the pride bar slim.

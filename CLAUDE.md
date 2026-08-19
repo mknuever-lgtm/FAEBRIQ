@@ -11,8 +11,9 @@ Printify requires transparent PNG print files at ~4500px. Source design files cu
 ## 3. Known open bugs — check before touching related products
 
 - Orphan White/L variant on the tee product.
-- Cross-copied SEO titles on four products (need unique titles per product).
 - Mug had the wrong design synced (already approved for deletion — confirm before recreating).
+
+Resolved (2026-08-19): "cross-copied SEO titles" — checked `seo.title` on all 12 active products via GraphQL, all unique, no cross-copying on the live catalog. The real (minor, non-live) issue was 3 archived products with mismatched `seo.title` values from old copy/paste — invisible to customers, low priority if ever revisited.
 
 ## 4. Brand voice
 

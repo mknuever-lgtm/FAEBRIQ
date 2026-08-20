@@ -6,7 +6,15 @@ Rainbow — **colour** (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AA
 
 Fonts — **superseded 2026-08-20, see below.** ~~(confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design.~~
 
-**Print art now uses Playfair Display throughout** — phrase, the small label (e.g. "404"), *and* the FÆBRIQ kicker. No mono anywhere in the print files. Identified from the founder's 2026-08-20 reference lockup by shape comparison (0.905 overlap vs Playfair; Instrument Serif scored 0.384 — not a match). This reverses the Instrument Serif decision made 2026-08-19 **for print art specifically**; the website/theme still runs Instrument Serif, so treat that as a deliberate two-typeface split until told otherwise. Set all tagline text in **CAPS**, matching the reference. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
+**Print art uses Bodoni Moda throughout** — phrase, the small label (e.g. "ERROR 404"), and the FÆBRIQ wordmark where one appears. No mono anywhere in the print files. Set all tagline text in **CAPS**, matching the handoff.
+
+The 2026-08-20 handoff was set in Playfair Display (identified by shape comparison — 0.905 overlap vs Playfair, 0.384 vs Instrument Serif). Founder chose Bodoni Moda over it: same Didone register, far less ubiquitous. Note Bodoni is higher-contrast, so its hairlines are the least forgiving on fabric of the options considered — small elements carry a size bump (see `SMALL_ELEMENT_BOOST` in the tool) to stay above the ~0.33mm DTG minimum. **Confirm with a sample print before committing the catalog.**
+
+This reverses the Instrument Serif decision of 2026-08-19 **for print art only** — the website/theme still runs Instrument Serif. Treat that as a deliberate split: Didone on product, Instrument Serif on screen.
+
+### Wordmark rule (confirmed 2026-08-20)
+
+**Apparel and other products carry NO FÆBRIQ wordmark** — phrase + circuit bar, nothing else. The wordmark appears on **stickers and caps only**. Verified against the handoff's own apparel print files (`Code It. Serve It. - White (Print)`, `Off The Clock. Still Iconic. - Black (Print)`): both are phrase + bar with no wordmark. The earlier "a small mono FÆBRIQ kicker sits under every design" line was wrong on both counts. `tools/make_print_file.py --product apparel|sticker` encodes this. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
 
 ## 1. Catalog at a glance
 

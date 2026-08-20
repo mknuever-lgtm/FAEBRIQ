@@ -27,6 +27,33 @@ Every tagline below ships in **two color variants** — Black-on-White (for ligh
 
 All tagline files live in `assets/print-art/`. The cap and mug files are separate, purpose-built assets (not part of the two-color set) — see §4 and §5.
 
+### 1a. The `.jpg` files above are previews, not print files (2026-08-19)
+
+Audited every file in `assets/print-art/`. The 16 tagline JPGs are **820×420 with a solid `#0D0D0D` background**, and their rainbow bar measures `#FE0000 #FF8B00 #FFFF00 #008001 #0000FE #81007F` — the retired pure pride-flag hex, not the palette §0 above marks "confirmed, do not change." They also don't appear to use Instrument Serif. They predate the v6 spec; the spec was always right. Three problems if uploaded as-is:
+
+1. **Too small** — 820px against Printify's ~4500px requirement.
+2. **Opaque background** — JPG has no alpha, so the `#0D0D0D` field prints as a visible dark box on the garment instead of ink-on-fabric.
+3. **Wrong palette** — contradicts the confirmed circuit colors.
+
+Only `cap-wordmark-slim.png` / `cap-wordmark-structured.png` (on-brand) and `assets/phrase-404.png` (correct palette + type — the reference the rebuild is measured from) were already right.
+
+**Print-ready files** (transparent PNG, 4500px, 300dpi, confirmed palette, Instrument Serif):
+
+| Tagline | Print file | For |
+|---|---|---|
+| 404: Straight Not Found | `assets/print-art/404-straight-not-found-light-4500.png` | dark garments (all FÆBRIQ apparel is black) |
+
+Regenerate any tagline with `tools/make_print_file.py`:
+
+```
+python3 tools/make_print_file.py --label 404 --line1 "Straight Not" --line2 "Found" \
+    --out assets/print-art/404-straight-not-found-light-4500.png
+```
+
+`--ink dark` produces the light-garment variant. The remaining taglines share this same lockup and can be regenerated the same way — not yet done, pending a decision on whether to re-upload art for SKUs already synced to Printify.
+
+**Open:** the live 404 sticker (`404-straight-not-found-sticker`, ACTIVE) was built from the old wrong-palette JPG per §6, so it is currently shipping retired pride-flag colors. Re-uploading its art in Printify is a founder action.
+
 ## 2. Standalone listing images (no photography needed)
 
 Pure-typographic "Phrase" type images per the design handoff's 5-image spec (Hero/Detail/Phrase/Lifestyle/Collection) — 1080×1080, black-void `#0d0d0d` background, ready to use as a listing image directly:

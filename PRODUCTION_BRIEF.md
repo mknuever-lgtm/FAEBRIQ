@@ -2,9 +2,11 @@
 
 Every SKU · which file · print method · placement · price · what's still needed.
 
-Rainbow (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, segmented bands (6 equal blocks, gaps), never a gradient.
+Rainbow — **colour** (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, never a gradient. **Geometry** (updated 2026-08-20 from the founder handoff): 6 blocks, but a *thin, near-continuous* bar — stripe gaps ≈0.4% of bar width (hairline, not the old chunky gaps), bar height ≈1.6% of bar width, and the bar runs slightly **wider** than the phrase above it (≈1.03×). Founder note: the rainbow read as too thick across the older designs.
 
-Fonts (confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
+Fonts — **superseded 2026-08-20, see below.** ~~(confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design.~~
+
+**Print art now uses Playfair Display throughout** — phrase, the small label (e.g. "404"), *and* the FÆBRIQ kicker. No mono anywhere in the print files. Identified from the founder's 2026-08-20 reference lockup by shape comparison (0.905 overlap vs Playfair; Instrument Serif scored 0.384 — not a match). This reverses the Instrument Serif decision made 2026-08-19 **for print art specifically**; the website/theme still runs Instrument Serif, so treat that as a deliberate two-typeface split until told otherwise. Set all tagline text in **CAPS**, matching the reference. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
 
 ## 1. Catalog at a glance
 
@@ -37,7 +39,11 @@ Audited every file in `assets/print-art/`. The 16 tagline JPGs are **820×420 wi
 
 Only `cap-wordmark-slim.png` / `cap-wordmark-structured.png` (on-brand) and `assets/phrase-404.png` (correct palette + type — the reference the rebuild is measured from) were already right.
 
-**Print-ready files** (transparent PNG, 4500px, 300dpi, confirmed palette, Instrument Serif):
+**Founder handoff, 2026-08-20** — a zip of genuinely print-ready transparent PNGs arrived and supersedes the JPGs for the designs it covers: 4500×5400 print files for *Code It. Serve It.* and *Off The Clock. Still Iconic.*, 1664×1664 stickers for five taglines, a sticker-sheet bundle, cap logos and the mug art. **Use those directly.** Note the handoff carries the pure pride-flag hex; colour still follows the tokens above, so anything regenerated here uses the muted set.
+
+There is **no print-res 404 in that handoff** — only the 1664px sticker (≈5.5" at 300dpi, too small for a chest print), which is why the 404 tee art is generated below.
+
+**Print-ready files** (transparent PNG, 4500px, 300dpi, confirmed palette, Playfair Display):
 
 | Tagline | Print file | For |
 |---|---|---|
@@ -46,7 +52,7 @@ Only `cap-wordmark-slim.png` / `cap-wordmark-structured.png` (on-brand) and `ass
 Regenerate any tagline with `tools/make_print_file.py`:
 
 ```
-python3 tools/make_print_file.py --label 404 --line1 "Straight Not" --line2 "Found" \
+python3 tools/make_print_file.py --label 404 --line1 "STRAIGHT NOT" --line2 "FOUND" \
     --out assets/print-art/404-straight-not-found-light-4500.png
 ```
 

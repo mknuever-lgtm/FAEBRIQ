@@ -6,3 +6,5 @@ ds-bundle/
 node_modules/
 dist/
 tools/.fontcache/
+__pycache__/
+*.pyc

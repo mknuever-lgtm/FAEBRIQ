@@ -8,7 +8,11 @@ Fonts — **superseded 2026-08-20, see below.** ~~(confirmed, all-serif as of v6
 
 **Print art uses Bodoni Moda throughout** — phrase, the small label (e.g. "ERROR 404"), and the FÆBRIQ wordmark where one appears. No mono anywhere in the print files. Set all tagline text in **CAPS**, matching the handoff.
 
-The 2026-08-20 handoff was set in Playfair Display (identified by shape comparison — 0.905 overlap vs Playfair, 0.384 vs Instrument Serif). Founder chose Bodoni Moda over it: same Didone register, far less ubiquitous. Note Bodoni is higher-contrast, so its hairlines are the least forgiving on fabric of the options considered — small elements carry a size bump (see `SMALL_ELEMENT_BOOST` in the tool) to stay above the ~0.33mm DTG minimum. **Confirm with a sample print before committing the catalog.**
+The 2026-08-20 handoff was set in Playfair Display (identified by shape comparison — 0.905 overlap vs Playfair, 0.384 vs Instrument Serif). Founder chose Bodoni Moda over it: same Didone register, far less ubiquitous.
+
+**Print-safety correction (2026-08-20, later same day):** the first version of this file used an invented 0.33mm minimum-stroke rule of thumb and measured it against an isolated "O" glyph — not the real design. Printify's own published DTG guideline is **2pt (0.706mm) minimum line thickness**, and measured directly on the actual rendered file, the headline and label **failed it** — down to 0.254mm at the serif feet, the thinnest feature of a Didone and not what the "O" check caught. Scaling up doesn't fix it: hitting 0.706mm by size alone would need "STRAIGHT NOT" printed ~42in wide. Fixed instead with a small uniform alpha-dilation pass on each glyph (`DILATE_RADIUS_PX` in the tool) that thickens a 3px hairline the same fixed amount a 40px stem barely notices — targets the actual failure, not a proxy for it. Re-measured on the shipped file: 0.85–1.52mm across every element, all above the real minimum. Visual difference at design scale is negligible.
+
+**Still true: no sample print has been run.** The 0.706mm figure is Printify's general DTG guideline, not a number confirmed for Monster Digital specifically. **Confirm with a physical print before committing the rest of the catalog.**
 
 This reverses the Instrument Serif decision of 2026-08-19 **for print art only** — the website/theme still runs Instrument Serif. Treat that as a deliberate split: Didone on product, Instrument Serif on screen.
 

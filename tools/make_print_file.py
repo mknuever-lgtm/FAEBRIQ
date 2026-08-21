@@ -50,10 +50,26 @@ SRC = dict(
     stripe_frac=0.16333,   # stripe width as a fraction of bar width
     gap_frac=0.00369,      # gap width as a fraction of bar width
 )
-# Bodoni is a high-contrast Didone: its hairlines thin out faster than the cap
-# height shrinks, so small elements get a safety bump to stay printable on
-# cotton (~0.33mm minimum stroke is the working rule of thumb).
-SMALL_ELEMENT_BOOST = 1.15
+
+# Printify's own published DTG guideline: 2pt minimum line thickness.
+# https://help.printify.com/hc/en-us/articles/43890557264529
+MIN_STROKE_MM = 0.706
+OUTPUT_DPI = 300  # fixed regardless of --width; do not scale DILATE_RADIUS_PX
+                  # against --width, only against a DPI change.
+
+# Bodoni Moda is a Didone: at any size that fits a garment print, its serif
+# *feet* run thinner than its round-letter hairlines (measured 2026-08-20 on
+# the actual rendered glyphs, not a proxy). Scaling the whole design up can't
+# fix this — reaching MIN_STROKE_MM by scale alone would require a ~42in wide
+# print for "STRAIGHT NOT" at this lockup's proportions. The fix is a small
+# uniform ink-growth pass on each glyph's alpha mask (see _reinforce below):
+# it thickens a 3px hairline by the same 4px that a 40px stem barely notices,
+# so it targets exactly the failure mode without visibly changing the type.
+# Verified: 3px (0.254mm) hairline -> 11px (0.931mm) after MaxFilter(9),
+# comfortably above the 0.706mm minimum; visual diff at design scale is
+# negligible (see scratchpad/dilation_compare.png, 2026-08-20).
+DILATE_RADIUS_PX = 4
+
 FONT_CSS = "https://fonts.googleapis.com/css?family={}"
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".fontcache")
 
@@ -86,12 +102,31 @@ def _fit(ImageFont, path, text, target, by):
     return ImageFont.truetype(path, max(1, int(round(lo))))
 
 
+def _draw_reinforced(canvas, cx, y, text, font, fill):
+    """Draw text as a standalone alpha mask, dilate it by DILATE_RADIUS_PX so no
+    stroke (in particular a Didone serif foot) falls under MIN_STROKE_MM, then
+    composite it at constant fill colour. See DILATE_RADIUS_PX docstring."""
+    from PIL import Image, ImageDraw, ImageFilter
+
+    bb = font.getbbox(text)
+    pad = DILATE_RADIUS_PX + 2
+    w, h = bb[2] - bb[0] + 2 * pad, bb[3] - bb[1] + 2 * pad
+    mask = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(mask).text((pad - bb[0], pad - bb[1]), text, font=font, fill=255)
+    mask = mask.filter(ImageFilter.MaxFilter(2 * DILATE_RADIUS_PX + 1))
+
+    layer = Image.new("RGBA", mask.size, (*fill, 255))
+    layer.putalpha(mask)
+    canvas.alpha_composite(layer, (int(round(cx - w / 2)), int(round(y - pad))))
+
+
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
           ink="light", product="apparel"):
-    from PIL import Image, ImageDraw, ImageFont
+    from PIL import Image, ImageFont
 
     serif = font_path("Bodoni Moda", None, "BodoniModa-Regular.ttf")
-    col = INK_LIGHT if ink == "light" else INK_DARK
+    ink_hex = INK_LIGHT if ink == "light" else INK_DARK
+    col = {k: tuple(int(v.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) for k, v in ink_hex.items()}
     wordmark = product == "sticker"
 
     # The bar is the widest element, so it sets the usable width.
@@ -100,10 +135,8 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     f_l2 = _fit(ImageFont, serif, line2, SRC["l2_w"] * L, "w")
     # Label is fitted by cap height, not width, so it stays a consistent size
     # regardless of how long the label text is ("404" vs "ERROR 404").
-    f_lab = (_fit(ImageFont, serif, label, SRC["label_h"] * L * SMALL_ELEMENT_BOOST, "h")
-             if label else None)
-    f_mark = (_fit(ImageFont, serif, "FÆBRIQ", SRC["mark_w"] * L * SMALL_ELEMENT_BOOST, "w")
-              if wordmark else None)
+    f_lab = _fit(ImageFont, serif, label, SRC["label_h"] * L, "h") if label else None
+    f_mark = _fit(ImageFont, serif, "FÆBRIQ", SRC["mark_w"] * L, "w") if wordmark else None
 
     bar_h = SRC["bar_h"] * SRC["bar_w"] * L
     content_h = (SRC["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
@@ -112,20 +145,21 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     top = pad if label else pad - SRC["l1_y"] * L
     height = int(round(content_h + 2 * pad - (0 if label else SRC["l1_y"] * L)))
     im = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
     cx = width / 2
 
     def line(y_key, text, font, fill):
-        bb = font.getbbox(text)
-        d.text((cx - (bb[2] + bb[0]) / 2, top + SRC[y_key] * L - bb[1]), text,
-               font=font, fill=fill)
+        _draw_reinforced(im, cx, top + SRC[y_key] * L, text, font, fill)
 
     if label:
         line("label_y", label, f_lab, col["label"])
     line("l1_y", line1, f_l1, col["text"])
     line("l2_y", line2, f_l2, col["text"])
 
-    # pride-circuit bar: thin, near-continuous, marginally wider than the phrase
+    # pride-circuit bar: thin, near-continuous, marginally wider than the phrase.
+    # A solid rectangle at 300dpi is always far above MIN_STROKE_MM (~5.7mm
+    # tall even at this "thin" spec), so it needs no reinforcement pass.
+    from PIL import ImageDraw
+    d = ImageDraw.Draw(im)
     bar_w = SRC["bar_w"] * L
     sw, gap = SRC["stripe_frac"] * bar_w, SRC["gap_frac"] * bar_w
     bx, by = cx - bar_w / 2, top + SRC["bar_y"] * L

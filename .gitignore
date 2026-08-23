@@ -5,3 +5,6 @@ ds-bundle/
 .design-sync/node_modules
 node_modules/
 dist/
+tools/.fontcache/
+__pycache__/
+*.pyc

@@ -2,9 +2,23 @@
 
 Every SKU · which file · print method · placement · price · what's still needed.
 
-Rainbow (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, segmented bands (6 equal blocks, gaps), never a gradient.
+Rainbow — **colour** (confirmed, do not change): `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, never a gradient. **Geometry** (updated 2026-08-20 from the founder handoff): 6 blocks, but a *thin, near-continuous* bar — stripe gaps ≈0.4% of bar width (hairline, not the old chunky gaps), bar height ≈1.6% of bar width, and the bar runs slightly **wider** than the phrase above it (≈1.03×). Founder note: the rainbow read as too thick across the older designs.
 
-Fonts (confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
+Fonts — **superseded 2026-08-20, see below.** ~~(confirmed, all-serif as of v6): **Instrument Serif** for every tagline, no exceptions — including "Deploying Identity v2.0," which previously used mono. A small **mono** "FÆBRIQ" kicker sits under every design.~~
+
+**Print art uses Bodoni Moda throughout** — phrase, the small label (e.g. "ERROR 404"), and the FÆBRIQ wordmark where one appears. No mono anywhere in the print files. Set all tagline text in **CAPS**, matching the handoff.
+
+The 2026-08-20 handoff was set in Playfair Display (identified by shape comparison — 0.905 overlap vs Playfair, 0.384 vs Instrument Serif). Founder chose Bodoni Moda over it: same Didone register, far less ubiquitous.
+
+**Print-safety correction (2026-08-20, later same day):** the first version of this file used an invented 0.33mm minimum-stroke rule of thumb and measured it against an isolated "O" glyph — not the real design. Printify's own published DTG guideline is **2pt (0.706mm) minimum line thickness**, and measured directly on the actual rendered file, the headline and label **failed it** — down to 0.254mm at the serif feet, the thinnest feature of a Didone and not what the "O" check caught. Scaling up doesn't fix it: hitting 0.706mm by size alone would need "STRAIGHT NOT" printed ~42in wide. Fixed instead with a small uniform alpha-dilation pass on each glyph (`DILATE_RADIUS_PX` in the tool) that thickens a 3px hairline the same fixed amount a 40px stem barely notices — targets the actual failure, not a proxy for it. Re-measured on the shipped file: 0.85–1.52mm across every element, all above the real minimum. Visual difference at design scale is negligible.
+
+**Still true: no sample print has been run.** The 0.706mm figure is Printify's general DTG guideline, not a number confirmed for Monster Digital specifically. **Confirm with a physical print before committing the rest of the catalog.**
+
+This reverses the Instrument Serif decision of 2026-08-19 **for print art only** — the website/theme still runs Instrument Serif. Treat that as a deliberate split: Didone on product, Instrument Serif on screen.
+
+### Wordmark rule (confirmed 2026-08-20)
+
+**Apparel and other products carry NO FÆBRIQ wordmark** — phrase + circuit bar, nothing else. The wordmark appears on **stickers and caps only**. Verified against the handoff's own apparel print files (`Code It. Serve It. - White (Print)`, `Off The Clock. Still Iconic. - Black (Print)`): both are phrase + bar with no wordmark. The earlier "a small mono FÆBRIQ kicker sits under every design" line was wrong on both counts. `tools/make_print_file.py --product apparel|sticker` encodes this. **Bold blocky** (not serif) stays on caps only — a fine serif blurs in embroidery thread at that scale; the cap uses the wordmark, not a tagline, so this doesn't conflict.
 
 ## 1. Catalog at a glance
 
@@ -26,6 +40,37 @@ Every tagline below ships in **two color variants** — Black-on-White (for ligh
 | Sticker | 404: Straight Not Found | `404-straight-not-found-white-on-black.jpg` | — | Kiss-cut vinyl | CA$5 |
 
 All tagline files live in `assets/print-art/`. The cap and mug files are separate, purpose-built assets (not part of the two-color set) — see §4 and §5.
+
+### 1a. The `.jpg` files above are previews, not print files (2026-08-19)
+
+Audited every file in `assets/print-art/`. The 16 tagline JPGs are **820×420 with a solid `#0D0D0D` background**, and their rainbow bar measures `#FE0000 #FF8B00 #FFFF00 #008001 #0000FE #81007F` — the retired pure pride-flag hex, not the palette §0 above marks "confirmed, do not change." They also don't appear to use Instrument Serif. They predate the v6 spec; the spec was always right. Three problems if uploaded as-is:
+
+1. **Too small** — 820px against Printify's ~4500px requirement.
+2. **Opaque background** — JPG has no alpha, so the `#0D0D0D` field prints as a visible dark box on the garment instead of ink-on-fabric.
+3. **Wrong palette** — contradicts the confirmed circuit colors.
+
+Only `cap-wordmark-slim.png` / `cap-wordmark-structured.png` (on-brand) and `assets/phrase-404.png` (correct palette + type — the reference the rebuild is measured from) were already right.
+
+**Founder handoff, 2026-08-20** — a zip of genuinely print-ready transparent PNGs arrived and supersedes the JPGs for the designs it covers: 4500×5400 print files for *Code It. Serve It.* and *Off The Clock. Still Iconic.*, 1664×1664 stickers for five taglines, a sticker-sheet bundle, cap logos and the mug art. **Use those directly.** Note the handoff carries the pure pride-flag hex; colour still follows the tokens above, so anything regenerated here uses the muted set.
+
+There is **no print-res 404 in that handoff** — only the 1664px sticker (≈5.5" at 300dpi, too small for a chest print), which is why the 404 tee art is generated below.
+
+**Print-ready files** (transparent PNG, 4500px, 300dpi, confirmed palette, Playfair Display):
+
+| Tagline | Print file | For |
+|---|---|---|
+| 404: Straight Not Found | `assets/print-art/404-straight-not-found-light-4500.png` | dark garments (all FÆBRIQ apparel is black) |
+
+Regenerate any tagline with `tools/make_print_file.py`:
+
+```
+python3 tools/make_print_file.py --label 404 --line1 "STRAIGHT NOT" --line2 "FOUND" \
+    --out assets/print-art/404-straight-not-found-light-4500.png
+```
+
+`--ink dark` produces the light-garment variant. The remaining taglines share this same lockup and can be regenerated the same way — not yet done, pending a decision on whether to re-upload art for SKUs already synced to Printify.
+
+**Open:** the live 404 sticker (`404-straight-not-found-sticker`, ACTIVE) was built from the old wrong-palette JPG per §6, so it is currently shipping retired pride-flag colors. Re-uploading its art in Printify is a founder action.
 
 ## 2. Standalone listing images (no photography needed)
 

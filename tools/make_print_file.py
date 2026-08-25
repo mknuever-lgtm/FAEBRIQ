@@ -120,6 +120,20 @@ def _draw_reinforced(canvas, cx, y, text, font, fill):
     canvas.alpha_composite(layer, (int(round(cx - w / 2)), int(round(y - pad))))
 
 
+# Gaps between line1->line2 and line2->bar, measured off the approved 404
+# reference ("STRAIGHT NOT" / "FOUND") as a multiple of the PRECEDING line's
+# own fitted font size — not a fixed fraction of canvas width like the old
+# l1_y/l2_y/bar_y constants were. A fixed-fraction gap looks wildly different
+# depending on word count, since _fit shrinks or grows the font to hit a
+# target width: "CODE IT." renders much bigger than "OFF THE CLOCK." at the
+# same width fraction, so the same absolute gap reads as cramped on one and
+# oversized on the other. Scaling the gap by the actual rendered font size
+# keeps the visual rhythm constant across every tagline automatically —
+# derived once from make_print_file.py's own font-fit output, not eyeballed.
+GAP_L1_L2_OF_L1_SIZE = 1.4668
+GAP_L2_BAR_OF_L2_SIZE = 1.3758
+
+
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
           ink="light", product="apparel", l2_y=None):
     from PIL import Image, ImageFont
@@ -128,7 +142,7 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     ink_hex = INK_LIGHT if ink == "light" else INK_DARK
     col = {k: tuple(int(v.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) for k, v in ink_hex.items()}
     wordmark = product == "sticker"
-    src = dict(SRC) if l2_y is None else {**SRC, "l2_y": l2_y}
+    src = dict(SRC)
 
     # The bar is the widest element, so it sets the usable width.
     L = width * (1 - 2 * margin_frac) / src["bar_w"]
@@ -138,6 +152,14 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     # regardless of how long the label text is ("404" vs "ERROR 404").
     f_lab = _fit(ImageFont, serif, label, src["label_h"] * L, "h") if label else None
     f_mark = _fit(ImageFont, serif, "FÆBRIQ", src["mark_w"] * L, "w") if wordmark else None
+
+    # l1_y is a fixed anchor (unaffected by text length); l2_y and bar_y are
+    # derived from the actual rendered font sizes so spacing self-adjusts per
+    # tagline. --l2-y still allows a manual override of the line1->line2 gap
+    # specifically, but bar_y always follows line2's own size from there.
+    src["l2_y"] = l2_y if l2_y is not None else src["l1_y"] + GAP_L1_L2_OF_L1_SIZE * f_l1.size / L
+    src["bar_y"] = src["l2_y"] + GAP_L2_BAR_OF_L2_SIZE * f_l2.size / L
+    src["mark_y"] = src["bar_y"] + (SRC["mark_y"] - SRC["bar_y"])
 
     bar_h = src["bar_h"] * src["bar_w"] * L
     content_h = (src["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
@@ -188,8 +210,10 @@ if __name__ == "__main__":
     p.add_argument("--ink", choices=["light", "dark"], default="light",
                    help="light = for dark garments (default); dark = for light garments")
     p.add_argument("--l2-y", type=float, default=None,
-                   help="override line-2's vertical position (fraction of L, default "
-                        f"{SRC['l2_y']}) — higher pushes it down, toward the bar")
+                   help="manual override for line-2's vertical position (fraction of L). "
+                        "By default this is computed automatically from line-1's rendered "
+                        "font size so spacing self-adjusts per tagline — only pass this to "
+                        "force a specific position.")
     a = p.parse_args()
     w, h = build(a.line1, a.line2, a.out, label=a.label, width=a.width,
                  ink=a.ink, product=a.product, l2_y=a.l2_y)

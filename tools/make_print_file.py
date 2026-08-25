@@ -121,34 +121,35 @@ def _draw_reinforced(canvas, cx, y, text, font, fill):
 
 
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
-          ink="light", product="apparel"):
+          ink="light", product="apparel", l2_y=None):
     from PIL import Image, ImageFont
 
     serif = font_path("Bodoni Moda", None, "BodoniModa-Regular.ttf")
     ink_hex = INK_LIGHT if ink == "light" else INK_DARK
     col = {k: tuple(int(v.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) for k, v in ink_hex.items()}
     wordmark = product == "sticker"
+    src = dict(SRC) if l2_y is None else {**SRC, "l2_y": l2_y}
 
     # The bar is the widest element, so it sets the usable width.
-    L = width * (1 - 2 * margin_frac) / SRC["bar_w"]
-    f_l1 = _fit(ImageFont, serif, line1, SRC["l1_w"] * L, "w")
-    f_l2 = _fit(ImageFont, serif, line2, SRC["l2_w"] * L, "w")
+    L = width * (1 - 2 * margin_frac) / src["bar_w"]
+    f_l1 = _fit(ImageFont, serif, line1, src["l1_w"] * L, "w")
+    f_l2 = _fit(ImageFont, serif, line2, src["l2_w"] * L, "w")
     # Label is fitted by cap height, not width, so it stays a consistent size
     # regardless of how long the label text is ("404" vs "ERROR 404").
-    f_lab = _fit(ImageFont, serif, label, SRC["label_h"] * L, "h") if label else None
-    f_mark = _fit(ImageFont, serif, "FÆBRIQ", SRC["mark_w"] * L, "w") if wordmark else None
+    f_lab = _fit(ImageFont, serif, label, src["label_h"] * L, "h") if label else None
+    f_mark = _fit(ImageFont, serif, "FÆBRIQ", src["mark_w"] * L, "w") if wordmark else None
 
-    bar_h = SRC["bar_h"] * SRC["bar_w"] * L
-    content_h = (SRC["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
-                 if wordmark else SRC["bar_y"] * L + bar_h)
+    bar_h = src["bar_h"] * src["bar_w"] * L
+    content_h = (src["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
+                 if wordmark else src["bar_y"] * L + bar_h)
     pad = width * margin_frac
-    top = pad if label else pad - SRC["l1_y"] * L
-    height = int(round(content_h + 2 * pad - (0 if label else SRC["l1_y"] * L)))
+    top = pad if label else pad - src["l1_y"] * L
+    height = int(round(content_h + 2 * pad - (0 if label else src["l1_y"] * L)))
     im = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     cx = width / 2
 
     def line(y_key, text, font, fill):
-        _draw_reinforced(im, cx, top + SRC[y_key] * L, text, font, fill)
+        _draw_reinforced(im, cx, top + src[y_key] * L, text, font, fill)
 
     if label:
         line("label_y", label, f_lab, col["label"])
@@ -160,9 +161,9 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     # tall even at this "thin" spec), so it needs no reinforcement pass.
     from PIL import ImageDraw
     d = ImageDraw.Draw(im)
-    bar_w = SRC["bar_w"] * L
-    sw, gap = SRC["stripe_frac"] * bar_w, SRC["gap_frac"] * bar_w
-    bx, by = cx - bar_w / 2, top + SRC["bar_y"] * L
+    bar_w = src["bar_w"] * L
+    sw, gap = src["stripe_frac"] * bar_w, src["gap_frac"] * bar_w
+    bx, by = cx - bar_w / 2, top + src["bar_y"] * L
     for i, c in enumerate(CIRCUIT):
         x0 = bx + i * (sw + gap)
         d.rectangle([x0, by, x0 + sw, by + bar_h], fill=c)
@@ -186,7 +187,10 @@ if __name__ == "__main__":
                    help="apparel omits the FÆBRIQ wordmark; sticker includes it")
     p.add_argument("--ink", choices=["light", "dark"], default="light",
                    help="light = for dark garments (default); dark = for light garments")
+    p.add_argument("--l2-y", type=float, default=None,
+                   help="override line-2's vertical position (fraction of L, default "
+                        f"{SRC['l2_y']}) — higher pushes it down, toward the bar")
     a = p.parse_args()
     w, h = build(a.line1, a.line2, a.out, label=a.label, width=a.width,
-                 ink=a.ink, product=a.product)
+                 ink=a.ink, product=a.product, l2_y=a.l2_y)
     print(f"wrote {a.out}  {w}x{h}  RGBA 300dpi  ink={a.ink}  product={a.product}")

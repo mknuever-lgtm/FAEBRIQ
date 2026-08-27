@@ -1,0 +1,287 @@
+{
+  "system": "FÆBRIQ sticker final system",
+  "date": "2026-08-27",
+  "product": "sticker",
+  "provider": "SPOKE kiss-cut",
+  "ink": "light",
+  "resolution": "2400 px wide, RGBA, 300 dpi",
+  "rules": {
+    "wordmark_included": true,
+    "pride_circuit_stripes": 6,
+    "transparent_background": true,
+    "no_store_publish_or_sync": true
+  },
+  "outputs": [
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/deploying-identity-v2-sticker-light-2400.png",
+      "text": [
+        "DEPLOYING",
+        "IDENTITY V2.0"
+      ],
+      "width_px": 2400,
+      "height_px": 1146,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        1042
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/please-hold-rebranding-identity-sticker-light-2400.png",
+      "text": [
+        "PLEASE HOLD",
+        "I'M REBRANDING MY IDENTITY"
+      ],
+      "width_px": 2400,
+      "height_px": 977,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        873
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/code-it-serve-it-sticker-light-2400.png",
+      "text": [
+        "CODE IT.",
+        "SERVE IT."
+      ],
+      "width_px": 2400,
+      "height_px": 1461,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        1357
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/error-404-straight-not-found-sticker-light-2400.png",
+      "text": [
+        "ERROR 404",
+        "STRAIGHT NOT",
+        "FOUND"
+      ],
+      "width_px": 2400,
+      "height_px": 1397,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        1293
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/its-not-a-bug-its-me-sticker-light-2400.png",
+      "text": [
+        "IT'S NOT A BUG.",
+        "IT'S ME."
+      ],
+      "width_px": 2400,
+      "height_px": 1198,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        1094
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "pass": true
+    }
+  ]
+}

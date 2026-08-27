@@ -1,0 +1,491 @@
+{
+  "scope": "apparel only; no external writes",
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "slug": "404-straight-not-found",
+      "master": "/home/ubuntu/FAEBRIQ/assets/print-art/404-straight-not-found-light-4500.png",
+      "actual_canvas_px": [
+        4500,
+        1866
+      ],
+      "actual_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_bounds_px": [
+        225,
+        202,
+        4275,
+        1664
+      ],
+      "alpha_bands_px": {
+        "line1": [
+          519,
+          933,
+          415
+        ],
+        "line2": [
+          1059,
+          1473,
+          415
+        ],
+        "bar": [
+          1599,
+          1663,
+          65
+        ]
+      },
+      "metrics": {
+        "product": "apparel",
+        "line1": "STRAIGHT NOT",
+        "line2": "FOUND",
+        "line1_cap_height_px": 415,
+        "line1_cap_height_in": 1.3833,
+        "line1_font_size_px": 521,
+        "line1_generic_H_cap_height_px": 399,
+        "line1_generic_H_cap_height_in": 1.33,
+        "line2_cap_target_px": 415,
+        "line2_cap_height_px": 415,
+        "line2_cap_height_in": 1.3833,
+        "line2_font_size_px": 523,
+        "line2_generic_H_cap_height_px": 401,
+        "line2_generic_H_cap_height_in": 1.3367,
+        "line2_to_line1_cap_ratio": 1.0,
+        "line2_to_line1_target_ratio": 1.0,
+        "hierarchy_mode": "equal_visual_caps",
+        "line2_floor_in": 0.55,
+        "line2_floor_pass": true,
+        "equal_scale_common_containment_applied": false,
+        "initial_line1_cap_height_px": 415,
+        "final_shared_cap_target_px": 415,
+        "text_widest_line_target_px": 4050,
+        "text_widest_line_target_in": 13.5,
+        "max_line_width_px": 4095.0,
+        "line1_rendered_width_px": 4004,
+        "line1_rendered_width_in": 13.3467,
+        "line2_rendered_width_px": 1833,
+        "line2_rendered_width_in": 6.11,
+        "bar_is_fixed_apparel_brand_constant": true,
+        "bar_width_px": 4050,
+        "bar_width_in": 13.5,
+        "bar_height_px": 65,
+        "bar_height_in": 0.2167,
+        "bar_height_mm": 5.5033,
+        "bar_to_line1_rendered_width_ratio": 1.0115,
+        "vertical_layout": "symmetric_apparel_stack",
+        "line1_to_line2_visible_gap_px": 125,
+        "line2_to_bar_visible_gap_px": 125,
+        "visible_gap_difference_px": 0,
+        "label_to_line1_visible_gap_px": 140,
+        "reinforcement_radius_px": 4,
+        "conservative_min_reinforced_stroke_px": 9,
+        "conservative_min_reinforced_stroke_mm": 0.762,
+        "dtg_minimum_stroke_mm": 0.706
+      },
+      "checks": {
+        "corrected_equal_visual_caps": true,
+        "direct_alpha_band_equal": true,
+        "direct_alpha_band_delta_px": 0,
+        "line1_visible_height_px": 415,
+        "line2_visible_height_px": 415,
+        "fixed_circuit": true,
+        "line1_target_and_protected_containment": true,
+        "symmetric_stack": true,
+        "line2_floor": true,
+        "stroke_floor": true,
+        "format_and_canvas": true,
+        "no_canvas_edge_contact": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "slug": "its-not-a-bug-its-me",
+      "master": "/home/ubuntu/FAEBRIQ/assets/print-art/its-not-a-bug-its-me-light-4500.png",
+      "actual_canvas_px": [
+        4500,
+        1522
+      ],
+      "actual_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_bounds_px": [
+        225,
+        202,
+        4275,
+        1319
+      ],
+      "alpha_bands_px": {
+        "line1": [
+          202,
+          605,
+          404
+        ],
+        "line2": [
+          728,
+          1131,
+          404
+        ],
+        "bar": [
+          1254,
+          1318,
+          65
+        ]
+      },
+      "metrics": {
+        "product": "apparel",
+        "line1": "IT'S NOT A BUG.",
+        "line2": "IT'S ME.",
+        "line1_cap_height_px": 404,
+        "line1_cap_height_in": 1.3467,
+        "line1_font_size_px": 508,
+        "line1_generic_H_cap_height_px": 390,
+        "line1_generic_H_cap_height_in": 1.3,
+        "line2_cap_target_px": 404,
+        "line2_cap_height_px": 404,
+        "line2_cap_height_in": 1.3467,
+        "line2_font_size_px": 510,
+        "line2_generic_H_cap_height_px": 391,
+        "line2_generic_H_cap_height_in": 1.3033,
+        "line2_to_line1_cap_ratio": 1.0,
+        "line2_to_line1_target_ratio": 1.0,
+        "hierarchy_mode": "equal_visual_caps",
+        "line2_floor_in": 0.55,
+        "line2_floor_pass": true,
+        "equal_scale_common_containment_applied": false,
+        "initial_line1_cap_height_px": 408,
+        "final_shared_cap_target_px": 404,
+        "text_widest_line_target_px": 4050,
+        "text_widest_line_target_in": 13.5,
+        "max_line_width_px": 4095.0,
+        "line1_rendered_width_px": 3972,
+        "line1_rendered_width_in": 13.24,
+        "line2_rendered_width_px": 1902,
+        "line2_rendered_width_in": 6.34,
+        "bar_is_fixed_apparel_brand_constant": true,
+        "bar_width_px": 4050,
+        "bar_width_in": 13.5,
+        "bar_height_px": 65,
+        "bar_height_in": 0.2167,
+        "bar_height_mm": 5.5033,
+        "bar_to_line1_rendered_width_ratio": 1.0196,
+        "vertical_layout": "symmetric_apparel_stack",
+        "line1_to_line2_visible_gap_px": 122,
+        "line2_to_bar_visible_gap_px": 122,
+        "visible_gap_difference_px": 0,
+        "label_to_line1_visible_gap_px": null,
+        "reinforcement_radius_px": 4,
+        "conservative_min_reinforced_stroke_px": 9,
+        "conservative_min_reinforced_stroke_mm": 0.762,
+        "dtg_minimum_stroke_mm": 0.706
+      },
+      "checks": {
+        "corrected_equal_visual_caps": true,
+        "direct_alpha_band_equal": true,
+        "direct_alpha_band_delta_px": 0,
+        "line1_visible_height_px": 404,
+        "line2_visible_height_px": 404,
+        "fixed_circuit": true,
+        "line1_target_and_protected_containment": true,
+        "symmetric_stack": true,
+        "line2_floor": true,
+        "stroke_floor": true,
+        "format_and_canvas": true,
+        "no_canvas_edge_contact": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "slug": "code-it-serve-it",
+      "master": "/home/ubuntu/FAEBRIQ/assets/print-art/code-it-serve-it-light-4500.png",
+      "actual_canvas_px": [
+        4500,
+        2218
+      ],
+      "actual_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_bounds_px": [
+        225,
+        202,
+        4275,
+        2015
+      ],
+      "alpha_bands_px": {
+        "line1": [
+          202,
+          872,
+          671
+        ],
+        "line2": [
+          1076,
+          1746,
+          671
+        ],
+        "bar": [
+          1950,
+          2014,
+          65
+        ]
+      },
+      "metrics": {
+        "product": "apparel",
+        "line1": "CODE IT.",
+        "line2": "SERVE IT.",
+        "line1_cap_height_px": 671,
+        "line1_cap_height_in": 2.2367,
+        "line1_font_size_px": 860,
+        "line1_generic_H_cap_height_px": 653,
+        "line1_generic_H_cap_height_in": 2.1767,
+        "line2_cap_target_px": 671,
+        "line2_cap_height_px": 671,
+        "line2_cap_height_in": 2.2367,
+        "line2_font_size_px": 853,
+        "line2_generic_H_cap_height_px": 649,
+        "line2_generic_H_cap_height_in": 2.1633,
+        "line2_to_line1_cap_ratio": 1.0,
+        "line2_to_line1_target_ratio": 1.0,
+        "hierarchy_mode": "equal_visual_caps",
+        "line2_floor_in": 0.55,
+        "line2_floor_pass": true,
+        "equal_scale_common_containment_applied": true,
+        "initial_line1_cap_height_px": 741,
+        "final_shared_cap_target_px": 671,
+        "text_widest_line_target_px": 4050,
+        "text_widest_line_target_in": 13.5,
+        "max_line_width_px": 4095.0,
+        "line1_rendered_width_px": 3580,
+        "line1_rendered_width_in": 11.9333,
+        "line2_rendered_width_px": 3955,
+        "line2_rendered_width_in": 13.1833,
+        "bar_is_fixed_apparel_brand_constant": true,
+        "bar_width_px": 4050,
+        "bar_width_in": 13.5,
+        "bar_height_px": 65,
+        "bar_height_in": 0.2167,
+        "bar_height_mm": 5.5033,
+        "bar_to_line1_rendered_width_ratio": 1.1313,
+        "vertical_layout": "symmetric_apparel_stack",
+        "line1_to_line2_visible_gap_px": 203,
+        "line2_to_bar_visible_gap_px": 203,
+        "visible_gap_difference_px": 0,
+        "label_to_line1_visible_gap_px": null,
+        "reinforcement_radius_px": 4,
+        "conservative_min_reinforced_stroke_px": 9,
+        "conservative_min_reinforced_stroke_mm": 0.762,
+        "dtg_minimum_stroke_mm": 0.706
+      },
+      "checks": {
+        "corrected_equal_visual_caps": true,
+        "direct_alpha_band_equal": true,
+        "direct_alpha_band_delta_px": 0,
+        "line1_visible_height_px": 671,
+        "line2_visible_height_px": 671,
+        "fixed_circuit": true,
+        "line1_target_and_protected_containment": true,
+        "symmetric_stack": true,
+        "line2_floor": true,
+        "stroke_floor": true,
+        "format_and_canvas": true,
+        "no_canvas_edge_contact": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "slug": "deploying-identity-v2",
+      "master": "/home/ubuntu/FAEBRIQ/assets/print-art/deploying-identity-v2-light-4500.png",
+      "actual_canvas_px": [
+        4500,
+        1584
+      ],
+      "actual_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_bounds_px": [
+        225,
+        202,
+        4275,
+        1381
+      ],
+      "alpha_bands_px": {
+        "line1": [
+          202,
+          629,
+          428
+        ],
+        "line2": [
+          759,
+          1186,
+          428
+        ],
+        "bar": [
+          1316,
+          1380,
+          65
+        ]
+      },
+      "metrics": {
+        "product": "apparel",
+        "line1": "DEPLOYING",
+        "line2": "IDENTITY V2.0",
+        "line1_cap_height_px": 428,
+        "line1_cap_height_in": 1.4267,
+        "line1_font_size_px": 542,
+        "line1_generic_H_cap_height_px": 416,
+        "line1_generic_H_cap_height_in": 1.3867,
+        "line2_cap_target_px": 428,
+        "line2_cap_height_px": 428,
+        "line2_cap_height_in": 1.4267,
+        "line2_font_size_px": 540,
+        "line2_generic_H_cap_height_px": 414,
+        "line2_generic_H_cap_height_in": 1.38,
+        "line2_to_line1_cap_ratio": 1.0,
+        "line2_to_line1_target_ratio": 1.0,
+        "hierarchy_mode": "equal_visual_caps",
+        "line2_floor_in": 0.55,
+        "line2_floor_pass": true,
+        "equal_scale_common_containment_applied": true,
+        "initial_line1_cap_height_px": 530,
+        "final_shared_cap_target_px": 428,
+        "text_widest_line_target_px": 4050,
+        "text_widest_line_target_in": 13.5,
+        "max_line_width_px": 4095.0,
+        "line1_rendered_width_px": 3214,
+        "line1_rendered_width_in": 10.7133,
+        "line2_rendered_width_px": 3964,
+        "line2_rendered_width_in": 13.2133,
+        "bar_is_fixed_apparel_brand_constant": true,
+        "bar_width_px": 4050,
+        "bar_width_in": 13.5,
+        "bar_height_px": 65,
+        "bar_height_in": 0.2167,
+        "bar_height_mm": 5.5033,
+        "bar_to_line1_rendered_width_ratio": 1.2601,
+        "vertical_layout": "symmetric_apparel_stack",
+        "line1_to_line2_visible_gap_px": 129,
+        "line2_to_bar_visible_gap_px": 129,
+        "visible_gap_difference_px": 0,
+        "label_to_line1_visible_gap_px": null,
+        "reinforcement_radius_px": 4,
+        "conservative_min_reinforced_stroke_px": 9,
+        "conservative_min_reinforced_stroke_mm": 0.762,
+        "dtg_minimum_stroke_mm": 0.706
+      },
+      "checks": {
+        "corrected_equal_visual_caps": true,
+        "direct_alpha_band_equal": true,
+        "direct_alpha_band_delta_px": 0,
+        "line1_visible_height_px": 428,
+        "line2_visible_height_px": 428,
+        "fixed_circuit": true,
+        "line1_target_and_protected_containment": true,
+        "symmetric_stack": true,
+        "line2_floor": true,
+        "stroke_floor": true,
+        "format_and_canvas": true,
+        "no_canvas_edge_contact": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "slug": "off-the-clock-still-iconic",
+      "master": "/home/ubuntu/FAEBRIQ/assets/print-art/off-the-clock-still-iconic-light-4500.png",
+      "actual_canvas_px": [
+        4500,
+        1474
+      ],
+      "actual_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_bounds_px": [
+        225,
+        202,
+        4275,
+        1271
+      ],
+      "alpha_bands_px": {
+        "line1": [
+          202,
+          587,
+          386
+        ],
+        "line2": [
+          704,
+          1089,
+          386
+        ],
+        "bar": [
+          1206,
+          1270,
+          65
+        ]
+      },
+      "metrics": {
+        "product": "apparel",
+        "line1": "OFF THE CLOCK.",
+        "line2": "STILL ICONIC.",
+        "line1_cap_height_px": 386,
+        "line1_cap_height_in": 1.2867,
+        "line1_font_size_px": 489,
+        "line1_generic_H_cap_height_px": 376,
+        "line1_generic_H_cap_height_in": 1.2533,
+        "line2_cap_target_px": 386,
+        "line2_cap_height_px": 386,
+        "line2_cap_height_in": 1.2867,
+        "line2_font_size_px": 487,
+        "line2_generic_H_cap_height_px": 374,
+        "line2_generic_H_cap_height_in": 1.2467,
+        "line2_to_line1_cap_ratio": 1.0,
+        "line2_to_line1_target_ratio": 1.0,
+        "hierarchy_mode": "equal_visual_caps",
+        "line2_floor_in": 0.55,
+        "line2_floor_pass": true,
+        "equal_scale_common_containment_applied": false,
+        "initial_line1_cap_height_px": 390,
+        "final_shared_cap_target_px": 386,
+        "text_widest_line_target_px": 4050,
+        "text_widest_line_target_in": 13.5,
+        "max_line_width_px": 4095.0,
+        "line1_rendered_width_px": 3967,
+        "line1_rendered_width_in": 13.2233,
+        "line2_rendered_width_px": 3374,
+        "line2_rendered_width_in": 11.2467,
+        "bar_is_fixed_apparel_brand_constant": true,
+        "bar_width_px": 4050,
+        "bar_width_in": 13.5,
+        "bar_height_px": 65,
+        "bar_height_in": 0.2167,
+        "bar_height_mm": 5.5033,
+        "bar_to_line1_rendered_width_ratio": 1.0209,
+        "vertical_layout": "symmetric_apparel_stack",
+        "line1_to_line2_visible_gap_px": 116,
+        "line2_to_bar_visible_gap_px": 116,
+        "visible_gap_difference_px": 0,
+        "label_to_line1_visible_gap_px": null,
+        "reinforcement_radius_px": 4,
+        "conservative_min_reinforced_stroke_px": 9,
+        "conservative_min_reinforced_stroke_mm": 0.762,
+        "dtg_minimum_stroke_mm": 0.706
+      },
+      "checks": {
+        "corrected_equal_visual_caps": true,
+        "direct_alpha_band_equal": true,
+        "direct_alpha_band_delta_px": 0,
+        "line1_visible_height_px": 386,
+        "line2_visible_height_px": 386,
+        "fixed_circuit": true,
+        "line1_target_and_protected_containment": true,
+        "symmetric_stack": true,
+        "line2_floor": true,
+        "stroke_floor": true,
+        "format_and_canvas": true,
+        "no_canvas_edge_contact": true
+      },
+      "all_checks_pass": true
+    }
+  ]
+}

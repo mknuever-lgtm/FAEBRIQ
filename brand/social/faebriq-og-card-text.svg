@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="FÆBRIQ">
+  <title>FÆBRIQ</title>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <!-- Editable source. Renders in Instrument Serif where available, Georgia otherwise. -->
+  <text x="600" y="339.67" fill="#000000" text-anchor="middle"
+        font-family="Instrument Serif, Georgia, serif"
+        font-size="204.52" letter-spacing="12.27"
+        >FÆBRIQ</text>
+  <!-- Pride Circuit bar: six flush stripes, hard edges, no gradient -->
+  <rect x="270" y="427.64" width="110" height="12" fill="#E8272A"/>
+  <rect x="380" y="427.64" width="110" height="12" fill="#F47F20"/>
+  <rect x="490" y="427.64" width="110" height="12" fill="#F9D426"/>
+  <rect x="600" y="427.64" width="110" height="12" fill="#2AAA42"/>
+  <rect x="710" y="427.64" width="110" height="12" fill="#1D5BBE"/>
+  <rect x="820" y="427.64" width="110" height="12" fill="#7B3FAA"/>
+</svg>

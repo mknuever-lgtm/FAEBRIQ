@@ -1,0 +1,87 @@
+{% comment %}
+  FAEBRIQ: Contact page — real Shopify contact form (name, email, message → store inbox).
+{% endcomment %}
+
+<style>
+  .fae-page { padding: 64px 0 80px; display: flex; flex-direction: column; gap: 24px; max-width: 620px; margin: 0 auto; }
+  .fae-page__title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.05; color: var(--fae-silver); margin: 0; }
+  .fae-page__intro { color: var(--fae-text-dim); font-size: 1rem; line-height: 1.7; max-width: 60ch; }
+  .fae-contact-form { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+  .fae-contact-form label {
+    display: block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fae-text-dim); margin-bottom: 8px;
+  }
+  .fae-contact-form input[type="text"],
+  .fae-contact-form input[type="email"],
+  .fae-contact-form textarea {
+    width: 100%; background: var(--fae-ink-800); border: 1px solid var(--fae-line-700);
+    color: var(--fae-text); font-family: var(--font-body); font-size: 1rem; padding: 12px 14px;
+  }
+  .fae-contact-form textarea { min-height: 160px; resize: vertical; }
+  .fae-contact-form input:focus, .fae-contact-form textarea:focus { outline: none; border-color: var(--fae-silver-lo); }
+  .fae-contact-form button[type="submit"] {
+    font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--fae-black); background: var(--fae-silver); border: none; padding: 14px 32px;
+    cursor: pointer; width: fit-content; transition: background 0.15s;
+  }
+  .fae-contact-form button[type="submit"]:hover { background: var(--fae-silver-hi); }
+  .fae-contact-form__success, .fae-contact-form__errors {
+    font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; padding: 14px 16px; border: 1px solid var(--fae-line-600);
+    background: var(--fae-ink-800);
+  }
+  .fae-contact-form__success { color: var(--fae-text); }
+  .fae-contact-form__errors { color: var(--fae-accent); }
+  .fae-contact-form__errors ul { margin: 8px 0 0 18px; }
+</style>
+
+<div class="fae-container">
+  <div class="fae-page fae-page--centered">
+
+    <div class="fae-circuit" style="height:4px; max-width:200px;">
+      {%- render 'circuit-rule', id: 'contact' -%}
+    </div>
+
+    <h1 class="fae-page__title">{{ page.title | default: "Contact" }}</h1>
+
+    {%- if page.content != blank -%}
+      <div class="fae-page__intro">{{ page.content }}</div>
+    {%- else -%}
+      <p class="fae-page__intro">Questions about an order, a size, or a wholesale request — send it here and it lands straight in the inbox.</p>
+    {%- endif -%}
+
+    {%- form 'contact', id: 'fae-contact-form', class: 'fae-contact-form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="fae-contact-form__success">Sent — thanks. Expect a reply soon.</div>
+      {%- endif -%}
+
+      {%- if form.errors -%}
+        <div class="fae-contact-form__errors">
+          Couldn't send that.
+          <ul>
+            {%- for field in form.errors -%}
+              <li>{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}</li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      <div>
+        <label for="ContactFormName">Name</label>
+        <input type="text" id="ContactFormName" name="contact[name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+      </div>
+
+      <div>
+        <label for="ContactFormEmail">Email</label>
+        <input type="email" id="ContactFormEmail" name="contact[email]" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+      </div>
+
+      <div>
+        <label for="ContactFormMessage">Message</label>
+        <textarea id="ContactFormMessage" name="contact[body]" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      </div>
+
+      <button type="submit">Send</button>
+    {%- endform -%}
+
+  </div>
+</div>

@@ -1,0 +1,96 @@
+{% comment %}
+  FAEBRIQ: generic page template. Required for /pages/contact and any page that
+  does not have its own template (About uses page.about.liquid).
+{% endcomment %}
+
+<style>
+  .fae-page { padding: 64px 0 80px; display: flex; flex-direction: column; gap: 24px; }
+  .fae-page__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--fae-silver);
+    margin: 0;
+  }
+  .fae-page__body { color: var(--fae-text-dim); font-size: 1rem; line-height: 1.7; max-width: 68ch; }
+  .fae-page__body > * + * { margin-top: 1em; }
+  .fae-page__body h2, .fae-page__body h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--fae-silver);
+    line-height: 1.2;
+    margin-top: 1.6em;
+  }
+  .fae-page__body h2 { font-size: 1.6rem; }
+  .fae-page__body h3 { font-size: 1.25rem; }
+  .fae-page__body a { color: var(--fae-accent); }
+  .fae-page__body a:hover { color: var(--fae-silver-hi); }
+  .fae-page__body ul, .fae-page__body ol { padding-left: 1.25em; }
+  .fae-page__body li + li { margin-top: 0.4em; }
+  .fae-page__body img { max-width: 100%; height: auto; }
+  .fae-page__body table { width: 100%; border-collapse: collapse; }
+  .fae-page__body td, .fae-page__body th {
+    border-bottom: 1px solid var(--fae-line-700); padding: 8px 12px; text-align: left;
+  }
+
+  /* Shopify's contact form, styled to match the theme */
+  .fae-page__body input[type="text"],
+  .fae-page__body input[type="email"],
+  .fae-page__body input[type="tel"],
+  .fae-page__body textarea {
+    width: 100%;
+    max-width: 480px;
+    background: var(--fae-ink-800);
+    border: 1px solid var(--fae-line-700);
+    color: var(--fae-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 12px 14px;
+    display: block;
+  }
+  .fae-page__body textarea { min-height: 160px; resize: vertical; }
+  .fae-page__body input:focus, .fae-page__body textarea:focus {
+    outline: none; border-color: var(--fae-silver-lo);
+  }
+  .fae-page__body label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fae-text-dim);
+    margin-bottom: 8px;
+  }
+  .fae-page__body input[type="submit"],
+  .fae-page__body button[type="submit"] {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fae-black);
+    background: var(--fae-silver);
+    border: none;
+    padding: 14px 32px;
+    cursor: pointer;
+    width: auto;
+  }
+  .fae-page__body input[type="submit"]:hover,
+  .fae-page__body button[type="submit"]:hover { background: var(--fae-silver-hi); }
+</style>
+
+<div class="fae-container">
+  <div class="fae-page fae-page--centered">
+
+    <div class="fae-circuit" style="height:4px; max-width:200px;">
+      {%- render 'circuit-rule', id: 'page' -%}
+    </div>
+
+    <h1 class="fae-page__title">{{ page.title }}</h1>
+
+    <div class="fae-page__body">
+      {{ page.content }}
+    </div>
+
+  </div>
+</div>

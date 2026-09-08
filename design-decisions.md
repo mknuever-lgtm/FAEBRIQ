@@ -6,9 +6,22 @@ The cap front is locked as the centered **FÆBRIQ wordmark in Instrument Serif**
 
 The cap is the **OTTO Cap 18-253**, black, one size, fulfilled through **Printify Choice using DTF**. The accepted physical sample used this same DTF / Printify Choice configuration; embroidery is not an approved substitute.
 
-The pride circuit stripe uses six equal blocks in this left-to-right order:
+The pride circuit stripe uses six equal blocks, left to right: red, orange,
+yellow, green, blue, purple.
 
-`#E8271C` `#F47B20` `#F9D01F` `#009A44` `#0057A8` `#742B8C`
+**Hex — UNRESOLVED, do not treat this file as the source.** This file was
+committed 2026-09-03 carrying `#E8271C #F47B20 #F9D01F #009A44 #0057A8 #742B8C`.
+That set appears in this file and nowhere else in the repo. Every other source —
+`tokens/colors.css`, `faebriq-brand-kit/SKILL.md`, `references/visual_identity.md`,
+`tools/make_print_file.py`, `PRODUCTION_BRIEF.md` and the `brand/social/` cards —
+carries `#E8272A #F47F20 #F9D426 #2AAA42 #1D5BBE #7B3FAA`, and the brand-kit
+explicitly retires saturated flag hex as "NOT the brand" (decided 2026-08-19).
+
+On 2026-09-08 a physical Error 404 tee sample was photographed. Its printed
+green, blue and purple read lighter and less saturated than `#009A44`,
+`#0057A8`, `#742B8C` — consistent with the muted set. Photo evidence only;
+DTF on black lightens colour, so this is indicative, not proof. **Settle it by
+opening the actual Printify print file, not by reading this document.**
 
 ## Tees
 
@@ -16,7 +29,24 @@ All tee designs use **Instrument Serif only**. The phrase is centered on the gar
 
 ## Error 404 Tee
 
-The design uses a massive `404` in Instrument Serif at approximately 90% white opacity, with the small italic phrase `Straight Not Found` beneath it and the full-width pride bar pinned to the bottom edge.
+**Corrected 2026-09-08 from a physical sample.** This section previously said
+the design was "a massive `404` in Instrument Serif at approximately 90% white
+opacity, with the small italic phrase `Straight Not Found` beneath it." That is
+wrong. The printed garment inverts that hierarchy.
+
+What the sample actually carries, front print, white/silver on black:
+
+- `ERROR 404` — small, all caps, Instrument Serif roman, centred, top line.
+- `STRAIGHT NOT FOUND` — large, all caps, Instrument Serif roman (**not**
+  italic), set on two centred lines.
+- The six-block pride bar beneath, running roughly the width of the phrase
+  block, not the width of the garment.
+
+Blank is a Gildan. Print process reads as DTF/DTG with a white underbase — a
+fine light edge is visible at each colour block boundary under macro. Block
+gaps on the sample are wider than the hairline gap `PRODUCTION_BRIEF.md` §0
+specifies (≈0.4% of bar width); the bar reads as six dashes rather than one
+near-continuous strip.
 
 ## Code It. Serve It. Tee
 

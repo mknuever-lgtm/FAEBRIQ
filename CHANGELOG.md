@@ -14,3 +14,7 @@ Note: gated on fixing product imagery first — Shop app is a pure image grid wi
 2026-09-08 Regenerated 4 apparel print masters (bug/code-it/deploying-identity/off-the-clock) via tools/make_print_file.py.
 Why: 2026-08-27's "equal-visual-cap" pass had silently overwritten make_print_file.py's tuned small-line2 lockup; line2 is punchline/payload and reads deadpan only when smaller, per make_print_file.py's own l2_w=0.4710 spec.
 Note: sticker-final-system-2026-08-27/manifest.json now describes a superseded state for these 4 slugs; not touched. No Printify/Shopify sync performed.
+
+2026-09-09 Fixed "It's Not a Bug. It's Me." line-2 sizing on both the sticker (final-system) and apparel-4500 masters, via new --l2-w override in tools/make_print_file.py; regenerated sticker-final-system manifest.json.
+Why: default l2_w=0.4710 gave this phrase a ~0.98 size ratio (no visible hierarchy) because line2 has just over half of line1's character count — mathematically inherent to the width-fit formula, not a corruption; PR #17's restoration used the same default and did not fix it. --l2-w is opt-in per call; all other designs verified byte-identical.
+Note: no Printify/Shopify sync performed.

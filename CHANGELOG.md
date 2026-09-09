@@ -10,3 +10,7 @@ Note: themes are inverted vs CLAUDE.md — faebriqtheme-launch-fix is MAIN (live
 2026-09-08 Added SOCIAL_LAUNCH_NOTES.md — reminder to link the Shop app from social profiles once the website is live.
 Why: Shop app has a Follow button and in-app checkout, and renders product data only, so it is unaffected by theme work.
 Note: gated on fixing product imagery first — Shop app is a pure image grid with no copy to compensate.
+
+2026-09-08 Regenerated 4 apparel print masters (bug/code-it/deploying-identity/off-the-clock) via tools/make_print_file.py.
+Why: 2026-08-27's "equal-visual-cap" pass had silently overwritten make_print_file.py's tuned small-line2 lockup; line2 is punchline/payload and reads deadpan only when smaller, per make_print_file.py's own l2_w=0.4710 spec.
+Note: sticker-final-system-2026-08-27/manifest.json now describes a superseded state for these 4 slugs; not touched. No Printify/Shopify sync performed.

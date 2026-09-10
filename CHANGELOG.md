@@ -13,3 +13,5 @@ Note: gated on fixing product imagery first — Shop app is a pure image grid wi
 2026-09-08 Corrected design-decisions.md from a physical Error 404 tee sample; flagged its pride hex as unresolved.
 Why: its tee description (massive 404, small italic phrase) is falsified by the sample, and its hex set exists in no other file.
 Also reverted the draft theme's circuit-rule.liquid to the brand-kit palette this session had overwritten on that file's authority.
+2026-09-10 Flagged design-decisions.md as sourced from a now-superseded physical sample; founder reports the design changed since 2026-09-08.
+Why: prevent the 2026-09-08 sample's hex/layout claims from being read as a live spec by a future session.

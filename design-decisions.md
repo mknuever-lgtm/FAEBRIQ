@@ -1,5 +1,12 @@
 # FÆBRIQ Design Decisions
 
+**2026/09/10 — the founder reports the design has changed since the
+2026/09/08 physical sample cited throughout this file.** What exactly
+changed is not recorded here. Every claim below sourced from that sample
+(the hex indication, the Error 404 layout description) is a record of
+that specific, now-superseded unit — not a live spec. Verify against the
+current Printify print file before relying on any of it.
+
 ## Cap
 
 The cap front is locked as the centered **FÆBRIQ wordmark in Instrument Serif**, with a short pride circuit stripe centered directly beneath the wordmark. The stripe is not a full-width line and does not sit above the mark. There is no phrase on the cap front.

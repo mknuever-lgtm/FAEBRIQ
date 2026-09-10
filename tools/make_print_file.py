@@ -135,7 +135,7 @@ GAP_L2_BAR_OF_L2_SIZE = 1.3758
 
 
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
-          ink="light", product="apparel", l2_y=None):
+          ink="light", product="apparel", l2_y=None, l2_w=None):
     from PIL import Image, ImageFont
 
     serif = font_path("Bodoni Moda", None, "BodoniModa-Regular.ttf")
@@ -143,6 +143,16 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     col = {k: tuple(int(v.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) for k, v in ink_hex.items()}
     wordmark = product == "sticker"
     src = dict(SRC)
+    # l2_w is a width-fit *target*, not a size ratio: fitting line2 to a fixed
+    # fraction of L only shrinks it relative to line1 by roughly
+    # (l2_w/l1_w)*(len(line1)/len(line2)). For phrase pairs where line2 has
+    # much less than half of line1's characters (e.g. "IT'S NOT A BUG." / 15
+    # chars vs "IT'S ME." / 8 — just over half), the default l2_w=0.4710 lands
+    # line2's font size within a few percent of line1's: no visible hierarchy,
+    # even though the tagline is a big-statement/small-punchline pair. --l2-w
+    # overrides the target for that one call; every other design keeps 0.4710.
+    if l2_w is not None:
+        src["l2_w"] = l2_w
 
     # The bar is the widest element, so it sets the usable width.
     L = width * (1 - 2 * margin_frac) / src["bar_w"]
@@ -214,7 +224,13 @@ if __name__ == "__main__":
                         "By default this is computed automatically from line-1's rendered "
                         "font size so spacing self-adjusts per tagline — only pass this to "
                         "force a specific position.")
+    p.add_argument("--l2-w", type=float, default=None,
+                   help="manual override for line-2's width-fit target (fraction of L, "
+                        "default 0.4710). The resulting size ratio also depends on "
+                        "len(line1)/len(line2), so lower this when line2 has much less "
+                        "than half of line1's character count and the default produces "
+                        "little or no visible size difference.")
     a = p.parse_args()
     w, h = build(a.line1, a.line2, a.out, label=a.label, width=a.width,
-                 ink=a.ink, product=a.product, l2_y=a.l2_y)
+                 ink=a.ink, product=a.product, l2_y=a.l2_y, l2_w=a.l2_w)
     print(f"wrote {a.out}  {w}x{h}  RGBA 300dpi  ink={a.ink}  product={a.product}")

@@ -26,3 +26,7 @@ Note (merge resolution, PR #19 vs PR #18): this pixel-shift pass and the 2026-09
 2026-09-16 Added LAUNCH_AUDIT_2026-09-16.md — competitive research + source-level audit of faebriqtheme-launch-fix (theme 145284005955), catalogue, delivery profiles, markets, orders and discounts.
 Why: final go/no-go before social traffic; live site could not be rendered (egress policy blocks faebriq.com and ufyytt-er.myshopify.com), so every check was done against theme source via the Shopify Admin API.
 Note: no store, theme or Printify changes made. Headline finding — the MAIN theme is faebriqtheme-launch-2026-08-06-review and carries none of the fixes; publishing launch-fix is the one action gating launch.
+
+2026-09-16 Added SHOPIFY_ADMIN_AUDIT_2026-09-16.md — read-only review of the admin surface the theme audit missed: sales channels, policies, payments, inventory, installed apps, analytics.
+Why: founder challenged whether the first audit was complete; it was theme-only. Six new findings, two launch-blocking.
+Note: no store/theme/Printify changes. Key items — Refund policy denies size refunds citing a non-existent size guide; 464 sessions have produced 2 cart adds and 0 orders; three AI agents hold write_themes.

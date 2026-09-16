@@ -1,0 +1,45 @@
+{% comment %} FAEBRIQ: home hero. Matches Storefront.html StorefrontHero (segmented rainbow, uppercase title, CTA to catalog). {% endcomment %}
+<section class="fae-hero">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="fae-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+
+  <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
+
+  <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component), not a gradient line -->
+  <div class="fae-circuit" style="height: 3px; max-width: 360px;">
+    {%- render 'circuit-rule', id: 'hero' -%}
+  </div>
+
+  {%- if section.settings.tagline != blank -%}
+    <p class="fae-hero__eyebrow">{{ section.settings.tagline }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.subheading != blank -%}
+    <p class="fae-hero__sub">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+    <a href="{{ section.settings.cta_url }}" class="fae-hero__cta">{{ section.settings.cta_label }}</a>
+  {%- endif -%}
+
+  {%- if section.settings.price_note != blank -%}
+    <p class="fae-hero__price-note">{{ section.settings.price_note }}</p>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Vol. 1 · Now Live" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "FÆBRIQ" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Identity is a build process." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop the Drop" },
+    { "type": "url", "id": "cta_url", "label": "Button URL" },
+    { "type": "text", "id": "price_note", "label": "Price / shipping line", "default": "$4-$68 USD · Free shipping to the US & Canada · Printed to order" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} | tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- FAEBRIQ: favicon. Pride-circuit bar on ink. Reads at 16px where a wordmark would not. -->
+  <link rel="icon" type="image/svg+xml" href="{{ 'favicon.svg' | asset_url }}">
+
+  {%- comment -%} FAEBRIQ 2026-09-10: social preview, canonical and structured data. {%- endcomment -%}
+  {% render 'meta-tags' %}
+
+  {{ content_for_header }}
+
+  {{ 'faebriq.css' | asset_url | stylesheet_tag }}
+  {{ 'faebriq-fixes.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+
+  <a href="#main-content" class="fae-skip-link">Skip to content</a>
+
+  {% section 'header' %}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {% render 'cart-drawer' %}
+
+  <script>
+    window.fae_money_format = {{ shop.money_format | json }};
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('fae-hamburger');
+      var nav = document.getElementById('fae-mobile-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', function () {
+          nav.classList.toggle('is-open');
+        });
+      }
+    });
+  </script>
+  {{ 'fae-cart.js' | asset_url | script_tag }}
+
+</body>
+</html>

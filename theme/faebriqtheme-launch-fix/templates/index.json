@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Vol. 1 · Now Live",
+        "heading": "FÆBRIQ",
+        "tagline": "Identity is a build process.",
+        "subheading": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
+        "cta_label": "Shop the Drop",
+        "cta_url": "/collections/all-products",
+        "price_note": "$4-$68 USD · Free shipping to the US & Canada · Printed to order"
+      }
+    },
+    "brand-statement": {
+      "type": "brand-statement",
+      "settings": {
+        "statement": "Identity is a build process. We print status updates, not slogans.",
+        "link_label": "Read the manifesto →",
+        "link_url": "/pages/about"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "The Drop",
+        "subtitle": "Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
+        "collection": "all-products",
+        "products_to_show": 24,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": ["hero", "brand-statement", "featured-collection"]
+}

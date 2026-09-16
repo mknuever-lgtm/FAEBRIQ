@@ -38,3 +38,7 @@ Note: policies and live-theme files could not be written via the connector (read
 2026-09-16 Applied 7 template/layout fixes directly to faebriqtheme-launch-fix (new policy.liquid; About type unified; dashes removed from theme.liquid title, hero price line, index.json, collection.liquid sort, contact strings).
 Why: founder review flagged mixed fonts on About, uncentred policy pages and em dashes sitewide; theme had flipped back to unpublished so connector writes were permitted.
 Note: themes swapped again at 11:01:43Z (review became MAIN). Connector cannot publish or unpublish, so an external actor did it; three AI apps hold write_themes. product.liquid left for manual edit (2 entities) to avoid retyping its cart JS.
+
+2026-09-16 Added handoff/homepage-options.html: side-by-side mockup of two homepage hero layouts (A typographic, B split with product shot), plus the competitor-research figures behind the call.
+Why: founder asked to see both options before choosing a homepage structure that features products above the fold.
+Note: published as an artifact for viewing. Product tiles are CSS, not real renders, so the comparison stays about layout.

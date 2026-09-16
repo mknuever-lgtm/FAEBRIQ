@@ -24,10 +24,17 @@
 
   {{ 'faebriq.css' | asset_url | stylesheet_tag }}
   {{ 'faebriq-fixes.css' | asset_url | stylesheet_tag }}
+  {{ 'faebriq-home.css' | asset_url | stylesheet_tag }}
 </head>
 <body>
 
   <a href="#main-content" class="fae-skip-link">Skip to content</a>
+
+  {%- comment -%}
+    FAEBRIQ 2026-09-16: free shipping was only stated in small type under the
+    homepage hero. Sitewide bar so it is above the fold on every page.
+  {%- endcomment -%}
+  {% section 'announcement-bar' %}
 
   {% section 'header' %}
 

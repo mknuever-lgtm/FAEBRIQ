@@ -1,0 +1,183 @@
+/* ============================================================
+   FÆBRIQ — homepage structure, 2026-09-16
+   Announcement bar, split hero, trust row.
+
+   Third stylesheet for the same reason faebriq-fixes.css is the
+   second one: adding rules should not mean retyping a file that
+   already works. Loaded last, so these win on equal specificity.
+   ============================================================ */
+
+/* ---- Announcement bar ---- */
+.fae-announce {
+  background: var(--fae-ink-800);
+  border-bottom: 1px solid var(--fae-line-700);
+  padding: 9px 24px;
+  text-align: center;
+}
+.fae-announce__text {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--fae-text-dim);
+}
+a.fae-announce__text:hover { color: var(--fae-silver); }
+
+/* ---- Split hero ----
+   .fae-hero is a centred flex column. Everything here exists to undo one
+   thing that base class does, so the rules stay together as a set. */
+.fae-hero--split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 56px;
+  text-align: left;
+  padding: 72px 24px 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.fae-hero--split .fae-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  min-width: 0;
+}
+.fae-hero--split .fae-hero__title { font-size: clamp(2.75rem, 5.5vw, 5.5rem); }
+.fae-hero--split .fae-hero__sub { max-width: 46ch; }
+.fae-hero--split .fae-circuit { max-width: 260px; }
+
+/* The free-shipping line had no rule of its own and rendered as plain body
+   copy. It is the most load-bearing sentence in the hero. */
+.fae-hero__price-note {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: var(--fae-text-faint);
+}
+
+/* ---- Hero product ---- */
+.fae-hero__media {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
+}
+.fae-hero__media-frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--fae-ink-900);
+  border: 1px solid var(--fae-line-700);
+}
+.fae-hero__media-frame img {
+  width: 100%;
+  height: 100%;
+  /* contain, not cover: the print is the product. Cropping it to fill a box
+     is how you end up shipping a hero that cuts the joke in half. */
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.fae-hero__media-frame:hover img { transform: scale(1.02); }
+.fae-hero__media-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fae-black);
+  background: var(--fae-silver);
+  padding: 3px 8px;
+}
+.fae-hero__media-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  color: var(--fae-text-dim);
+}
+.fae-hero__media-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--fae-silver);
+}
+.fae-hero__media-price {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--fae-text);
+  white-space: nowrap;
+}
+.fae-hero__media-meta:hover .fae-hero__media-title { color: var(--fae-silver-hi); }
+.fae-hero__media-frame:focus-visible,
+.fae-hero__media-meta:focus-visible {
+  outline: 2px solid var(--fae-accent);
+  outline-offset: 2px;
+}
+
+/* ---- Trust row ---- */
+.fae-trust {
+  background: var(--fae-ink-900);
+  border-bottom: 1px solid var(--fae-line-700);
+  padding: 28px 0;
+}
+.fae-trust__row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.fae-trust__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.fae-trust__title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fae-silver);
+}
+.fae-trust__text {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--fae-text-dim);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .fae-hero--split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 44px 24px 52px;
+  }
+  .fae-hero--split .fae-hero__copy { gap: 18px; }
+  /* Squarer on a phone so the image clears the fold instead of running past it. */
+  .fae-hero__media-frame { aspect-ratio: 1 / 1; }
+  .fae-trust__row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (max-width: 480px) {
+  .fae-hero--split { padding: 32px 20px 44px; }
+  .fae-hero--split .fae-hero__title { font-size: clamp(2.25rem, 11vw, 3.5rem); }
+  .fae-announce__text { font-size: 0.625rem; letter-spacing: 0.08em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fae-hero__media-frame img { transition: none; }
+  .fae-hero__media-frame:hover img { transform: none; }
+}

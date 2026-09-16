@@ -1,0 +1,27 @@
+{% comment %}
+  FAEBRIQ: announcement bar. Rendered in layout/theme.liquid above the header,
+  so it appears on every page, not only the homepage.
+
+  Free shipping was buried in small type under the hero, which meant it was
+  invisible on a phone and invisible on every page that is not the homepage.
+  This is the one fact most likely to stop someone bouncing, so it goes first.
+{% endcomment %}
+{%- if section.settings.message != blank -%}
+  <div class="fae-announce">
+    {%- if section.settings.link_url != blank -%}
+      <a href="{{ section.settings.link_url }}" class="fae-announce__text">{{ section.settings.message }}</a>
+    {%- else -%}
+      <p class="fae-announce__text">{{ section.settings.message }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    { "type": "text", "id": "message", "label": "Message", "default": "Free shipping to the US & Canada · Made to order, printed after you buy" },
+    { "type": "url", "id": "link_url", "label": "Link (optional)" }
+  ]
+}
+{% endschema %}

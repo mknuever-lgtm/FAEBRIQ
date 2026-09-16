@@ -18,7 +18,32 @@
         "subheading": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
         "cta_label": "Shop the Drop",
         "cta_url": "/collections/all-products",
-        "price_note": "$4-$68 USD · Free shipping to the US & Canada · Printed to order"
+        "price_note": "$4-$68 USD · Free shipping to the US & Canada · Printed to order",
+        "hero_product": "error-404-straight-not-found-tee",
+        "media_tag": "The Flagship"
+      }
+    },
+    "trust-row": {
+      "type": "trust-row",
+      "settings": {
+        "item_1_title": "Free shipping",
+        "item_1_text": "To the US and Canada. Built into the price, no threshold to hit.",
+        "item_2_title": "Made to order",
+        "item_2_text": "Printed after you buy it, not before. No warehouse of unsold guesses.",
+        "item_3_title": "2 to 7 days to print",
+        "item_3_text": "Then 4 to 8 business days in the US, 7 to 14 to Canada.",
+        "item_4_title": "Misprints covered",
+        "item_4_text": "Damaged, defective or misprinted: replaced or refunded within 30 days."
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "The Drop",
+        "subtitle": "Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
+        "collection": "all-products",
+        "products_to_show": 6,
+        "show_view_all": true
       }
     },
     "brand-statement": {
@@ -28,17 +53,7 @@
         "link_label": "Read the manifesto →",
         "link_url": "/pages/about"
       }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "The Drop",
-        "subtitle": "Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
-        "collection": "all-products",
-        "products_to_show": 24,
-        "show_view_all": true
-      }
     }
   },
-  "order": ["hero", "brand-statement", "featured-collection"]
+  "order": ["hero", "trust-row", "featured-collection", "brand-statement"]
 }

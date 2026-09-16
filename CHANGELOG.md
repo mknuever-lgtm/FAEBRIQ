@@ -42,3 +42,7 @@ Note: themes swapped again at 11:01:43Z (review became MAIN). Connector cannot p
 2026-09-16 Added handoff/homepage-options.html: side-by-side mockup of two homepage hero layouts (A typographic, B split with product shot), plus the competitor-research figures behind the call.
 Why: founder asked to see both options before choosing a homepage structure that features products above the fold.
 Note: published as an artifact for viewing. Product tiles are CSS, not real renders, so the comparison stays about layout.
+
+2026-09-16 Built Option B homepage into faebriqtheme-launch-fix: split hero (wordmark beside a product shot, product picked via theme setting), new sitewide announcement bar, new trust row, curated 6-product grid; mirrored the 7 files into theme/.
+Why: founder chose Option B from the two hero mockups; competitor research put a product, free shipping and trust facts above the fold.
+Note: trimming the grid to 6 broke the catalog section's count ("12 products" over 6 cards) and its filter rail (filtering a 12-type rail over 6 cards emptied the grid), so both are now conditional on the grid holding the full collection. Also removed the last en dash, in its A-Z sort option.

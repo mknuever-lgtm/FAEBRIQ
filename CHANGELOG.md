@@ -30,3 +30,7 @@ Note: no store, theme or Printify changes made. Headline finding — the MAIN th
 2026-09-16 Added SHOPIFY_ADMIN_AUDIT_2026-09-16.md — read-only review of the admin surface the theme audit missed: sales channels, policies, payments, inventory, installed apps, analytics.
 Why: founder challenged whether the first audit was complete; it was theme-only. Six new findings, two launch-blocking.
 Note: no store/theme/Printify changes. Key items — Refund policy denies size refunds citing a non-existent size guide; 464 sessions have produced 2 cart adds and 0 orders; three AI agents hold write_themes.
+
+2026-09-16 Site review pass: rewrote all 12 product descriptions + SEO fields, Contact and About page bodies (dashes removed, sticker copy de-duplicated); added theme/templates/policy.liquid, unified About page type, stripped dashes from contact template; staged corrected Refund/Shipping/Terms policies in handoff/.
+Why: founder review of the live site flagged em dashes sitewide, mixed fonts on About, uncentred policy pages, and AI-sounding copy.
+Note: policies and live-theme files could not be written via the connector (read-only legal scope; MAIN theme writes blocked), so both are staged in handoff/ for manual paste. Privacy policy verified dash-free, no change needed.

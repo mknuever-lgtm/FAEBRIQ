@@ -50,3 +50,7 @@ Note: trimming the grid to 6 broke the catalog section's count ("12 products" ov
 2026-09-17 Published the All Products collection to the Online Store sales channel. It was published to zero channels.
 Why: the homepage catalog section rendered its "select a collection" placeholder and /collections/all-products was unreachable, because an unpublished collection resolves to nil on the storefront even though the Admin API returns it normally.
 Note: Online Store only. Shop, TikTok, POS and Manus left as they were, since those are separate distribution decisions.
+
+2026-09-17 Added handoff/MANUS_BRIEF.md: a self-contained browser task brief covering the three policy replacements, the two product.liquid string edits, a sticker artwork investigation, and a homepage render check.
+Why: the remaining launch items all need a logged-in browser session, which the Shopify connector cannot provide. Manus can.
+Note: the three policy bodies are embedded in full so the brief needs no repo access, and the standing brand rules (no Printify sync, no price or handle changes, no theme publishing, no embroidery claim, no dashes) are stated as hard constraints.

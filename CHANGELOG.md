@@ -46,3 +46,7 @@ Note: published as an artifact for viewing. Product tiles are CSS, not real rend
 2026-09-16 Built Option B homepage into faebriqtheme-launch-fix: split hero (wordmark beside a product shot, product picked via theme setting), new sitewide announcement bar, new trust row, curated 6-product grid; mirrored the 7 files into theme/.
 Why: founder chose Option B from the two hero mockups; competitor research put a product, free shipping and trust facts above the fold.
 Note: trimming the grid to 6 broke the catalog section's count ("12 products" over 6 cards) and its filter rail (filtering a 12-type rail over 6 cards emptied the grid), so both are now conditional on the grid holding the full collection. Also removed the last en dash, in its A-Z sort option.
+
+2026-09-17 Published the All Products collection to the Online Store sales channel. It was published to zero channels.
+Why: the homepage catalog section rendered its "select a collection" placeholder and /collections/all-products was unreachable, because an unpublished collection resolves to nil on the storefront even though the Admin API returns it normally.
+Note: Online Store only. Shop, TikTok, POS and Manus left as they were, since those are separate distribution decisions.

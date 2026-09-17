@@ -54,3 +54,7 @@ Note: Online Store only. Shop, TikTok, POS and Manus left as they were, since th
 2026-09-17 Added handoff/MANUS_BRIEF.md: a self-contained browser task brief covering the three policy replacements, the two product.liquid string edits, a sticker artwork investigation, and a homepage render check.
 Why: the remaining launch items all need a logged-in browser session, which the Shopify connector cannot provide. Manus can.
 Note: the three policy bodies are embedded in full so the brief needs no repo access, and the standing brand rules (no Printify sync, no price or handle changes, no theme publishing, no embroidery claim, no dashes) are stated as hard constraints.
+
+2026-09-17 Added handoff/MANUS_BRIEF_2.md for a second Manus account: policies, the two product.liquid strings, and the sticker investigation, reordered by value and capped by time.
+Why: the first run drained its credits on Shopify admin routes that never rendered, and completed none of the three.
+Note: drops the homepage checks the first run already confirmed, routes around the SPA stall with deep links and a legacy-host fallback, sets hard attempt caps, and makes Task B conditional on the theme still being published.

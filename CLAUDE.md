@@ -21,6 +21,12 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Brand: queer-coded dark-tech merch. Voice: dry, deadpan, terminal wit.
   Instrument Serif silver wordmark on near-black (#0f0e0c bg / #e0e0e0 text).
   One pride-circuit accent per product.
+- Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
+  marketing copy, avatar/video persona, or promotional content still needs
+  a hook, charisma, confident energy, and comedic timing. Deadpan means the
+  joke isn't oversold, not that there's no energy behind it. Rendering this
+  as a bored technician reciting specs is a bug — always re-read output for
+  "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
   baked into listed prices.
 - Live catalog: 6 sticker listings ($4–$13.99), tees $34, crewneck $62,

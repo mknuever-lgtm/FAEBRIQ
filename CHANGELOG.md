@@ -58,3 +58,7 @@ Note: the three policy bodies are embedded in full so the brief needs no repo ac
 2026-09-17 Added handoff/MANUS_BRIEF_2.md for a second Manus account: policies, the two product.liquid strings, and the sticker investigation, reordered by value and capped by time.
 Why: the first run drained its credits on Shopify admin routes that never rendered, and completed none of the three.
 Note: drops the homepage checks the first run already confirmed, routes around the SPA stall with deep links and a legacy-host fallback, sets hard attempt caps, and makes Task B conditional on the theme still being published.
+
+2026-09-17 Applied the two product.liquid dash replacements directly to faebriqtheme-launch-fix (Made to order line, Production 5 to 7 line), byte-verified. Mirrored into theme/.
+Why: last of the sitewide dash cleanup, held back earlier because the connector cannot write to a live theme and the file carries the cart JS.
+Note: theme was unpublished by the founder for this edit; publish to see it live. No other line in the file touched.

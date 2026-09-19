@@ -1,4 +1,4 @@
-<!-- @dsCard group="Core" viewport="700x220" name="CircuitRule" subtitle="The signature six-color circuit divider with optional terminal nodes" -->
+<!-- @dsCard group="Core" viewport="700x380" name="CircuitRule" subtitle="The signature pride bar — six equal blocks, sized and aligned" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,7 @@
   body { margin: 0; padding: 26px; background: var(--bg-page); }
   .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing:.14em; text-transform:uppercase; color: var(--text-faint); margin-bottom: 14px; }
   .sec { margin-bottom: 26px; }
+  .ctx { font-family: var(--font-display); font-size: 26px; color: var(--text-display); letter-spacing: 0.02em; margin: 0 0 12px; }
 </style>
 </head>
 <body>
@@ -22,16 +23,25 @@
       return (
         <div>
           <div className="sec">
-            <div className="lbl">Default (nodes, full width)</div>
+            <div className="lbl">Default — six equal blocks</div>
             <CircuitRule width={340} />
           </div>
           <div className="sec">
-            <div className="lbl">No nodes</div>
-            <CircuitRule width={340} nodes={false} />
+            <div className="lbl">Heavier bar — height 8</div>
+            <CircuitRule width={340} height={8} />
+          </div>
+          <div className="sec">
+            <div className="lbl">Continuous — gap 0</div>
+            <CircuitRule width={340} gap={0} />
+          </div>
+          <div className="sec">
+            <div className="lbl">Right-aligned</div>
+            <CircuitRule width={340} align="right" />
           </div>
           <div className="sec" style={{ marginBottom: 0 }}>
-            <div className="lbl">Right-aligned, wide gap</div>
-            <CircuitRule width={340} gap={9} align="right" />
+            <div className="lbl">In context — section divider</div>
+            <h2 className="ctx">Deploying Identity v2.0</h2>
+            <CircuitRule />
           </div>
         </div>
       );

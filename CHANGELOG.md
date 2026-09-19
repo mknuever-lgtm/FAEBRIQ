@@ -25,3 +25,7 @@ Note (merge resolution, PR #19 vs PR #18): this pixel-shift pass and the 2026-09
 
 2026-09-16 Added CLAUDE.md clarification that dry/deadpan brand voice is a delivery style, not low-energy/monotone.
 Why: Riverside AI-avatar tone draft was written as a flat, no-energy "technician" persona under a literal reading of "dry, deadpan" — founder correctly called it boring/unsellable; locking in the correct interpretation so it isn't regenerated wrong next session.
+
+2026-09-19 Design-sync re-sync to claude.ai/design. Added tools/build-ds-bundle.mjs + tools/assemble-ds-bundle.mjs (npm run ds:bundle) so _ds_bundle.js is generated from the real component sources instead of hand-maintained, and bundle previews vendor React locally instead of loading it from unpkg.
+Why: the shipped bundle still contained the superseded CircuitRule (stacked hairlines, not the confirmed segmented pride bar), and every preview card rendered blank wherever the CDN was unreachable.
+Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) in color-circuit/brand-logos/circuit.svg, .fae-circuit-rule and CircuitRule docs still described the old style, ui_kits storefront images used Vite-absolute paths, and two cards still said "free worldwide shipping".

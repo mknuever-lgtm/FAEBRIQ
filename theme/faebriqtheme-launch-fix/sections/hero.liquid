@@ -1,0 +1,99 @@
+{% comment %}
+  FAEBRIQ: home hero.
+
+  2026-09-16 — split layout (Option B).
+  This was a centred typographic stack: wordmark, rule, tagline, button. On a
+  phone a visitor hit the fold before seeing a single product. Now the copy and
+  a product shot sit side by side, so the first screen carries the brand and
+  the thing being sold at the same time.
+
+  The image comes from a product setting, not a hardcoded file, so the hero
+  product is swappable from the theme editor without touching Liquid. A
+  "product" setting resolves to a Product object, so section.settings.hero_product
+  IS the product. Do not look it up in all_products with it.
+
+  If no product is set, or the one set has no image, the section falls back to
+  the original centred layout rather than rendering an empty column.
+{% endcomment %}
+
+{%- assign hero_product = section.settings.hero_product -%}
+{%- assign has_media = false -%}
+{%- if hero_product != blank and hero_product.featured_image != blank -%}
+  {%- assign has_media = true -%}
+{%- endif -%}
+
+<section class="fae-hero{% if has_media %} fae-hero--split{% endif %}">
+
+  <div class="fae-hero__copy">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="fae-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
+
+    <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component), not a gradient line -->
+    <div class="fae-circuit" style="height: 3px; max-width: 360px;">
+      {%- render 'circuit-rule', id: 'hero' -%}
+    </div>
+
+    {%- if section.settings.tagline != blank -%}
+      <p class="fae-hero__eyebrow">{{ section.settings.tagline }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="fae-hero__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+      <a href="{{ section.settings.cta_url }}" class="fae-hero__cta">{{ section.settings.cta_label }}</a>
+    {%- endif -%}
+
+    {%- if section.settings.price_note != blank -%}
+      <p class="fae-hero__price-note">{{ section.settings.price_note }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- if has_media -%}
+    <div class="fae-hero__media">
+      <a href="{{ hero_product.url }}" class="fae-hero__media-frame">
+        {%- if section.settings.media_tag != blank -%}
+          <span class="fae-hero__media-tag">{{ section.settings.media_tag }}</span>
+        {%- endif -%}
+        <img
+          src="{{ hero_product.featured_image | image_url: width: 900 }}"
+          srcset="{{ hero_product.featured_image | image_url: width: 450 }} 450w, {{ hero_product.featured_image | image_url: width: 900 }} 900w, {{ hero_product.featured_image | image_url: width: 1350 }} 1350w"
+          sizes="(max-width: 900px) 92vw, 44vw"
+          width="{{ hero_product.featured_image.width }}"
+          height="{{ hero_product.featured_image.height }}"
+          alt="{{ hero_product.featured_image.alt | default: hero_product.title | escape }}"
+          loading="eager"
+          fetchpriority="high">
+      </a>
+
+      <a href="{{ hero_product.url }}" class="fae-hero__media-meta">
+        <span class="fae-hero__media-title">{{ hero_product.title }}</span>
+        <span class="fae-hero__media-price">{{ hero_product.price | money }}</span>
+      </a>
+    </div>
+  {%- endif -%}
+
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Vol. 1 · Now Live" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "FÆBRIQ" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Identity is a build process." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop the Drop" },
+    { "type": "url", "id": "cta_url", "label": "Button URL" },
+    { "type": "text", "id": "price_note", "label": "Price / shipping line", "default": "$4-$68 USD · Free shipping to the US & Canada · Printed to order" },
+    { "type": "header", "content": "Hero product" },
+    { "type": "product", "id": "hero_product", "label": "Product shown beside the wordmark", "info": "Leave empty to fall back to the centred typographic hero." },
+    { "type": "text", "id": "media_tag", "label": "Image badge", "default": "The Flagship" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

@@ -25,3 +25,43 @@ Note (merge resolution, PR #19 vs PR #18): this pixel-shift pass and the 2026-09
 
 2026-09-16 Added CLAUDE.md clarification that dry/deadpan brand voice is a delivery style, not low-energy/monotone.
 Why: Riverside AI-avatar tone draft was written as a flat, no-energy "technician" persona under a literal reading of "dry, deadpan" — founder correctly called it boring/unsellable; locking in the correct interpretation so it isn't regenerated wrong next session.
+
+2026-09-16 Added LAUNCH_AUDIT_2026-09-16.md — competitive research + source-level audit of faebriqtheme-launch-fix (theme 145284005955), catalogue, delivery profiles, markets, orders and discounts.
+Why: final go/no-go before social traffic; live site could not be rendered (egress policy blocks faebriq.com and ufyytt-er.myshopify.com), so every check was done against theme source via the Shopify Admin API.
+Note: no store, theme or Printify changes made. Headline finding — the MAIN theme is faebriqtheme-launch-2026-08-06-review and carries none of the fixes; publishing launch-fix is the one action gating launch.
+
+2026-09-16 Added SHOPIFY_ADMIN_AUDIT_2026-09-16.md — read-only review of the admin surface the theme audit missed: sales channels, policies, payments, inventory, installed apps, analytics.
+Why: founder challenged whether the first audit was complete; it was theme-only. Six new findings, two launch-blocking.
+Note: no store/theme/Printify changes. Key items — Refund policy denies size refunds citing a non-existent size guide; 464 sessions have produced 2 cart adds and 0 orders; three AI agents hold write_themes.
+
+2026-09-16 Site review pass: rewrote all 12 product descriptions + SEO fields, Contact and About page bodies (dashes removed, sticker copy de-duplicated); added theme/templates/policy.liquid, unified About page type, stripped dashes from contact template; staged corrected Refund/Shipping/Terms policies in handoff/.
+Why: founder review of the live site flagged em dashes sitewide, mixed fonts on About, uncentred policy pages, and AI-sounding copy.
+Note: policies and live-theme files could not be written via the connector (read-only legal scope; MAIN theme writes blocked), so both are staged in handoff/ for manual paste. Privacy policy verified dash-free, no change needed.
+
+2026-09-16 Applied 7 template/layout fixes directly to faebriqtheme-launch-fix (new policy.liquid; About type unified; dashes removed from theme.liquid title, hero price line, index.json, collection.liquid sort, contact strings).
+Why: founder review flagged mixed fonts on About, uncentred policy pages and em dashes sitewide; theme had flipped back to unpublished so connector writes were permitted.
+Note: themes swapped again at 11:01:43Z (review became MAIN). Connector cannot publish or unpublish, so an external actor did it; three AI apps hold write_themes. product.liquid left for manual edit (2 entities) to avoid retyping its cart JS.
+
+2026-09-16 Added handoff/homepage-options.html: side-by-side mockup of two homepage hero layouts (A typographic, B split with product shot), plus the competitor-research figures behind the call.
+Why: founder asked to see both options before choosing a homepage structure that features products above the fold.
+Note: published as an artifact for viewing. Product tiles are CSS, not real renders, so the comparison stays about layout.
+
+2026-09-16 Built Option B homepage into faebriqtheme-launch-fix: split hero (wordmark beside a product shot, product picked via theme setting), new sitewide announcement bar, new trust row, curated 6-product grid; mirrored the 7 files into theme/.
+Why: founder chose Option B from the two hero mockups; competitor research put a product, free shipping and trust facts above the fold.
+Note: trimming the grid to 6 broke the catalog section's count ("12 products" over 6 cards) and its filter rail (filtering a 12-type rail over 6 cards emptied the grid), so both are now conditional on the grid holding the full collection. Also removed the last en dash, in its A-Z sort option.
+
+2026-09-17 Published the All Products collection to the Online Store sales channel. It was published to zero channels.
+Why: the homepage catalog section rendered its "select a collection" placeholder and /collections/all-products was unreachable, because an unpublished collection resolves to nil on the storefront even though the Admin API returns it normally.
+Note: Online Store only. Shop, TikTok, POS and Manus left as they were, since those are separate distribution decisions.
+
+2026-09-17 Added handoff/MANUS_BRIEF.md: a self-contained browser task brief covering the three policy replacements, the two product.liquid string edits, a sticker artwork investigation, and a homepage render check.
+Why: the remaining launch items all need a logged-in browser session, which the Shopify connector cannot provide. Manus can.
+Note: the three policy bodies are embedded in full so the brief needs no repo access, and the standing brand rules (no Printify sync, no price or handle changes, no theme publishing, no embroidery claim, no dashes) are stated as hard constraints.
+
+2026-09-17 Added handoff/MANUS_BRIEF_2.md for a second Manus account: policies, the two product.liquid strings, and the sticker investigation, reordered by value and capped by time.
+Why: the first run drained its credits on Shopify admin routes that never rendered, and completed none of the three.
+Note: drops the homepage checks the first run already confirmed, routes around the SPA stall with deep links and a legacy-host fallback, sets hard attempt caps, and makes Task B conditional on the theme still being published.
+
+2026-09-17 Applied the two product.liquid dash replacements directly to faebriqtheme-launch-fix (Made to order line, Production 5 to 7 line), byte-verified. Mirrored into theme/.
+Why: last of the sitewide dash cleanup, held back earlier because the connector cannot write to a live theme and the file carries the cart JS.
+Note: theme was unpublished by the founder for this edit; publish to see it live. No other line in the file touched.

@@ -1,0 +1,286 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign main_image = current_variant.image | default: product.featured_image -%}
+
+<style>
+  /* FAEBRIQ: product gallery — scoped to this template */
+  .fae-gallery { display: flex; flex-direction: column; height: 100%; gap: 1px; background: var(--fae-line-700); }
+  .fae-gallery__main { flex: 1; min-height: 0; background: var(--fae-ink-900); overflow: hidden; }
+  /* FAEBRIQ FIX: contain, not cover. The catalogue mixes 1:1 and 4:5 and cover cropped both. */
+  .fae-gallery__main img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .fae-gallery__thumbs {
+    display: flex; gap: 1px; background: var(--fae-line-700);
+    overflow-x: auto; flex: 0 0 auto; scrollbar-width: thin;
+  }
+  .fae-thumb {
+    flex: 0 0 84px; height: 84px; padding: 0; border: none;
+    background: var(--fae-ink-900); cursor: pointer; opacity: 0.45;
+    transition: opacity 0.15s; position: relative;
+  }
+  .fae-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .fae-thumb:hover { opacity: 0.8; }
+  .fae-thumb.is-active { opacity: 1; }
+  .fae-thumb.is-active::after {
+    content: ''; position: absolute; inset: 0; border: 1px solid var(--fae-silver);
+  }
+  .fae-thumb:focus-visible { outline: 2px solid var(--fae-accent); outline-offset: -2px; opacity: 1; }
+
+  /* FAEBRIQ 2026-09-10: variant buttons had no visible keyboard focus. */
+  .fae-variant-btn:focus-visible,
+  .fae-atc:focus-visible { outline: 2px solid var(--fae-accent); outline-offset: 2px; }
+
+  .fae-product__ship {
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--fae-text-faint);
+  }
+
+  @media (max-width: 768px) {
+    .fae-product__media { position: static; height: auto; }
+    .fae-gallery { height: auto; }
+    .fae-gallery__main { flex: none; aspect-ratio: 1 / 1; }
+    .fae-thumb { flex: 0 0 64px; height: 64px; }
+  }
+</style>
+
+<div class="fae-product">
+
+  <!-- Media -->
+  <div class="fae-product__media">
+    {%- if product.images.size > 0 -%}
+      <div class="fae-gallery">
+        <div class="fae-gallery__main">
+          {%- comment -%}
+            FAEBRIQ 2026-09-10: responsive srcset + fetchpriority. This is the page's
+            Largest Contentful Paint element; it was a single fixed width:1400 with
+            no priority hint.
+          {%- endcomment -%}
+          <img
+            id="fae-main-image"
+            src="{{ main_image | image_url: width: 1400 }}"
+            srcset="{{ main_image | image_url: width: 600 }} 600w,
+                    {{ main_image | image_url: width: 900 }} 900w,
+                    {{ main_image | image_url: width: 1400 }} 1400w,
+                    {{ main_image | image_url: width: 1800 }} 1800w"
+            sizes="(min-width: 769px) 50vw, 100vw"
+            alt="{{ main_image.alt | default: product.title | escape }}"
+            width="1400"
+            height="1400"
+            fetchpriority="high"
+          >
+        </div>
+
+        {%- if product.images.size > 1 -%}
+          <div class="fae-gallery__thumbs" role="group" aria-label="Product images">
+            {%- for image in product.images -%}
+              <button
+                type="button"
+                class="fae-thumb{% if forloop.first %} is-active{% endif %}"
+                data-full="{{ image | image_url: width: 1400 }}"
+                aria-label="Show image {{ forloop.index }} of {{ product.images.size }}"
+              >
+                <img
+                  src="{{ image | image_url: width: 220 }}"
+                  srcset="{{ image | image_url: width: 168 }} 168w, {{ image | image_url: width: 220 }} 220w, {{ image | image_url: width: 440 }} 440w"
+                  sizes="84px"
+                  alt="{{ image.alt | default: product.title | escape }}"
+                  width="220"
+                  height="220"
+                  loading="lazy"
+                >
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;opacity:0.15;">
+        {%- render 'circuit-rule', id: 'product-media' -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <!-- Info -->
+  <div class="fae-product__info">
+
+    <!-- FAEBRIQ FIX: product.type printed Printify taxonomy on the storefront —
+         sticker pages opened with "Paper products", the tote with "Bags". -->
+    {%- assign fae_label = product.type -%}
+    {%- case product.type -%}
+      {%- when 'Paper products' -%}{%- assign fae_label = 'Stickers' -%}
+      {%- when 'Bags' -%}{%- assign fae_label = 'Tote' -%}
+      {%- when 'Hats' -%}{%- assign fae_label = 'Cap' -%}
+      {%- when 'Sweatshirt' -%}{%- assign fae_label = 'Crewneck' -%}
+    {%- endcase -%}
+    <p class="fae-product__eyebrow">{{ fae_label | default: product.vendor }}</p>
+
+    <div class="fae-circuit" style="height:24px;">
+      {%- render 'circuit-rule', id: 'product-info' -%}
+    </div>
+
+    <h1 class="fae-product__title">{{ product.title }}</h1>
+
+    <div class="fae-product__price">
+      {%- if current_variant.compare_at_price > current_variant.price -%}
+        <span class="fae-product__compare">{{ current_variant.compare_at_price | money }}</span>
+      {%- endif -%}
+      <span id="fae-price">{{ current_variant.price | money }}</span>
+    </div>
+
+    <p class="fae-product__ship">Free shipping to the US &amp; Canada &middot; Printed to order</p>
+
+    <!-- Variants -->
+    {%- unless product.has_only_default_variant -%}
+      {%- for option in product.options_with_values -%}
+        <div>
+          <p class="fae-variants__label" id="fae-opt-label-{{ forloop.index0 }}">{{ option.name }}</p>
+          {%- comment -%}
+            FAEBRIQ 2026-09-10: these were bare buttons with a class for state, so a
+            screen reader could not tell they were a choice group or which was picked.
+          {%- endcomment -%}
+          <div class="fae-variants__options" role="group" aria-labelledby="fae-opt-label-{{ forloop.index0 }}">
+            {%- for value in option.values -%}
+              <button
+                class="fae-variant-btn{% if option.selected_value == value %} is-selected{% endif %}"
+                data-option-index="{{ forloop.parentloop.index0 }}"
+                data-value="{{ value | escape }}"
+                aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}"
+                type="button"
+              >{{ value }}</button>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- endunless -%}
+
+    <!-- Add to cart -->
+    {%- form 'product', product, id: 'fae-product-form' -%}
+      <input type="hidden" name="id" id="fae-variant-id" value="{{ current_variant.id }}">
+      <button
+        type="submit"
+        class="fae-atc"
+        {%- unless current_variant.available -%}disabled{%- endunless -%}
+      >
+        {%- if current_variant.available -%}Add to cart{%- else -%}Sold out{%- endif -%}
+      </button>
+    {%- endform -%}
+
+    <!-- FAEBRIQ: delivery + returns. Print-on-demand's top objection was unanswered. -->
+    <div class="fae-product__delivery">
+      <p class="fae-section-label" style="margin-bottom:12px;">Delivery &amp; returns</p>
+      <ul>
+        <li>Made to order. Printed after you order it, not before</li>
+        <li>Production 5 to 7 business days, then shipping</li>
+        <li>Free shipping to the US &amp; Canada</li>
+        <li><a href="/policies/refund-policy">Returns &amp; exchanges</a></li>
+      </ul>
+    </div>
+
+    <!-- Description -->
+    {%- if product.description != blank -%}
+      <div class="fae-product__desc">{{ product.description }}</div>
+    {%- endif -%}
+
+    <!-- Sticker cross-sell (apparel PDPs only) -->
+    {%- render 'sticker-addon' -%}
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var form     = document.getElementById('fae-product-form');
+    var vidInp   = document.getElementById('fae-variant-id');
+    var priceEl  = document.getElementById('fae-price');
+    var imgEl    = document.getElementById('fae-main-image');
+    var variants = {{ product.variants | json }};
+    var fmt      = {{ shop.money_format | json }};
+
+    // FAEBRIQ FIX: Shopify.formatMoney is not loaded by this theme. Guard it so a
+    // missing helper can never break variant switching, and fall back to plain
+    // formatting — same approach already used in fae-cart.js.
+    function faeMoney(cents) {
+      if (window.Shopify && typeof Shopify.formatMoney === 'function') {
+        try { return Shopify.formatMoney(cents, fmt); } catch (e) { /* fall through */ }
+      }
+      return '$' + (cents / 100).toFixed(2);
+    }
+
+    // FAEBRIQ FIX 2026-09-10: swapping the main image left the responsive srcset in
+    // place, so the browser kept picking from the OLD image's candidate list. Clear
+    // srcset on swap, and request a sized URL rather than the CDN original.
+    function faeSetMainImage(url) {
+      if (!imgEl || !url) return;
+      imgEl.removeAttribute('srcset');
+      imgEl.removeAttribute('sizes');
+      imgEl.src = url;
+    }
+
+    function faeSized(url, width) {
+      if (!url) return url;
+      return url + (url.indexOf('?') > -1 ? '&' : '?') + 'width=' + width;
+    }
+
+    /* ---- Gallery ---- */
+    var thumbs = document.querySelectorAll('.fae-thumb');
+    function setActiveThumb(btn) {
+      thumbs.forEach(function (t) { t.classList.toggle('is-active', t === btn); });
+    }
+    thumbs.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        faeSetMainImage(btn.dataset.full);
+        setActiveThumb(btn);
+      });
+    });
+
+    /* ---- Variants ---- */
+    function getSelectedVariant() {
+      var opts = [];
+      document.querySelectorAll('.fae-variant-btn.is-selected').forEach(function (b) {
+        opts.push(b.dataset.value);
+      });
+      return variants.find(function (v) {
+        return v.options.every(function (o, i) { return o === opts[i]; });
+      });
+    }
+
+    document.querySelectorAll('.fae-variant-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = btn.dataset.optionIndex;
+        document.querySelectorAll('[data-option-index="' + idx + '"]').forEach(function (b) {
+          b.classList.remove('is-selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-pressed', 'true');
+
+        var variant = getSelectedVariant();
+        var atc = form.querySelector('.fae-atc');
+
+        // FAEBRIQ FIX: an option combination with no matching variant used to fall
+        // through here with the button still marked selected and the hidden variant
+        // id unchanged — which added a DIFFERENT variant to the cart. Now it blocks.
+        if (!variant) {
+          atc.disabled = true;
+          atc.textContent = 'Unavailable';
+          return;
+        }
+
+        vidInp.value = variant.id;
+
+        if (priceEl) priceEl.textContent = faeMoney(variant.price);
+
+        if (variant.available) {
+          atc.disabled = false;
+          atc.textContent = 'Add to cart';
+        } else {
+          atc.disabled = true;
+          atc.textContent = 'Sold out';
+        }
+
+        if (variant.featured_image) {
+          faeSetMainImage(faeSized(variant.featured_image.src, 1400));
+          thumbs.forEach(function (t) { t.classList.remove('is-active'); });
+        }
+      });
+    });
+  })();
+</script>

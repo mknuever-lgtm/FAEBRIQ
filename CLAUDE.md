@@ -38,6 +38,12 @@ requests unless explicitly asked. When the assigned task is done, stop.
   `faebriqtheme-launch-2026-08-06-review` = LIVE. Never publish themes
   without an explicit instruction.
 
+## Output style
+- No em dashes and no en dashes in any output: chat replies, reports,
+  briefs, store copy, theme strings, commit messages. Hyphens are fine
+  (compounds, ranges, handles). Rewrite with commas, colons, or a full
+  stop instead.
+
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).

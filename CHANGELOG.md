@@ -65,3 +65,7 @@ Note: drops the homepage checks the first run already confirmed, routes around t
 2026-09-17 Applied the two product.liquid dash replacements directly to faebriqtheme-launch-fix (Made to order line, Production 5 to 7 line), byte-verified. Mirrored into theme/.
 Why: last of the sitewide dash cleanup, held back earlier because the connector cannot write to a live theme and the file carries the cart JS.
 Note: theme was unpublished by the founder for this edit; publish to see it live. No other line in the file touched.
+
+2026-09-19 Added an Output style section to CLAUDE.md: no em dashes or en dashes in any output, hyphens still allowed.
+Why: the founder wants the existing store-copy dash ban applied to chat replies and reports too, not just shipped strings.
+Note: rule text only. No existing dashes elsewhere in the repo were touched.

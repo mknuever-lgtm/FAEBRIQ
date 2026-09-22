@@ -72,3 +72,6 @@ Note: rule text only. No existing dashes elsewhere in the repo were touched.
 
 2026-09-22 Added POST_LAUNCH_TOOLS.md, logging Triple Whale and Postscript as later-stage growth tools to revisit once the store has traffic.
 Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md (current-state only) or misfiling under SOCIAL_LAUNCH_NOTES.md (social-channel-specific).
+
+2026-09-22 Added IMAGE_INVENTORY_2026-09-22.md, built from the media on the live Shopify store (13 products, 52 images, 3 systems).
+Why: to scope the imagery launch blocker before any art gets redone.

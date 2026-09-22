@@ -1,6 +1,6 @@
 # Shipping Policy
 
-*Paste into Settings → Legal → Shipping policy — replaces the generic Shopify template.*
+*Paste into Settings → Legal → Shipping policy. Replaces the generic Shopify template.*
 
 **Last Updated: June 15, 2026**
 
@@ -8,7 +8,7 @@ FÆBRIQ currently ships to the **United States and Canada**. Additional regions,
 
 ## 1. Production Time
 
-Each item is printed and prepared specifically for you after you order. Typical production time is **2–7 business days** before your order ships. During peak periods (holidays, sales, new drops), production may take slightly longer.
+Each item is printed and prepared specifically for you after you order. Typical production time is **2 to 7 business days** before your order ships. During peak periods (holidays, sales, new drops), production may take slightly longer.
 
 ## 2. Shipping Time
 
@@ -16,10 +16,10 @@ Once your order leaves our fulfillment partner, estimated transit times are:
 
 | Destination | Estimated Transit |
 | --- | --- |
-| United States | 4–8 business days |
-| Canada | 7–14 business days |
+| United States | 4 to 8 business days |
+| Canada | 7 to 14 business days |
 
-These are estimates, not guarantees. Total delivery time = production time + shipping time. We currently ship only within the United States and Canada — other regions will be added in the future.
+These are estimates, not guarantees. Total delivery time = production time + shipping time. We currently ship only within the United States and Canada. Other regions will be added in the future.
 
 ## 3. Shipping Costs
 
@@ -27,7 +27,7 @@ Shipping costs are calculated at checkout based on your destination and order. A
 
 ## 4. Order Tracking
 
-Once your order ships, you will receive a confirmation email with tracking information. Please allow 24–48 hours for tracking to update after dispatch.
+Once your order ships, you will receive a confirmation email with tracking information. Please allow 24 to 48 hours for tracking to update after dispatch.
 
 ## 5. Customs, Duties & Taxes
 

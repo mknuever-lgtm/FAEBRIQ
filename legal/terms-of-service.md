@@ -1,6 +1,6 @@
 # Terms of Service
 
-*Paste into Settings → Legal → Terms of service — replaces the generic Shopify template.*
+*Paste into Settings → Legal → Terms of service. Replaces the generic Shopify template.*
 
 **Last Updated: June 15, 2026**
 
@@ -36,7 +36,7 @@ Returns and refunds are governed by our Refund Policy. Because items are made to
 
 ## 7. Intellectual Property
 
-All content on the Site — including designs, logos, text, graphics, and the FÆBRIQ name and marks — is the property of FÆBRIQ or its licensors and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without prior written permission.
+All content on the Site, including designs, logos, text, graphics, and the FÆBRIQ name and marks, is the property of FÆBRIQ or its licensors and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from our content without prior written permission.
 
 ## 8. User Conduct
 

@@ -69,3 +69,6 @@ Note: theme was unpublished by the founder for this edit; publish to see it live
 2026-09-19 Added an Output style section to CLAUDE.md: no em dashes or en dashes in any output, hyphens still allowed.
 Why: the founder wants the existing store-copy dash ban applied to chat replies and reports too, not just shipped strings.
 Note: rule text only. No existing dashes elsewhere in the repo were touched.
+
+2026-09-22 Added POST_LAUNCH_TOOLS.md, logging Triple Whale and Postscript as later-stage growth tools to revisit once the store has traffic.
+Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md (current-state only) or misfiling under SOCIAL_LAUNCH_NOTES.md (social-channel-specific).

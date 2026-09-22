@@ -11,7 +11,7 @@ Three image systems, confirmed:
 |---|---|---|---|
 | A: Printify mockups | 2048x2048 square JPG | numeric `*_2048.jpg` | 404 Tee, Code It Tee, 404 Tote, Circuit Cap Low Profile (4 each) |
 | A': Printify, low-res | 1200x1200 square JPG | numeric `*_1200.jpg` | 404 Sticker (4) |
-| B: AI studio set | 1664x2080 (4:5) PNG | random 16-char `*.png` | Crewneck, Hoodie (4 each), archived Slim Cap (4) |
+| B: AI studio set | 1664x2080 (4:5) PNG | random 16-char `*.png` | Crewneck, Hoodie (4 each), archived Slim Cap (4 of its 8; the other 4 are system A) |
 | C: Sticker set | 1664x2080 (4:5) PNG | `sticker_<name>_01/02/03.png` | Not A Bug, Code It, Please Hold, Deploying Identity stickers (3 each) |
 | Mixed | B + C, 1664x2080 and 2048x2560 | both patterns | Sticker Sheet (2 from B, 2 from C) |
 

@@ -75,3 +75,6 @@ Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md
 
 2026-09-22 Added IMAGE_INVENTORY_2026-09-22.md, built from the media on the live Shopify store (13 products, 52 images, 3 systems).
 Why: to scope the imagery launch blocker before any art gets redone.
+
+2026-09-22 Rewrote alt text on 35 live Shopify images: em dashes out, "embroidery" removed from the archived Slim Cap, circuit wording unified as "six-color rainbow pride stripe".
+Why: no em dashes in store copy, never claim embroidery, and alt text now uses terms people search. Imagery decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV1kVHdtA

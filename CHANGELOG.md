@@ -93,3 +93,6 @@ Why: the repo 404 masters did not match the approved design.
 
 2026-09-23 Restored the size guide on the live 404 Tee description after the Manus rewrite dropped it (same block as the Code It Tee; same S to 5XL Gildan 5000). Manus copy kept.
 Why: the size guide is a conversion must-have and the prompt never told Manus to keep it.
+
+2026-09-23 Live descriptions: Crewneck and Hoodie size tables moved into the same collapsible Size guide the tees use (contents unchanged). Cap "six-colour" changed to "six-color".
+Why: consistent product pages and US spelling. The other 9 descriptions were already on-brand and left alone.

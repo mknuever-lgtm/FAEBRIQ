@@ -101,3 +101,5 @@ Why: consistent product pages and US spelling. The other 9 descriptions were alr
 Why: slot order per IMAGERY_SPEC, and no retired design live. The new tee and tote images still need a visual check.
 2026-09-24 Added cap print file v2 (assets/print-art/cap-wordmark-v2-print.png, 3360x593 transparent, 300 dpi) and its generator tools/make_cap_v2.py: flat six-block stripe over FÆBRIQ in Inter SemiBold.
 Why: the cap design changed after the sample and the repo only had 520px previews; this is the reference file for Muse and for the Printify DTF print.
+2026-09-24 Added cap print file v3 (tools/make_cap_v3.py): FÆBRIQ in Inter SemiBold on top, flat stripe underneath, three stripe widths (1.1x, 1.35x, 1.7x the word) plus a comparison sheet.
+Why: Maurice wants the render's wordmark font, the stripe under the word like the rest of the brand, and the stripe at least as wide as the word.

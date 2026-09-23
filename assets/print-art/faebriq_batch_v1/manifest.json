@@ -1,0 +1,264 @@
+{
+  "batch": "faebriq_batch_v1",
+  "palette": {
+    "w": "#FFFFFF",
+    "s": "#8E9AAF",
+    "t": "#D96B43"
+  },
+  "font": "JetBrains Mono (OFL)",
+  "designs": [
+    {
+      "design_id": "FAEBRIQ-B1-01",
+      "file": "faebriq_design_01_commit-amend.png",
+      "slogan": "$ git commit --amend // identity in active refactor",
+      "micro_niche_keywords": [
+        "queer developer shirt",
+        "git commit tee",
+        "identity as code",
+        "trans in tech",
+        "refactor shirt"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-02",
+      "file": "faebriq_design_02_checkout-me.png",
+      "slogan": "$ git checkout -b me / Switched to a new branch 'me'",
+      "micro_niche_keywords": [
+        "git branch shirt",
+        "coming out tee",
+        "queer coder",
+        "lgbtq programmer gift",
+        "minimal dev tee"
+      ],
+      "printify_placement": "Left Chest",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only",
+      "left_chest_file": "faebriq_design_02_checkout-me_leftchest.png"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-03",
+      "file": "faebriq_design_03_wontfix-1969.png",
+      "slogan": "#1969 just be straight / closed as WONTFIX",
+      "micro_niche_keywords": [
+        "stonewall 1969 shirt",
+        "wontfix tee",
+        "gay developer shirt",
+        "github issue humor",
+        "queer pride subtle"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-04",
+      "file": "faebriq_design_04_no-closet.png",
+      "slogan": "$ cd /closet / No such file or directory",
+      "micro_niche_keywords": [
+        "out and proud tee",
+        "bash humor shirt",
+        "queer tech worker",
+        "linux terminal shirt",
+        "no closet"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-05",
+      "file": "faebriq_design_05_deprecated.png",
+      "slogan": "npm WARN deprecated heteronormativity@1.0.0: no longer maintained",
+      "micro_niche_keywords": [
+        "npm warn shirt",
+        "javascript dev tee",
+        "queer web developer",
+        "deprecated humor",
+        "lgbtq coder gift"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-06",
+      "file": "faebriq_design_06_breaking-change.png",
+      "slogan": "v2.0.0 / BREAKING CHANGE: came out. not a phase. a major release.",
+      "micro_niche_keywords": [
+        "semver shirt",
+        "not a phase tee",
+        "coming out gift",
+        "software engineer queer",
+        "release notes shirt"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-07",
+      "file": "faebriq_design_07_kept-mine.png",
+      "slogan": "CONFLICT (identity): merge conflict / resolved: kept mine.",
+      "micro_niche_keywords": [
+        "merge conflict shirt",
+        "git humor tee",
+        "nonbinary coder",
+        "queer self love tee",
+        "developer identity"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-08",
+      "file": "faebriq_design_08_no-sudo.png",
+      "slogan": "$ sudo be gay / permission not required",
+      "micro_niche_keywords": [
+        "sudo shirt",
+        "linux gay tee",
+        "sysadmin queer",
+        "unapologetic pride",
+        "terminal humor"
+      ],
+      "printify_placement": "Left Chest",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only",
+      "left_chest_file": "faebriq_design_08_no-sudo_leftchest.png"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-09",
+      "file": "faebriq_design_09_identity-diff.png",
+      "slogan": "--- a/expectations +++ b/me / - straight - quiet + queer + loud",
+      "micro_niche_keywords": [
+        "git diff shirt",
+        "code review tee",
+        "queer engineer",
+        "loud and queer",
+        "pull request humor"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B1-10",
+      "file": "faebriq_design_10_runtime-pronouns.png",
+      "slogan": "export PRONOUNS=they/them # set at runtime. not hardcoded.",
+      "micro_niche_keywords": [
+        "pronoun shirt",
+        "they them tee",
+        "nonbinary developer",
+        "env variable humor",
+        "trans coder gift"
+      ],
+      "printify_placement": "Left Chest",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only",
+      "left_chest_file": "faebriq_design_10_runtime-pronouns_leftchest.png"
+    }
+  ]
+}

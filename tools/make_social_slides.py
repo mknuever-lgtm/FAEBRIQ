@@ -13,6 +13,7 @@ SERIF = m.font_path('Instrument Serif', None, 'InstrumentSerif-Regular.ttf')
 ITAL = m.font_path('Instrument Serif:ital', None, 'InstrumentSerif-Italic.ttf')
 MONO = m.font_path('IBM Plex Mono', None, 'IBMPlexMono-Regular.ttf')
 LOCKUP = 'assets/print-art/off-the-clock-still-iconic-light-4500.png'
+WORDMARK_REF = 'assets/print-art/reference/wordmark-reference-2026-09-23.jpg'
 
 
 def font(path, size):
@@ -103,19 +104,40 @@ def slide(blocks, n, total, label, last=False):
     return im
 
 
+def wordmark(width):
+    """The approved wordmark (middle one in Maurice's 2026-09-23 reference), cut from the reference
+    image as an alpha mask. Returns (image, baseline_y)."""
+    ref = np.array(Image.open(WORDMARK_REF).convert('L')).astype(float)
+    top, base, bottom, left, right = 570, 777, 800, 490, 1516  # middle wordmark; base = bottom of F
+    a = np.clip((ref[top:bottom, left:right] - 16) / (232 - 16), 0, 1) * 255
+    im = Image.new('RGBA', a.shape[::-1], TEXT)
+    im.putalpha(Image.fromarray(a.astype('uint8')))
+    cols = np.where((a > 40).any(0))[0]
+    im = im.crop((cols[0], 0, cols[-1] + 1, im.height))
+    k = width / im.width
+    return im.resize((width, round(im.height * k)), Image.LANCZOS), round((base - top) * k)
+
+
 def centered_wordmark(n, total):
     im = slide([], n, total, '> boot sequence')
     d = ImageDraw.Draw(im)
-    f = font(SERIF, 230)
-    tw = d.textlength('FÆBRIQ', font=f)
-    x, y = (W - tw) / 2, 470
-    d.text((x, y), 'FÆBRIQ', font=f, fill=TEXT)
-    sy = y + 300
-    stripe(im, round(x), sy, round(tw), max(8, round(tw * m.SRC['bar_h'])))
+    wm, base = wordmark(600)
+    x, y = (W - wm.width) // 2, 440
+    im.paste(wm, (x, y), wm)
+    bw = round(wm.width * 1.35)  # bar is 1.35x the wordmark width (Maurice, 2026-09-23)
+    sy = y + base + round(wm.width * 0.104)
+    bar(im, (W - bw) // 2, sy, bw, round(wm.width * 0.023))
     fi = font(ITAL, 76)
     sub = 'System online.'
-    d.text(((W - d.textlength(sub, font=fi)) / 2, sy + 70), sub, font=fi, fill=TEXT)
+    d.text(((W - d.textlength(sub, font=fi)) / 2, sy + 90), sub, font=fi, fill=TEXT)
     return im
+
+
+def bar(im, x, y, w, h):
+    """Wordmark bar: six flat blocks, no gaps, as in the reference."""
+    d = ImageDraw.Draw(im)
+    for i, c in enumerate(m.CIRCUIT):
+        d.rectangle([x + round(i * w / 6), y, x + round((i + 1) * w / 6) - 1, y + h - 1], fill=c)
 
 
 def main():

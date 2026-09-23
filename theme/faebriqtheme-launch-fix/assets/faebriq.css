@@ -236,7 +236,7 @@ img, video { display: block; max-width: 100%; }
 .fae-card:hover { background: var(--fae-ink-700); }
 
 .fae-card__image {
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   overflow: hidden;
   background: var(--fae-ink-900);
   position: relative;
@@ -538,6 +538,8 @@ img, video { display: block; max-width: 100%; }
   .fae-product-grid { grid-template-columns: repeat(2, 1fr); }
   .fae-product { grid-template-columns: 1fr; }
   .fae-product__media { position: static; height: 60vw; }
+  /* 4:5 gallery on mobile; outranks the 1 / 1 rule inside templates/product.liquid */
+  .fae-product .fae-gallery__main { aspect-ratio: 4 / 5; }
   .fae-footer__inner { grid-template-columns: 1fr; gap: 32px; }
   .fae-hero__title { font-size: clamp(2.5rem, 12vw, 5rem); }
 }

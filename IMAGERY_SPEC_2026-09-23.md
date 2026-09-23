@@ -32,12 +32,12 @@ Decisions by Maurice. Decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV
 | Code It Tee | none usable (square) | Check the print lockup, then all 4 slots |
 | Circuit Cap, Low Profile | none usable (square) | All 4 slots (logo product: the circuit wordmark stays on the cap) |
 
-## Theme dependency (not done)
-The product cards are square (`aspect-ratio: 1/1`), so 4:5 images get black bars on the sides. Change these two lines:
-- `assets/faebriq.css`, `.fae-card__image`: `aspect-ratio: 1/1;` becomes `aspect-ratio: 4/5;`
-- `templates/product.liquid`, mobile `.fae-gallery__main`: `aspect-ratio: 1 / 1;` becomes `aspect-ratio: 4 / 5;`
+## Theme dependency (done 2026/09/23, on the unpublished theme)
+The 4:5 card and mobile gallery ratio is set in `faebriqtheme-launch-fix` (UNPUBLISHED), inside `assets/faebriq.css` only:
+- `.fae-card__image` is now `aspect-ratio: 4/5;`
+- The mobile media query has `.fae-product .fae-gallery__main { aspect-ratio: 4 / 5; }`, which overrides the `1 / 1` rule in `templates/product.liquid` without editing that file.
 
-As of 2026/09/23, `faebriqtheme-launch-fix` is the **live** theme (role MAIN) and `faebriqtheme-launch-2026-08-06-review` is unpublished. That is the reverse of what CLAUDE.md says. The API tool can't write to the live theme, so this edit is Maurice's to make in Shopify admin > Edit code, or a Claude session can do it on a duplicated, unpublished copy.
+The live theme is `faebriqtheme-launch-2026-08-06-review`. It shows the change only once launch-fix is published.
 
 ## Print file swaps (Maurice, in Printify, manual)
 The live 404 products still print the old design: a big "404" with an italic "Straight Not Found" (source: `design-decisions.md` and the live alt text). Swap them before making any new shots:

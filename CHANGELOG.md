@@ -81,3 +81,6 @@ Why: no em dashes in store copy, never claim embroidery, and alt text now uses t
 
 2026-09-23 Locked the imagery spec (IMAGERY_SPEC_2026-09-23.md: 4:5, studio hero, 4 fixed slots, serif lockup, FAEBRIQ under the stripe on stickers) and moved the flat studio shot to first on the 4 single stickers and the Sticker Sheet (live).
 Why: these are Maurice's picks from the decision board. Theme card ratio NOT changed, because launch-fix is now the live theme and the tool cannot write to it.
+
+2026-09-23 Set product cards and mobile product gallery to 4:5 in faebriqtheme-launch-fix (unpublished), faebriq.css only, uploaded and checksum-verified.
+Why: the 4:5 imagery spec letterboxes inside square cards.

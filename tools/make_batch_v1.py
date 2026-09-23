@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FAEBRIQ batch v1: 10 terminal-style DTG graphics for BLACK garments.
+"""FAEBRIQ batches v1 (10) and v2 (2): terminal-style DTG graphics for BLACK garments.
 
 Canvas 4500x5400 @ 300 DPI, fully transparent background. Each design is drawn
 at 2x (9000x10800) as one alpha mask per ink colour, then every mask is
@@ -10,7 +10,7 @@ Palette (black garments only): white #FFFFFF, slate #8E9AAF, terracotta #D96B43.
 Type: JetBrains Mono (Google Fonts, OFL).
 
     python3 tools/make_batch_v1.py --fonts <dir with JBM-*.ttf> \
-        --out assets/print-art/faebriq_batch_v1 [--mirror /workspace/scratch/faebriq_batch_v1]
+        --out assets/print-art/faebriq_batch_v1 [--mirror /workspace/scratch/faebriq_batch_v1] [--batch v2]
 """
 import argparse
 import json
@@ -106,6 +106,30 @@ DESIGNS = [
                 (0.46, "r", [("# set at runtime. not hardcoded.", "s")])]),
 ]
 
+# Batch v2: picks from the 2026/09/23 external concept list.
+DESIGNS_V2 = [
+    dict(slug="chown-identity", slogan="$ sudo chown -R me:me /identity # everyone else: read-only.",
+         placement="Front Center",
+         keywords=["sudo chown shirt", "linux queer tee", "self ownership tee", "sysadmin pride", "queer developer gift"],
+         lines=[(0.55, "b", [("$ ", "s"), ("sudo ", "t"), ("chown -R", "s")]),
+                (0.30, None, None),
+                (1.0, "x", [("me", "w"), (":", "s"), ("me", "w")]),
+                (1.0, "x", [("/identity", "w"), ("CURSOR", "t")]),
+                (0.35, None, None),
+                (0.42, "r", [("# everyone else: read-only.", "s")])]),
+    dict(slug="npm-liberation", slogan="$ npm install @queer/liberation / added 1 package. found 0 vulnerabilities.",
+         placement="Front Center",
+         keywords=["npm install shirt", "javascript queer tee", "full stack developer gift", "queer liberation tee", "web dev pride"],
+         lines=[(0.55, "b", [("$ ", "s"), ("npm install", "s")]),
+                (0.30, None, None),
+                (1.0, "x", [("@queer/", "t")]),
+                (1.0, "x", [("liberation", "w"), ("CURSOR", "t")]),
+                (0.35, None, None),
+                (0.42, "r", [("added 1 package.", "s")]),
+                (0.42, "r", [("found 0 vulnerabilities.", "s")])]),
+]
+BATCHES = {"v1": DESIGNS, "v2": DESIGNS_V2}
+
 BASE = 400  # px at 2x for relative size 1.0, before fit-to-width scaling
 MAX_W = 0.86  # block width as share of canvas
 TOP = 0.07  # block top offset as share of canvas height
@@ -174,12 +198,12 @@ def left_chest(img):
 
 
 def preview(files, out):
-    th = 540
+    th, cols = 540, min(5, len(files))
     tw = int(th * W / H)
-    sheet = Image.new("RGB", (tw * 5, th * 2), "#0f0e0c")
+    sheet = Image.new("RGB", (tw * cols, th * -(-len(files) // cols)), "#0f0e0c")
     for i, f in enumerate(files):
         im = Image.open(f).resize((tw, th), Image.LANCZOS)
-        sheet.paste(im, ((i % 5) * tw, (i // 5) * th), im)
+        sheet.paste(im, ((i % cols) * tw, (i // cols) * th), im)
     sheet.save(out)
 
 
@@ -188,16 +212,17 @@ def main():
     ap.add_argument("--fonts", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--mirror")
+    ap.add_argument("--batch", choices=sorted(BATCHES), default="v1")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     manifest, files = [], []
-    for i, d in enumerate(DESIGNS, 1):
+    for i, d in enumerate(BATCHES[a.batch], 1):
         name = f"faebriq_design_{i:02d}_{d['slug']}.png"
         path = os.path.join(a.out, name)
         img = render(d, a.fonts)
         img.save(path, dpi=(DPI, DPI), optimize=True)
         files.append(path)
-        entry = dict(design_id=f"FAEBRIQ-B1-{i:02d}", file=name, slogan=d["slogan"],
+        entry = dict(design_id=f"FAEBRIQ-B{a.batch[1:]}-{i:02d}", file=name, slogan=d["slogan"],
                      micro_niche_keywords=d["keywords"], printify_placement=d["placement"],
                      canvas_px=[W, H], dpi=DPI, background="transparent",
                      inks=sorted({INK[s[1]] for _, _, segs in d["lines"] if segs for s in segs}),
@@ -208,7 +233,7 @@ def main():
             entry["left_chest_file"] = lc
         manifest.append(entry)
     with open(os.path.join(a.out, "manifest.json"), "w") as fh:
-        json.dump({"batch": "faebriq_batch_v1", "palette": INK, "font": "JetBrains Mono (OFL)",
+        json.dump({"batch": f"faebriq_batch_{a.batch}", "palette": INK, "font": "JetBrains Mono (OFL)",
                    "designs": manifest}, fh, indent=2, ensure_ascii=False)
     preview(files, os.path.join(a.out, "_preview_on_black.png"))
     if a.mirror:

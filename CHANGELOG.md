@@ -99,3 +99,6 @@ Why: Maurice asked for a 10-design batch and a corrected Etsy metadata package f
 
 2026-09-23 Added ETSY_LISTING_02_2026-09-23.md: corrected Etsy package for listing #2 (clean build).
 Why: supplied package had 2 over-length tags and unverified fabric claims.
+
+2026-09-23 Added faebriq_batch_v2: 2 designs (chown-identity, npm-liberation) via make_batch_v1.py --batch v2.
+Why: Maurice approved the two strongest picks from the external concept list.

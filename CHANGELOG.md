@@ -72,3 +72,6 @@ Note: rule text only. No existing dashes elsewhere in the repo were touched.
 
 2026-09-22 Added POST_LAUNCH_TOOLS.md, logging Triple Whale and Postscript as later-stage growth tools to revisit once the store has traffic.
 Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md (current-state only) or misfiling under SOCIAL_LAUNCH_NOTES.md (social-channel-specific).
+
+2026-09-23 Added an approved social bio copy entry to SOCIAL_LAUNCH_NOTES.md (Instagram/X/Threads/Bluesky and TikTok bios, plus an implementation note).
+Why: founder-approved copy for a future manual account setup, logged so it isn't lost before accounts exist.

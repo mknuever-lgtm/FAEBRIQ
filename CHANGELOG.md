@@ -99,3 +99,5 @@ Why: consistent product pages and US spelling. The other 9 descriptions were alr
 
 2026-09-24 After the Manus image run: moved the new in-hand shot to slot 3 on the 4 single stickers, and deleted the 4 retired square italic-404 images from the 404 Sticker (the in-hand shot is now its only image).
 Why: slot order per IMAGERY_SPEC, and no retired design live. The new tee and tote images still need a visual check.
+2026-09-24 Added cap print file v2 (assets/print-art/cap-wordmark-v2-print.png, 3360x593 transparent, 300 dpi) and its generator tools/make_cap_v2.py: flat six-block stripe over FÆBRIQ in Inter SemiBold.
+Why: the cap design changed after the sample and the repo only had 520px previews; this is the reference file for Muse and for the Printify DTF print.

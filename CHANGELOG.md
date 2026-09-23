@@ -90,3 +90,6 @@ Why: Maurice caught the misspelled brand and the wrong 404 design on the board.
 
 2026-09-23 Set the canonical 404 design from Maurice's reference (big 404, one-line STRAIGHT NOT FOUND, stripe). Added the v3 print files (apparel 4500, sticker 2400 with FAEBRIQ), tools/make_404_v3.py and the reference image. Retired the ERROR 404 files in the spec.
 Why: the repo 404 masters did not match the approved design.
+
+2026-09-23 Added SOCIAL_LAUNCH_POSTS_2026-09-23.md: 9 Instagram launch posts (grid order, readiness per imagery spec) and 2 LinkedIn founder posts.
+Why: store is open, Maurice asked for the first social posts.

@@ -78,3 +78,6 @@ Why: to scope the imagery launch blocker before any art gets redone.
 
 2026-09-22 Rewrote alt text on 35 live Shopify images: em dashes out, "embroidery" removed from the archived Slim Cap, circuit wording unified as "six-color rainbow pride stripe".
 Why: no em dashes in store copy, never claim embroidery, and alt text now uses terms people search. Imagery decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV1kVHdtA
+
+2026-09-23 Locked the imagery spec (IMAGERY_SPEC_2026-09-23.md: 4:5, studio hero, 4 fixed slots, serif lockup, FAEBRIQ under the stripe on stickers) and moved the flat studio shot to first on the 4 single stickers and the Sticker Sheet (live).
+Why: these are Maurice's picks from the decision board. Theme card ratio NOT changed, because launch-fix is now the live theme and the tool cannot write to it.

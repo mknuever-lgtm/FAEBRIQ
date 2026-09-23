@@ -90,3 +90,6 @@ Why: Maurice caught the misspelled brand and the wrong 404 design on the board.
 
 2026-09-23 Set the canonical 404 design from Maurice's reference (big 404, one-line STRAIGHT NOT FOUND, stripe). Added the v3 print files (apparel 4500, sticker 2400 with FAEBRIQ), tools/make_404_v3.py and the reference image. Retired the ERROR 404 files in the spec.
 Why: the repo 404 masters did not match the approved design.
+
+2026-09-23 Restored the size guide on the live 404 Tee description after the Manus rewrite dropped it (same block as the Code It Tee; same S to 5XL Gildan 5000). Manus copy kept.
+Why: the size guide is a conversion must-have and the prompt never told Manus to keep it.

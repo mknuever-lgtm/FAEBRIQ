@@ -96,3 +96,6 @@ Why: the size guide is a conversion must-have and the prompt never told Manus to
 
 2026-09-23 Live descriptions: Crewneck and Hoodie size tables moved into the same collapsible Size guide the tees use (contents unchanged). Cap "six-colour" changed to "six-color".
 Why: consistent product pages and US spelling. The other 9 descriptions were already on-brand and left alone.
+
+2026-09-24 After the Manus image run: moved the new in-hand shot to slot 3 on the 4 single stickers, and deleted the 4 retired square italic-404 images from the 404 Sticker (the in-hand shot is now its only image).
+Why: slot order per IMAGERY_SPEC, and no retired design live. The new tee and tote images still need a visual check.

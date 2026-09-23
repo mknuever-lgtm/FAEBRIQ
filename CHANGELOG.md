@@ -96,3 +96,6 @@ Why: store is open, Maurice asked for the first social posts.
 
 2026-09-23 Added faebriq_batch_v1: 10 transparent 4500x5400 terminal-style tee graphics for black garments (tools/make_batch_v1.py, manifest.json, left-chest crops) plus ETSY_LISTING_01_2026-09-23.md.
 Why: Maurice asked for a 10-design batch and a corrected Etsy metadata package for listing #1.
+
+2026-09-23 Added ETSY_LISTING_02_2026-09-23.md: corrected Etsy package for listing #2 (clean build).
+Why: supplied package had 2 over-length tags and unverified fabric claims.

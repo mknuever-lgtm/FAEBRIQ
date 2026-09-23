@@ -84,3 +84,6 @@ Why: these are Maurice's picks from the decision board. Theme card ratio NOT cha
 
 2026-09-23 Set product cards and mobile product gallery to 4:5 in faebriqtheme-launch-fix (unpublished), faebriq.css only, uploaded and checksum-verified.
 Why: the 4:5 imagery spec letterboxes inside square cards.
+
+2026-09-23 Spec and decision board: added the FAEBRIQ spelling rule and banned the old repo mockups (garbled wordmark, wrong 404 art). The board slot examples now use the real print files.
+Why: Maurice caught the misspelled brand and the wrong 404 design on the board.

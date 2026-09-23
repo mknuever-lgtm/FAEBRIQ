@@ -9,6 +9,7 @@ Decisions by Maurice. Decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV
 - **Ground:** the brand's near-black (#0f0e0c family). Dark studio surfaces, dark scenes.
 - **Lockup:** serif caps (Instrument Serif), line 2 smaller than line 1, a flat six-block rainbow stripe underneath. Source: the current masters in `assets/print-art/*-light-4500.png`, which match the "75% (current)" variant.
 - **Stickers:** FÆBRIQ small, centered under the stripe. Required on every sticker. All 5 files in `assets/print-art/sticker-final-system-2026-08-27/` already have it (checked 2026/09/23).
+- **Brand spelling:** FÆBRIQ, with the Æ ligature, every time. The old repo mockups (`assets/mockup-*.png`, `FAEBRIQ_*_Mockup*.png`, `model-*-new.png`, `model-flatlay-new.png`) show a garbled wordmark, the circuit logo on slogan products, or an off-brand font. Never use them as a reference or as a product image.
 - **Never:** embroidery claims, em or en dashes, the condensed bold sans (seen in `model-tee-new.png` and `model-flatlay-new.png`), or the old "big 404 + italic line" design.
 
 ## Slot system

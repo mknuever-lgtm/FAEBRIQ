@@ -87,3 +87,6 @@ Why: the 4:5 imagery spec letterboxes inside square cards.
 
 2026-09-23 Spec and decision board: added the FAEBRIQ spelling rule and banned the old repo mockups (garbled wordmark, wrong 404 art). The board slot examples now use the real print files.
 Why: Maurice caught the misspelled brand and the wrong 404 design on the board.
+
+2026-09-23 Set the canonical 404 design from Maurice's reference (big 404, one-line STRAIGHT NOT FOUND, stripe). Added the v3 print files (apparel 4500, sticker 2400 with FAEBRIQ), tools/make_404_v3.py and the reference image. Retired the ERROR 404 files in the spec.
+Why: the repo 404 masters did not match the approved design.

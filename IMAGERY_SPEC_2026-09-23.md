@@ -10,6 +10,7 @@ Decisions by Maurice. Decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV
 - **Lockup:** serif caps (Instrument Serif), line 2 smaller than line 1, a flat six-block rainbow stripe underneath. Source: the current masters in `assets/print-art/*-light-4500.png`, which match the "75% (current)" variant.
 - **Stickers:** FÆBRIQ small, centered under the stripe. Required on every sticker. All 5 files in `assets/print-art/sticker-final-system-2026-08-27/` already have it (checked 2026/09/23).
 - **Brand spelling:** FÆBRIQ, with the Æ ligature, every time. The old repo mockups (`assets/mockup-*.png`, `FAEBRIQ_*_Mockup*.png`, `model-*-new.png`, `model-flatlay-new.png`) show a garbled wordmark, the circuit logo on slogan products, or an off-brand font. Never use them as a reference or as a product image.
+- **404 design (canonical, set 2026/09/23):** a big "404" on top, "STRAIGHT NOT FOUND" on one line underneath, then the flat stripe (plus FÆBRIQ on stickers). Reference: `assets/print-art/reference/404-canonical-reference-2026-09-23.webp`. Print files: `assets/print-art/404-straight-not-found-v3-light-4500.png` (apparel, tote) and `assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png` (sticker), made with `tools/make_404_v3.py`. The "ERROR 404 / STRAIGHT NOT / FOUND" files are retired.
 - **Never:** embroidery claims, em or en dashes, the condensed bold sans (seen in `model-tee-new.png` and `model-flatlay-new.png`), or the old "big 404 + italic line" design.
 
 ## Slot system
@@ -27,9 +28,9 @@ Decisions by Maurice. Decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV
 | Off The Clock Hoodie | 1, 2, 3, 4 | Visual check that the print matches the lockup |
 | Not A Bug, Code It, Please Hold, Deploying stickers | 1, 2, 4 (reordered 2026/09/23: flat is now first) | Slot 3 (in hand). Check that FÆBRIQ shows on the rendered sticker |
 | Sticker Sheet | 1, 2, 4 (flat moved first 2026/09/23; spare detail shot sits at 3) | Slot 3 (in hand), which then replaces the spare |
-| 404 Sticker | none usable (square 1200px Printify, old design) | Swap the print file, then all 4 slots in the sticker system |
-| 404 Tee | none usable (square, old design) | Swap the print file, then all 4 slots |
-| 404 Tote | none usable (square, old design) | Swap the print file, then all 4 slots |
+| 404 Sticker | none usable (square 1200px Printify) | Check against the canonical 404, swap to v3 if different, then all 4 slots in the sticker system |
+| 404 Tee | none usable (square) | Check against the canonical 404, swap to v3 if different, then all 4 slots |
+| 404 Tote | none usable (square) | Check against the canonical 404, swap to v3 if different, then all 4 slots |
 | Code It Tee | none usable (square) | Check the print lockup, then all 4 slots |
 | Circuit Cap, Low Profile | none usable (square) | All 4 slots (logo product: the circuit wordmark stays on the cap) |
 
@@ -41,10 +42,10 @@ The 4:5 card and mobile gallery ratio is set in `faebriqtheme-launch-fix` (UNPUB
 The live theme is `faebriqtheme-launch-2026-08-06-review`. It shows the change only once launch-fix is published.
 
 ## Print file swaps (Maurice, in Printify, manual)
-The live 404 products still print the old design: a big "404" with an italic "Straight Not Found" (source: `design-decisions.md` and the live alt text). Swap them before making any new shots:
-- 404 Tee: `assets/print-art/404-straight-not-found-light-4500.png`
-- 404 Tote: `assets/print-art/404-straight-not-found-light-4500.png`
-- 404 Sticker: `assets/print-art/sticker-final-system-2026-08-27/error-404-straight-not-found-sticker-light-2400.png`
+Compare each live 404 product to the canonical reference. If it matches (one-line STRAIGHT NOT FOUND in upright serif caps under a big 404), keep it. If it shows an italic line, or the retired ERROR 404 layout, swap it:
+- 404 Tee: `assets/print-art/404-straight-not-found-v3-light-4500.png`
+- 404 Tote: `assets/print-art/404-straight-not-found-v3-light-4500.png`
+- 404 Sticker: `assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png`
 - Code It Tee: open it and compare to `code-it-serve-it-light-4500.png`. Swap it if it shows the circuit wordmark instead.
 
 **Do not press Publish in Printify.** It overwrites Shopify edits (titles, alt text, image order). Save the design in Printify only, then upload the new images to Shopify by hand.

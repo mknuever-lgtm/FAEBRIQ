@@ -19,7 +19,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
 
 ## Stable facts — trust these, do not re-verify each session
 - Brand: queer-coded dark-tech merch. Voice: dry, deadpan, terminal wit.
-  Instrument Serif silver wordmark on near-black (#0f0e0c bg / #e0e0e0 text).
+  Sans FÆBRIQ wordmark (reference: assets/print-art/reference/wordmark-reference-2026-09-23.jpg)
+  with a six-block bar at 1.35x its width, on near-black (#0f0e0c bg / #e0e0e0 text).
+  Phrase lockups (product prints) keep Instrument Serif.
   One pride-circuit accent per product.
 - Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
   marketing copy, avatar/video persona, or promotional content still needs

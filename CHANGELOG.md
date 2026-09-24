@@ -102,3 +102,6 @@ Why: Maurice picked the middle version from three options.
 
 2026-09-24 Updated CLAUDE.md stable facts: wordmark is sans FÆBRIQ with a 1.35x bar, not Instrument Serif. Product phrase lockups keep Instrument Serif.
 Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow the stale rule.
+
+2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
+Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.

@@ -116,7 +116,7 @@ FÆBRIQ is **icon-light by design** — the terminal aesthetic favors text and t
 
 **Root**
 - `styles.css` — global entry point (imports only). Consumers link this.
-- `readme.md` — this guide.
+- `README.md` — this guide.
 - `SKILL.md` — Agent Skills wrapper for downloadable use.
 
 **`tokens/`** — `fonts.css`, `colors.css`, `typography.css`, `spacing.css`, `base.css` (element defaults + `.fae-wordmark` / `.fae-overline` / `.fae-tagline` / `.fae-circuit-rule` primitives).

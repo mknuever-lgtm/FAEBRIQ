@@ -13,7 +13,7 @@ Queer tech-nomad merch. Dark editorial. Silver serif wordmark (`#C0C0C0`, Instru
 
 ## Files
 - `styles.css` — link this; it imports all tokens + fonts.
-- `readme.md` — full guide (content fundamentals, visual foundations, iconography).
+- `README.md` — full guide (content fundamentals, visual foundations, iconography).
 - `tokens/` — color/type/spacing/font CSS custom properties.
 - `assets/` — wordmark, favicon, logos, product mockups.
 - `components/` — React primitives (Button, Badge, Card, Input, CircuitRule, ProductCard, SiteHeader).

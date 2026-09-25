@@ -99,3 +99,12 @@ Why: Maurice asked for the text carousels as ready-to-post images.
 
 2026-09-23 Added an approved social bio copy entry to SOCIAL_LAUNCH_NOTES.md (Instagram/X/Threads/Bluesky and TikTok bios, plus an implementation note).
 Why: founder-approved copy for a future manual account setup, logged so it isn't lost before accounts exist.
+
+2026-09-23 Set the wordmark: sans FÆBRIQ (reference saved in assets/print-art/reference), bar at 1.35x wordmark width. Applied to IG post 1 slide 1, rule added to IMAGERY_SPEC.
+Why: Maurice picked the middle version from three options.
+
+2026-09-24 Updated CLAUDE.md stable facts: wordmark is sans FÆBRIQ with a 1.35x bar, not Instrument Serif. Product phrase lockups keep Instrument Serif.
+Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow the stale rule.
+
+2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
+Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.

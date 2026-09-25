@@ -129,3 +129,7 @@ Why: supplied package had 2 over-length tags and unverified fabric claims.
 
 2026-09-23 Added faebriq_batch_v2: 2 designs (chown-identity, npm-liberation) via make_batch_v1.py --batch v2.
 Why: Maurice approved the two strongest picks from the external concept list.
+
+2026-09-25 Design-sync re-sync to claude.ai/design. Added tools/build-ds-bundle.mjs + tools/assemble-ds-bundle.mjs (npm run ds:bundle) so _ds_bundle.js is generated from the real component sources instead of hand-maintained, and bundle previews vendor React locally instead of loading it from unpkg.
+Why: the shipped bundle still contained the superseded CircuitRule (stacked hairlines, not the confirmed segmented pride bar), and every preview card rendered blank wherever the CDN was unreachable.
+Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) in color-circuit/brand-logos/circuit.svg, .fae-circuit-rule and CircuitRule docs still described the old style, ui_kits storefront images used Vite-absolute paths, and two cards still said "free worldwide shipping".

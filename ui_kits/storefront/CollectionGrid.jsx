@@ -3,13 +3,13 @@ import { ProductCard } from "../../components/storefront/ProductCard/ProductCard
 import { CircuitRule } from "../../components/core/CircuitRule/CircuitRule.jsx";
 
 const PRODUCTS = [
-  { id: "p1", image: "/model-tee-new.png", meta: "HOODIE", title: "Deploying Identity v2.0", price: "CA$78", badge: "New Drop", badgeTone: "new" },
-  { id: "p2", image: "/model-hoodie-new.png", meta: "TEE", title: "Code It, Serve It.", price: "CA$42", badge: null },
-  { id: "p3", image: "/model-cap-new.png", meta: "CAP", title: "Circuit Cap", price: "CA$34", badge: null },
+  { id: "p1", image: "../../assets/model-hoodie-new.png", meta: "HOODIE", title: "Deploying Identity v2.0", price: "CA$78", badge: "New Drop", badgeTone: "new" },
+  { id: "p2", image: "../../assets/model-tee-new.png", meta: "TEE", title: "Code It, Serve It.", price: "CA$42", badge: null },
+  { id: "p3", image: "../../assets/model-cap-new.png", meta: "CAP", title: "Circuit Cap", price: "CA$34", badge: null },
 ];
 
 /** Collection overview tile — not a priced product, links out to the full catalog. */
-const COLLECTION_TILE = { image: "/model-flatlay-new.png", label: "Shop the full collection" };
+const COLLECTION_TILE = { image: "../../assets/model-flatlay-new.png", label: "Shop the full collection" };
 
 /**
  * Collection grid — filter rail + product grid.

@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"FBRIQDesignSystem_0e5da2","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"CircuitRule","sourcePath":"components/core/CircuitRule.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"ProductCard","sourcePath":"components/storefront/ProductCard.jsx"},{"name":"SiteHeader","sourcePath":"components/storefront/SiteHeader.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"611d20d07f12","components/core/Button.jsx":"299357e98b38","components/core/Card.jsx":"aef5b741760c","components/core/CircuitRule.jsx":"7a67a359ee58","components/core/Input.jsx":"3ae3e83a64d6","components/storefront/ProductCard.jsx":"4f1061f20c1f","components/storefront/SiteHeader.jsx":"1e25ded8af4f","ui_kits/storefront/About.jsx":"726f45c20f02","ui_kits/storefront/CollectionGrid.jsx":"f083bec11956","ui_kits/storefront/Hero.jsx":"38513b823eef","ui_kits/storefront/ProductDetail.jsx":"92b1c1b7cdf4","ui_kits/storefront/SiteFooter.jsx":"7e1e86b8035e"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"FBRIQDesignSystem_0e5da2","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"CircuitRule","sourcePath":"components/core/CircuitRule.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"ProductCard","sourcePath":"components/storefront/ProductCard.jsx"},{"name":"SiteHeader","sourcePath":"components/storefront/SiteHeader.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"611d20d07f12","components/core/Button.jsx":"299357e98b38","components/core/Card.jsx":"aef5b741760c","components/core/CircuitRule.jsx":"64cc3e64f32c","components/core/Input.jsx":"3ae3e83a64d6","components/storefront/ProductCard.jsx":"b16419e1bf52","components/storefront/SiteHeader.jsx":"1e25ded8af4f","ui_kits/storefront/About.jsx":"9b77d8945ae8","ui_kits/storefront/CollectionGrid.jsx":"4ad1a23f59e5","ui_kits/storefront/Hero.jsx":"dc42a2f11e96","ui_kits/storefront/ProductDetail.jsx":"e902c34ff499","ui_kits/storefront/SiteFooter.jsx":"940c486343e9"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -269,48 +269,34 @@ const CIRCUIT = ["var(--fae-circuit-coral)", "var(--fae-circuit-amber)", "var(--
 
 /**
  * FÆBRIQ CircuitRule — the signature divider.
- * Six rainbow hairlines stacked with optional hollow terminal nodes.
- * The brand's load-bearing graphic device.
+ * Confirmed style (June 2026, Option 3): six equal segmented bands
+ * in a single row. Renders faithfully at any size, including
+ * embroidery and small print — unlike a smooth gradient trace.
+ * Never substitute with a CSS gradient.
  */
 function CircuitRule({
-  nodes = true,
-  gap = 5,
+  gap = 4,
+  height = 4,
   width = "100%",
   align = "left",
   style = {},
   ...rest
 }) {
-  const lines = CIRCUIT.length;
-  const height = (lines - 1) * gap + (nodes ? 6 : 1);
   return /*#__PURE__*/React.createElement("div", _extends({
+    role: "separator",
     style: {
-      position: "relative",
+      display: "flex",
+      gap: `${gap}px`,
       width,
       height: `${height}px`,
       marginLeft: align === "right" ? "auto" : 0,
       ...style
     }
-  }, rest), CIRCUIT.map((c, i) => /*#__PURE__*/React.createElement("div", {
+  }, rest), CIRCUIT.map((c, i) => /*#__PURE__*/React.createElement("span", {
     key: i,
     style: {
-      position: "absolute",
-      top: `${i * gap + (nodes ? 3 : 0)}px`,
-      left: nodes ? "6px" : 0,
-      right: 0,
-      height: "1px",
+      flex: 1,
       background: c
-    }
-  })), nodes && CIRCUIT.map((c, i) => /*#__PURE__*/React.createElement("span", {
-    key: `n${i}`,
-    style: {
-      position: "absolute",
-      top: `${i * gap}px`,
-      left: 0,
-      width: "5px",
-      height: "5px",
-      borderRadius: "50%",
-      border: `1px solid ${c}`,
-      background: "var(--bg-page)"
     }
   })));
 }
@@ -726,53 +712,36 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const PRODUCTS = [{
   id: "p1",
-  image: "../../assets/mockup-tee-model.png",
-  meta: "TEE · 6.5 OZ",
+  image: "../../assets/model-hoodie-new.png",
+  meta: "HOODIE",
   title: "Deploying Identity v2.0",
-  price: "$35",
+  price: "CA$78",
   badge: "New Drop",
   badgeTone: "new"
 }, {
   id: "p2",
-  image: "../../assets/mockup-sleeve.png",
-  meta: "SLEEVE · 13\"",
-  title: "Carry Protocol",
-  price: "$42",
-  badge: "Limited",
-  badgeTone: "purple"
+  image: "../../assets/model-tee-new.png",
+  meta: "TEE",
+  title: "Code It, Serve It.",
+  price: "CA$42",
+  badge: null
 }, {
   id: "p3",
-  image: "../../assets/mockup-stickers.png",
-  meta: "STICKER PACK · ×6",
-  title: "Commit Messages",
-  price: "$12",
-  badge: null
-}, {
-  id: "p4",
-  image: "../../assets/mockup-flatlay.png",
-  meta: "TEE · 6.5 OZ",
-  title: "Serve It Black",
-  price: "$35",
-  badge: null
-}, {
-  id: "p5",
-  image: "../../assets/mockup-tee-flat.png",
-  meta: "TEE · 6.5 OZ",
-  title: "Rebrand In Progress",
-  price: "$35",
-  badge: "Sold Out",
-  badgeTone: "sold"
-}, {
-  id: "p6",
-  image: "../../assets/mockup-sleeve-desk.png",
-  meta: "SLEEVE · 15\"",
-  title: "Nomad Edition",
-  price: "$46",
+  image: "../../assets/model-cap-new.png",
+  meta: "CAP",
+  title: "Circuit Cap",
+  price: "CA$34",
   badge: null
 }];
 
+/** Collection overview tile — not a priced product, links out to the full catalog. */
+const COLLECTION_TILE = {
+  image: "../../assets/model-flatlay-new.png",
+  label: "Shop the full collection"
+};
+
 /**
- * Collection grid — filter rail + 3-up product grid.
+ * Collection grid — filter rail + product grid.
  */
 function CollectionGrid({
   onOpen
@@ -782,7 +751,7 @@ function CollectionGrid({
     CircuitRule
   } = window.FBRIQDesignSystem_0e5da2;
   const [filter, setFilter] = React.useState("All");
-  const filters = ["All", "Tees", "Sleeves", "Stickers"];
+  const filters = ["All", "Tees", "Hoodies", "Accessories"];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "64px 56px"
@@ -829,7 +798,6 @@ function CollectionGrid({
     }
   }, f)))), /*#__PURE__*/React.createElement(CircuitRule, {
     width: "100%",
-    nodes: false,
     style: {
       margin: "0 0 32px"
     }
@@ -843,7 +811,43 @@ function CollectionGrid({
     key: p.id
   }, p, {
     onClick: () => onOpen && onOpen(p)
-  })))));
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      aspectRatio: "4 / 5",
+      overflow: "hidden",
+      border: "1px solid var(--border-hairline)",
+      cursor: "pointer"
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: COLLECTION_TILE.image,
+    alt: COLLECTION_TILE.label,
+    style: {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      opacity: 0.85
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "rgba(13,13,13,0.55)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--font-mono)",
+      fontSize: "12px",
+      letterSpacing: "0.14em",
+      textTransform: "uppercase",
+      color: "var(--fae-silver-hi)",
+      border: "1px solid var(--fae-silver)",
+      padding: "10px 18px"
+    }
+  }, COLLECTION_TILE.label, " \u2192")))));
 }
 window.CollectionGrid = CollectionGrid;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/CollectionGrid.jsx", error: String((e && e.message) || e) }); }
@@ -884,7 +888,7 @@ function Hero({
   }, /*#__PURE__*/React.createElement(Badge, {
     tone: "new",
     dot: true
-  }, "New Drop \xB7 Collection 02"), /*#__PURE__*/React.createElement("h1", {
+  }, "New Drop \xB7 Vol. 1"), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontFamily: "var(--font-display)",
       fontSize: "68px",
@@ -930,8 +934,8 @@ function Hero({
       overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/mockup-tee-model.png",
-    alt: "F\xC6BRIQ flagship tee on model",
+    src: "../../assets/model-hoodie-new.png",
+    alt: "F\xC6BRIQ hoodie on model",
     style: {
       width: "100%",
       height: "100%",
@@ -949,7 +953,7 @@ function Hero({
       textTransform: "uppercase",
       color: "var(--text-faint)"
     }
-  }, "FAE-TEE-001 \xB7 6.5oz \xB7 XS\u20133XL"))));
+  }, "FAE-TEE-001 \xB7 Premium cotton \xB7 S\u2013XL"))));
 }
 window.Hero = Hero;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/Hero.jsx", error: String((e && e.message) || e) }); }
@@ -970,15 +974,15 @@ function ProductDetail({
     CircuitRule
   } = window.FBRIQDesignSystem_0e5da2;
   const p = product || {
-    image: "../../assets/mockup-tee-model.png",
-    meta: "TEE · 6.5 OZ",
+    image: "../../assets/model-hoodie-new.png",
+    meta: "HOODIE",
     title: "Deploying Identity v2.0",
-    price: "$35",
+    price: "CA$78",
     badge: "New Drop",
     badgeTone: "new"
   };
   const [size, setSize] = React.useState("M");
-  const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
+  const sizes = ["S", "M", "L", "XL"];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: "40px 56px 80px"
@@ -1063,7 +1067,7 @@ function ProductDetail({
       margin: 0,
       maxWidth: "46ch"
     }
-  }, "Premium heavyweight cotton, 6.5oz. Soft hand-feel, structured drape. Screen-quality DTG print that survives the laundromat in any timezone."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+  }, "Premium heavyweight cotton. Soft hand-feel, structured drape. Screen-quality print that survives the laundromat in any timezone."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
     className: "fae-overline",
     style: {
       display: "block",
@@ -1111,7 +1115,7 @@ function ProductDetail({
       color: "var(--text-faint)",
       letterSpacing: "0.06em"
     }
-  }, "// free US & Canada shipping over $80 \xB7 30-day returns"))));
+  }, "// made to order \xB7 ships to US & Canada"))));
 }
 window.ProductDetail = ProductDetail;
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/storefront/ProductDetail.jsx", error: String((e && e.message) || e) }); }
@@ -1129,7 +1133,7 @@ function SiteFooter() {
   } = window.FBRIQDesignSystem_0e5da2;
   const cols = [{
     h: "Shop",
-    items: ["Tees", "Sleeves", "Stickers", "Gift cards"]
+    items: ["Tees", "Hoodies", "Stickers", "Accessories"]
   }, {
     h: "Brand",
     items: ["About", "Journal", "Sustainability", "Sizing"]

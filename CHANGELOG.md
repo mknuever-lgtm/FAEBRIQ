@@ -97,6 +97,21 @@ Why: store is open, Maurice asked for the first social posts.
 2026-09-23 Rendered IG launch posts 1 and 2 as 10 slides (1080x1350) in assets/social/launch-2026-09, built by tools/make_social_slides.py.
 Why: Maurice asked for the text carousels as ready-to-post images.
 
+2026-09-23 Added an approved social bio copy entry to SOCIAL_LAUNCH_NOTES.md (Instagram/X/Threads/Bluesky and TikTok bios, plus an implementation note).
+Why: founder-approved copy for a future manual account setup, logged so it isn't lost before accounts exist.
+
+2026-09-23 Set the wordmark: sans FÆBRIQ (reference saved in assets/print-art/reference), bar at 1.35x wordmark width. Applied to IG post 1 slide 1, rule added to IMAGERY_SPEC.
+Why: Maurice picked the middle version from three options.
+
+2026-09-24 Updated CLAUDE.md stable facts: wordmark is sans FÆBRIQ with a 1.35x bar, not Instrument Serif. Product phrase lockups keep Instrument Serif.
+Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow the stale rule.
+
+2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
+Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.
+
+2026-09-25 Fixed two print-lockup rules per Maurice: line1 is 100%, line2 is 75-85% of line1 (LINE2_RATIO_DEFAULT=0.80, replaces the old width-fit l2_w mechanism which sometimes gave near-zero size difference); the bar next to a printed wordmark is 1.35x that wordmark width (BAR_TO_MARK_RATIO), not the old ~7x phrase-width bar. Regenerated the 5 live stickers and the 404 v3 print files in tools/make_print_file.py and tools/make_404_v3.py, re-swapped the sans mark, corrected CLAUDE.md (product prints use Bodoni Moda, not Instrument Serif) and IMAGERY_SPEC.
+Why: Maurice flagged the shipped stickers as wrong on both counts.
+
 2026-09-23 Added faebriq_batch_v1: 10 transparent 4500x5400 terminal-style tee graphics for black garments (tools/make_batch_v1.py, manifest.json, left-chest crops) plus ETSY_LISTING_01_2026-09-23.md.
 Why: Maurice asked for a 10-design batch and a corrected Etsy metadata package for listing #1.
 

@@ -35,7 +35,9 @@ Manus ran out of credits: no images, nothing saved in Printify. Start the images
 | `deploying-identity-v2-sticker` | kiss-cut sticker | `deploying-identity-v2-sticker-2400.png` |
 | `faebriq-sticker-sheet-full-drop` | sticker sheet | `sticker-sheet-2400x3600.png` |
 
-Tees, hoodie and crewneck also carry `logo-faebriq-1p35.png` (about 3 in) on the **left sleeve**, shown where the angle allows.
+Tees, hoodie and crewneck also carry `wordmark-faebriq-sleeve.png` (FÆBRIQ alone, no stripe) on the left sleeve: horizontal, no rotation, at the bottom of the sleeve about 1 in above the hem (tees) or cuff (hoodie, crewneck), about 3 in wide or the widest that fits, shown where the angle allows.
+
+The tote file already carries FÆBRIQ under the stripe, like the 404 sticker.
 
 ## Tiers
 - **Tier 2:** slots 1-2, all 12 products (24 images).
@@ -56,7 +58,7 @@ Shoot the scene with the product blank, then composite the exact print file. Las
 2. **Displacement:** warp along the folds, using scene luminance as the displacement map.
 3. **Shading:** multiply scene light and shadow over the print, so folds cross the ink. White stays just below pure white in shadow.
 4. **Focus:** match scene sharpness and grain. No halo, no hard cut edge.
-5. **Scale:** chest 10 in (tees), 11 in (hoodie, crewneck). Tote 10 in. Cap 3.5 to 4 in. Sleeve 3 in.
+5. **Scale:** chest 10 in (tees), 11 in (hoodie, crewneck). Tote 10 in. Cap 3.5 to 4 in. Sleeve 3 in, or the widest that fits.
 
 ## Reject and redo if any of these apply
 1. Text differs from the file, or FÆBRIQ loses its **Æ**.
@@ -67,12 +69,12 @@ Shoot the scene with the product blank, then composite the exact print file. Las
 6. Blank isn't black, wrong garment, or malformed hands or bodies.
 
 ## Printify (via connector)
-- **One approval, not twelve.** Read all 12 products, then send Maurice one table: product, print area and position, file, width in inches, sleeve yes/no, current and new cost if exposed. He approves once, then you execute. Ask only on deviations.
+- **One approval, not twelve.** Read all 12 products, then send Maurice one table: product, print area and position, file, width in inches, sleeve yes/no, current and new cost if exposed. Maurice approves once, then you execute. Ask only on deviations.
 - **Upload by URL**, not from the device. Base plus file name:
   `https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/claude/hopeful-goldberg-a40dkh/assets/print-art/system-2026-09-25/`
   This avoids the file chooser failure.
-- **Placement:** read each product's real print area size and position names from the connector. Scale = target width / print area width. Targets: chest 10 in (tees), 11 in (hoodie, crewneck), tote 10 in, cap 3.5 to 4 in, sleeve 3 in. Stickers fill their area. Chest art centered, top edge 0.5 in below the print area top.
-- **Sleeve:** only if the product already has a sleeve position. Never change blueprint or provider.
+- **Placement:** read each product's real print area size and position names from the connector. Scale = target width / print area width. Targets: chest 10 in (tees), 11 in (hoodie, crewneck), tote 10 in, cap 3.5 to 4 in, sleeve 3 in or the widest that fits. Stickers fill their area. Chest art centered, top edge 0.5 in below the print area top.
+- **Sleeve:** only if the product already has a sleeve position. File `wordmark-faebriq-sleeve.png`, horizontal, no rotation, at the bottom of the left sleeve about 1 in above the hem or cuff, about 3 in wide or the widest that fits. Never change blueprint or provider.
 - **Publish** with title, description, tags and images/mockups false. Push variants only. Prices unchanged.
 - **Record** the sticker sheet print area size and cost before and after in `Final_report.md`.
 

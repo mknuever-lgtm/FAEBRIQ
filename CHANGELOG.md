@@ -111,3 +111,12 @@ Why: match the 2026-09-23 wordmark decision; cap files also carried no real prin
 
 2026-09-25 Fixed two print-lockup rules per Maurice: line1 is 100%, line2 is 75-85% of line1 (LINE2_RATIO_DEFAULT=0.80, replaces the old width-fit l2_w mechanism which sometimes gave near-zero size difference); the bar next to a printed wordmark is 1.35x that wordmark width (BAR_TO_MARK_RATIO), not the old ~7x phrase-width bar. Regenerated the 5 live stickers and the 404 v3 print files in tools/make_print_file.py and tools/make_404_v3.py, re-swapped the sans mark, corrected CLAUDE.md (product prints use Bodoni Moda, not Instrument Serif) and IMAGERY_SPEC.
 Why: Maurice flagged the shipped stickers as wrong on both counts.
+
+2026-09-23 Added faebriq_batch_v1: 10 transparent 4500x5400 terminal-style tee graphics for black garments (tools/make_batch_v1.py, manifest.json, left-chest crops) plus ETSY_LISTING_01_2026-09-23.md.
+Why: Maurice asked for a 10-design batch and a corrected Etsy metadata package for listing #1.
+
+2026-09-23 Added ETSY_LISTING_02_2026-09-23.md: corrected Etsy package for listing #2 (clean build).
+Why: supplied package had 2 over-length tags and unverified fabric claims.
+
+2026-09-23 Added faebriq_batch_v2: 2 designs (chown-identity, npm-liberation) via make_batch_v1.py --batch v2.
+Why: Maurice approved the two strongest picks from the external concept list.

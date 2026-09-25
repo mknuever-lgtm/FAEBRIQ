@@ -113,3 +113,5 @@ Why: Maurice's call to put every product in one system; older print files and th
 2026-09-25 MUSE_BRIEF_4: Muse now also does the Printify swaps via its connector (read first, one batched approval, upload by URL, publish variants only). Why: Maurice connected Printify to Muse.
 2026-09-25 MUSE_BRIEF_4: sleeve logo placed horizontal at the bottom of the left sleeve; tote lockup spelled out as the sticker version. Why: Maurice's placement spec.
 2026-09-25 Added wordmark-faebriq-sleeve.png (FÆBRIQ alone, no stripe) for apparel sleeves; Muse brief and imagery spec updated. Why: Maurice chose no bar on sleeves.
+
+2026-09-25 Rewrote handoff/MUSE_BRIEF_4.md: Printify swaps moved to Muse via the Printify connector; order is Tier 2 images, Printify, Tier 3. Why: Maurice connected Printify to Muse, Muse handles the swaps after the Tier 2 images, with one approval table.

@@ -42,7 +42,7 @@ MARGIN = 0.045        # canvas margin / canvas width
 
 DESIGNS = {
     # 404 stays the hero: a lower ratio grows the 404 against the fixed stripe.
-    "404-straight-not-found": ("404", "STRAIGHT NOT FOUND", 0.60),
+    "404-straight-not-found": ("404", "STRAIGHT NOT FOUND", 0.55),
     "code-it-serve-it": ("CODE IT.", "SERVE IT.", 0.85),
     "off-the-clock-still-iconic": ("OFF THE CLOCK.", "STILL ICONIC.", 0.72),
     "deploying-identity-v2": ("DEPLOYING", "IDENTITY V2.0", 0.75),

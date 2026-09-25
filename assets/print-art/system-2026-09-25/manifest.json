@@ -13,9 +13,9 @@
       ],
       "size": [
         4500,
-        1303
+        1351
       ],
-      "line1_px": 462,
+      "line1_px": 504,
       "line2_px": 277,
       "stripe_over_widest": 1.35
     },
@@ -103,9 +103,9 @@
       ],
       "size": [
         2400,
-        853
+        879
       ],
-      "line1_px": 246,
+      "line1_px": 269,
       "line2_px": 148,
       "stripe_over_widest": 1.35
     },
@@ -193,9 +193,9 @@
       ],
       "size": [
         4500,
-        1593
+        1641
       ],
-      "line1_px": 462,
+      "line1_px": 504,
       "line2_px": 277,
       "stripe_over_widest": 1.35
     },

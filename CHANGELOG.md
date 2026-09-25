@@ -107,3 +107,4 @@ Why: Maurice wants the render's wordmark font, the stripe under the word like th
 Why: Maurice's call to put every product in one system; older print files and the 2026-09-24 images are retired in IMAGERY_SPEC. Added handoff/MANUS_BRIEF_3.md to rebuild Printify, reshoot 4 images per product and publish.
 2026-09-25 Print system: line 2 size now set per design (404 0.60 so the 404 reads bigger, Code It 0.85, Off The Clock 0.72, Deploying 0.75, Not A Bug 0.80, Please Hold 0.58). Why: Maurice asked for a per-design judgment in the 55 to 90% range.
 2026-09-25 Print system refinements: -2% tracking, stripe height follows line 1 cap height (clamped 1.3 to 2.8% of stripe width), Please Hold sticker line 2 at 0.62 for legibility. Why: design review, sharper sans and consistent bar weight.
+2026-09-25 404 line 2 to 0.55 (bigger 404); launch-fix header and footer FÆBRIQ switched to Inter SemiBold to match the product logo. Why: Maurice approved the open review items.

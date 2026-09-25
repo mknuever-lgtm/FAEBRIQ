@@ -16,7 +16,7 @@ Paste this whole file into Manus as the task brief. Written 2026/09/25.
 
 ### The new print system (applies to every product)
 - Font: Inter SemiBold, white.
-- Line 2 is 58 to 85% the size of line 1, set per design. Never resize or rebalance the files.
+- Line 2 is 55 to 85% the size of line 1, set per design. Never resize or rebalance the files.
 - A flat six-block rainbow pride stripe sits under the text: red, orange, yellow, green, blue, purple, left to right. It is exactly 1.35x as wide as the widest text line.
 - **FÆBRIQ wordmark under the stripe:** stickers and tote only.
 - **Tees, hoodie, crewneck:** no wordmark in the chest print. The FÆBRIQ logo goes on the left sleeve.

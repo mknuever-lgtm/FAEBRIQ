@@ -2,7 +2,7 @@
    FÆBRIQ — Shopify Theme Stylesheet
    Dark editorial. Flat. Sharp. No gradients.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@600&family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,6 +22,8 @@
   --fae-text-faint:  #5f5f5f;
   --fae-accent:      #4a9eff;
   --font-display:    "Instrument Serif", Georgia, serif;
+  /* Brand name only: matches the Inter SemiBold logo on every product. */
+  --font-logo:       "Inter", system-ui, sans-serif;
   --font-body:       "Archivo", -apple-system, sans-serif;
   --font-mono:       "JetBrains Mono", ui-monospace, monospace;
 }
@@ -69,9 +71,10 @@ img, video { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-display);
+  font-family: var(--font-logo);
+  font-weight: 600;
   font-size: 1.5rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: var(--fae-silver);
   text-decoration: none;
 }
@@ -412,9 +415,10 @@ img, video { display: block; max-width: 100%; }
   gap: 40px;
 }
 .fae-footer__brand {
-  font-family: var(--font-display);
+  font-family: var(--font-logo);
+  font-weight: 600;
   font-size: 1.5rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: var(--fae-silver);
   margin-bottom: 16px;
 }

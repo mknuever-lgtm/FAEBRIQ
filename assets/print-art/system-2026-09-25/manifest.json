@@ -3,7 +3,6 @@
   "date": "2026-09-25",
   "font": "Inter SemiBold",
   "stripe_over_widest_line": 1.35,
-  "line2_size": 0.75,
   "outputs": [
     {
       "file": "assets/print-art/system-2026-09-25/404-straight-not-found-apparel-4500.png",
@@ -14,9 +13,9 @@
       ],
       "size": [
         4500,
-        1202
+        1301
       ],
-      "line1_px": 359,
+      "line1_px": 449,
       "line2_px": 270,
       "stripe_over_widest": 1.35
     },
@@ -29,10 +28,10 @@
       ],
       "size": [
         4500,
-        1937
+        2023
       ],
       "line1_px": 726,
-      "line2_px": 545,
+      "line2_px": 617,
       "stripe_over_widest": 1.35
     },
     {
@@ -44,10 +43,10 @@
       ],
       "size": [
         4500,
-        1228
+        1216
       ],
       "line1_px": 373,
-      "line2_px": 280,
+      "line2_px": 269,
       "stripe_over_widest": 1.35
     },
     {
@@ -74,10 +73,10 @@
       ],
       "size": [
         4500,
-        1258
+        1279
       ],
       "line1_px": 387,
-      "line2_px": 291,
+      "line2_px": 310,
       "stripe_over_widest": 1.35
     },
     {
@@ -89,9 +88,9 @@
       ],
       "size": [
         4500,
-        1020
+        1108
       ],
-      "line1_px": 269,
+      "line1_px": 348,
       "line2_px": 202,
       "stripe_over_widest": 1.35
     },
@@ -104,9 +103,9 @@
       ],
       "size": [
         2400,
-        798
+        853
       ],
-      "line1_px": 192,
+      "line1_px": 240,
       "line2_px": 144,
       "stripe_over_widest": 1.35
     },
@@ -119,10 +118,10 @@
       ],
       "size": [
         2400,
-        1190
+        1235
       ],
       "line1_px": 387,
-      "line2_px": 291,
+      "line2_px": 329,
       "stripe_over_widest": 1.35
     },
     {
@@ -134,10 +133,10 @@
       ],
       "size": [
         2400,
-        811
+        805
       ],
       "line1_px": 199,
-      "line2_px": 149,
+      "line2_px": 143,
       "stripe_over_widest": 1.35
     },
     {
@@ -164,10 +163,10 @@
       ],
       "size": [
         2400,
-        828
+        840
       ],
       "line1_px": 207,
-      "line2_px": 155,
+      "line2_px": 165,
       "stripe_over_widest": 1.35
     },
     {
@@ -179,9 +178,9 @@
       ],
       "size": [
         2400,
-        701
+        747
       ],
-      "line1_px": 143,
+      "line1_px": 185,
       "line2_px": 108,
       "stripe_over_widest": 1.35
     },
@@ -194,9 +193,9 @@
       ],
       "size": [
         4500,
-        1491
+        1590
       ],
-      "line1_px": 359,
+      "line1_px": 449,
       "line2_px": 270,
       "stripe_over_widest": 1.35
     },

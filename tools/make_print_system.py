@@ -2,7 +2,7 @@
 
 Maurice's rules:
   - Inter SemiBold on every design.
-  - Line 2 is 75% of line 1's font size.
+  - Line 2 is 55 to 90% of line 1's font size, judged per design.
   - Rainbow stripe: six flat blocks, 1.35x the widest text line.
   - FÆBRIQ wordmark under the stripe on stickers and the tote only.
   - Tees, hoodie, crewneck: no wordmark in the chest print; the FÆBRIQ
@@ -23,7 +23,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "print-art", "system-2026-09-25")
 
 STRIPE_RATIO = 1.35   # stripe width / widest text line
-L2_SIZE = 0.75        # line 2 font size / line 1 font size
+# Line 2 font size / line 1 font size is set per design in DESIGNS, judged
+# by eye within 0.55 to 0.90 (Maurice, 2026/09/25).
 STRIPE_H = 0.018      # stripe height / stripe width
 MARK_W = 0.20         # wordmark width / stripe width
 # Vertical gaps, as a multiple of the cap height of the element above.
@@ -33,12 +34,13 @@ GAP_BAR_MARK = 0.75   # x the wordmark's own cap height
 MARGIN = 0.045        # canvas margin / canvas width
 
 DESIGNS = {
-    "404-straight-not-found": ("404", "STRAIGHT NOT FOUND"),
-    "code-it-serve-it": ("CODE IT.", "SERVE IT."),
-    "off-the-clock-still-iconic": ("OFF THE CLOCK.", "STILL ICONIC."),
-    "deploying-identity-v2": ("DEPLOYING", "IDENTITY V2.0"),
-    "its-not-a-bug-its-me": ("IT’S NOT A BUG.", "IT’S ME."),
-    "please-hold-rebranding-identity": ("PLEASE HOLD,", "I’M REBRANDING MY IDENTITY"),
+    # 404 stays the hero: a lower ratio grows the 404 against the fixed stripe.
+    "404-straight-not-found": ("404", "STRAIGHT NOT FOUND", 0.60),
+    "code-it-serve-it": ("CODE IT.", "SERVE IT.", 0.85),
+    "off-the-clock-still-iconic": ("OFF THE CLOCK.", "STILL ICONIC.", 0.72),
+    "deploying-identity-v2": ("DEPLOYING", "IDENTITY V2.0", 0.75),
+    "its-not-a-bug-its-me": ("IT’S NOT A BUG.", "IT’S ME.", 0.80),
+    "please-hold-rebranding-identity": ("PLEASE HOLD,", "I’M REBRANDING MY IDENTITY", 0.58),
 }
 SHEET = ["404-straight-not-found", "its-not-a-bug-its-me", "code-it-serve-it",
          "please-hold-rebranding-identity", "deploying-identity-v2"]
@@ -72,9 +74,9 @@ def ink_w(f, text):
     return b[2] - b[0]
 
 
-def layout(lines, wordmark, s):
+def layout(lines, wordmark, s, l2):
     """Measure every element at line-1 font size s. Returns rows and stripe width."""
-    fonts = [font(s), font(s * L2_SIZE)][:len(lines)]
+    fonts = [font(s)] + ([font(s * l2)] if len(lines) > 1 else [])
     widest = max(ink_w(f, t) for f, t in zip(fonts, lines))
     sw = widest * STRIPE_RATIO
     fm = None
@@ -84,12 +86,12 @@ def layout(lines, wordmark, s):
     return fonts, fm, sw
 
 
-def lockup(lines, wordmark, width):
+def lockup(lines, wordmark, width, l2=None):
     """Transparent RGBA lockup whose stripe spans the canvas minus margins."""
     target = width * (1 - 2 * MARGIN)
-    fonts, fm, sw = layout(lines, wordmark, 1000)
+    fonts, fm, sw = layout(lines, wordmark, 1000, l2)
     s = 1000 * target / sw
-    fonts, fm, sw = layout(lines, wordmark, s)
+    fonts, fm, sw = layout(lines, wordmark, s, l2)
 
     pad = width * MARGIN
     y = pad
@@ -168,16 +170,16 @@ def contact(entries):
 def main():
     os.makedirs(OUT, exist_ok=True)
     manifest, preview, stickers = [], [], {}
-    for key, lines in DESIGNS.items():
-        im, meta = lockup(lines, False, 4500)
+    for key, (*lines, l2) in DESIGNS.items():
+        im, meta = lockup(lines, False, 4500, l2)
         preview.append(save(im, f"{key}-apparel-4500.png", meta, "apparel", lines, manifest))
-    for key, lines in DESIGNS.items():
-        im, meta = lockup(lines, True, 2400)
+    for key, (*lines, l2) in DESIGNS.items():
+        im, meta = lockup(lines, True, 2400, l2)
         stickers[key] = save(im, f"{key}-sticker-2400.png", meta, "sticker", lines, manifest)
         preview.append(im)
-    im, meta = lockup(DESIGNS["404-straight-not-found"], True, 4500)
-    preview.append(save(im, "404-tote-4500.png", meta, "tote",
-                        DESIGNS["404-straight-not-found"], manifest))
+    *lines, l2 = DESIGNS["404-straight-not-found"]
+    im, meta = lockup(lines, True, 4500, l2)
+    preview.append(save(im, "404-tote-4500.png", meta, "tote", lines, manifest))
     # Logo: wordmark as line 1, stripe underneath. Cap front and apparel sleeve.
     im, meta = lockup(("FÆBRIQ",), False, 3600)
     preview.append(save(im, "logo-faebriq-1p35.png", meta, "cap front + sleeve", ["FÆBRIQ"], manifest))
@@ -188,7 +190,7 @@ def main():
     contact(preview).save(os.path.join(OUT, "contact-sheet-on-black.jpg"), quality=88)
     with open(os.path.join(OUT, "manifest.json"), "w") as fh:
         json.dump(dict(system="FÆBRIQ print system", date="2026-09-25", font="Inter SemiBold",
-                       stripe_over_widest_line=STRIPE_RATIO, line2_size=L2_SIZE,
+                       stripe_over_widest_line=STRIPE_RATIO,
                        outputs=manifest), fh, indent=2, ensure_ascii=False)
     for e in manifest:
         print(e["file"], e["size"], e.get("stripe_over_widest"))

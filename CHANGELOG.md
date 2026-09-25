@@ -105,3 +105,4 @@ Why: the cap design changed after the sample and the repo only had 520px preview
 Why: Maurice wants the render's wordmark font, the stripe under the word like the rest of the brand, and the stripe at least as wide as the word.
 2026-09-25 New print system for every product (tools/make_print_system.py, assets/print-art/system-2026-09-25/): Inter SemiBold, line 2 at 75%, stripe 1.35x the widest line, wordmark on stickers and tote only, FÆBRIQ logo on apparel sleeves and cap.
 Why: Maurice's call to put every product in one system; older print files and the 2026-09-24 images are retired in IMAGERY_SPEC. Added handoff/MANUS_BRIEF_3.md to rebuild Printify, reshoot 4 images per product and publish.
+2026-09-25 Print system: line 2 size now set per design (404 0.60 so the 404 reads bigger, Code It 0.85, Off The Clock 0.72, Deploying 0.75, Not A Bug 0.80, Please Hold 0.58). Why: Maurice asked for a per-design judgment in the 55 to 90% range.

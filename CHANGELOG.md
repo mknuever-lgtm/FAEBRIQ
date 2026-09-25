@@ -115,3 +115,5 @@ Why: Maurice's call to put every product in one system; older print files and th
 2026-09-25 Added wordmark-faebriq-sleeve.png (FÆBRIQ alone, no stripe) for apparel sleeves; Muse brief and imagery spec updated. Why: Maurice chose no bar on sleeves.
 
 2026-09-25 Rewrote handoff/MUSE_BRIEF_4.md: Printify swaps moved to Muse via the Printify connector; order is Tier 2 images, Printify, Tier 3. Why: Maurice connected Printify to Muse, Muse handles the swaps after the Tier 2 images, with one approval table.
+
+2026-09-25 Note: the on-model composites assets/model-{tee,hoodie,cap}-print.png on branch claude/zealous-archimedes-vq92tg bake in print masters at build time. After any print master regeneration, rerun bash tools/make_model_composites.sh on that branch, or the composites silently keep the old art.

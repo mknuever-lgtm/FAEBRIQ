@@ -1,0 +1,69 @@
+{% comment %}
+  FAEBRIQ: About, the brand manifesto page. Static content, copy is brand-owned.
+
+  FAEBRIQ 2026-09-16 (type unification):
+  The page previously used four different type treatments in one short screen.
+  The eyebrow used .fae-hero__eyebrow (mono at 0.28em tracking), the column
+  headings used .fae-footer__heading (mono at 0.12em), the headline used the
+  display serif and the body used the sans. Two near-identical mono styles
+  sitting a few hundred pixels apart read as "different fonts".
+
+  Now the page uses the same three-role system as every other page:
+    display serif  -> headline only
+    body sans      -> all running copy
+    .fae-section-label (mono) -> every label, one treatment, no exceptions
+
+  Also removed the em dash from the third paragraph.
+{% endcomment %}
+<style>
+  .fae-about__label { margin-bottom: 12px; }
+  @media (max-width: 640px) {
+    .fae-about-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
+</style>
+<div class="fae-collection-section">
+  <div class="fae-container" style="max-width: 760px; padding: 64px 24px 96px;">
+
+    <p class="fae-section-label" style="margin-bottom:0;">About</p>
+
+    <div class="fae-circuit" style="height:24px; margin: 20px 0 32px; max-width: 320px;">
+      {%- render 'circuit-rule', id: 'about-top' -%}
+    </div>
+
+    <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(2.5rem, 6vw, 4rem);line-height:1.05;color:var(--fae-silver);margin-bottom:40px;">
+      Identity is a build process.
+    </h1>
+
+    <div style="display:flex;flex-direction:column;gap:24px;color:var(--fae-text-dim);font-size:1.0625rem;line-height:1.7;">
+      <p>FÆBRIQ is merch for people who ship code by day and ship themselves by night. The tech-nomad. The queer engineer between identities, between cities, between deploys.</p>
+
+      <p>We don't print slogans. We print status updates. <span style="color:var(--fae-text);">Deploying Identity v2.0.</span> <span style="color:var(--fae-text);">Please hold, I'm rebranding my identity.</span> The joke lands because it's true.</p>
+
+      <p>Every piece is made to order. Printed after you order it, not before. No warehouse of unsold guesses. Slower, on purpose.</p>
+    </div>
+
+    <div class="fae-circuit" style="height:20px; margin: 56px 0; max-width: 320px;">
+      {%- render 'circuit-rule', id: 'about-mid' -%}
+    </div>
+
+    <div class="fae-about-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+      <div>
+        <p class="fae-section-label fae-about__label">Design</p>
+        <p style="color:var(--fae-text-dim);font-size:0.9375rem;line-height:1.6;">Flat. Sharp. Dark. Silver wordmark, one rainbow trace. No gradients, no noise.</p>
+      </div>
+      <div>
+        <p class="fae-section-label fae-about__label">Product</p>
+        <p style="color:var(--fae-text-dim);font-size:0.9375rem;line-height:1.6;">Heavyweight blanks. Print-on-demand. Made to order, shipped to the US and Canada.</p>
+      </div>
+      <div>
+        <p class="fae-section-label fae-about__label">Voice</p>
+        <p style="color:var(--fae-text-dim);font-size:0.9375rem;line-height:1.6;">Dry. Direct. The full stop is a brand device. No exclamation marks.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:64px;">
+      <a href="/collections/all-products" class="fae-hero__cta">Code it. Serve it.</a>
+    </div>
+
+  </div>
+</div>

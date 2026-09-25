@@ -120,22 +120,39 @@ def _draw_reinforced(canvas, cx, y, text, font, fill):
     canvas.alpha_composite(layer, (int(round(cx - w / 2)), int(round(y - pad))))
 
 
-# Gaps between line1->line2 and line2->bar, measured off the approved 404
-# reference ("STRAIGHT NOT" / "FOUND") as a multiple of the PRECEDING line's
-# own fitted font size — not a fixed fraction of canvas width like the old
-# l1_y/l2_y/bar_y constants were. A fixed-fraction gap looks wildly different
-# depending on word count, since _fit shrinks or grows the font to hit a
-# target width: "CODE IT." renders much bigger than "OFF THE CLOCK." at the
-# same width fraction, so the same absolute gap reads as cramped on one and
-# oversized on the other. Scaling the gap by the actual rendered font size
-# keeps the visual rhythm constant across every tagline automatically —
-# derived once from make_print_file.py's own font-fit output, not eyeballed.
+# Gap between line1->line2, measured off the approved 404 reference
+# ("STRAIGHT NOT" / "FOUND") as a multiple of line1's own fitted font size,
+# not a fixed fraction of canvas width like the old l1_y/l2_y constants were.
+# A fixed-fraction gap looks wildly different depending on word count, since
+# _fit shrinks or grows the font to hit a target width. Scaling the gap by
+# the actual rendered font size keeps the visual rhythm constant across every
+# tagline automatically.
 GAP_L1_L2_OF_L1_SIZE = 1.4668
 GAP_L2_BAR_OF_L2_SIZE = 1.3758
 
+# Line hierarchy (Maurice, 2026-09-25): line1 (the statement) sits at 100%,
+# line2 (the footnote/punchline) at 75-85% of line1's rendered size. This
+# replaced the old l2_w width-fit target, which sized line2 by matching a
+# fixed fraction of canvas width: for a short line2 against a long line1
+# ("IT'S NOT A BUG." / "IT'S ME.") that produced almost no visible size
+# difference (line2 landed within a few percent of line1), the opposite of
+# the intended big-statement/small-punchline hierarchy. Sizing line2 as a
+# direct fraction of line1's own fitted size is exact and word-count-proof.
+LINE2_RATIO_DEFAULT = 0.80
+
+# Bar-to-wordmark ratio (Maurice, 2026-09-23 and reconfirmed 2026-09-25): the
+# six-block bar is always 1.35x the width of the FÆBRIQ wordmark it sits with,
+# on stickers and caps, where the wordmark actually prints. This replaces
+# the old bar_w=1.0326 (a fraction of the PHRASE width), which made the bar
+# roughly 7x wider than the tiny signature mark underneath it: visually two
+# unrelated elements, not "a wordmark with its bar". Apparel prints carry no
+# wordmark at all (see module docstring), so they keep the phrase-width bar
+# unchanged, there is nothing for their bar to be 1.35x of.
+BAR_TO_MARK_RATIO = 1.35
+
 
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
-          ink="light", product="apparel", l2_y=None, l2_w=None):
+          ink="light", product="apparel", l2_y=None, l2_ratio=None):
     from PIL import Image, ImageFont
 
     serif = font_path("Bodoni Moda", None, "BodoniModa-Regular.ttf")
@@ -143,21 +160,20 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     col = {k: tuple(int(v.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) for k, v in ink_hex.items()}
     wordmark = product == "sticker"
     src = dict(SRC)
-    # l2_w is a width-fit *target*, not a size ratio: fitting line2 to a fixed
-    # fraction of L only shrinks it relative to line1 by roughly
-    # (l2_w/l1_w)*(len(line1)/len(line2)). For phrase pairs where line2 has
-    # much less than half of line1's characters (e.g. "IT'S NOT A BUG." / 15
-    # chars vs "IT'S ME." / 8 — just over half), the default l2_w=0.4710 lands
-    # line2's font size within a few percent of line1's: no visible hierarchy,
-    # even though the tagline is a big-statement/small-punchline pair. --l2-w
-    # overrides the target for that one call; every other design keeps 0.4710.
-    if l2_w is not None:
-        src["l2_w"] = l2_w
+    l2_ratio = LINE2_RATIO_DEFAULT if l2_ratio is None else l2_ratio
 
-    # The bar is the widest element, so it sets the usable width.
-    L = width * (1 - 2 * margin_frac) / src["bar_w"]
+    # Line1 (and, for apparel, the bar right under it) sets the usable width.
+    # Stickers size off line1 too now that the bar no longer follows the
+    # phrase width -- see BAR_TO_MARK_RATIO above.
+    L = width * (1 - 2 * margin_frac) / (src["bar_w"] if not wordmark else src["l1_w"])
     f_l1 = _fit(ImageFont, serif, line1, src["l1_w"] * L, "w")
-    f_l2 = _fit(ImageFont, serif, line2, src["l2_w"] * L, "w")
+    f_l2 = ImageFont.truetype(serif, max(1, round(f_l1.size * l2_ratio)))
+    # A long line2 at the target ratio can render wider than the canvas (e.g.
+    # "I'M REBRANDING MY IDENTITY" at 80% of "PLEASE HOLD"'s size) -- the
+    # ratio is a target, not a licence to run off the print area, so fall
+    # back to width-fit (matching line1's own width target) only when needed.
+    if f_l2.getlength(line2) > src["l1_w"] * L:
+        f_l2 = _fit(ImageFont, serif, line2, src["l1_w"] * L, "w")
     # Label is fitted by cap height, not width, so it stays a consistent size
     # regardless of how long the label text is ("404" vs "ERROR 404").
     f_lab = _fit(ImageFont, serif, label, src["label_h"] * L, "h") if label else None
@@ -171,7 +187,14 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     src["bar_y"] = src["l2_y"] + GAP_L2_BAR_OF_L2_SIZE * f_l2.size / L
     src["mark_y"] = src["bar_y"] + (SRC["mark_y"] - SRC["bar_y"])
 
-    bar_h = src["bar_h"] * src["bar_w"] * L
+    if wordmark:
+        mark_w_px = f_mark.getlength("FÆBRIQ")
+        bar_w = BAR_TO_MARK_RATIO * mark_w_px
+        bar_h = (SRC["bar_h"] * SRC["bar_w"]) * L  # same absolute thinness as the old phrase-width bar
+    else:
+        bar_w = src["bar_w"] * L
+        bar_h = src["bar_h"] * bar_w
+
     content_h = (src["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
                  if wordmark else src["bar_y"] * L + bar_h)
     pad = width * margin_frac
@@ -188,12 +211,11 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     line("l1_y", line1, f_l1, col["text"])
     line("l2_y", line2, f_l2, col["text"])
 
-    # pride-circuit bar: thin, near-continuous, marginally wider than the phrase.
-    # A solid rectangle at 300dpi is always far above MIN_STROKE_MM (~5.7mm
-    # tall even at this "thin" spec), so it needs no reinforcement pass.
+    # pride-circuit bar. A solid rectangle at 300dpi is always far above
+    # MIN_STROKE_MM (~5.7mm tall even at this "thin" spec), so it needs no
+    # reinforcement pass.
     from PIL import ImageDraw
     d = ImageDraw.Draw(im)
-    bar_w = src["bar_w"] * L
     sw, gap = src["stripe_frac"] * bar_w, src["gap_frac"] * bar_w
     bx, by = cx - bar_w / 2, top + src["bar_y"] * L
     for i, c in enumerate(CIRCUIT):
@@ -224,13 +246,12 @@ if __name__ == "__main__":
                         "By default this is computed automatically from line-1's rendered "
                         "font size so spacing self-adjusts per tagline — only pass this to "
                         "force a specific position.")
-    p.add_argument("--l2-w", type=float, default=None,
-                   help="manual override for line-2's width-fit target (fraction of L, "
-                        "default 0.4710). The resulting size ratio also depends on "
-                        "len(line1)/len(line2), so lower this when line2 has much less "
-                        "than half of line1's character count and the default produces "
-                        "little or no visible size difference.")
+    p.add_argument("--l2-ratio", type=float, default=None,
+                   help="manual override for line-2's size as a fraction of line-1's "
+                        "rendered size (default 0.80, i.e. within the 75-85%% house "
+                        "range). Exact and word-count-proof, unlike the old width-fit "
+                        "approach it replaced.")
     a = p.parse_args()
     w, h = build(a.line1, a.line2, a.out, label=a.label, width=a.width,
-                 ink=a.ink, product=a.product, l2_y=a.l2_y, l2_w=a.l2_w)
+                 ink=a.ink, product=a.product, l2_y=a.l2_y, l2_ratio=a.l2_ratio)
     print(f"wrote {a.out}  {w}x{h}  RGBA 300dpi  ink={a.ink}  product={a.product}")

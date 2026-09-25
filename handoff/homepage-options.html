@@ -1,0 +1,482 @@
+<title>FÆBRIQ Hero Options</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* FÆBRIQ brand tokens. Single-theme by intent: the brand is dark-only,
+     so this page commits to the storefront's own palette rather than
+     re-theming itself in light mode. Every colour is painted explicitly. */
+  :root {
+    --ink: #0f0e0c;
+    --panel: #141414;
+    --panel-2: #1a1a1a;
+    --well: #0a0a0a;
+    --line: #2a2a2a;
+    --line-2: #383838;
+    --silver: #c0c0c0;
+    --silver-hi: #e8e8e8;
+    --text: #e8e8e8;
+    --dim: #9a9a9a;
+    --faint: #8a8a8a;
+    --p1: #E8271C; --p2: #F47B20; --p3: #F9D01F;
+    --p4: #009A44; --p5: #0057A8; --p6: #742B8C;
+    --display: "Instrument Serif", Georgia, serif;
+    --body: "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 40px 72px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; }
+
+  /* ---- page head ---- */
+  .eyebrow {
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--faint); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.05;
+    color: var(--silver); margin: 0 0 18px; text-wrap: balance;
+  }
+  .standfirst { color: var(--dim); max-width: 62ch; margin: 0 0 8px; }
+  .standfirst strong { color: var(--text); font-weight: 500; }
+
+  .pride { display: flex; height: 4px; width: 100%; }
+  .pride > i { flex: 1; display: block; }
+  .pride > i:nth-child(1) { background: var(--p1); }
+  .pride > i:nth-child(2) { background: var(--p2); }
+  .pride > i:nth-child(3) { background: var(--p3); }
+  .pride > i:nth-child(4) { background: var(--p4); }
+  .pride > i:nth-child(5) { background: var(--p5); }
+  .pride > i:nth-child(6) { background: var(--p6); }
+
+  .rule { max-width: 320px; margin: 26px 0 34px; }
+
+  /* ---- option columns ---- */
+  .options {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px; align-items: start; margin-top: 8px;
+  }
+  @media (max-width: 860px) { .options { grid-template-columns: 1fr; gap: 44px; } }
+
+  .opt { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+  .opt-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .opt-tag {
+    font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink); background: var(--silver);
+    padding: 4px 9px;
+  }
+  .opt-tag.rec { background: var(--p4); color: #fff; }
+  .opt-name {
+    font-family: var(--display); font-size: 1.5rem; color: var(--silver); line-height: 1.1;
+  }
+
+  /* ---- device frame ---- */
+  .frame {
+    border: 1px solid var(--line-2); background: var(--well);
+    overflow: hidden; max-width: 100%;
+  }
+  .frame-bar {
+    display: flex; align-items: center; gap: 6px;
+    padding: 9px 12px; background: var(--panel-2); border-bottom: 1px solid var(--line);
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); display: block; }
+  .frame-url {
+    font-family: var(--mono); font-size: 0.6rem; color: var(--faint);
+    margin-left: 6px; letter-spacing: 0.04em;
+  }
+
+  /* ---- storefront mock ---- */
+  .sf { font-size: 11px; }
+  .sf-announce {
+    background: var(--silver); color: var(--ink);
+    font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-align: center; padding: 6px 8px;
+  }
+  .sf-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 11px 14px; background: var(--well);
+  }
+  .sf-word { font-family: var(--display); font-size: 1rem; color: var(--silver); letter-spacing: 0.05em; }
+  .sf-nav { display: flex; gap: 12px; }
+  .sf-nav span, .sf-cart {
+    font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--dim);
+  }
+  .sf-cart { border: 1px solid var(--line-2); padding: 3px 8px; color: var(--text); }
+  @media (max-width: 500px) { .sf-nav { display: none; } }
+
+  .sf-hero { padding: 30px 18px 26px; text-align: center; border-bottom: 1px solid var(--line); }
+  .sf-eyebrow {
+    font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--faint); margin: 0 0 12px;
+  }
+  .sf-title {
+    font-family: var(--display); font-size: clamp(1.9rem, 7vw, 2.9rem);
+    color: var(--silver); line-height: 0.95; letter-spacing: 0.02em; margin: 0 0 14px;
+  }
+  .sf-hero .pride { max-width: 180px; margin: 0 auto 14px; height: 3px; }
+  .sf-tag {
+    font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); margin: 0 0 10px;
+  }
+  .sf-sub { color: var(--dim); font-size: 0.72rem; line-height: 1.55; max-width: 34ch; margin: 0 auto 16px; }
+  .sf-cta {
+    display: inline-block; background: var(--silver); color: var(--ink);
+    font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 9px 20px;
+  }
+  .sf-note {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.06em;
+    color: var(--faint); margin: 12px 0 0;
+  }
+
+  /* split hero (option B) */
+  .sf-hero--split {
+    display: grid; grid-template-columns: 1fr 0.92fr; gap: 18px;
+    text-align: left; align-items: center; padding: 26px 18px;
+  }
+  .sf-hero--split .pride { margin: 0 0 14px; max-width: 150px; }
+  .sf-hero--split .sf-sub { margin: 0 0 16px; max-width: none; }
+  @media (max-width: 420px) { .sf-hero--split { grid-template-columns: 1fr; } }
+
+  /* product tile drawn in CSS, not a photo */
+  .tile {
+    aspect-ratio: 1 / 1; background: #080808; border: 1px solid var(--line);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 7px; padding: 12px; text-align: center; max-width: 100%;
+  }
+  .tile-l1 {
+    font-family: var(--display); color: #fff; line-height: 0.95;
+    font-size: 1.15rem; letter-spacing: 0.01em;
+  }
+  .tile-l2 {
+    font-family: var(--mono); font-size: 0.46rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #d8d8d8;
+  }
+  .tile .pride { max-width: 62%; height: 3px; }
+  .tile--hero .tile-l1 { font-size: 1.9rem; }
+  .tile--hero .tile-l2 { font-size: 0.56rem; }
+
+  /* trust row */
+  .sf-trust {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--line);
+  }
+  .sf-trust div {
+    padding: 11px 6px; text-align: center; border-right: 1px solid var(--line);
+    font-family: var(--mono); font-size: 0.46rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--dim); line-height: 1.5;
+  }
+  .sf-trust div:last-child { border-right: none; }
+  @media (max-width: 420px) {
+    .sf-trust { grid-template-columns: repeat(2, 1fr); }
+    .sf-trust div:nth-child(2) { border-right: none; }
+    .sf-trust div:nth-child(1), .sf-trust div:nth-child(2) { border-bottom: 1px solid var(--line); }
+  }
+
+  /* drop section */
+  .sf-drop { padding: 22px 14px 24px; }
+  .sf-drop-head { text-align: center; margin-bottom: 16px; }
+  .sf-drop-title { font-family: var(--display); font-size: 1.4rem; color: var(--silver); line-height: 1; }
+  .sf-drop-sub {
+    font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint); margin-top: 7px;
+  }
+  .sf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
+  @media (max-width: 420px) { .sf-grid { grid-template-columns: repeat(2, 1fr); } }
+  .card { background: var(--panel); display: flex; flex-direction: column; }
+  .card-body { padding: 8px 9px 10px; display: flex; flex-direction: column; gap: 5px; }
+  .card .pride { height: 3px; }
+  .card-name {
+    font-family: var(--display); font-size: 0.72rem; color: var(--silver); line-height: 1.2;
+  }
+  .card-price { font-family: var(--mono); font-size: 0.56rem; color: var(--text); }
+
+  .sf-allyship {
+    margin-top: 20px; padding: 16px 14px; border: 1px solid var(--line);
+    background: var(--panel); text-align: center;
+  }
+  .sf-allyship p { margin: 0; font-family: var(--display); font-size: 0.9rem; color: var(--silver); line-height: 1.35; }
+  .sf-allyship span {
+    display: block; margin-top: 7px; font-family: var(--mono); font-size: 0.48rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+  }
+
+  .fold {
+    border-top: 1px dashed var(--p3); position: relative;
+    margin: 0; height: 0;
+  }
+  .fold span {
+    position: absolute; right: 8px; top: -8px; background: var(--well);
+    font-family: var(--mono); font-size: 0.46rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--p3); padding: 0 6px;
+  }
+
+  /* ---- notes under each option ---- */
+  .notes { border: 1px solid var(--line); background: var(--panel); padding: 16px 16px 18px; }
+  .notes h3 {
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); margin: 0 0 10px; font-weight: 500;
+  }
+  .notes ul { margin: 0 0 14px; padding-left: 16px; }
+  .notes ul:last-child { margin-bottom: 0; }
+  .notes li { margin-bottom: 6px; color: var(--dim); font-size: 0.86rem; line-height: 1.55; }
+  .notes li strong { color: var(--text); font-weight: 500; }
+  .notes li::marker { color: var(--line-2); }
+  .cost h3 { color: var(--p2); }
+
+  /* ---- shared + verdict ---- */
+  .section-label {
+    font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--faint); margin: 0 0 14px;
+  }
+  .band { margin-top: 56px; }
+  .shared {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px; background: var(--line); border: 1px solid var(--line);
+  }
+  .shared div { background: var(--panel); padding: 14px 15px; }
+  .shared .n {
+    font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--p3); display: block; margin-bottom: 6px;
+  }
+  .shared p { margin: 0; font-size: 0.84rem; color: var(--dim); line-height: 1.55; }
+
+  .verdict {
+    border: 1px solid var(--line-2); background: var(--panel); padding: 22px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .verdict p { margin: 0; color: var(--dim); max-width: 70ch; }
+  .verdict p strong { color: var(--text); font-weight: 500; }
+  .verdict .lead {
+    font-family: var(--display); font-size: 1.45rem; color: var(--silver);
+    line-height: 1.25; max-width: 32ch;
+  }
+
+  .data { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .data div { background: var(--panel); padding: 15px; }
+  .data .fig {
+    font-family: var(--display); font-size: 1.8rem; color: var(--silver);
+    line-height: 1; display: block; margin-bottom: 7px;
+    font-variant-numeric: tabular-nums;
+  }
+  .data p { margin: 0; font-size: 0.8rem; color: var(--dim); line-height: 1.5; }
+
+  .caveat {
+    margin-top: 36px; border-left: 2px solid var(--p2); padding: 4px 0 4px 15px;
+    color: var(--faint); font-size: 0.85rem; max-width: 72ch;
+  }
+  .caveat strong { color: var(--dim); font-weight: 500; }
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">FÆBRIQ · Homepage structure</p>
+  <h1>Two hero options</h1>
+  <p class="standfirst">Both mockups show the <strong>same</strong> homepage below the hero. Only the top block differs. The dotted line marks roughly where a phone screen ends, since that is where your social traffic will land.</p>
+  <div class="pride rule"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="options">
+
+    <!-- ================= OPTION A ================= -->
+    <div class="opt">
+      <div class="opt-head">
+        <span class="opt-tag rec">Option A · recommended</span>
+        <span class="opt-name">Typographic</span>
+      </div>
+
+      <div class="frame">
+        <div class="frame-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="frame-url">faebriq.com</span></div>
+        <div class="sf">
+          <div class="sf-announce">Free shipping · US &amp; Canada · Printed to order</div>
+          <div class="sf-header">
+            <span class="sf-word">FÆBRIQ</span>
+            <span class="sf-nav"><span>Shop</span><span>About</span><span>Contact</span></span>
+            <span class="sf-cart">Cart</span>
+          </div>
+          <div class="pride" style="height:3px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+          <div class="sf-hero">
+            <p class="sf-eyebrow">Vol. 1 · Now live</p>
+            <div class="sf-title">FÆBRIQ</div>
+            <div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <p class="sf-tag">Identity is a build process.</p>
+            <p class="sf-sub">Premium dark-tech apparel for people who code by day and serve identity by night.</p>
+            <span class="sf-cta">Shop the Drop</span>
+            <p class="sf-note">$4-$68 USD · Free shipping</p>
+          </div>
+
+          <div class="fold"><span>Phone fold</span></div>
+
+          <div class="sf-trust">
+            <div>Made to<br>order</div><div>Printed in<br>the US</div><div>Ships in<br>5-7 days</div><div>Free<br>shipping</div>
+          </div>
+
+          <div class="sf-drop">
+            <div class="sf-drop-head">
+              <div class="sf-drop-title">The Drop</div>
+              <div class="sf-drop-sub">Six pieces · view all 12</div>
+            </div>
+            <div class="sf-grid">
+              <div class="card"><div class="tile"><div class="tile-l1">404</div><div class="tile-l2">Straight not found</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Error 404 Tee</div><div class="card-price">$34</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Code It.<br>Serve It.</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Code It. Serve It. Tee</div><div class="card-price">$34</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Sticker<br>Sheet</div><div class="tile-l2">All five</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Sticker Sheet</div><div class="card-price">$11.99</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Deploying<br>Identity</div><div class="tile-l2">v2.0</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Deploying Identity Crewneck</div><div class="card-price">$62</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Off The<br>Clock.</div><div class="tile-l2">Still iconic.</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Off The Clock Hoodie</div><div class="card-price">$68</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">It's Not<br>A Bug.</div><div class="tile-l2">It's me.</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">It's Not A Bug Sticker</div><div class="card-price">$4</div></div></div>
+            </div>
+
+            <div class="sf-allyship">
+              <p>A named share goes to an LGBTQ+ org. Year-round.</p>
+              <span>Not Q2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <h3>What it does well</h3>
+        <ul>
+          <li><strong>Protects the one thing you own.</strong> Silver wordmark on near-black is your signature. Nobody else in queer tech merch looks like this.</li>
+          <li><strong>No dependency on the mockups.</strong> Your imagery is the known weak link. This layout never puts it above the fold.</li>
+          <li><strong>Shippable today.</strong> Every element already exists in the theme.</li>
+        </ul>
+      </div>
+      <div class="notes cost">
+        <h3>What it costs</h3>
+        <ul>
+          <li>A cold visitor scrolls once before seeing a product. The data says apparel heroes carry images for a reason.</li>
+          <li>Reads as a brand site before it reads as a shop.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ================= OPTION B ================= -->
+    <div class="opt">
+      <div class="opt-head">
+        <span class="opt-tag">Option B</span>
+        <span class="opt-name">Split</span>
+      </div>
+
+      <div class="frame">
+        <div class="frame-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="frame-url">faebriq.com</span></div>
+        <div class="sf">
+          <div class="sf-announce">Free shipping · US &amp; Canada · Printed to order</div>
+          <div class="sf-header">
+            <span class="sf-word">FÆBRIQ</span>
+            <span class="sf-nav"><span>Shop</span><span>About</span><span>Contact</span></span>
+            <span class="sf-cart">Cart</span>
+          </div>
+          <div class="pride" style="height:3px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+          <div class="sf-hero sf-hero--split">
+            <div>
+              <p class="sf-eyebrow">Vol. 1 · Now live</p>
+              <div class="sf-title" style="font-size:clamp(1.5rem,5.5vw,2.2rem)">FÆBRIQ</div>
+              <div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <p class="sf-sub">Identity is a build process. Status updates, printed on all-black.</p>
+              <span class="sf-cta">Shop the Drop</span>
+              <p class="sf-note">$4-$68 USD</p>
+            </div>
+            <div class="tile tile--hero">
+              <div class="tile-l1">404</div>
+              <div class="tile-l2">Straight not found</div>
+              <div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="fold"><span>Phone fold</span></div>
+
+          <div class="sf-trust">
+            <div>Made to<br>order</div><div>Printed in<br>the US</div><div>Ships in<br>5-7 days</div><div>Free<br>shipping</div>
+          </div>
+
+          <div class="sf-drop">
+            <div class="sf-drop-head">
+              <div class="sf-drop-title">The Drop</div>
+              <div class="sf-drop-sub">Six pieces · view all 12</div>
+            </div>
+            <div class="sf-grid">
+              <div class="card"><div class="tile"><div class="tile-l1">Code It.<br>Serve It.</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Code It. Serve It. Tee</div><div class="card-price">$34</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Sticker<br>Sheet</div><div class="tile-l2">All five</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Sticker Sheet</div><div class="card-price">$11.99</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Deploying<br>Identity</div><div class="tile-l2">v2.0</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Deploying Identity Crewneck</div><div class="card-price">$62</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Off The<br>Clock.</div><div class="tile-l2">Still iconic.</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Off The Clock Hoodie</div><div class="card-price">$68</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Please<br>Hold.</div><div class="tile-l2">Rebranding</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Please Hold Sticker</div><div class="card-price">$4</div></div></div>
+              <div class="card"><div class="tile"><div class="tile-l1">Circuit<br>Cap</div><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-body"><div class="pride"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-name">Circuit Cap</div><div class="card-price">$34</div></div></div>
+            </div>
+
+            <div class="sf-allyship">
+              <p>A named share goes to an LGBTQ+ org. Year-round.</p>
+              <span>Not Q2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <h3>What it does well</h3>
+        <ul>
+          <li><strong>A product is visible immediately.</strong> Matches what the conversion data says apparel homepages should do.</li>
+          <li><strong>Reads as a shop.</strong> A cold visitor from TikTok knows in one second that something is for sale.</li>
+          <li><strong>Room to grow.</strong> The hero slot becomes your drop-announcement space later.</li>
+        </ul>
+      </div>
+      <div class="notes cost">
+        <h3>What it costs</h3>
+        <ul>
+          <li><strong>It puts your weakest asset first.</strong> At phone width the hero product fills most of the screen. A flat pasted-on print gets bigger, not better.</li>
+          <li>Halves the wordmark. The restraint that makes you distinctive gets diluted.</li>
+          <li>Needs the mockup fix before it is worth shipping.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= SHARED ================= -->
+  <div class="band">
+    <p class="section-label">Identical in both, and new to your homepage</p>
+    <div class="shared">
+      <div><span class="n">Announcement bar</span><p>Free shipping moves above the fold instead of sitting in small type under the hero. Standard above-fold trust element you currently do not have.</p></div>
+      <div><span class="n">Trust row</span><p>Four facts answering "is this a real brand". The substitute for reviews you do not have yet.</p></div>
+      <div><span class="n">Six products, not twelve</span><p>Curated grids beat full listings. Two tees, two sweats, an entry-price sticker and the sheet.</p></div>
+      <div><span class="n">Allyship line lifted</span><p>Your sharpest differentiator moves off the About page and onto the homepage.</p></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <p class="section-label">What the research says</p>
+    <div class="data">
+      <div><span class="fig">80%</span><p>of attention lands above the fold</p></div>
+      <div><span class="fig">3x</span><p>more product clicks from a curated grid vs a full category listing</p></div>
+      <div><span class="fig">+18%</span><p>add-to-cart from that same curated grid</p></div>
+      <div><span class="fig">6-8</span><p>products is the optimal count. You currently show 12</p></div>
+      <div><span class="fig">2.4x</span><p>conversion from real photos over studio renders, for apparel</p></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <p class="section-label">My call</p>
+    <div class="verdict">
+      <p class="lead">Option A now. Option B the week your mockups are fixed.</p>
+      <p>The research says put a product in the hero, and it is right. But it also says real photography beats renders by <strong>2.4x</strong>, and your renders are the thing you keep flagging. Option B takes your weakest asset and makes it the largest thing on the screen.</p>
+      <p>Option A ships today, wins most of the same ground through the announcement bar, trust row and curated grid, and keeps the restraint that actually makes FÆBRIQ look unlike anything else in this niche. <strong>Then you swap in Option B</strong> once there is a photograph worth putting at that size.</p>
+    </div>
+  </div>
+
+  <p class="caveat"><strong>On the mockups:</strong> product tiles here are drawn in CSS, not photographs. That is deliberate. This page is a decision about layout, and dropping in the current renders would bias the comparison toward whichever one hid them better.</p>
+
+</div>

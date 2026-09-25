@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Vol. 1 · Now Live",
+        "heading": "FÆBRIQ",
+        "tagline": "Identity is a build process.",
+        "subheading": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
+        "cta_label": "Shop the Drop",
+        "cta_url": "/collections/all-products",
+        "price_note": "$4-$68 USD · Free shipping to the US & Canada · Printed to order",
+        "hero_product": "error-404-straight-not-found-tee",
+        "media_tag": "The Flagship"
+      }
+    },
+    "trust-row": {
+      "type": "trust-row",
+      "settings": {
+        "item_1_title": "Free shipping",
+        "item_1_text": "To the US and Canada. Built into the price, no threshold to hit.",
+        "item_2_title": "Made to order",
+        "item_2_text": "Printed after you buy it, not before. No warehouse of unsold guesses.",
+        "item_3_title": "2 to 7 days to print",
+        "item_3_text": "Then 4 to 8 business days in the US, 7 to 14 to Canada.",
+        "item_4_title": "Misprints covered",
+        "item_4_text": "Damaged, defective or misprinted: replaced or refunded within 30 days."
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "The Drop",
+        "subtitle": "Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
+        "collection": "all-products",
+        "products_to_show": 6,
+        "show_view_all": true
+      }
+    },
+    "brand-statement": {
+      "type": "brand-statement",
+      "settings": {
+        "statement": "Identity is a build process. We print status updates, not slogans.",
+        "link_label": "Read the manifesto →",
+        "link_url": "/pages/about"
+      }
+    }
+  },
+  "order": ["hero", "trust-row", "featured-collection", "brand-statement"]
+}

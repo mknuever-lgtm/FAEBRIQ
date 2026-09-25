@@ -1,5 +1,5 @@
 {% comment %}
-  FAEBRIQ: Contact page — real Shopify contact form (name, email, message → store inbox).
+  FAEBRIQ: Contact page. Real Shopify contact form (name, email, message goes to the store inbox).
 {% endcomment %}
 
 <style>
@@ -46,12 +46,12 @@
     {%- if page.content != blank -%}
       <div class="fae-page__intro">{{ page.content }}</div>
     {%- else -%}
-      <p class="fae-page__intro">Questions about an order, a size, or a wholesale request — send it here and it lands straight in the inbox.</p>
+      <p class="fae-page__intro">Questions about an order, a size, or a wholesale request. Send it here and it lands straight in the inbox.</p>
     {%- endif -%}
 
     {%- form 'contact', id: 'fae-contact-form', class: 'fae-contact-form' -%}
       {%- if form.posted_successfully? -%}
-        <div class="fae-contact-form__success">Sent — thanks. Expect a reply soon.</div>
+        <div class="fae-contact-form__success">Sent. Expect a reply soon.</div>
       {%- endif -%}
 
       {%- if form.errors -%}

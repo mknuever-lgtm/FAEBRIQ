@@ -1,0 +1,78 @@
+<div class="fae-collection-section">
+  <div class="fae-container">
+
+    <div style="padding:48px 0 32px;">
+      <div class="fae-circuit" style="height:28px; margin-bottom:24px;">
+        {%- render 'circuit-rule', id: 'collection-top' -%}
+      </div>
+      <h1 style="font-family:var(--font-display);font-size:3rem;color:var(--fae-silver);font-weight:400;line-height:1;">
+        {{ collection.title }}
+      </h1>
+      {%- if collection.description != blank -%}
+        <p style="margin-top:16px;color:var(--fae-text-dim);font-size:1rem;max-width:520px;">
+          {{ collection.description }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <!-- FAEBRIQ: filter (type) + sort + count bar -->
+    {%- assign fae_current_type = current_tags | join: '' -%}
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--fae-line-700);">
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="{{ collection.url }}" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:0 0 4px;border-bottom:1px solid {% if current_tags.size == 0 %}var(--fae-accent){% else %}transparent{% endif %};color:{% if current_tags.size == 0 %}var(--fae-text){% else %}var(--fae-text-faint){% endif %};">All</a>
+        {%- for tag in collection.all_tags -%}
+          <a
+            href="{{ collection.url }}/{{ tag | handleize }}"
+            style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:0 0 4px;border-bottom:1px solid {% if current_tags contains tag %}var(--fae-accent){% else %}transparent{% endif %};color:{% if current_tags contains tag %}var(--fae-text){% else %}var(--fae-text-faint){% endif %};"
+          >{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+
+      <form method="get" style="display:flex;align-items:center;gap:12px;">
+        {%- if current_tags -%}<input type="hidden" name="q" value="{{ current_tags | join: ',' }}">{%- endif -%}
+        <label for="fae-sort" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fae-text-faint);">Sort</label>
+        <select
+          name="sort_by"
+          id="fae-sort"
+          onchange="this.form.submit()"
+          style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--fae-text);background:var(--fae-ink-800);border:1px solid var(--fae-line-700);padding:8px 12px;cursor:pointer;"
+        >
+          <option value="manual" {% if collection.sort_by == 'manual' %}selected{% endif %}>Featured</option>
+          <option value="best-selling" {% if collection.sort_by == 'best-selling' %}selected{% endif %}>Best selling</option>
+          <option value="price-ascending" {% if collection.sort_by == 'price-ascending' %}selected{% endif %}>Price: Low to high</option>
+          <option value="price-descending" {% if collection.sort_by == 'price-descending' %}selected{% endif %}>Price: High to low</option>
+          <option value="title-ascending" {% if collection.sort_by == 'title-ascending' %}selected{% endif %}>A-Z</option>
+          <option value="created-descending" {% if collection.sort_by == 'created-descending' %}selected{% endif %}>Newest</option>
+        </select>
+      </form>
+    </div>
+
+    <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fae-text-faint);padding:20px 0;">
+      {{ collection.products_count }} product{% if collection.products_count != 1 %}s{% endif %}
+    </p>
+
+    <div class="fae-product-grid">
+      {%- paginate collection.products by 24 -%}
+      {%- for product in collection.products -%}
+        {%- render 'product-card', card_product: product, card_id: forloop.index -%}
+      {%- else -%}
+        <p style="padding:40px;font-family:var(--font-mono);font-size:0.75rem;color:var(--fae-text-faint);grid-column:1/-1;">
+          No products found.
+        </p>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <div style="display:flex;justify-content:center;gap:8px;padding:40px 0;">
+        {%- if paginate.previous -%}
+          <a href="{{ paginate.previous.url }}" class="fae-variant-btn">← Prev</a>
+        {%- endif -%}
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}" class="fae-variant-btn">Next →</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- endpaginate -%}
+
+  </div>
+</div>

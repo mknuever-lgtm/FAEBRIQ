@@ -21,7 +21,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Brand: queer-coded dark-tech merch. Voice: dry, deadpan, terminal wit.
   Sans FÆBRIQ wordmark (reference: assets/print-art/reference/wordmark-reference-2026-09-23.jpg)
   with a six-block bar at 1.35x its width, on near-black (#0f0e0c bg / #e0e0e0 text).
-  Phrase lockups (product prints) keep Instrument Serif.
+  Phrase lockups (product prints) keep Bodoni Moda (corrected 2026-09-25;
+  an earlier version of this line wrongly said Instrument Serif). Line 1
+  is 100% size, line 2 is 75-85% of line 1. Bar is 1.35x the wordmark's
+  width wherever the wordmark prints (stickers, cap, standalone logo);
+  apparel has no wordmark, so its bar stays tied to the phrase width.
   One pride-circuit accent per product.
 - Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
   marketing copy, avatar/video persona, or promotional content still needs

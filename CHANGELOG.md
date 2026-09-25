@@ -108,3 +108,6 @@ Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow 
 
 2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
 Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.
+
+2026-09-25 Fixed two print-lockup rules per Maurice: line1 is 100%, line2 is 75-85% of line1 (LINE2_RATIO_DEFAULT=0.80, replaces the old width-fit l2_w mechanism which sometimes gave near-zero size difference); the bar next to a printed wordmark is 1.35x that wordmark width (BAR_TO_MARK_RATIO), not the old ~7x phrase-width bar. Regenerated the 5 live stickers and the 404 v3 print files in tools/make_print_file.py and tools/make_404_v3.py, re-swapped the sans mark, corrected CLAUDE.md (product prints use Bodoni Moda, not Instrument Serif) and IMAGERY_SPEC.
+Why: Maurice flagged the shipped stickers as wrong on both counts.

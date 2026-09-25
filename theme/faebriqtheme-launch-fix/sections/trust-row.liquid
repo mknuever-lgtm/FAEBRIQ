@@ -1,0 +1,55 @@
+{% comment %}
+  FAEBRIQ: trust row. Sits directly under the hero.
+
+  A new store has no reviews and no order count, so the usual social proof is
+  not available. These four facts are the substitute. Every one is checkable
+  against the Shipping and Refund policies, which is the point: nothing goes
+  here that the policy pages do not already back.
+{% endcomment %}
+<div class="fae-trust">
+  <div class="fae-container">
+    <ul class="fae-trust__row">
+      {%- if section.settings.item_1_title != blank -%}
+        <li class="fae-trust__item">
+          <span class="fae-trust__title">{{ section.settings.item_1_title }}</span>
+          <span class="fae-trust__text">{{ section.settings.item_1_text }}</span>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.item_2_title != blank -%}
+        <li class="fae-trust__item">
+          <span class="fae-trust__title">{{ section.settings.item_2_title }}</span>
+          <span class="fae-trust__text">{{ section.settings.item_2_text }}</span>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.item_3_title != blank -%}
+        <li class="fae-trust__item">
+          <span class="fae-trust__title">{{ section.settings.item_3_title }}</span>
+          <span class="fae-trust__text">{{ section.settings.item_3_text }}</span>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.item_4_title != blank -%}
+        <li class="fae-trust__item">
+          <span class="fae-trust__title">{{ section.settings.item_4_title }}</span>
+          <span class="fae-trust__text">{{ section.settings.item_4_text }}</span>
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Trust row",
+  "settings": [
+    { "type": "text", "id": "item_1_title", "label": "1. Title", "default": "Free shipping" },
+    { "type": "text", "id": "item_1_text", "label": "1. Text", "default": "To the US and Canada. Built into the price, no threshold to hit." },
+    { "type": "text", "id": "item_2_title", "label": "2. Title", "default": "Made to order" },
+    { "type": "text", "id": "item_2_text", "label": "2. Text", "default": "Printed after you buy it, not before. No warehouse of unsold guesses." },
+    { "type": "text", "id": "item_3_title", "label": "3. Title", "default": "2 to 7 days to print" },
+    { "type": "text", "id": "item_3_text", "label": "3. Text", "default": "Then 4 to 8 business days in the US, 7 to 14 to Canada." },
+    { "type": "text", "id": "item_4_title", "label": "4. Title", "default": "Misprints covered" },
+    { "type": "text", "id": "item_4_text", "label": "4. Text", "default": "Damaged, defective or misprinted: replaced or refunded within 30 days." }
+  ],
+  "presets": [{ "name": "Trust row" }]
+}
+{% endschema %}

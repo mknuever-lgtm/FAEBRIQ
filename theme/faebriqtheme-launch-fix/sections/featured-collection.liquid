@@ -1,0 +1,176 @@
+{% comment %}
+  FAEBRIQ: rich catalog section — big serif title + subtitle, type filter rail, sort
+  dropdown, live count, grid. Filtering/sorting run client-side over the rendered
+  cards, no page reload. Use on home (index) or any page needing the full catalog
+  treatment; for the dedicated collection page see templates/collection.liquid.
+{% endcomment %}
+
+{%- comment -%}
+  FAEBRIQ FIX 2026-09-07: was `collections[section.settings.collection]`.
+  The schema below declares this setting as "type": "collection", which Shopify
+  resolves to a COLLECTION OBJECT, not a handle string. Indexing the collections
+  array with an object returns nil, so `col` was always blank and the homepage
+  rendered the "select a collection" placeholder instead of any products.
+  A collection-type setting is used directly.
+{%- endcomment -%}
+{%- assign col = section.settings.collection -%}
+
+{%- comment -%}
+  FAEBRIQ 2026-09-16: the homepage now shows a curated 6, not the whole catalog.
+  That broke two things that assumed the grid held every product:
+
+  1. The count read `col.products.size`, so it said "12 products" above a grid
+     of 6. It now counts what is actually rendered.
+  2. The filter rail is built from every product type in the collection, but
+     filters only the cards on the page. Clicking "Tote" when the tote is not
+     in the first 6 emptied the grid. The rail now only renders when the grid
+     holds the full collection; the "View all" button is the route to browsing.
+
+  The section JS already guards for a missing sort select and tolerates an
+  empty filter list, so hiding the rail needs no script change.
+{%- endcomment -%}
+{%- assign fae_shown = 0 -%}
+{%- assign fae_full_catalog = false -%}
+{%- if col != blank -%}
+  {%- assign fae_shown = section.settings.products_to_show -%}
+  {%- if col.products.size < fae_shown -%}
+    {%- assign fae_shown = col.products.size -%}
+  {%- endif -%}
+  {%- if fae_shown >= col.products.size -%}
+    {%- assign fae_full_catalog = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+<div class="fae-collection-section" data-fae-catalog="{{ section.id }}">
+  <div class="fae-container">
+
+    {%- if col != blank -%}
+      {%- comment -%} FAEBRIQ 2026-09-10: header block centred to match hero and brand-statement. {%- endcomment -%}
+      <div style="padding: 48px 0 32px; text-align: center;">
+        <div class="fae-circuit" style="height: 4px; max-width: 360px; margin: 0 auto 24px;">
+          {%- render 'circuit-rule', id: 'catalog-', append: section.id -%}
+        </div>
+        <h1 style="font-family:var(--font-display);font-size:3rem;color:var(--fae-silver);font-weight:400;line-height:1;">
+          {{ section.settings.title | default: col.title }}
+        </h1>
+        {%- if section.settings.subtitle != blank -%}
+          <p style="margin:12px auto 0;color:var(--fae-text-dim);font-size:1rem;max-width:520px;">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- if fae_full_catalog -%}
+        <!-- Filter rail + sort -->
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--fae-line-700);flex-wrap:wrap;">
+          <div class="fae-catalog-filters" style="display:flex;gap:24px;flex-wrap:wrap;">
+            <button type="button" data-fae-filter="All" class="fae-catalog-filter-btn is-active" style="background:none;border:none;cursor:pointer;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fae-text);padding:0 0 4px;border-bottom:1px solid var(--fae-accent);">All</button>
+            {%- assign seen_types = "" -%}
+            {%- for product in col.products -%}
+              {%- unless seen_types contains product.type -%}
+                {%- assign seen_types = seen_types | append: product.type | append: "," -%}
+                {%- assign fae_flabel = product.type -%}
+                {%- case product.type -%}
+                  {%- when 'Paper products' -%}{%- assign fae_flabel = 'Stickers' -%}
+                  {%- when 'Bags' -%}{%- assign fae_flabel = 'Tote' -%}
+                  {%- when 'Hats' -%}{%- assign fae_flabel = 'Cap' -%}
+                  {%- when 'Sweatshirt' -%}{%- assign fae_flabel = 'Crewneck' -%}
+                {%- endcase -%}
+                <button type="button" data-fae-filter="{{ product.type | escape }}" class="fae-catalog-filter-btn" style="background:none;border:none;cursor:pointer;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fae-text-faint);padding:0 0 4px;border-bottom:1px solid transparent;">{{ fae_flabel }}</button>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+
+          <div style="display:flex;align-items:center;gap:12px;">
+            <label for="fae-sort-{{ section.id }}" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fae-text-faint);">Sort</label>
+            <select id="fae-sort-{{ section.id }}" class="fae-catalog-sort" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--fae-text);background:var(--fae-ink-800);border:1px solid var(--fae-line-700);padding:8px 12px;cursor:pointer;">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to high</option>
+              <option value="price-desc">Price: High to low</option>
+              <option value="az">A-Z</option>
+            </select>
+          </div>
+        </div>
+      {%- endif -%}
+
+      <p class="fae-catalog-count" style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fae-text-faint);padding:20px 0;text-align:center;">
+        {{ fae_shown }} product{% if fae_shown != 1 %}s{% endif %}
+      </p>
+
+      <div class="fae-product-grid" style="margin-top:1px;">
+        {%- for product in col.products limit: section.settings.products_to_show -%}
+          {%- render 'product-card', card_product: product, card_id: forloop.index -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_view_all -%}
+        <div style="margin-top:32px; text-align:center;">
+          <a href="{{ col.url }}" class="fae-hero__cta">View all {{ col.title }}</a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <p style="padding:40px 0; font-family:var(--font-mono); font-size:0.75rem; color:var(--fae-text-faint);">Select a collection in the theme editor to show the catalog here.</p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-fae-catalog="{{ section.id }}"]');
+  if (!root) return;
+  var grid = root.querySelector('.fae-product-grid');
+  if (!grid) return;
+  var countEl = root.querySelector('.fae-catalog-count');
+  var filterBtns = root.querySelectorAll('[data-fae-filter]');
+  var sortSelect = root.querySelector('.fae-catalog-sort');
+  var activeFilter = 'All';
+
+  function apply() {
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-fae-card]'));
+    var visible = 0;
+    cards.forEach(function (card) {
+      var show = activeFilter === 'All' || card.dataset.type === activeFilter;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (countEl) countEl.textContent = visible + ' product' + (visible !== 1 ? 's' : '');
+
+    var sortVal = sortSelect ? sortSelect.value : 'featured';
+    if (sortVal !== 'featured') {
+      cards.sort(function (a, b) {
+        if (sortVal === 'price-asc') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+        if (sortVal === 'price-desc') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+        if (sortVal === 'az') return a.dataset.title.localeCompare(b.dataset.title);
+        return 0;
+      });
+      cards.forEach(function (card) { grid.appendChild(card); });
+    }
+  }
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeFilter = btn.dataset.faeFilter;
+      filterBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b === btn);
+        b.style.color = b === btn ? 'var(--fae-text)' : 'var(--fae-text-faint)';
+        b.style.borderBottomColor = b === btn ? 'var(--fae-accent)' : 'transparent';
+      });
+      apply();
+    });
+  });
+  if (sortSelect) sortSelect.addEventListener('change', apply);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Catalog",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title override", "info": "Defaults to collection title if left blank." },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Tees, hoodies, caps, totes, stickers. All black. All sharp." },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 3, "max": 24, "step": 1, "default": 12 },
+    { "type": "checkbox", "id": "show_view_all", "label": "Show 'View all' button", "default": true }
+  ],
+  "presets": [{ "name": "Catalog" }]
+}
+{% endschema %}

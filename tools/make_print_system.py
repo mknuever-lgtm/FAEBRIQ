@@ -201,6 +201,17 @@ def main():
     # Logo: wordmark as line 1, stripe underneath. Cap front and apparel sleeve.
     im, meta = lockup(("FÆBRIQ",), False, 3600)
     preview.append(save(im, "logo-faebriq-1p35.png", meta, "cap front + sleeve", ["FÆBRIQ"], manifest))
+    # Sleeve: FÆBRIQ alone, no stripe (the chest print already carries it,
+    # and at 3 in the stripe would print as a 1.5 mm thread).
+    f = font(1000)
+    f = font(1000 * 3000 / ink_w(f, "FÆBRIQ"))
+    m, _ = line_mask(f, "FÆBRIQ")
+    pad = 60
+    im = Image.new("RGBA", (m.width + 2 * pad, m.height + 2 * pad), (0, 0, 0, 0))
+    ink = Image.new("RGBA", m.size, WHITE + (255,))
+    ink.putalpha(m)
+    im.alpha_composite(ink, (pad, pad))
+    preview.append(save(im, "wordmark-faebriq-sleeve.png", {}, "apparel sleeve", ["FÆBRIQ"], manifest))
     sheet = sticker_sheet(stickers)
     save(sheet, "sticker-sheet-2400x3600.png", {}, "sticker sheet", SHEET, manifest)
     preview.append(sheet)

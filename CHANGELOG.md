@@ -112,3 +112,4 @@ Why: Maurice's call to put every product in one system; older print files and th
 2026-09-25 Manus ran out of credits with nothing delivered; added handoff/MUSE_BRIEF_4.md so Muse makes the product images (physically warped composites), Printify swaps go to Maurice by hand. Why: no Manus credits left.
 2026-09-25 MUSE_BRIEF_4: Muse now also does the Printify swaps via its connector (read first, one batched approval, upload by URL, publish variants only). Why: Maurice connected Printify to Muse.
 2026-09-25 MUSE_BRIEF_4: sleeve logo placed horizontal at the bottom of the left sleeve; tote lockup spelled out as the sticker version. Why: Maurice's placement spec.
+2026-09-25 Added wordmark-faebriq-sleeve.png (FÆBRIQ alone, no stripe) for apparel sleeves; Muse brief and imagery spec updated. Why: Maurice chose no bar on sleeves.

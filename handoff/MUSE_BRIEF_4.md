@@ -33,7 +33,7 @@ Manus ran out of credits. It delivered no images and saved nothing in Printify. 
 | `deploying-identity-v2-sticker` | kiss-cut sticker | `deploying-identity-v2-sticker-2400.png` |
 | `faebriq-sticker-sheet-full-drop` | sticker sheet | `sticker-sheet-2400x3600.png` |
 
-Tees, hoodie and crewneck also carry `logo-faebriq-1p35.png` (FÆBRIQ over the stripe) about 3 in wide at the **bottom of the left sleeve**, **horizontal**: it reads left to right across the sleeve, level when the arm hangs down, about 1 in above the sleeve hem (tees) or the cuff (hoodie, crewneck). Show it where the angle allows.
+Tees, hoodie and crewneck also carry `wordmark-faebriq-sleeve.png` (FÆBRIQ alone, no stripe) about 3 in wide at the **bottom of the left sleeve**, **horizontal**: it reads left to right across the sleeve, level when the arm hangs down, about 1 in above the sleeve hem (tees) or the cuff (hoodie, crewneck). Show it where the angle allows.
 
 ## Tiers (work in the table's order)
 - **Tier 2 (first):** slot 1 and slot 2 for all 12 products. That's 24 images.
@@ -78,7 +78,7 @@ Generate the scene with the product blank but no print, then composite the exact
    - Tote: 10 in, centered.
    - Cap: 3.5 to 4 in, centered.
    - Stickers and sheet: fill the area.
-   - Left sleeve: `logo-faebriq-1p35.png` at 3 in, **horizontal** (no rotation), placed at the bottom of the sleeve print area, about 1 in above the hem or cuff. **Only if the product already has a sleeve position.** Never change blueprint or provider. If the sleeve area is too narrow for 3 in horizontal, use the largest width that fits and note it.
+   - Left sleeve: `wordmark-faebriq-sleeve.png` at 3 in, **horizontal** (no rotation), placed at the bottom of the sleeve print area, about 1 in above the hem or cuff. **Only if the product already has a sleeve position.** Never change blueprint or provider. If the sleeve area is too narrow for 3 in horizontal, use the largest width that fits and note it.
 5. **Publish** with title, description, tags and images/mockups set to **false**. Variants only. No price may change.
 6. Record in `Final_report.md`: done per product, sleeve added or not offered, cost before and after, and the sticker sheet's print area size.
 

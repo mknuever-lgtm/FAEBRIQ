@@ -214,6 +214,17 @@
       "stripe_over_widest": 1.35
     },
     {
+      "file": "assets/print-art/system-2026-09-25/wordmark-faebriq-sleeve.png",
+      "product": "apparel sleeve",
+      "text": [
+        "FÆBRIQ"
+      ],
+      "size": [
+        3118,
+        763
+      ]
+    },
+    {
       "file": "assets/print-art/system-2026-09-25/sticker-sheet-2400x3600.png",
       "product": "sticker sheet",
       "text": [

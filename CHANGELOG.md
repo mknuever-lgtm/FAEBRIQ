@@ -113,3 +113,5 @@ Why: Maurice's call to put every product in one system; older print files and th
 2026-09-25 MUSE_BRIEF_4: Muse now also does the Printify swaps via its connector (read first, one batched approval, upload by URL, publish variants only). Why: Maurice connected Printify to Muse.
 2026-09-25 MUSE_BRIEF_4: sleeve logo placed horizontal at the bottom of the left sleeve; tote lockup spelled out as the sticker version. Why: Maurice's placement spec.
 2026-09-25 Added wordmark-faebriq-sleeve.png (FÆBRIQ alone, no stripe) for apparel sleeves; Muse brief and imagery spec updated. Why: Maurice chose no bar on sleeves.
+2026-09-25 Reverted the tagline print system from Inter back to Bodoni Moda (the 2026-09-10 founder-approved off-the-clock-still-iconic-light-4500.png is now the documented spacing reference); cap and sleeve logo stay Inter. Added a serif tote and sticker sheet, and MUSE_BRIEF_5.md superseding brief 4.
+Why: Maurice's call, the Inter tagline experiment is retired same-day it shipped.

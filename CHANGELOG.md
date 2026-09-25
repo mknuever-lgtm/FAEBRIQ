@@ -119,3 +119,5 @@ Why: Maurice's call to put every product in one system; older print files and th
 
 2026-09-25 Reverted the tagline print system from Inter back to Bodoni Moda (the 2026-09-10 founder-approved off-the-clock-still-iconic-light-4500.png is now the documented spacing reference); cap and sleeve logo stay Inter. Added a serif tote and sticker sheet, and MUSE_BRIEF_5.md superseding brief 4.
 Why: Maurice's call, the Inter tagline experiment is retired same-day it shipped.
+2026-09-25 Fixed Please Hold sticker: line 2 was 23% of line 1's size (never rebalanced in the 09-10 pass), now 45% via --l2-w=1.03, legible. Documented that make_print_file.py's spacing formula is stale vs the committed pixel-shifted masters; future spacing edits must pixel-shift the existing file, not re-render.
+Why: real bug found on the reverted Bodoni files, confirmed on pixels.

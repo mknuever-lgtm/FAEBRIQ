@@ -70,6 +70,10 @@ Note: theme was unpublished by the founder for this edit; publish to see it live
 Why: the founder wants the existing store-copy dash ban applied to chat replies and reports too, not just shipped strings.
 Note: rule text only. No existing dashes elsewhere in the repo were touched.
 
+2026-09-22 Removed all 13 em and en dashes from the four policy drafts in legal/ (ranges now read "2 to 7", parenthetical dashes rewritten as commas or full stops).
+Why: the Output style rule merged in PR #22 bans dashes in store copy, and the earlier sitewide cleanup covered theme strings only, never legal/.
+Note: wording is otherwise untouched and the drafts already carried their Last Updated lines. The four live Shopify policies still need a manual paste: the connector lacks write_legal_policies.
+
 2026-09-22 Added POST_LAUNCH_TOOLS.md, logging Triple Whale and Postscript as later-stage growth tools to revisit once the store has traffic.
 Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md (current-state only) or misfiling under SOCIAL_LAUNCH_NOTES.md (social-channel-specific).
 

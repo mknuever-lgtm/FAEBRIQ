@@ -10,6 +10,11 @@ Note: themes are inverted vs CLAUDE.md — faebriqtheme-launch-fix is MAIN (live
 2026-09-08 Added SOCIAL_LAUNCH_NOTES.md — reminder to link the Shop app from social profiles once the website is live.
 Why: Shop app has a Follow button and in-app checkout, and renders product data only, so it is unaffected by theme work.
 Note: gated on fixing product imagery first — Shop app is a pure image grid with no copy to compensate.
+2026-09-08 Corrected design-decisions.md from a physical Error 404 tee sample; flagged its pride hex as unresolved.
+Why: its tee description (massive 404, small italic phrase) is falsified by the sample, and its hex set exists in no other file.
+Also reverted the draft theme's circuit-rule.liquid to the brand-kit palette this session had overwritten on that file's authority.
+2026-09-10 Flagged design-decisions.md as sourced from a now-superseded physical sample; founder reports the design changed since 2026-09-08.
+Why: prevent the 2026-09-08 sample's hex/layout claims from being read as a live spec by a future session.
 
 2026-09-08 Regenerated 4 apparel print masters (bug/code-it/deploying-identity/off-the-clock) via tools/make_print_file.py.
 Why: 2026-08-27's "equal-visual-cap" pass had silently overwritten make_print_file.py's tuned small-line2 lockup; line2 is punchline/payload and reads deadpan only when smaller, per make_print_file.py's own l2_w=0.4710 spec.

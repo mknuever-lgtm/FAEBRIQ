@@ -3,7 +3,9 @@
 Paste this whole file into Muse. Written 2026/09/25.
 
 ## Where things stand
-Manus ran out of credits. It delivered no images and saved nothing in Printify. Start the images from zero. **Printify is not your job.** Maurice does it by hand.
+Manus ran out of credits. It delivered no images and saved nothing in Printify. Start the images from zero. **Printify is your job too**, through your Printify connector. Code It Tee may have had its artwork deleted by Manus, so check it first. You have no Shopify connector, and Shopify isn't your job: Claude does it.
+
+**Order:** Tier 2 images, then Printify, then Tier 3 images.
 
 ## Budget rules
 - Do only what this brief lists, in tier order.
@@ -35,7 +37,8 @@ Tees, hoodie and crewneck also carry `logo-faebriq-1p35.png` small (about 3 in) 
 
 ## Tiers (work in the table's order)
 - **Tier 2 (first):** slot 1 and slot 2 for all 12 products. That's 24 images.
-- **Tier 3 (only if budget remains):** slots 3 and 4, in the same order.
+- **Printify (second):** see the section below.
+- **Tier 3 (last, only if budget remains):** slots 3 and 4, in the same order.
 
 | Slot | Apparel / tote / cap | Stickers | Sheet |
 |---|---|---|---|
@@ -66,14 +69,27 @@ Generate the scene with the product blank but no print, then composite the exact
 5. The background is white or light, or the room is cluttered.
 6. The blank isn't black, or it's the wrong garment (knit, wool). Hands or bodies are malformed.
 
+## Printify (via your connector)
+1. **Read first, change nothing yet.** Fetch all 12 products and record, for each one: print area positions (front, left sleeve and so on) with their sizes in inches, current artwork, and cost per variant if exposed.
+2. **One approval.** Send Maurice a single table: product, position, file, target width, sleeve yes/no, cost now. Maurice approves once. Then run all 12 without asking again. Ask only if something differs from the approved table.
+3. **Upload by URL**, never from a device: `https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/claude/hopeful-goldberg-a40dkh/assets/print-art/system-2026-09-25/` + file name.
+4. **Placement:** scale = target width / print area width.
+   - Chest: 10 in on tees, 11 in on the hoodie and crewneck. Centered, top edge about 0.5 in below the top of the print area.
+   - Tote: 10 in, centered.
+   - Cap: 3.5 to 4 in, centered.
+   - Stickers and sheet: fill the area.
+   - Left sleeve: `logo-faebriq-1p35.png` at 3 in, **only if the product already has a sleeve position**. Never change blueprint or provider.
+5. **Publish** with title, description, tags and images/mockups set to **false**. Variants only. No price may change.
+6. Record in `Final_report.md`: done per product, sleeve added or not offered, cost before and after, and the sticker sheet's print area size.
+
 ## Delivery
 - New branch `muse/imagery-2026-09-25`, folder `assets/product-images/2026-09-25/`.
 - Files `{handle}-slot{N}.jpg`, 2048x2560, JPG quality 92.
 - `Final_report.md` in the same folder: one row per product with slots done, flags per image, and anything skipped.
-- Don't push to any other branch. Don't touch Shopify or Printify. Claude uploads to Shopify after checking.
+- Don't push to any other branch. Don't touch Shopify. Claude uploads the images to Shopify after checking.
 
 ## Hard rules
 - No purchases.
-- No store, theme, price or product changes.
+- No store, theme, price or variant changes. No creating or deleting Printify products.
 - No print files from outside `system-2026-09-25/`.
 - No em or en dashes in any text you write.

@@ -103,3 +103,5 @@ Why: slot order per IMAGERY_SPEC, and no retired design live. The new tee and to
 Why: the cap design changed after the sample and the repo only had 520px previews; this is the reference file for Muse and for the Printify DTF print.
 2026-09-24 Added cap print file v3 (tools/make_cap_v3.py): FÆBRIQ in Inter SemiBold on top, flat stripe underneath, three stripe widths (1.1x, 1.35x, 1.7x the word) plus a comparison sheet.
 Why: Maurice wants the render's wordmark font, the stripe under the word like the rest of the brand, and the stripe at least as wide as the word.
+2026-09-25 New print system for every product (tools/make_print_system.py, assets/print-art/system-2026-09-25/): Inter SemiBold, line 2 at 75%, stripe 1.35x the widest line, wordmark on stickers and tote only, FÆBRIQ logo on apparel sleeves and cap.
+Why: Maurice's call to put every product in one system; older print files and the 2026-09-24 images are retired in IMAGERY_SPEC. Added handoff/MANUS_BRIEF_3.md to rebuild Printify, reshoot 4 images per product and publish.

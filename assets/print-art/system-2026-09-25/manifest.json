@@ -1,0 +1,233 @@
+{
+  "system": "FÆBRIQ print system",
+  "date": "2026-09-25",
+  "font": "Inter SemiBold",
+  "stripe_over_widest_line": 1.35,
+  "line2_size": 0.75,
+  "outputs": [
+    {
+      "file": "assets/print-art/system-2026-09-25/404-straight-not-found-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "404",
+        "STRAIGHT NOT FOUND"
+      ],
+      "size": [
+        4500,
+        1202
+      ],
+      "line1_px": 359,
+      "line2_px": 270,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/code-it-serve-it-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "CODE IT.",
+        "SERVE IT."
+      ],
+      "size": [
+        4500,
+        1937
+      ],
+      "line1_px": 726,
+      "line2_px": 545,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/off-the-clock-still-iconic-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "OFF THE CLOCK.",
+        "STILL ICONIC."
+      ],
+      "size": [
+        4500,
+        1228
+      ],
+      "line1_px": 373,
+      "line2_px": 280,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/deploying-identity-v2-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "DEPLOYING",
+        "IDENTITY V2.0"
+      ],
+      "size": [
+        4500,
+        1567
+      ],
+      "line1_px": 541,
+      "line2_px": 406,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/its-not-a-bug-its-me-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "IT’S NOT A BUG.",
+        "IT’S ME."
+      ],
+      "size": [
+        4500,
+        1258
+      ],
+      "line1_px": 387,
+      "line2_px": 291,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/please-hold-rebranding-identity-apparel-4500.png",
+      "product": "apparel",
+      "text": [
+        "PLEASE HOLD,",
+        "I’M REBRANDING MY IDENTITY"
+      ],
+      "size": [
+        4500,
+        1020
+      ],
+      "line1_px": 269,
+      "line2_px": 202,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/404-straight-not-found-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "404",
+        "STRAIGHT NOT FOUND"
+      ],
+      "size": [
+        2400,
+        798
+      ],
+      "line1_px": 192,
+      "line2_px": 144,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/code-it-serve-it-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "CODE IT.",
+        "SERVE IT."
+      ],
+      "size": [
+        2400,
+        1190
+      ],
+      "line1_px": 387,
+      "line2_px": 291,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/off-the-clock-still-iconic-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "OFF THE CLOCK.",
+        "STILL ICONIC."
+      ],
+      "size": [
+        2400,
+        811
+      ],
+      "line1_px": 199,
+      "line2_px": 149,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/deploying-identity-v2-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "DEPLOYING",
+        "IDENTITY V2.0"
+      ],
+      "size": [
+        2400,
+        990
+      ],
+      "line1_px": 288,
+      "line2_px": 216,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/its-not-a-bug-its-me-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "IT’S NOT A BUG.",
+        "IT’S ME."
+      ],
+      "size": [
+        2400,
+        828
+      ],
+      "line1_px": 207,
+      "line2_px": 155,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/please-hold-rebranding-identity-sticker-2400.png",
+      "product": "sticker",
+      "text": [
+        "PLEASE HOLD,",
+        "I’M REBRANDING MY IDENTITY"
+      ],
+      "size": [
+        2400,
+        701
+      ],
+      "line1_px": 143,
+      "line2_px": 108,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/404-tote-4500.png",
+      "product": "tote",
+      "text": [
+        "404",
+        "STRAIGHT NOT FOUND"
+      ],
+      "size": [
+        4500,
+        1491
+      ],
+      "line1_px": 359,
+      "line2_px": 270,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/logo-faebriq-1p35.png",
+      "product": "cap front + sleeve",
+      "text": [
+        "FÆBRIQ"
+      ],
+      "size": [
+        3600,
+        1178
+      ],
+      "line1_px": 648,
+      "line2_px": null,
+      "stripe_over_widest": 1.35
+    },
+    {
+      "file": "assets/print-art/system-2026-09-25/sticker-sheet-2400x3600.png",
+      "product": "sticker sheet",
+      "text": [
+        "404-straight-not-found",
+        "its-not-a-bug-its-me",
+        "code-it-serve-it",
+        "please-hold-rebranding-identity",
+        "deploying-identity-v2"
+      ],
+      "size": [
+        2400,
+        3600
+      ]
+    }
+  ]
+}

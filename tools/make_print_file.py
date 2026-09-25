@@ -140,15 +140,18 @@ GAP_L2_BAR_OF_L2_SIZE = 1.3758
 # direct fraction of line1's own fitted size is exact and word-count-proof.
 LINE2_RATIO_DEFAULT = 0.80
 
-# Bar-to-wordmark ratio (Maurice, 2026-09-23 and reconfirmed 2026-09-25): the
-# six-block bar is always 1.35x the width of the FÆBRIQ wordmark it sits with,
-# on stickers and caps, where the wordmark actually prints. This replaces
-# the old bar_w=1.0326 (a fraction of the PHRASE width), which made the bar
-# roughly 7x wider than the tiny signature mark underneath it: visually two
-# unrelated elements, not "a wordmark with its bar". Apparel prints carry no
-# wordmark at all (see module docstring), so they keep the phrase-width bar
-# unchanged, there is nothing for their bar to be 1.35x of.
-BAR_TO_MARK_RATIO = 1.35
+# Bar-to-text ratio (Maurice, 2026-09-23, corrected 2026-09-25 -- final,
+# non-negotiable, applies to every design: sticker, tee, crewneck, hoodie,
+# tote, cap). The six-block bar is always 1.35x the width of the WIDEST text
+# in the design, whichever line that is (line1, in every design so far).
+# This is not "1.35x the small FÆBRIQ signature mark" -- an earlier reading
+# of the same instruction -- which made the bar shrink to hug the tiny mark
+# and left it far shorter than the phrase above it. The bar fills the canvas
+# edge to edge (as it always did); what changed is that line1 is now sized
+# DOWN so its own width, times 1.35, exactly equals that full canvas width,
+# rather than line1 filling the canvas and the bar being an independent
+# ~1.03x-of-line1 constant with no exact ratio to anything.
+BAR_TO_TEXT_RATIO = 1.35
 
 
 def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
@@ -162,20 +165,24 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     src = dict(SRC)
     l2_ratio = LINE2_RATIO_DEFAULT if l2_ratio is None else l2_ratio
 
-    # Line1 (and, for apparel, the bar right under it) sets the usable width.
-    # Stickers size off line1 too now that the bar no longer follows the
-    # phrase width -- see BAR_TO_MARK_RATIO above.
-    L = width * (1 - 2 * margin_frac) / (src["bar_w"] if not wordmark else src["l1_w"])
+    # The bar always fills the canvas edge to edge (minus margin); line1 is
+    # sized so that its own width is exactly bar_w / BAR_TO_TEXT_RATIO, which
+    # makes line1 -- the widest element in every design so far -- 1.35x
+    # narrower than the bar, i.e. the bar is 1.35x line1. L is that scale.
+    bar_w = width * (1 - 2 * margin_frac)
+    L = bar_w / BAR_TO_TEXT_RATIO / src["l1_w"]
     f_l1 = _fit(ImageFont, serif, line1, src["l1_w"] * L, "w")
     f_l2 = ImageFont.truetype(serif, max(1, round(f_l1.size * l2_ratio)))
-    # A long line2 at the target ratio can render wider than the canvas (e.g.
+    # A long line2 at the target ratio can render wider than line1 (e.g.
     # "I'M REBRANDING MY IDENTITY" at 80% of "PLEASE HOLD"'s size) -- the
-    # ratio is a target, not a licence to run off the print area, so fall
-    # back to width-fit (matching line1's own width target) only when needed.
+    # ratio is a target, not a licence to become the new widest element and
+    # push the bar wider than the canvas, so fall back to width-fit
+    # (matching line1's own width target) only when needed.
     if f_l2.getlength(line2) > src["l1_w"] * L:
         f_l2 = _fit(ImageFont, serif, line2, src["l1_w"] * L, "w")
     # Label is fitted by cap height, not width, so it stays a consistent size
-    # regardless of how long the label text is ("404" vs "ERROR 404").
+    # regardless of how long the label text is ("404" vs "ERROR 404"). Every
+    # label used so far is short enough to stay narrower than line1.
     f_lab = _fit(ImageFont, serif, label, src["label_h"] * L, "h") if label else None
     f_mark = _fit(ImageFont, serif, "FÆBRIQ", src["mark_w"] * L, "w") if wordmark else None
 
@@ -187,13 +194,7 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     src["bar_y"] = src["l2_y"] + GAP_L2_BAR_OF_L2_SIZE * f_l2.size / L
     src["mark_y"] = src["bar_y"] + (SRC["mark_y"] - SRC["bar_y"])
 
-    if wordmark:
-        mark_w_px = f_mark.getlength("FÆBRIQ")
-        bar_w = BAR_TO_MARK_RATIO * mark_w_px
-        bar_h = (SRC["bar_h"] * SRC["bar_w"]) * L  # same absolute thinness as the old phrase-width bar
-    else:
-        bar_w = src["bar_w"] * L
-        bar_h = src["bar_h"] * bar_w
+    bar_h = (SRC["bar_h"] * SRC["bar_w"]) * L  # same absolute thinness the bar always had
 
     content_h = (src["mark_y"] * L + f_mark.getbbox("FÆBRIQ")[3] - f_mark.getbbox("FÆBRIQ")[1]
                  if wordmark else src["bar_y"] * L + bar_h)

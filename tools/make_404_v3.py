@@ -2,12 +2,22 @@
 import sys; sys.path.insert(0,'tools')
 import make_print_file as m
 from PIL import Image, ImageFont, ImageDraw
-# Proportions measured off Maurice's 2026-09-23 reference, as fractions of bar width B.
+# Proportions measured off Maurice's 2026-09-23 reference, as fractions of B
+# (the width scale -- see build(), B is no longer the bar width itself).
 R=dict(n404_w=0.2799, l2_w=0.7732, gap1=0.0642, gap2=0.0216, bar_h=0.0166, gap_mark=0.0510, mark_w=0.140)
 def build(out,width,sticker):
     serif=m.font_path("Bodoni Moda",None,"BodoniModa-Regular.ttf")
     col={k:tuple(int(v.lstrip('#')[i:i+2],16) for i in (0,2,4)) for k,v in m.INK_LIGHT.items()}
-    pad=width*0.045; B=width-2*pad
+    pad=width*0.045
+    # Bar-to-text ratio (Maurice, 2026-09-25, final): the bar is always 1.35x
+    # the widest text in the design -- here "STRAIGHT NOT FOUND" (l2_w=0.7732),
+    # wider than "404" (n404_w=0.2799) or the sticker's FÆBRIQ mark (mark_w=0.140)
+    # at these locked relative proportions. The bar still fills the canvas edge
+    # to edge, as it always did; B is scaled down from the old (bar-width) basis
+    # so that l2's rendered width, times 1.35, comes out to exactly that full
+    # canvas width -- see BAR_TO_TEXT_RATIO in make_print_file.py.
+    bar_w = width - 2*pad
+    B = bar_w / m.BAR_TO_TEXT_RATIO / R['l2_w']
     f1=m._fit(ImageFont,serif,"404",R['n404_w']*B,'w'); f2=m._fit(ImageFont,serif,"STRAIGHT NOT FOUND",R['l2_w']*B,'w')
     h1=f1.getbbox("404"); h1=h1[3]-h1[1]; h2=f2.getbbox("STRAIGHT NOT FOUND"); h2=h2[3]-h2[1]
     y1=pad; y2=y1+h1+R['gap1']*B; yb=y2+h2+R['gap2']*B; bh=R['bar_h']*B
@@ -19,11 +29,6 @@ def build(out,width,sticker):
     im=Image.new('RGBA',(width,int(round(bottom+pad))),(0,0,0,0)); cx=width/2
     m._draw_reinforced(im,cx,y1,"404",f1,col['text']); m._draw_reinforced(im,cx,y2,"STRAIGHT NOT FOUND",f2,col['text'])
     d=ImageDraw.Draw(im)
-    # Bar-to-wordmark ratio (Maurice, 2026-09-25): on the sticker, the bar is
-    # 1.35x the FÆBRIQ mark's own width, not tied to the full canvas width B.
-    # The apparel file (sticker=False) has no mark, so it keeps the old
-    # full-width bar -- nothing for it to be 1.35x of.
-    bar_w = m.BAR_TO_MARK_RATIO * fm.getlength("FÆBRIQ") if sticker else B
     sw, gap = m.SRC['stripe_frac']*bar_w, m.SRC['gap_frac']*bar_w
     bx = cx - bar_w/2
     for i,c in enumerate(m.CIRCUIT): x0=bx+i*(sw+gap); d.rectangle([x0,yb,x0+sw,yb+bh],fill=c)

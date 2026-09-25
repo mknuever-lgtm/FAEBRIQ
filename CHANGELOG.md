@@ -111,3 +111,6 @@ Why: match the 2026-09-23 wordmark decision; cap files also carried no real prin
 
 2026-09-25 Fixed two print-lockup rules per Maurice: line1 is 100%, line2 is 75-85% of line1 (LINE2_RATIO_DEFAULT=0.80, replaces the old width-fit l2_w mechanism which sometimes gave near-zero size difference); the bar next to a printed wordmark is 1.35x that wordmark width (BAR_TO_MARK_RATIO), not the old ~7x phrase-width bar. Regenerated the 5 live stickers and the 404 v3 print files in tools/make_print_file.py and tools/make_404_v3.py, re-swapped the sans mark, corrected CLAUDE.md (product prints use Bodoni Moda, not Instrument Serif) and IMAGERY_SPEC.
 Why: Maurice flagged the shipped stickers as wrong on both counts.
+
+2026-09-25 Corrected the bar-to-text ratio: the bar is 1.35x the WIDEST text in the design (line1, or the wordmark where there is no phrase), not the small signature mark specifically, and applies to every design including apparel (previous fix only touched stickers). BAR_TO_TEXT_RATIO replaces BAR_TO_MARK_RATIO in tools/make_print_file.py and tools/make_404_v3.py. Regenerated all 5 live stickers, the 404 v3 files, and the 4 live apparel masters (off the clock, code it, deploying identity, its not a bug).
+Why: Maurice called this final and non-negotiable for every design after seeing the previous mark-only version.

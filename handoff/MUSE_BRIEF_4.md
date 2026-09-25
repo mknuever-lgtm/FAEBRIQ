@@ -24,7 +24,7 @@ Manus ran out of credits. It delivered no images and saved nothing in Printify. 
 | `code-it-serve-it-tee` | heavy cotton tee | `code-it-serve-it-apparel-4500.png` |
 | `off-the-clock-still-iconic-hoodie` | heavyweight hoodie | `off-the-clock-still-iconic-apparel-4500.png` |
 | `deploying-identity-v2-crewneck` | heavyweight crewneck | `deploying-identity-v2-apparel-4500.png` |
-| `404-straight-not-found-tote` | canvas tote | `404-tote-4500.png` |
+| `404-straight-not-found-tote` | canvas tote | `404-tote-4500.png` (same lockup as the 404 sticker, FÆBRIQ under the stripe) |
 | `faebriq-baseball-cap-pride-rainbow-low-profile-hat` | low-profile unstructured cap, fabric strap | `logo-faebriq-1p35.png` |
 | `404-straight-not-found-sticker` | kiss-cut sticker | `404-straight-not-found-sticker-2400.png` |
 | `its-not-a-bug-its-me-sticker` | kiss-cut sticker | `its-not-a-bug-its-me-sticker-2400.png` |
@@ -33,7 +33,7 @@ Manus ran out of credits. It delivered no images and saved nothing in Printify. 
 | `deploying-identity-v2-sticker` | kiss-cut sticker | `deploying-identity-v2-sticker-2400.png` |
 | `faebriq-sticker-sheet-full-drop` | sticker sheet | `sticker-sheet-2400x3600.png` |
 
-Tees, hoodie and crewneck also carry `logo-faebriq-1p35.png` small (about 3 in) on the **left sleeve**. Show it where the angle allows.
+Tees, hoodie and crewneck also carry `logo-faebriq-1p35.png` (FÆBRIQ over the stripe) about 3 in wide at the **bottom of the left sleeve**, **horizontal**: it reads left to right across the sleeve, level when the arm hangs down, about 1 in above the sleeve hem (tees) or the cuff (hoodie, crewneck). Show it where the angle allows.
 
 ## Tiers (work in the table's order)
 - **Tier 2 (first):** slot 1 and slot 2 for all 12 products. That's 24 images.
@@ -78,7 +78,7 @@ Generate the scene with the product blank but no print, then composite the exact
    - Tote: 10 in, centered.
    - Cap: 3.5 to 4 in, centered.
    - Stickers and sheet: fill the area.
-   - Left sleeve: `logo-faebriq-1p35.png` at 3 in, **only if the product already has a sleeve position**. Never change blueprint or provider.
+   - Left sleeve: `logo-faebriq-1p35.png` at 3 in, **horizontal** (no rotation), placed at the bottom of the sleeve print area, about 1 in above the hem or cuff. **Only if the product already has a sleeve position.** Never change blueprint or provider. If the sleeve area is too narrow for 3 in horizontal, use the largest width that fits and note it.
 5. **Publish** with title, description, tags and images/mockups set to **false**. Variants only. No price may change.
 6. Record in `Final_report.md`: done per product, sleeve added or not offered, cost before and after, and the sticker sheet's print area size.
 

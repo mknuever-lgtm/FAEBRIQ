@@ -111,3 +111,4 @@ Why: Maurice's call to put every product in one system; older print files and th
 2026-09-25 Rewrote handoff/MANUS_BRIEF_3.md as a low-credit run: Manus does Printify swaps and images only, in tiers with 2-try caps; Claude takes over all Shopify work. Why: Maurice has very limited Manus credits.
 2026-09-25 Manus ran out of credits with nothing delivered; added handoff/MUSE_BRIEF_4.md so Muse makes the product images (physically warped composites), Printify swaps go to Maurice by hand. Why: no Manus credits left.
 2026-09-25 MUSE_BRIEF_4: Muse now also does the Printify swaps via its connector (read first, one batched approval, upload by URL, publish variants only). Why: Maurice connected Printify to Muse.
+2026-09-25 MUSE_BRIEF_4: sleeve logo placed horizontal at the bottom of the left sleeve; tote lockup spelled out as the sticker version. Why: Maurice's placement spec.

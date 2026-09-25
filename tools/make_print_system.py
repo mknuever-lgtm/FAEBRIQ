@@ -25,7 +25,14 @@ OUT = os.path.join(ROOT, "assets", "print-art", "system-2026-09-25")
 STRIPE_RATIO = 1.35   # stripe width / widest text line
 # Line 2 font size / line 1 font size is set per design in DESIGNS, judged
 # by eye within 0.55 to 0.90 (Maurice, 2026/09/25).
-STRIPE_H = 0.018      # stripe height / stripe width
+# Stripe height follows the type, not the stripe width, so the bar reads the
+# same weight under big and small type. Clamped to a sane band of the width.
+STRIPE_H = 0.14       # stripe height / line 1 cap height
+STRIPE_H_MIN, STRIPE_H_MAX = 0.013, 0.028   # of stripe width
+TRACK = -0.02         # letter spacing, x font size (editorial tightening)
+# Sticker-only line 2 overrides where the apparel ratio prints too small at
+# sticker size.
+STICKER_L2 = {"please-hold-rebranding-identity": 0.62}
 MARK_W = 0.20         # wordmark width / stripe width
 # Vertical gaps, as a multiple of the cap height of the element above.
 GAP_L1_L2 = 0.55
@@ -58,20 +65,27 @@ def cap_h(f):
     return b[3] - b[1]
 
 
-def ink_box(f, text):
-    """True ink box relative to the baseline anchor. font.getbbox pads the
-    right edge to the advance width, which throws the 1.35x stripe off by
-    a few percent on lines ending in a period or comma."""
-    b = f.getbbox(text, anchor="ls")
-    m = Image.new("L", (b[2] - b[0] + 4, b[3] - b[1] + 4), 0)
-    ImageDraw.Draw(m).text((2 - b[0], 2 - b[1]), text, font=f, anchor="ls", fill=255)
-    x0, y0, x1, y1 = m.getbbox()
-    return x0 - 2 + b[0], y0 - 2 + b[1], x1 - 2 + b[0], y1 - 2 + b[1]
+def line_mask(f, text):
+    """Tracked line as an L mask cropped to its ink, plus the baseline's y
+    offset inside the mask. Glyph by glyph so TRACK applies; measuring the
+    real ink (not font.getbbox, which pads to the advance) keeps the 1.35x
+    stripe exact on lines ending in a period or comma."""
+    track = TRACK * f.size
+    xs, x = [], 0.0
+    for ch in text:
+        xs.append(x)
+        x += f.getlength(ch) + track
+    asc, desc = f.getmetrics()
+    m = Image.new("L", (int(x + f.size) + 8, asc + desc + 8), 0)
+    d = ImageDraw.Draw(m)
+    for ch, cx in zip(text, xs):
+        d.text((4 + cx, 4 + asc), ch, font=f, anchor="ls", fill=255)
+    box = m.getbbox()
+    return m.crop(box), 4 + asc - box[1]
 
 
 def ink_w(f, text):
-    b = ink_box(f, text)
-    return b[2] - b[0]
+    return line_mask(f, text)[0].width
 
 
 def layout(lines, wordmark, s, l2):
@@ -102,20 +116,24 @@ def lockup(lines, wordmark, width, l2=None):
         # Descenders (Q, comma) sit below the baseline; gaps are measured
         # from the baseline so every design keeps the same rhythm.
         y += (GAP_L1_L2 if i < len(lines) - 1 else GAP_L2_BAR) * cap_h(f)
-    bar_y, bar_h = y, round(sw * STRIPE_H)
+    bar_h = round(min(max(STRIPE_H * cap_h(fonts[0]), STRIPE_H_MIN * sw), STRIPE_H_MAX * sw))
+    bar_y = y
     y += bar_h
     if fm:
         y += GAP_BAR_MARK * cap_h(fm) + cap_h(fm)
         rows.append(("FÆBRIQ", fm, y))
-    bottom = y + max(0, max(f.getbbox(t, anchor="ls")[3] for t, f, _ in rows[-1:]))
+    last = line_mask(rows[-1][1], rows[-1][0])
+    bottom = y + max(0, last[0].height - last[1])
     H = int(round(bottom + pad))
 
     im = Image.new("RGBA", (width, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     cx = width / 2
     for t, f, base in rows:
-        b = ink_box(f, t)
-        d.text((cx - (b[0] + b[2]) / 2, base), t, font=f, anchor="ls", fill=WHITE + (255,))
+        m, base_off = line_mask(f, t)
+        ink = Image.new("RGBA", m.size, WHITE + (255,))
+        ink.putalpha(m)
+        im.alpha_composite(ink, (int(round(cx - m.width / 2)), int(round(base - base_off))))
     x0, seg = cx - sw / 2, sw / 6
     for i, c in enumerate(CIRCUIT):
         d.rectangle([round(x0 + i * seg), round(bar_y), round(x0 + (i + 1) * seg) - 1,
@@ -174,7 +192,7 @@ def main():
         im, meta = lockup(lines, False, 4500, l2)
         preview.append(save(im, f"{key}-apparel-4500.png", meta, "apparel", lines, manifest))
     for key, (*lines, l2) in DESIGNS.items():
-        im, meta = lockup(lines, True, 2400, l2)
+        im, meta = lockup(lines, True, 2400, STICKER_L2.get(key, l2))
         stickers[key] = save(im, f"{key}-sticker-2400.png", meta, "sticker", lines, manifest)
         preview.append(im)
     *lines, l2 = DESIGNS["404-straight-not-found"]

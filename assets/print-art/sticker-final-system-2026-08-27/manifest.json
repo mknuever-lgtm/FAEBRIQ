@@ -1,18 +1,17 @@
 {
   "system": "FÆBRIQ sticker final system",
   "date": "2026-09-26",
-  "product": "sticker",
   "provider": "SPOKE kiss-cut",
   "ink": "near-black #0B0B0D lettering on white vinyl",
   "resolution": "2400 px wide, RGBA, 300 dpi",
   "rules": {
+    "individual_stickers": "one connected opaque-white contour backing with transparent canvas outside it",
+    "sticker_sheet": "rectangular sheet, intentionally not contour-cut as one single sticker",
     "wordmark_included": true,
     "pride_circuit_stripes": 6,
-    "transparent_background": true,
-    "standard_white_vinyl_supplies_background": true,
     "no_store_publish_or_sync": true
   },
-  "outputs": [
+  "individual_stickers": [
     {
       "file": "assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png",
       "text": [
@@ -26,13 +25,14 @@
         299.9994,
         299.9994
       ],
-      "transparent_background": true,
+      "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        108,
-        104,
-        2289,
-        818
+        52,
+        48,
+        2345,
+        874
       ],
+      "connected_cut_objects": 1,
       "circuit_colors_present": [
         [
           29,
@@ -66,6 +66,7 @@
         ]
       ],
       "near_black_present": true,
+      "opaque_white_cut_path_present": true,
       "pass": true
     },
     {
@@ -81,13 +82,14 @@
         299.9994,
         299.9994
       ],
-      "transparent_background": true,
+      "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        108,
-        104,
-        2289,
-        805
+        52,
+        48,
+        2345,
+        861
       ],
+      "connected_cut_objects": 1,
       "circuit_colors_present": [
         [
           29,
@@ -121,6 +123,7 @@
         ]
       ],
       "near_black_present": true,
+      "opaque_white_cut_path_present": true,
       "pass": true
     },
     {
@@ -136,13 +139,14 @@
         299.9994,
         299.9994
       ],
-      "transparent_background": true,
+      "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        108,
-        104,
-        2289,
-        786
+        52,
+        48,
+        2345,
+        842
       ],
+      "connected_cut_objects": 1,
       "circuit_colors_present": [
         [
           29,
@@ -176,6 +180,7 @@
         ]
       ],
       "near_black_present": true,
+      "opaque_white_cut_path_present": true,
       "pass": true
     },
     {
@@ -191,13 +196,14 @@
         299.9994,
         299.9994
       ],
-      "transparent_background": true,
+      "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        108,
-        104,
-        2289,
-        1001
+        32,
+        28,
+        2365,
+        1077
       ],
+      "connected_cut_objects": 1,
       "circuit_colors_present": [
         [
           29,
@@ -231,6 +237,7 @@
         ]
       ],
       "near_black_present": true,
+      "opaque_white_cut_path_present": true,
       "pass": true
     },
     {
@@ -246,13 +253,14 @@
         299.9994,
         299.9994
       ],
-      "transparent_background": true,
+      "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        108,
-        104,
-        2289,
-        814
+        52,
+        48,
+        2345,
+        870
       ],
+      "connected_cut_objects": 1,
       "circuit_colors_present": [
         [
           29,
@@ -286,7 +294,54 @@
         ]
       ],
       "near_black_present": true,
+      "opaque_white_cut_path_present": true,
       "pass": true
     }
-  ]
+  ],
+  "sticker_sheet": {
+    "file": "assets/print-art/sticker-sheet-serif-2400x3600.png",
+    "type": "rectangular kiss-cut sticker sheet",
+    "width_px": 2400,
+    "height_px": 3600,
+    "mode": "RGBA",
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "transparent_canvas": true,
+    "near_black_present": true,
+    "circuit_colors_present": [
+      [
+        29,
+        91,
+        190
+      ],
+      [
+        42,
+        170,
+        66
+      ],
+      [
+        123,
+        63,
+        170
+      ],
+      [
+        232,
+        39,
+        42
+      ],
+      [
+        244,
+        127,
+        32
+      ],
+      [
+        249,
+        212,
+        38
+      ]
+    ],
+    "pass": true
+  }
 }

@@ -1,5 +1,7 @@
 from pathlib import Path
 import json
+import cv2
+import numpy as np
 from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
@@ -20,10 +22,11 @@ for name, text in expected.items():
         raise SystemExit(f"missing: {path}")
     with Image.open(path) as im:
         rgba = im.convert("RGBA")
+        pixels = np.asarray(rgba)
         colors = set(rgba.getdata())
         rgb_colors = {(r, g, b) for r, g, b, a in colors if a > 0}
         alpha = rgba.getchannel("A")
-        bbox = alpha.getbbox()
+        connected_components = int(cv2.connectedComponents((pixels[:, :, 3] > 0).astype(np.uint8), 8)[0] - 1)
         row = {
             "file": str(path.relative_to(root)),
             "text": list(text),
@@ -31,30 +34,53 @@ for name, text in expected.items():
             "height_px": im.height,
             "mode": im.mode,
             "dpi": im.info.get("dpi"),
-            "transparent_background": (0, 0, 0, 0) in colors,
-            "alpha_bbox": bbox,
+            "transparent_canvas_outside_cut_path": (0, 0, 0, 0) in colors,
+            "alpha_bbox": alpha.getbbox(),
+            "connected_cut_objects": connected_components,
             "circuit_colors_present": sorted(required_circuit.intersection(rgb_colors)),
             "near_black_present": near_black in rgb_colors,
-            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors,
+            "opaque_white_cut_path_present": (255, 255, 255, 255) in colors,
+            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors and (255, 255, 255, 255) in colors and connected_components == 1,
         }
         if not row["pass"]:
             raise SystemExit(json.dumps(row, indent=2))
         results.append(row)
+
+sheet_path = root / "assets" / "print-art" / "sticker-sheet-serif-2400x3600.png"
+with Image.open(sheet_path) as im:
+    sheet = im.convert("RGBA")
+    sheet_colors = set(sheet.getdata())
+    sheet_rgb = {(r, g, b) for r, g, b, a in sheet_colors if a > 0}
+    sheet_result = {
+        "file": str(sheet_path.relative_to(root)),
+        "type": "rectangular kiss-cut sticker sheet",
+        "width_px": im.width,
+        "height_px": im.height,
+        "mode": im.mode,
+        "dpi": im.info.get("dpi"),
+        "transparent_canvas": (0, 0, 0, 0) in sheet_colors,
+        "near_black_present": near_black in sheet_rgb,
+        "circuit_colors_present": sorted(required_circuit.intersection(sheet_rgb)),
+        "pass": im.size == (2400, 3600) and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and near_black in sheet_rgb and len(required_circuit.intersection(sheet_rgb)) == 6,
+    }
+    if not sheet_result["pass"]:
+        raise SystemExit(json.dumps(sheet_result, indent=2))
+
 manifest = {
     "system": "FÆBRIQ sticker final system",
     "date": "2026-09-26",
-    "product": "sticker",
     "provider": "SPOKE kiss-cut",
     "ink": "near-black #0B0B0D lettering on white vinyl",
     "resolution": "2400 px wide, RGBA, 300 dpi",
     "rules": {
+        "individual_stickers": "one connected opaque-white contour backing with transparent canvas outside it",
+        "sticker_sheet": "rectangular sheet, intentionally not contour-cut as one single sticker",
         "wordmark_included": True,
         "pride_circuit_stripes": 6,
-        "transparent_background": True,
-        "standard_white_vinyl_supplies_background": True,
         "no_store_publish_or_sync": True,
     },
-    "outputs": results,
+    "individual_stickers": results,
+    "sticker_sheet": sheet_result,
 }
 manifest_path = folder / "manifest.json"
 manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")

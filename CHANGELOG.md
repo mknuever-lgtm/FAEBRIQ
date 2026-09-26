@@ -125,3 +125,5 @@ Why: real bug found on the reverted Bodoni files, confirmed on pixels.
 Why: Maurice: the gap was still too wide and inconsistent between designs; same treatment on both, no more candidates.
 2026-09-26 Closed Please Hold sticker's line1-to-line2 gap: ratio was 0.83 (unchanged since the l2_w fix, nobody retuned it for the bigger line 2), now 0.19, matching Off The Clock and Code It exactly. Pixel-shift only.
 Why: Maurice flagged the gap, confirmed at full resolution before committing.
+2026-09-26 Closed Please Hold's bottom gap (line 2 to bar) too, was 0.325 vs Code It's 0.19. Both gaps now 0.193, symmetric, matching the family. Pixel-shift only.
+Why: top gap alone wasn't enough, Maurice caught the bottom gap still off.

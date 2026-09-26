@@ -127,3 +127,5 @@ Why: Maurice: the gap was still too wide and inconsistent between designs; same 
 Why: Maurice flagged the gap, confirmed at full resolution before committing.
 2026-09-26 Closed Please Hold's bottom gap (line 2 to bar) too, was 0.325 vs Code It's 0.19. Both gaps now 0.193, symmetric, matching the family. Pixel-shift only.
 Why: top gap alone wasn't enough, Maurice caught the bottom gap still off.
+2026-09-26 Closed Off The Clock's bar gap too (was 0.25, now 0.193), matching Code It and Please Hold. All three designs now sit at the same top-gap and bar-gap ratio, ~0.19-0.193. Pixel-shift only.
+Why: Maurice wants every gap even across designs, no exceptions.

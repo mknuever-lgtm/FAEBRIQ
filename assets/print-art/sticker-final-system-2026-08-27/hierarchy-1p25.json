@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-26",
+  "font": "Bodoni Moda Regular",
+  "ink": "#0B0B0D",
+  "target_top_to_bottom_cap_ratio": 1.25,
+  "actual_lockups": [
+    {
+      "line_1": "404",
+      "line_2": "STRAIGHT NOT FOUND",
+      "top_font_px": 229,
+      "bottom_font_px": 182,
+      "top_cap_px": 173,
+      "bottom_cap_px": 138,
+      "top_to_bottom_cap_ratio": 1.2536,
+      "widest_text_px": 2108,
+      "bar_width_px": 2177,
+      "canvas_width_px": 2400,
+      "canvas_height_px": 786,
+      "file": "assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png"
+    },
+    {
+      "line_1": "CODE IT.",
+      "line_2": "SERVE IT.",
+      "top_font_px": 495,
+      "bottom_font_px": 396,
+      "top_cap_px": 372,
+      "bottom_cap_px": 297,
+      "top_to_bottom_cap_ratio": 1.2525,
+      "widest_text_px": 2104,
+      "bar_width_px": 2173,
+      "canvas_width_px": 2400,
+      "canvas_height_px": 1233,
+      "file": "assets/print-art/sticker-final-system-2026-08-27/code-it-serve-it-sticker-light-2400.png"
+    },
+    {
+      "line_1": "DEPLOYING",
+      "line_2": "IDENTITY V2.0",
+      "top_font_px": 351,
+      "bottom_font_px": 281,
+      "top_cap_px": 264,
+      "bottom_cap_px": 211,
+      "top_to_bottom_cap_ratio": 1.2512,
+      "widest_text_px": 2095,
+      "bar_width_px": 2163,
+      "canvas_width_px": 2400,
+      "canvas_height_px": 985,
+      "file": "assets/print-art/sticker-final-system-2026-08-27/deploying-identity-v2-sticker-light-2400.png"
+    },
+    {
+      "line_1": "IT'S NOT A BUG.",
+      "line_2": "IT'S ME.",
+      "top_font_px": 265,
+      "bottom_font_px": 213,
+      "top_cap_px": 200,
+      "bottom_cap_px": 160,
+      "top_to_bottom_cap_ratio": 1.25,
+      "widest_text_px": 2087,
+      "bar_width_px": 2155,
+      "canvas_width_px": 2400,
+      "canvas_height_px": 842,
+      "file": "assets/print-art/sticker-final-system-2026-08-27/its-not-a-bug-its-me-sticker-light-2400.png"
+    },
+    {
+      "line_1": "PLEASE HOLD",
+      "line_2": "I'M REBRANDING MY IDENTITY",
+      "top_font_px": 167,
+      "bottom_font_px": 134,
+      "top_cap_px": 127,
+      "bottom_cap_px": 101,
+      "top_to_bottom_cap_ratio": 1.2574,
+      "widest_text_px": 2105,
+      "bar_width_px": 2174,
+      "canvas_width_px": 2400,
+      "canvas_height_px": 681,
+      "file": "assets/print-art/sticker-final-system-2026-08-27/please-hold-rebranding-identity-sticker-light-2400.png"
+    }
+  ],
+  "sheet": "Rectangular full-drop sheet regenerated from the same raw hierarchy lockups."
+}

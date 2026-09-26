@@ -142,3 +142,5 @@ Why: Maurice: finish all designs to the same standard, close it out.
 2026-09-26 Replaced the literal letter-following contour with a centered, four-band stepped silhouette: rounded, symmetric, solid white, and joined by deliberate central bridges. Why: preserve a single shaped sticker without turning the lockup into a lumpy outline or a white square.
 
 2026-09-26 Founder approved the smooth organic contour for all five individual text stickers after marketplace and production research. Rebuilt the white carrier as softly overlapping rounded bands with no narrow central bridge, square card, literal character outline, or interior transparent voids. Why: one durable, premium connected lockup per sticker.
+
+2026-09-26 Standardized all five individual Bodoni sticker lockups to a 1.25x line-1 to line-2 cap-height ratio, then rebuilt the rectangular full-drop sheet from the same raw lockups and regenerated each approved organic contour. Why: the prior hierarchy ranged from 1.20x to 3.33x and made several top lines visually shout; the approved system calls for a modest, consistent top-line emphasis.

@@ -6,6 +6,14 @@ from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
 folder = root / "assets" / "print-art" / "sticker-final-system-2026-08-27"
+hierarchy_path = folder / "hierarchy-1p25.json"
+if not hierarchy_path.exists():
+    raise SystemExit(f"missing hierarchy metadata: {hierarchy_path}")
+hierarchy = json.loads(hierarchy_path.read_text())
+target_cap_ratio = float(hierarchy.get("target_top_to_bottom_cap_ratio", 0))
+if target_cap_ratio != 1.25:
+    raise SystemExit(f"unexpected target cap ratio: {target_cap_ratio}")
+hierarchy_by_file = {Path(record["file"]).name: record for record in hierarchy.get("actual_lockups", [])}
 expected = {
     "404-straight-not-found-v3-sticker-light-2400.png": ("404", "STRAIGHT NOT FOUND"),
     "deploying-identity-v2-sticker-light-2400.png": ("DEPLOYING", "IDENTITY V2.0"),
@@ -20,6 +28,10 @@ for name, text in expected.items():
     path = folder / name
     if not path.exists():
         raise SystemExit(f"missing: {path}")
+    hierarchy_record = hierarchy_by_file.get(name)
+    if hierarchy_record is None:
+        raise SystemExit(f"missing hierarchy record: {path}")
+    actual_cap_ratio = float(hierarchy_record["top_to_bottom_cap_ratio"])
     with Image.open(path) as im:
         rgba = im.convert("RGBA")
         pixels = np.asarray(rgba)
@@ -43,10 +55,12 @@ for name, text in expected.items():
             "alpha_bbox": alpha.getbbox(),
             "connected_cut_objects": connected_components,
             "interior_transparent_void_pixels": interior_transparent_voids,
+            "top_to_bottom_cap_ratio": actual_cap_ratio,
+            "target_top_to_bottom_cap_ratio": target_cap_ratio,
             "circuit_colors_present": sorted(required_circuit.intersection(rgb_colors)),
             "near_black_present": near_black in rgb_colors,
             "opaque_white_cut_path_present": (255, 255, 255, 255) in colors,
-            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors and (255, 255, 255, 255) in colors and connected_components == 1 and interior_transparent_voids == 0,
+            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors and (255, 255, 255, 255) in colors and connected_components == 1 and interior_transparent_voids == 0 and abs(actual_cap_ratio - target_cap_ratio) <= 0.01,
         }
         if not row["pass"]:
             raise SystemExit(json.dumps(row, indent=2))
@@ -79,7 +93,7 @@ manifest = {
     "ink": "near-black #0B0B0D lettering on white vinyl",
     "resolution": "2400 px wide, RGBA, 300 dpi",
     "rules": {
-        "individual_stickers": "one connected solid-white contour backing with no transparent interior voids and transparent canvas outside it",
+        "individual_stickers": "one connected solid-white organic contour backing with no transparent interior voids, transparent canvas outside it, and a 1.25x line-1-to-line-2 Bodoni cap-height ratio",
         "sticker_sheet": "rectangular sheet, intentionally not contour-cut as one single sticker",
         "wordmark_included": True,
         "pride_circuit_stripes": 6,

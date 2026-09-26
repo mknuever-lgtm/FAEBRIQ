@@ -1,17 +1,73 @@
 {
   "system": "FÆBRIQ sticker final system",
-  "date": "2026-08-27",
+  "date": "2026-09-26",
   "product": "sticker",
   "provider": "SPOKE kiss-cut",
-  "ink": "light",
+  "ink": "near-black #0B0B0D lettering on white vinyl",
   "resolution": "2400 px wide, RGBA, 300 dpi",
   "rules": {
     "wordmark_included": true,
     "pride_circuit_stripes": 6,
     "transparent_background": true,
+    "standard_white_vinyl_supplies_background": true,
     "no_store_publish_or_sync": true
   },
   "outputs": [
+    {
+      "file": "assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png",
+      "text": [
+        "404",
+        "STRAIGHT NOT FOUND"
+      ],
+      "width_px": 2400,
+      "height_px": 1004,
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "transparent_background": true,
+      "alpha_bbox": [
+        108,
+        104,
+        2289,
+        818
+      ],
+      "circuit_colors_present": [
+        [
+          29,
+          91,
+          190
+        ],
+        [
+          42,
+          170,
+          66
+        ],
+        [
+          123,
+          63,
+          170
+        ],
+        [
+          232,
+          39,
+          42
+        ],
+        [
+          244,
+          127,
+          32
+        ],
+        [
+          249,
+          212,
+          38
+        ]
+      ],
+      "near_black_present": true,
+      "pass": true
+    },
     {
       "file": "assets/print-art/sticker-final-system-2026-08-27/deploying-identity-v2-sticker-light-2400.png",
       "text": [
@@ -64,6 +120,7 @@
           38
         ]
       ],
+      "near_black_present": true,
       "pass": true
     },
     {
@@ -118,6 +175,7 @@
           38
         ]
       ],
+      "near_black_present": true,
       "pass": true
     },
     {
@@ -172,61 +230,7 @@
           38
         ]
       ],
-      "pass": true
-    },
-    {
-      "file": "assets/print-art/sticker-final-system-2026-08-27/error-404-straight-not-found-sticker-light-2400.png",
-      "text": [
-        "ERROR 404",
-        "STRAIGHT NOT",
-        "FOUND"
-      ],
-      "width_px": 2400,
-      "height_px": 1280,
-      "mode": "RGBA",
-      "dpi": [
-        299.9994,
-        299.9994
-      ],
-      "transparent_background": true,
-      "alpha_bbox": [
-        108,
-        104,
-        2289,
-        1176
-      ],
-      "circuit_colors_present": [
-        [
-          29,
-          91,
-          190
-        ],
-        [
-          42,
-          170,
-          66
-        ],
-        [
-          123,
-          63,
-          170
-        ],
-        [
-          232,
-          39,
-          42
-        ],
-        [
-          244,
-          127,
-          32
-        ],
-        [
-          249,
-          212,
-          38
-        ]
-      ],
+      "near_black_present": true,
       "pass": true
     },
     {
@@ -281,6 +285,7 @@
           38
         ]
       ],
+      "near_black_present": true,
       "pass": true
     }
   ]

@@ -8,7 +8,8 @@ All 12 print files are locked: Bodoni Moda serif, one shared spacing rule across
 Base URL for every file below:
 `https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/claude/hopeful-goldberg-a40dkh/`
 Append the path from the table.
-
+## White-vinyl sticker correction, approved 2026/09/26
+The five single sticker masters and `sticker-sheet-serif-2400x3600.png` now use near-black `#0B0B0D` lettering and FÆBRIQ wordmarks over transparent backgrounds. The standard white SPOKE kiss-cut substrate supplies the white field. Keep the six-color Pride Circuit bar unchanged. These are color-only corrections: do not resize, re-space, redraw, add a black background, or use the retired `error-404` master.
 ## Do this once: read first, one approval
 1. Open all 12 Printify products. For each, record the print area's position names (front, left sleeve, etc.) and sizes in inches, and the current cost per variant.
 2. Send Maurice one table: product, position, file, target width, sleeve yes or no, cost now. Wait for his one approval, then run all 12 without asking again per product.

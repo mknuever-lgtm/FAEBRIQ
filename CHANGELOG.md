@@ -132,3 +132,5 @@ Why: Maurice wants every gap even across designs, no exceptions.
 2026-09-26 Applied the same 0.19-0.195 gap standard to every remaining tagline design: Deploying, Not A Bug (apparel), 404 (apparel and tote, top gap only), and the 404/Not A Bug/Code It/Deploying stickers. Rebuilt the sticker sheet from the corrected stickers. Every design now reads even. Pixel-shift only, full-resolution checked before each commit.
 Why: Maurice: finish all designs to the same standard, close it out.
 2026-09-26 Added handoff/PRINTIFY_FINAL.md: every print file is locked, final Printify swap-and-publish instructions for Muse or Manus. Why: Maurice, close it out and get it into Printify.
+
+2026-09-26 Corrected all five white-vinyl sticker masters and the sticker sheet to near-black `#0B0B0D` lettering and FÆBRIQ wordmarks, preserving their transparent backgrounds, exact geometry, and six-color Pride Circuit bars. Why: the SPOKE kiss-cut sticker blank is white; white lettering on transparent art failed the live Printify contrast check. The retired `error-404` source remains retired.

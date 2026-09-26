@@ -123,3 +123,5 @@ Why: Maurice's call, the Inter tagline experiment is retired same-day it shipped
 Why: real bug found on the reverted Bodoni files, confirmed on pixels.
 2026-09-25 Tightened Off The Clock's line1-to-line2 gap -25% (bottom gap left alone, per Maurice). Code It's top and bottom gaps both -25%, same cut as Off The Clock, keeping its own top/bottom symmetry. Pixel-shift only, no re-render.
 Why: Maurice: the gap was still too wide and inconsistent between designs; same treatment on both, no more candidates.
+2026-09-26 Closed Please Hold sticker's line1-to-line2 gap: ratio was 0.83 (unchanged since the l2_w fix, nobody retuned it for the bigger line 2), now 0.19, matching Off The Clock and Code It exactly. Pixel-shift only.
+Why: Maurice flagged the gap, confirmed at full resolution before committing.

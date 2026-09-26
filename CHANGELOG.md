@@ -129,3 +129,5 @@ Why: Maurice flagged the gap, confirmed at full resolution before committing.
 Why: top gap alone wasn't enough, Maurice caught the bottom gap still off.
 2026-09-26 Closed Off The Clock's bar gap too (was 0.25, now 0.193), matching Code It and Please Hold. All three designs now sit at the same top-gap and bar-gap ratio, ~0.19-0.193. Pixel-shift only.
 Why: Maurice wants every gap even across designs, no exceptions.
+2026-09-26 Applied the same 0.19-0.195 gap standard to every remaining tagline design: Deploying, Not A Bug (apparel), 404 (apparel and tote, top gap only), and the 404/Not A Bug/Code It/Deploying stickers. Rebuilt the sticker sheet from the corrected stickers. Every design now reads even. Pixel-shift only, full-resolution checked before each commit.
+Why: Maurice: finish all designs to the same standard, close it out.

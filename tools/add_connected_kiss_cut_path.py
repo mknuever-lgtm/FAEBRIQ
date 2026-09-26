@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Build a symmetric solid-white contour backing for FÆBRIQ individual stickers.
+"""Build smooth connected white contours for FÆBRIQ individual text stickers.
 
 Approved production rule, 2026-09-26:
 - Preserve the existing lettering, Pride Circuit bar, canvas dimensions, and DPI.
-- Put the full lockup on one smooth, centered, stepped white silhouette.
-- Leave transparency only outside the outer silhouette.
-- Do not make a square card, a letter-by-letter outline, separate pieces, or interior holes.
+- Build one centered, near-symmetrical, solid-white organic contour around each lockup.
+- Form the contour from softly overlapping rounded bands, not rectangles, letter outlines, or thin bridges.
+- Keep transparency only outside the outer silhouette and retain no interior transparent voids.
 - Do not apply to sticker-sheet-serif-2400x3600.png: that product stays rectangular.
 """
 from __future__ import annotations
@@ -26,9 +26,8 @@ FILES = (
     "please-hold-rebranding-identity-sticker-light-2400.png",
 )
 HORIZONTAL_PAD = 56
-VERTICAL_PAD = 48
-CORNER_RADIUS = 48
-BRIDGE_HALF_WIDTH = 150
+VERTICAL_PAD = 64
+CORNER_RADIUS = 96
 
 
 def connected_components(mask: np.ndarray) -> int:
@@ -36,7 +35,7 @@ def connected_components(mask: np.ndarray) -> int:
 
 
 def bands(alpha: np.ndarray) -> list[tuple[int, int, int, int]]:
-    """Return the four typographic/bar bands: line 1, line 2, bar, wordmark."""
+    """Return the four text or bar bands: line 1, line 2, bar, wordmark."""
     active = (alpha > 0).any(axis=1)
     y_runs: list[tuple[int, int]] = []
     start: int | None = None
@@ -56,7 +55,7 @@ def bands(alpha: np.ndarray) -> list[tuple[int, int, int, int]]:
     return result
 
 
-def centered_rect(band: tuple[int, int, int, int], width: int, height: int) -> tuple[int, int, int, int]:
+def rounded_band_rect(band: tuple[int, int, int, int], width: int, height: int) -> tuple[int, int, int, int]:
     left, top, right, bottom = band
     centre_x = width // 2
     half_width = max(centre_x - left, right - centre_x) + HORIZONTAL_PAD
@@ -75,20 +74,14 @@ def transform(path: Path) -> None:
     original = np.asarray(art).copy()
     height, width = original.shape[:2]
     alpha = original[:, :, 3]
-    rects = [centered_rect(band, width, height) for band in bands(alpha)]
+    rects = [rounded_band_rect(band, width, height) for band in bands(alpha)]
 
+    # With a 64 px vertical offset every adjacent band overlaps. This creates
+    # one gentle, cloud-like carrier without a skinny bridge or square card.
     backing = Image.new("L", (width, height), 0)
     draw = ImageDraw.Draw(backing)
     for rect in rects:
         draw.rounded_rectangle(rect, radius=CORNER_RADIUS, fill=255)
-    # The narrow central bridges make the bands one intentional object without
-    # producing a rectangular card or a blob around individual letters.
-    for upper, lower in zip(rects, rects[1:]):
-        x1 = width // 2 - BRIDGE_HALF_WIDTH
-        x2 = width // 2 + BRIDGE_HALF_WIDTH
-        y1 = max(0, upper[3] - CORNER_RADIUS)
-        y2 = min(height - 1, lower[1] + CORNER_RADIUS)
-        draw.rounded_rectangle((x1, y1, x2, y2), radius=CORNER_RADIUS, fill=255)
     backing_mask = (np.asarray(backing) > 0).astype(np.uint8)
     if connected_components(backing_mask) != 1:
         raise RuntimeError(f"cut path is not connected: {path.name}")

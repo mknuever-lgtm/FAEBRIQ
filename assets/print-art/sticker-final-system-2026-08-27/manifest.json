@@ -28,9 +28,9 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        56,
+        40,
         2349,
-        866
+        882
       ],
       "connected_cut_objects": 1,
       "interior_transparent_void_pixels": 0,
@@ -86,9 +86,9 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        56,
+        40,
         2349,
-        853
+        869
       ],
       "connected_cut_objects": 1,
       "interior_transparent_void_pixels": 0,
@@ -144,9 +144,9 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        56,
+        40,
         2349,
-        834
+        850
       ],
       "connected_cut_objects": 1,
       "interior_transparent_void_pixels": 0,
@@ -202,9 +202,9 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        56,
+        40,
         2349,
-        1049
+        1065
       ],
       "connected_cut_objects": 1,
       "interior_transparent_void_pixels": 0,
@@ -260,9 +260,9 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        56,
+        40,
         2349,
-        862
+        878
       ],
       "connected_cut_objects": 1,
       "interior_transparent_void_pixels": 0,

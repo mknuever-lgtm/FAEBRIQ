@@ -26,7 +26,12 @@ for name, text in expected.items():
         colors = set(rgba.getdata())
         rgb_colors = {(r, g, b) for r, g, b, a in colors if a > 0}
         alpha = rgba.getchannel("A")
-        connected_components = int(cv2.connectedComponents((pixels[:, :, 3] > 0).astype(np.uint8), 8)[0] - 1)
+        cut_mask = (pixels[:, :, 3] > 0).astype(np.uint8)
+        connected_components = int(cv2.connectedComponents(cut_mask, 8)[0] - 1)
+        exterior = cut_mask.copy()
+        flood_mask = np.zeros((cut_mask.shape[0] + 2, cut_mask.shape[1] + 2), np.uint8)
+        cv2.floodFill(exterior, flood_mask, (0, 0), 1)
+        interior_transparent_voids = int(np.count_nonzero(exterior == 0))
         row = {
             "file": str(path.relative_to(root)),
             "text": list(text),
@@ -37,10 +42,11 @@ for name, text in expected.items():
             "transparent_canvas_outside_cut_path": (0, 0, 0, 0) in colors,
             "alpha_bbox": alpha.getbbox(),
             "connected_cut_objects": connected_components,
+            "interior_transparent_void_pixels": interior_transparent_voids,
             "circuit_colors_present": sorted(required_circuit.intersection(rgb_colors)),
             "near_black_present": near_black in rgb_colors,
             "opaque_white_cut_path_present": (255, 255, 255, 255) in colors,
-            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors and (255, 255, 255, 255) in colors and connected_components == 1,
+            "pass": im.size[0] == 2400 and im.mode == "RGBA" and im.info.get("dpi", (0, 0))[0] >= 299 and len(required_circuit.intersection(rgb_colors)) == 6 and near_black in rgb_colors and (255, 255, 255, 255) in colors and connected_components == 1 and interior_transparent_voids == 0,
         }
         if not row["pass"]:
             raise SystemExit(json.dumps(row, indent=2))
@@ -73,7 +79,7 @@ manifest = {
     "ink": "near-black #0B0B0D lettering on white vinyl",
     "resolution": "2400 px wide, RGBA, 300 dpi",
     "rules": {
-        "individual_stickers": "one connected opaque-white contour backing with transparent canvas outside it",
+        "individual_stickers": "one connected solid-white contour backing with no transparent interior voids and transparent canvas outside it",
         "sticker_sheet": "rectangular sheet, intentionally not contour-cut as one single sticker",
         "wordmark_included": True,
         "pride_circuit_stripes": 6,

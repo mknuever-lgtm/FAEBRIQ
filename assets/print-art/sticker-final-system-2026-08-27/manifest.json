@@ -5,7 +5,7 @@
   "ink": "near-black #0B0B0D lettering on white vinyl",
   "resolution": "2400 px wide, RGBA, 300 dpi",
   "rules": {
-    "individual_stickers": "one connected opaque-white contour backing with transparent canvas outside it",
+    "individual_stickers": "one connected solid-white contour backing with no transparent interior voids and transparent canvas outside it",
     "sticker_sheet": "rectangular sheet, intentionally not contour-cut as one single sticker",
     "wordmark_included": true,
     "pride_circuit_stripes": 6,
@@ -28,11 +28,12 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        48,
-        2345,
-        874
+        56,
+        2349,
+        866
       ],
       "connected_cut_objects": 1,
+      "interior_transparent_void_pixels": 0,
       "circuit_colors_present": [
         [
           29,
@@ -85,11 +86,12 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        48,
-        2345,
-        861
+        56,
+        2349,
+        853
       ],
       "connected_cut_objects": 1,
+      "interior_transparent_void_pixels": 0,
       "circuit_colors_present": [
         [
           29,
@@ -142,11 +144,12 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        48,
-        2345,
-        842
+        56,
+        2349,
+        834
       ],
       "connected_cut_objects": 1,
+      "interior_transparent_void_pixels": 0,
       "circuit_colors_present": [
         [
           29,
@@ -198,12 +201,13 @@
       ],
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
-        32,
-        28,
-        2365,
-        1077
+        52,
+        56,
+        2349,
+        1049
       ],
       "connected_cut_objects": 1,
+      "interior_transparent_void_pixels": 0,
       "circuit_colors_present": [
         [
           29,
@@ -256,11 +260,12 @@
       "transparent_canvas_outside_cut_path": true,
       "alpha_bbox": [
         52,
-        48,
-        2345,
-        870
+        56,
+        2349,
+        862
       ],
       "connected_cut_objects": 1,
+      "interior_transparent_void_pixels": 0,
       "circuit_colors_present": [
         [
           29,

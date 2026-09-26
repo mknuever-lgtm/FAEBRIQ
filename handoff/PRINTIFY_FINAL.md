@@ -9,7 +9,7 @@ Base URL for every file below:
 `https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/claude/hopeful-goldberg-a40dkh/`
 Append the path from the table.
 ## White-vinyl sticker correction, approved 2026/09/26
-The five single sticker masters and `sticker-sheet-serif-2400x3600.png` use near-black `#0B0B0D` lettering and FÆBRIQ wordmarks. Each single-sticker file includes exactly one connected opaque-white contour backing around its complete lockup, with transparent canvas outside it. The sticker must not be a white square or separate pieces. `sticker-sheet-serif-2400x3600.png` remains a rectangular sheet. Keep the six-color Pride Circuit bar unchanged. Do not resize, re-space, redraw, add a black background, or use the retired `error-404` master.
+The five single sticker masters and `sticker-sheet-serif-2400x3600.png` use near-black `#0B0B0D` lettering and FÆBRIQ wordmarks. Each single-sticker file includes exactly one connected solid-white contour backing around its complete lockup, with transparent canvas outside it and no transparent interior holes. The sticker must not be a white square or separate pieces. `sticker-sheet-serif-2400x3600.png` remains a rectangular sheet. Keep the six-color Pride Circuit bar unchanged. Do not resize, re-space, redraw, add a black background, or use the retired `error-404` master.
 ## Do this once: read first, one approval
 1. Open all 12 Printify products. For each, record the print area's position names (front, left sleeve, etc.) and sizes in inches, and the current cost per variant.
 2. Send Maurice one table: product, position, file, target width, sleeve yes or no, cost now. Wait for his one approval, then run all 12 without asking again per product.

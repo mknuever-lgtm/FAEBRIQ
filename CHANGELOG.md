@@ -136,3 +136,7 @@ Why: Maurice: finish all designs to the same standard, close it out.
 2026-09-26 Corrected all five white-vinyl sticker masters and the sticker sheet to near-black `#0B0B0D` lettering and FÆBRIQ wordmarks, preserving their transparent backgrounds, exact geometry, and six-color Pride Circuit bars. Why: the SPOKE kiss-cut sticker blank is white; white lettering on transparent art failed the live Printify contrast check. The retired `error-404` source remains retired.
 
 2026-09-26 Added one connected opaque-white contour backing behind each individual near-black sticker lockup, retaining transparent canvas outside the contour. Why: the SPOKE Kiss-Cut preview split the unconnected 404, text, stripe, and wordmark into multiple pieces. The final individual stickers now cut as one shaped white vinyl lockup, not a white square; the Full Drop remains a rectangular sticker sheet.
+
+2026-09-26 Filled all transparent interior voids inside the five individual contour backings, including letter counters, so every single sticker has one solid white silhouette behind its near-black typography. Why: the prior contour treatment left visible dark holes inside letter shapes. Transparency exists only outside the outer cut path.
+
+2026-09-26 Replaced the literal letter-following contour with a centered, four-band stepped silhouette: rounded, symmetric, solid white, and joined by deliberate central bridges. Why: preserve a single shaped sticker without turning the lockup into a lumpy outline or a white square.

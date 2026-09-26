@@ -131,3 +131,4 @@ Why: top gap alone wasn't enough, Maurice caught the bottom gap still off.
 Why: Maurice wants every gap even across designs, no exceptions.
 2026-09-26 Applied the same 0.19-0.195 gap standard to every remaining tagline design: Deploying, Not A Bug (apparel), 404 (apparel and tote, top gap only), and the 404/Not A Bug/Code It/Deploying stickers. Rebuilt the sticker sheet from the corrected stickers. Every design now reads even. Pixel-shift only, full-resolution checked before each commit.
 Why: Maurice: finish all designs to the same standard, close it out.
+2026-09-26 Added handoff/PRINTIFY_FINAL.md: every print file is locked, final Printify swap-and-publish instructions for Muse or Manus. Why: Maurice, close it out and get it into Printify.

@@ -105,3 +105,6 @@ Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow 
 
 2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
 Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.
+
+2026-09-27 Added ETSY.md placeholder codifying channel rules for a not-yet-live Etsy shop (brand facts carry over, catalog/SEO can differ per channel, same hard gates).
+Why: same brand new channel is coming, future sessions should not improvise brand or gate decisions when it goes live.

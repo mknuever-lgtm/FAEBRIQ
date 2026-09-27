@@ -35,8 +35,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
   baked into listed prices.
-- Live catalog: 6 sticker listings ($4–$13.99), tees $34, crewneck $62,
-  hoodie $68, cap $34, Error 404 tote $42.
+- Live catalog (checked in Shopify 2026-09-27): 6 sticker listings
+  ($4 to $13.99; 3 active, 3 still Draft), tees $34, crewneck $62,
+  hoodie $68, cap $34, 404 tote $34.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.

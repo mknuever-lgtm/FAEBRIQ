@@ -134,5 +134,8 @@ Why: Maurice approved the two strongest picks from the external concept list.
 Why: the shipped bundle still contained the superseded CircuitRule (stacked hairlines, not the confirmed segmented pride bar), and every preview card rendered blank wherever the CDN was unreachable.
 Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) in color-circuit/brand-logos/circuit.svg, .fae-circuit-rule and CircuitRule docs still described the old style, ui_kits storefront images used Vite-absolute paths, and two cards still said "free worldwide shipping".
 
+2026-09-27 CLAUDE.md catalog line and SOCIAL_LAUNCH_POSTS tote price corrected to match Shopify: tote is $34 (was listed $42), 3 of 6 sticker listings are still Draft.
+Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
+
 2026-09-28 Read-only Shopify Admin verification session, no repo or store changes made. Confirmed live About/Contact pages and theme.liquid all say "United States and Canada" consistently (no meta-description conflict found); shop country is Canada (no false US-presence claim); 241 sessions and 0 orders in the last 30 days; no Etsy app installed in Shopify.
 Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.

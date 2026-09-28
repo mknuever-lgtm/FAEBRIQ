@@ -128,7 +128,7 @@ Hashtag set for every IG post (keep it to these): `#queerfashion #queertech #lgb
 >
 > Everything is made to order and printed per piece. No warehouse of unsold hoodies. Good for the planet, great for cash flow.
 
-### 8. 404: STRAIGHT NOT FOUND tee ($34) + tote ($42)
+### 8. 404: STRAIGHT NOT FOUND tee ($34) + tote ($34)
 **Images:** tee slot 2, tote slot 2, tee slot 4, tote slot 3. Needs the v3 canonical design (big 404, one-line STRAIGHT NOT FOUND, stripe).
 
 **Caption**
@@ -136,7 +136,7 @@ Hashtag set for every IG post (keep it to these): `#queerfashion #queertech #lgb
 >
 > 0 results.
 >
-> 404: STRAIGHT NOT FOUND. On a black tee ($34 USD) and a black canvas tote ($42 USD). Shipping included, US + Canada.
+> 404: STRAIGHT NOT FOUND. On a black tee ($34 USD) and a black canvas tote ($34 USD). Shipping included, US + Canada.
 >
 > Error is permanent. Do not refresh.
 
@@ -146,7 +146,7 @@ Hashtag set for every IG post (keep it to these): `#queerfashion #queertech #lgb
 2. `Standup, camera on, waist up:` CODE IT. SERVE IT. tee, $34
 3. `Conference, badge on:` DEPLOYING IDENTITY v2.0 crewneck, $62
 4. `After hours:` OFF THE CLOCK. STILL ICONIC. hoodie, $68
-5. `Commute and errands:` 404 tote, $42, and the Circuit cap, $34
+5. `Commute and errands:` 404 tote, $34, and the Circuit cap, $34
 6. `Laptop lid:` stickers from $4
 7. `Ships US + Canada. Shipping included. Link in bio.`
 

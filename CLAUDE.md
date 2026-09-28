@@ -21,7 +21,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Brand: queer-coded dark-tech merch. Voice: dry, deadpan, terminal wit.
   Sans FÆBRIQ wordmark (reference: assets/print-art/reference/wordmark-reference-2026-09-23.jpg)
   with a six-block bar at 1.35x its width, on near-black (#0f0e0c bg / #e0e0e0 text).
-  Phrase lockups (product prints) keep Instrument Serif.
+  Phrase lockups (product prints) keep Bodoni Moda (corrected 2026-09-25;
+  an earlier version of this line wrongly said Instrument Serif). Line 1
+  is 100% size, line 2 is 75-85% of line 1. Bar is 1.35x the wordmark's
+  width wherever the wordmark prints (stickers, cap, standalone logo);
+  apparel has no wordmark, so its bar stays tied to the phrase width.
   One pride-circuit accent per product.
 - Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
   marketing copy, avatar/video persona, or promotional content still needs
@@ -31,8 +35,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
   baked into listed prices.
-- Live catalog: 6 sticker listings ($4–$13.99), tees $34, crewneck $62,
-  hoodie $68, cap $34, Error 404 tote $42.
+- Live catalog (checked in Shopify 2026-09-27): 6 sticker listings
+  ($4 to $13.99; 3 active, 3 still Draft), tees $34, crewneck $62,
+  hoodie $68, cap $34, 404 tote $34.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.

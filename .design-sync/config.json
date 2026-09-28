@@ -2,6 +2,7 @@
   "shape": "package",
   "pkg": "faebriq-design-system",
   "globalName": "FBRIQDesignSystem_0e5da2",
+  "buildCmd": "npm run ds:bundle",
   "readmeHeader": "readme.md",
   "projectId": "0e5da28c-f30d-45e2-aad9-88541218cdaa"
 }

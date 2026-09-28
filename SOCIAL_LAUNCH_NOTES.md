@@ -34,3 +34,28 @@ between white and near-black so the grid reads as two different stores. Driving
 follows to that grid spends traffic on the weakest asset in the store.
 
 Sequence: fix imagery → publish website → build socials → link the Shop app.
+
+---
+
+## 2026-09-23 - Approved social bio copy (Instagram, X, Threads, Bluesky, TikTok)
+
+**Status:** approved by the founder 2026-09-23. No account has been created,
+claimed, signed into, or changed. This is copy for a future manual account
+setup, not an action taken.
+
+**Instagram, X, Threads, Bluesky:**
+
+> Queer-coded, not queer-loud.
+> Dark-tech streetwear you can wear to standup.
+> Your colleagues won't get it. Your people will.
+> ↓
+
+**TikTok:**
+
+> Queer-coded, not queer-loud. Your colleagues won't get it. Your people will.
+
+**Implementation note:** use the exact spelling and punctuation above when
+accounts are created manually. Check live platform character limits at setup,
+since limits can change. Do not substitute "work-safe" or "plausible
+deniability" into the bio. Those phrases stay useful in longer product copy
+and creative scripts, not the profile bio.

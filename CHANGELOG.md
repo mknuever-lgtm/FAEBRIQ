@@ -10,6 +10,11 @@ Note: themes are inverted vs CLAUDE.md — faebriqtheme-launch-fix is MAIN (live
 2026-09-08 Added SOCIAL_LAUNCH_NOTES.md — reminder to link the Shop app from social profiles once the website is live.
 Why: Shop app has a Follow button and in-app checkout, and renders product data only, so it is unaffected by theme work.
 Note: gated on fixing product imagery first — Shop app is a pure image grid with no copy to compensate.
+2026-09-08 Corrected design-decisions.md from a physical Error 404 tee sample; flagged its pride hex as unresolved.
+Why: its tee description (massive 404, small italic phrase) is falsified by the sample, and its hex set exists in no other file.
+Also reverted the draft theme's circuit-rule.liquid to the brand-kit palette this session had overwritten on that file's authority.
+2026-09-10 Flagged design-decisions.md as sourced from a now-superseded physical sample; founder reports the design changed since 2026-09-08.
+Why: prevent the 2026-09-08 sample's hex/layout claims from being read as a live spec by a future session.
 
 2026-09-08 Regenerated 4 apparel print masters (bug/code-it/deploying-identity/off-the-clock) via tools/make_print_file.py.
 Why: 2026-08-27's "equal-visual-cap" pass had silently overwritten make_print_file.py's tuned small-line2 lockup; line2 is punchline/payload and reads deadpan only when smaller, per make_print_file.py's own l2_w=0.4710 spec.
@@ -70,6 +75,10 @@ Note: theme was unpublished by the founder for this edit; publish to see it live
 Why: the founder wants the existing store-copy dash ban applied to chat replies and reports too, not just shipped strings.
 Note: rule text only. No existing dashes elsewhere in the repo were touched.
 
+2026-09-22 Removed all 13 em and en dashes from the four policy drafts in legal/ (ranges now read "2 to 7", parenthetical dashes rewritten as commas or full stops).
+Why: the Output style rule merged in PR #22 bans dashes in store copy, and the earlier sitewide cleanup covered theme strings only, never legal/.
+Note: wording is otherwise untouched and the drafts already carried their Last Updated lines. The four live Shopify policies still need a manual paste: the connector lacks write_legal_policies.
+
 2026-09-22 Added POST_LAUNCH_TOOLS.md, logging Triple Whale and Postscript as later-stage growth tools to revisit once the store has traffic.
 Why: keep post-launch tooling ideas somewhere durable without drifting MEMORY.md (current-state only) or misfiling under SOCIAL_LAUNCH_NOTES.md (social-channel-specific).
 
@@ -97,6 +106,9 @@ Why: store is open, Maurice asked for the first social posts.
 2026-09-23 Rendered IG launch posts 1 and 2 as 10 slides (1080x1350) in assets/social/launch-2026-09, built by tools/make_social_slides.py.
 Why: Maurice asked for the text carousels as ready-to-post images.
 
+2026-09-23 Added an approved social bio copy entry to SOCIAL_LAUNCH_NOTES.md (Instagram/X/Threads/Bluesky and TikTok bios, plus an implementation note).
+Why: founder-approved copy for a future manual account setup, logged so it isn't lost before accounts exist.
+
 2026-09-23 Set the wordmark: sans FÆBRIQ (reference saved in assets/print-art/reference), bar at 1.35x wordmark width. Applied to IG post 1 slide 1, rule added to IMAGERY_SPEC.
 Why: Maurice picked the middle version from three options.
 
@@ -105,6 +117,25 @@ Why: matches the 2026-09-23 wordmark decision, so future sessions do not follow 
 
 2026-09-24 Swapped the serif FAEBRIQ signature mark for the approved sans wordmark on all 6 sticker print files (phrase lines and bar untouched, hand-tuned pixel positions preserved) and fully rebuilt the two cap wordmark files at print resolution (3000px, was 500x200 placeholder scale) via new tools/swap_print_wordmark.py.
 Why: match the 2026-09-23 wordmark decision; cap files also carried no real print resolution before.
+
+2026-09-25 Fixed two print-lockup rules per Maurice: line1 is 100%, line2 is 75-85% of line1 (LINE2_RATIO_DEFAULT=0.80, replaces the old width-fit l2_w mechanism which sometimes gave near-zero size difference); the bar next to a printed wordmark is 1.35x that wordmark width (BAR_TO_MARK_RATIO), not the old ~7x phrase-width bar. Regenerated the 5 live stickers and the 404 v3 print files in tools/make_print_file.py and tools/make_404_v3.py, re-swapped the sans mark, corrected CLAUDE.md (product prints use Bodoni Moda, not Instrument Serif) and IMAGERY_SPEC.
+Why: Maurice flagged the shipped stickers as wrong on both counts.
+
+2026-09-23 Added faebriq_batch_v1: 10 transparent 4500x5400 terminal-style tee graphics for black garments (tools/make_batch_v1.py, manifest.json, left-chest crops) plus ETSY_LISTING_01_2026-09-23.md.
+Why: Maurice asked for a 10-design batch and a corrected Etsy metadata package for listing #1.
+
+2026-09-23 Added ETSY_LISTING_02_2026-09-23.md: corrected Etsy package for listing #2 (clean build).
+Why: supplied package had 2 over-length tags and unverified fabric claims.
+
+2026-09-23 Added faebriq_batch_v2: 2 designs (chown-identity, npm-liberation) via make_batch_v1.py --batch v2.
+Why: Maurice approved the two strongest picks from the external concept list.
+
+2026-09-25 Design-sync re-sync to claude.ai/design. Added tools/build-ds-bundle.mjs + tools/assemble-ds-bundle.mjs (npm run ds:bundle) so _ds_bundle.js is generated from the real component sources instead of hand-maintained, and bundle previews vendor React locally instead of loading it from unpkg.
+Why: the shipped bundle still contained the superseded CircuitRule (stacked hairlines, not the confirmed segmented pride bar), and every preview card rendered blank wherever the CDN was unreachable.
+Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) in color-circuit/brand-logos/circuit.svg, .fae-circuit-rule and CircuitRule docs still described the old style, ui_kits storefront images used Vite-absolute paths, and two cards still said "free worldwide shipping".
+
+2026-09-27 CLAUDE.md catalog line and SOCIAL_LAUNCH_POSTS tote price corrected to match Shopify: tote is $34 (was listed $42), 3 of 6 sticker listings are still Draft.
+Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
 
 2026-09-27 Added ETSY.md placeholder codifying channel rules for a not-yet-live Etsy shop (brand facts carry over, catalog/SEO can differ per channel, same hard gates).
 Why: same brand new channel is coming, future sessions should not improvise brand or gate decisions when it goes live.

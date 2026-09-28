@@ -1,6 +1,6 @@
 # Refund Policy
 
-*Paste into Settings → Legal → Refund policy — replaces the generic Shopify template.*
+*Paste into Settings → Legal → Refund policy. Replaces the generic Shopify template.*
 
 **Last Updated: June 15, 2026**
 
@@ -33,7 +33,7 @@ We cannot offer refunds or replacements for:
 
 ## 4. Lost or Stuck Shipments
 
-If your tracking shows your order as lost in transit or significantly delayed beyond the estimated delivery window, please reach out — see our Shipping Policy for details, and we will work with our fulfillment partners to resolve it.
+If your tracking shows your order as lost in transit or significantly delayed beyond the estimated delivery window, please reach out. See our Shipping Policy for details, and we will work with our fulfillment partners to resolve it.
 
 ## 5. Refund Processing
 
@@ -41,7 +41,7 @@ Approved refunds are issued to your original payment method (Shopify Payments or
 
 ## 6. Order Changes & Cancellations
 
-Because items go into production quickly, we can only modify or cancel an order within **24 hours** of purchase. Contact us at support@faebriq.com as soon as possible — after production begins, changes are no longer possible.
+Because items go into production quickly, we can only modify or cancel an order within **24 hours** of purchase. Contact us at support@faebriq.com as soon as possible. After production begins, changes are no longer possible.
 
 ## 7. Contact Us
 

@@ -20,7 +20,7 @@ Same brand, second channel. Not a separate business, not a rebrand.
 ## What must NOT differ by channel (brand facts carry over unchanged)
 - Wordmark: sans FÆBRIQ wordmark with the six-block bar at 1.35x its width,
   on near-black (#0f0e0c bg / #e0e0e0 text).
-- Phrase lockups (product prints) keep Instrument Serif.
+- Phrase lockups (product prints) keep Bodoni Moda.
 - One pride-circuit accent per product.
 - Voice: dry, deadpan, terminal wit, with a hook and confident energy, never
   flat or bored-technician delivery.

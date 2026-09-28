@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Paste into Settings → Legal → Privacy policy — replaces the generic Shopify template.*
+*Paste into Settings → Legal → Privacy policy. Replaces the generic Shopify template.*
 
 **Last updated: June 22, 2026**
 

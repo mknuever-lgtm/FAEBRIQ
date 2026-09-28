@@ -6,13 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:ds-bundle": "node tools/build-ds-bundle.mjs",
+    "ds:bundle": "node tools/build-ds-bundle.mjs && node tools/assemble-ds-bundle.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/standalone": "^7.29.9",
     "@vitejs/plugin-react": "^4.3.1",
     "vite": "^5.4.1"
   }

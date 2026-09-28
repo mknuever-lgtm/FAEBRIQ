@@ -1,0 +1,61 @@
+{
+  "batch": "faebriq_batch_v2",
+  "palette": {
+    "w": "#FFFFFF",
+    "s": "#8E9AAF",
+    "t": "#D96B43"
+  },
+  "font": "JetBrains Mono (OFL)",
+  "designs": [
+    {
+      "design_id": "FAEBRIQ-B2-01",
+      "file": "faebriq_design_01_chown-identity.png",
+      "slogan": "$ sudo chown -R me:me /identity # everyone else: read-only.",
+      "micro_niche_keywords": [
+        "sudo chown shirt",
+        "linux queer tee",
+        "self ownership tee",
+        "sysadmin pride",
+        "queer developer gift"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    },
+    {
+      "design_id": "FAEBRIQ-B2-02",
+      "file": "faebriq_design_02_npm-liberation.png",
+      "slogan": "$ npm install @queer/liberation / added 1 package. found 0 vulnerabilities.",
+      "micro_niche_keywords": [
+        "npm install shirt",
+        "javascript queer tee",
+        "full stack developer gift",
+        "queer liberation tee",
+        "web dev pride"
+      ],
+      "printify_placement": "Front Center",
+      "canvas_px": [
+        4500,
+        5400
+      ],
+      "dpi": 300,
+      "background": "transparent",
+      "inks": [
+        "#8E9AAF",
+        "#D96B43",
+        "#FFFFFF"
+      ],
+      "garment": "black only"
+    }
+  ]
+}

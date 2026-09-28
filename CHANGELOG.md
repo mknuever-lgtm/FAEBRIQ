@@ -136,3 +136,6 @@ Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) i
 
 2026-09-27 CLAUDE.md catalog line and SOCIAL_LAUNCH_POSTS tote price corrected to match Shopify: tote is $34 (was listed $42), 3 of 6 sticker listings are still Draft.
 Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
+
+2026-09-27 Added ETSY.md placeholder codifying channel rules for a not-yet-live Etsy shop (brand facts carry over, catalog/SEO can differ per channel, same hard gates).
+Why: same brand new channel is coming, future sessions should not improvise brand or gate decisions when it goes live.

@@ -139,3 +139,6 @@ Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
 
 2026-09-27 Added ETSY.md placeholder codifying channel rules for a not-yet-live Etsy shop (brand facts carry over, catalog/SEO can differ per channel, same hard gates).
 Why: same brand new channel is coming, future sessions should not improvise brand or gate decisions when it goes live.
+
+2026-09-28 Read-only Shopify Admin verification session, no repo or store changes made. Confirmed live About/Contact pages and theme.liquid all say "United States and Canada" consistently (no meta-description conflict found); shop country is Canada (no false US-presence claim); 241 sessions and 0 orders in the last 30 days; no Etsy app installed in Shopify.
+Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.

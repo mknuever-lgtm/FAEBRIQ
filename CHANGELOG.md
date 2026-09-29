@@ -142,3 +142,5 @@ Why: same brand new channel is coming, future sessions should not improvise bran
 
 2026-09-28 Read-only Shopify Admin verification session, no repo or store changes made. Confirmed live About/Contact pages and theme.liquid all say "United States and Canada" consistently (no meta-description conflict found); shop country is Canada (no false US-presence claim); 241 sessions and 0 orders in the last 30 days; no Etsy app installed in Shopify.
 Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.
+2026-09-29 Shopify cleanup after Printify publish: restored locked prices (tees $34/36/37, crewneck $62, hoodie $68, stickers $4/5/6), archived duplicate Error 404 tee and Liberty tote, rewrote Off The Clock and Please Hold tee copy/tags/SEO (Embroidery tag removed), fixed Not A Bug title, added alt text to 24 apparel images, filled both collections.
+Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4:5 crewneck/hoodie/sticker shots were deleted by that publish, not recoverable from Shopify Files.

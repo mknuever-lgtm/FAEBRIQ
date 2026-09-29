@@ -6,7 +6,7 @@ Why: Apply the approved sticker lockup system for the SPOKE kiss-cut sticker lin
 2026-08-30 Audited hero 'Shop the Drop' CTA; no fix applied pending confirmation of target collection handle.
 2026-09-05 Added AUDIT_2026-09-05.md — independent read-only pre-traffic audit of Shopify, live theme and design-system repo.
 Why: verify launch readiness before driving social traffic; four blockers found, no store/Printify changes made.
-Note: themes are inverted vs CLAUDE.md — faebriqtheme-launch-fix is MAIN (live); do not publish the -review theme.
+Note (corrected 2026-09-29, verified in Shopify): this note was wrong. faebriqtheme-launch-2026-08-06-review is MAIN (live); faebriqtheme-launch-fix is UNPUBLISHED. Themes match CLAUDE.md. Do not publish either without an explicit instruction.
 2026-09-08 Added SOCIAL_LAUNCH_NOTES.md — reminder to link the Shop app from social profiles once the website is live.
 Why: Shop app has a Follow button and in-app checkout, and renders product data only, so it is unaffected by theme work.
 Note: gated on fixing product imagery first — Shop app is a pure image grid with no copy to compensate.

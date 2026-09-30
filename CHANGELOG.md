@@ -142,3 +142,6 @@ Why: same brand new channel is coming, future sessions should not improvise bran
 
 2026-09-28 Read-only Shopify Admin verification session, no repo or store changes made. Confirmed live About/Contact pages and theme.liquid all say "United States and Canada" consistently (no meta-description conflict found); shop country is Canada (no false US-presence claim); 241 sessions and 0 orders in the last 30 days; no Etsy app installed in Shopify.
 Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.
+
+2026-09-30 Added brand/MASCOT_FAE.md: locked FÆ mascot look, revised adult/raspy voice direction, mascot content rules.
+Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark tees and a FÄBRIQ typo that break brand rules.

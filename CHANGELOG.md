@@ -144,3 +144,4 @@ Why: same brand new channel is coming, future sessions should not improvise bran
 Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.
 2026-09-29 Shopify cleanup after Printify publish: restored locked prices (tees $34/36/37, crewneck $62, hoodie $68, stickers $4/5/6), archived duplicate Error 404 tee and Liberty tote, rewrote Off The Clock and Please Hold tee copy/tags/SEO (Embroidery tag removed), fixed Not A Bug title, added alt text to 24 apparel images, filled both collections.
 Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4:5 crewneck/hoodie/sticker shots were deleted by that publish, not recoverable from Shopify Files.
+2026-09-30 Restored the 404 tee (reactivated product 10274729820227: locked prices, brand copy, tags, SEO, alt, All Products) and fixed Not A Bug tee SEO. Why: the original 404 listing had been repurposed into the Not A Bug tee, leaving no 404 tee live.

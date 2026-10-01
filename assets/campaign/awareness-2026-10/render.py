@@ -45,15 +45,15 @@ def btn(x,label,primary):
 r2='Wear it anyway'; w2=int(d.textlength(r2,font=fb))+80
 x2=dx1-60-w2; btn(x2,r2,True)
 r1='Ignore'; w1=int(d.textlength(r1,font=fb))+80; btn(x2-30-w1,r1,False)
-# sans wordmark + six-block bar at 1.35x width, greyscale so the purple stays the only accent
-fw=ImageFont.truetype(F+'InstrumentSans-Bold.ttf',150)
-wx=M+70; ww=d.textlength('FÆBRIQ',font=fw); bb=d.textbbox((0,0),'FÆBRIQ',font=fw)
-bw=ww*1.35; by0=H-M-110; th=bb[3]-bb[1]
-wy=by0-40-th-bb[1]
+# sans wordmark per assets/print-art/reference/wordmark-reference-2026-09-23.jpg,
+# gapless six-block circuit bar at 1.35x wordmark width, centered beneath
+fw=ImageFont.truetype(S+'inter0.ttf',150)
+ww=d.textlength('FÆBRIQ',font=fw); bb=d.textbbox((0,0),'FÆBRIQ',font=fw)
+bw=ww*1.35; wx=M+70; by0=H-M-110; bh=round(bw*0.016)
+th=bb[3]-bb[1]; wy=by0-int(th*0.55)-th-bb[1]
 d.text((wx+(bw-ww)/2,wy),'FÆBRIQ',font=fw,fill=FG)
-greys=[(224,224,224),(190,189,186),(156,155,151),(122,121,117),(92,91,87),(66,65,61)]
-gap=8; cw=(bw-gap*5)/6
-for i,g in enumerate(greys):
-    x=wx+i*(cw+gap); d.rectangle([x,by0,x+cw,by0+22],fill=g)
-d.text((wx,wy+bb[1]-62),'> process running',font=mono(24),fill=DIM)
+CIRCUIT=[(232,39,42),(244,127,32),(249,212,38),(42,170,66),(29,91,190),(123,63,170)]
+cw=bw/6
+for i,c in enumerate(CIRCUIT): d.rectangle([round(wx+i*cw),by0,round(wx+(i+1)*cw)-1,by0+bh],fill=c)
+d.text((wx,wy+bb[1]-70),'> process running',font=mono(24),fill=DIM)
 im.save('hero-error-state-3000x1250.png'); print(bb, th)

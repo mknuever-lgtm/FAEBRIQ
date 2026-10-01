@@ -147,3 +147,4 @@ Why: Maurice asked to verify open questions from a prior store status check befo
 Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark tees and a FÄBRIQ typo that break brand rules.
 
 2026/10/01: added assets/campaign/awareness-2026-10 (Error State hero banner, philosophy, render script). Why: Step 2 of the store awareness design workflow.
+2026/10/01: awareness hero now uses the reference sans wordmark (Inter Medium stand-in) and the gapless six-colour circuit bar. Why: match wordmark-reference-2026-09-23.jpg.

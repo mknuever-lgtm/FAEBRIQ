@@ -160,3 +160,6 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026-10-01 Added the Printify location to the "Stickers (SPOKE)" shipping profile (Manus created it with only 164 Finch Ave E). Why: stock lives at Printify, so stickers had no shipping origin and showed Sold out on the storefront.
 2026-10-01 Sticker descriptions (5 singles): size bullet now lists 2" and notes 2" is transparent-only (Deploying has both). Why: copy said 3"/4"/6" but every sticker sells a 2".
 2026-10-01 Tote switched to the Liberty canvas tote (product 10274729852995): unarchived, house title/copy/tags/SEO/alt, $34, All Products, free General shipping profile, handle 404-straight-not-found-tote. AS Colour tote stays Draft, handle now -as-colour. Why: Fulfill Engine shows 0 stock; Liberty costs $9.67 vs $20.44. Manus brief for per-product Printify shipping costs.
+
+2026-10-01: added assets/mockups/2026-10-01/ (27 Printify mockups + REPORT.md from Manus).
+2026-10-01: Shopify: added 15 new-angle mockups (tee collar+folded x6, hoodie collar+folded, crewneck folded) with alt text; skipped fronts/cap/tote as duplicates of existing images.

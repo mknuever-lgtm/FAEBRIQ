@@ -47,7 +47,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft).
   A Printify publish resets Shopify prices, images and copy.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
-  (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
+  Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = production candidate.
   `faebriqtheme-launch-2026-08-06-review` = LIVE. Never publish themes

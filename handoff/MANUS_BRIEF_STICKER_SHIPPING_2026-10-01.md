@@ -6,6 +6,9 @@ Paste everything below the line into Manus. No files to attach.
 
 You are working in my Shopify admin (store: FÆBRIQ, faebriq.com). Goal: stickers stop shipping for free. Everything else keeps free shipping. Then update the two remaining places in Shopify admin that still promise free shipping on everything.
 
+## Already did this brief with a Canada rate of 7.99?
+Then do only this: open Settings, Shipping and delivery, the "Stickers (SPOKE)" profile, Canada zone, and change the "Standard" rate from 7.99 to 9.99 USD. Then open Settings, Policies, Shipping policy and change "$7.99 to Canada" to "$9.99 to Canada". Save both. Report back. Skip everything else below.
+
 ## Hard rules
 - Do NOT place an order, enter payment details, or press any final "Pay" or "Complete order" button. You may go as far as the checkout shipping step to check a rate, then close it.
 - Do NOT change product prices, titles, descriptions, themes, or apps.
@@ -25,7 +28,7 @@ You are working in my Shopify admin (store: FÆBRIQ, faebriq.com). Goal: sticker
    - FÆBRIQ Sticker Sheet: The Full Drop
 4. Shipping origin: keep the default location Shopify offers.
 5. Create a shipping zone named United States, country United States. Add one flat rate: name "Standard", price 4.99 USD, no conditions.
-6. Create a shipping zone named Canada, country Canada. Add one flat rate: name "Standard", price 7.99 USD, no conditions.
+6. Create a shipping zone named Canada, country Canada. Add one flat rate: name "Standard", price 9.99 USD, no conditions.
 7. Save.
 8. Open the "General" shipping profile and confirm, without changing anything, that the US and Canada rates are still free (0.00). Report what you see.
 
@@ -42,7 +45,7 @@ You are working in my Shopify admin (store: FÆBRIQ, faebriq.com). Goal: sticker
 
    Shipping is free on all apparel, caps and totes to the United States and Canada. It is built into the price, with no minimum order.
 
-   Stickers and sticker sheets are printed by a separate partner and ship on their own, for a flat $4.99 to the US or $7.99 to Canada per order. If your order contains apparel and stickers, you pay only the sticker shipping rate.
+   Stickers and sticker sheets are printed by a separate partner and ship on their own, for a flat $4.99 to the US or $9.99 to Canada per order. If your order contains apparel and stickers, you pay only the sticker shipping rate.
 
 4. Leave every other section unchanged. Save.
 

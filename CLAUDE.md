@@ -38,7 +38,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only. Free shipping
   baked into prices for apparel, cap and tote. Stickers + sheet ship separately
-  (SPOKE) at a flat $4.99 US / $7.99 CA via the "Stickers (SPOKE)" shipping
+  (SPOKE) at a flat $4.99 US / $9.99 CA via the "Stickers (SPOKE)" shipping
   profile (2026-10-01). Never write "free shipping on everything".
 - Live catalog (repriced in Shopify 2026-10-01, cheapest with reasonable
   profit): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock, Please

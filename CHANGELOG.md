@@ -161,3 +161,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - 2026/10/01: added Error State 4:5 feed post (post-error-state-1080x1350.png) via render.py post(), Step 2b social set.
 - 2026/10/01: added CAPTIONS.md (feed + story copy) to awareness-2026-10 campaign.
 - 2026/10/01: added 404 tote print files (sans wordmark + no-wordmark variants); Printify tote still carried the old serif wordmark file.
+- 2026/10/01: removed the two tote files added earlier today; they used the retired ERROR 404 / STRAIGHT NOT / FOUND layout. Canonical tote art stays 404-straight-not-found-v3-light-4500.png.

@@ -4,7 +4,7 @@ import make_print_file as m
 from PIL import Image, ImageFont, ImageDraw
 # Proportions measured off Maurice's 2026-09-23 reference, as fractions of bar width B.
 R=dict(n404_w=0.2799, l2_w=0.7732, gap1=0.0642, gap2=0.0216, bar_h=0.0166, gap_mark=0.0510, mark_w=0.140)
-def build(out,width,sticker):
+def build(out,width,sticker,tote=False):
     serif=m.font_path("Bodoni Moda",None,"BodoniModa-Regular.ttf")
     col={k:tuple(int(v.lstrip('#')[i:i+2],16) for i in (0,2,4)) for k,v in m.INK_LIGHT.items()}
     pad=width*0.045; B=width-2*pad
@@ -16,6 +16,11 @@ def build(out,width,sticker):
         fm=m._fit(ImageFont,serif,"FÆBRIQ",R['mark_w']*B,'w')
         hm=fm.getbbox("FÆBRIQ"); hm=hm[3]-hm[1]
         ym=yb+bh+R['gap_mark']*B; bottom=ym+hm
+    if tote:
+        # Tote (Maurice, 2026-10-01): sans wordmark underneath, measured off his
+        # reference at ~0.17 of bar width, ~0.068 below the bar. The bar stays
+        # full phrase width as in that reference.
+        wm=m.wordmark_mask(0.17*B,col['mark']); ym=yb+bh+0.068*B; bottom=ym+wm.height
     im=Image.new('RGBA',(width,int(round(bottom+pad))),(0,0,0,0)); cx=width/2
     m._draw_reinforced(im,cx,y1,"404",f1,col['text']); m._draw_reinforced(im,cx,y2,"STRAIGHT NOT FOUND",f2,col['text'])
     d=ImageDraw.Draw(im)
@@ -28,6 +33,8 @@ def build(out,width,sticker):
     bx = cx - bar_w/2
     for i,c in enumerate(m.CIRCUIT): x0=bx+i*(sw+gap); d.rectangle([x0,yb,x0+sw,yb+bh],fill=c)
     if sticker: m._draw_reinforced(im,cx,ym,"FÆBRIQ",fm,col['mark'])
+    if tote: im.alpha_composite(wm,(int(round(cx-wm.width/2)),int(round(ym))))
     im.save(out,'PNG',dpi=(300,300)); print(out,im.size)
 build('assets/print-art/404-straight-not-found-v3-light-4500.png',4500,False)
+build('assets/print-art/404-straight-not-found-v3-tote-light-4500.png',4500,False,tote=True)
 build('assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png',2400,True)

@@ -129,7 +129,23 @@ def story():
     return im
 
 
+def post():
+    """4:5 feed post. Content stays inside the 3:4 profile-grid crop (~34px off each side)."""
+    W, H, M = 1080, 1350, 70
+    im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im)
+    frame(d, W, H, M, 40)
+    f = mono(22); L = M + 30; R = W - M - 30
+    runs(d, L, M + 24, [('STATUS: UNEXPECTED', NOTE)], f)
+    runs(d, 0, M + 24, [('FAEBRIQ.COM', NOTE)], f, right=R)
+    dialog(d, (M + 20, 160, W - M - 20, 800), 112, 26, square_left=False)
+    lockup(im, d, W / 2, 1090, 440, 24, center=True)
+    runs(d, L, H - M - 54, [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)], f)
+    runs(d, 0, H - M - 54, [('FIG. 02', NOTE)], f, right=R)
+    return im
+
+
 if __name__ == '__main__':
+    post().save(os.path.join(HERE, 'post-error-state-1080x1350.png'), optimize=True)
     desktop().save(os.path.join(HERE, 'hero-error-state-3000x1250.png'), optimize=True)
     story().save(os.path.join(HERE, 'hero-error-state-story-1080x1920.png'), optimize=True)
     print('ok')

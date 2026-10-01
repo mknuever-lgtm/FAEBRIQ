@@ -29,7 +29,14 @@
       <p class="fae-hero__eyebrow">{{ section.settings.eyebrow }}</p>
     {%- endif -%}
 
-    <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
+    {%- comment -%} FAEBRIQ 2026-10-01: when the heading is the brand name, show the sans wordmark SVG
+      (same asset as the header) instead of serif text. The h1 + alt keep "FÆBRIQ" for SEO and screen
+      readers. Height 0.72em tracks the h1's responsive font-size clamp. Any other heading stays text. {%- endcomment -%}
+    {%- if section.settings.heading == 'FÆBRIQ' -%}
+      <h1 class="fae-hero__title"><img src="{{ 'faebriq-wordmark.svg' | asset_url }}" alt="FÆBRIQ" width="337" height="72" style="display:block;height:0.72em;width:auto;max-width:100%;"></h1>
+    {%- else -%}
+      <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
+    {%- endif -%}
 
     <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component), not a gradient line -->
     <div class="fae-circuit" style="height: 3px; max-width: 360px;">

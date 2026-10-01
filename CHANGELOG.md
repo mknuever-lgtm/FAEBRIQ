@@ -152,3 +152,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: faebriqtheme-launch-fix (draft): header wordmark swapped from Instrument Serif text to inline SVG traced from the sans reference; header.liquid + SVG mirrored into repo. Why: header broke the sans wordmark rule.
 2026/10/01: CLAUDE.md now names faebriqtheme-launch-fix as the only theme Claude may edit. Why: Maurice instruction.
 2026/10/01: launch-fix header wordmark switched to a plain <img> of the SVG (fill baked to #C0C0C0). Why: inline_asset_content rendered nothing in preview.
+2026/10/01: launch-fix hero h1 shows the sans wordmark SVG when the heading is FAEBRIQ (text kept as alt). Why: hero wordmark was serif.

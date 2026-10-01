@@ -24,11 +24,9 @@ def build(out,width,sticker,tote=False,ink='light'):
     im=Image.new('RGBA',(width,int(round(bottom+pad))),(0,0,0,0)); cx=width/2
     m._draw_reinforced(im,cx,y1,"404",f1,col['text']); m._draw_reinforced(im,cx,y2,"STRAIGHT NOT FOUND",f2,col['text'])
     d=ImageDraw.Draw(im)
-    # Bar-to-wordmark ratio (Maurice, 2026-09-25): on the sticker, the bar is
-    # 1.35x the FÆBRIQ mark's own width, not tied to the full canvas width B.
-    # The apparel file (sticker=False) has no mark, so it keeps the old
-    # full-width bar -- nothing for it to be 1.35x of.
-    bar_w = m.BAR_TO_MARK_RATIO * wm.width if sticker else B
+    # Full phrase-width bar on every 404 file, sticker included (Maurice,
+    # 2026-10-01, overriding the 1.35x-of-mark sticker bar from 2026-09-25).
+    bar_w = B
     sw, gap = m.SRC['stripe_frac']*bar_w, m.SRC['gap_frac']*bar_w
     bx = cx - bar_w/2
     for i,c in enumerate(m.CIRCUIT): x0=bx+i*(sw+gap); d.rectangle([x0,yb,x0+sw,yb+bh],fill=c)

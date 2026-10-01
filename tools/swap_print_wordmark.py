@@ -12,22 +12,11 @@ import make_print_file as m
 import numpy as np
 from PIL import Image
 
-REF = 'assets/print-art/reference/wordmark-reference-2026-09-23.jpg'
 STICKERS = sorted(glob.glob('assets/print-art/sticker-final-system-2026-08-27/*sticker-light-2400.png'))
 MARK_HEX = m.INK_LIGHT['mark']  # #C0C0C0 -- unchanged: only the typeface changes, not the tone
 
 
-def wordmark_mask(width, color):
-    """The approved sans wordmark cut from Maurice's reference, as a solid-color RGBA at `width`."""
-    ref = np.array(Image.open(REF).convert('L')).astype(float)
-    top, bottom, left, right = 570, 800, 490, 1516  # crop box for the middle (approved) wordmark
-    a = np.clip((ref[top:bottom, left:right] - 16) / (232 - 16), 0, 1) * 255
-    cols = np.where((a > 40).any(0))[0]
-    a = a[:, cols[0]:cols[-1] + 1]
-    im = Image.new('RGBA', a.shape[::-1], color)
-    im.putalpha(Image.fromarray(a.astype('uint8')))
-    k = width / im.width
-    return im.resize((width, round(im.height * k)), Image.LANCZOS)
+wordmark_mask = m.wordmark_mask  # single source of truth lives in make_print_file.py
 
 
 def find_mark_band(alpha):

@@ -148,3 +148,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 
 2026/10/01: added assets/campaign/awareness-2026-10 (Error State hero banner, philosophy, render script). Why: Step 2 of the store awareness design workflow.
 2026/10/01: awareness hero now uses the reference sans wordmark (Inter Medium stand-in) and the gapless six-colour circuit bar. Why: match wordmark-reference-2026-09-23.jpg.
+2026/10/01: make_print_file.py now draws the sticker wordmark from the sans reference (no second swap step); --type-wordmark-family now points at the sans token. Why: generator and tokens contradicted the sans wordmark rule.

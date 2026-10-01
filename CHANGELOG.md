@@ -145,3 +145,5 @@ Why: Maurice asked to verify open questions from a prior store status check befo
 
 2026-09-30 Added brand/MASCOT_FAE.md: locked FÆ mascot look, revised adult/raspy voice direction, mascot content rules.
 Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark tees and a FÄBRIQ typo that break brand rules.
+
+2026/10/01: added assets/campaign/awareness-2026-10 (Error State hero banner, philosophy, render script). Why: Step 2 of the store awareness design workflow.

@@ -154,3 +154,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: launch-fix header wordmark switched to a plain <img> of the SVG (fill baked to #C0C0C0). Why: inline_asset_content rendered nothing in preview.
 2026/10/01: launch-fix hero h1 shows the sans wordmark SVG when the heading is FAEBRIQ (text kept as alt). Why: hero wordmark was serif.
 2026/10/01: launch-fix hero logo is now a lockup with the bar at 1.35x wordmark width, scaling with screen size. Why: bar was ~2x after the SVG swap.
+2026/10/01: added tools/make_dark_mockup.py (Printify mockup -> charcoal studio backdrop, option A). Why: unify product photos on a dark backdrop.

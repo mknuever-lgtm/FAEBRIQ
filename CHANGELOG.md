@@ -155,3 +155,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: launch-fix hero h1 shows the sans wordmark SVG when the heading is FAEBRIQ (text kept as alt). Why: hero wordmark was serif.
 2026/10/01: launch-fix hero logo is now a lockup with the bar at 1.35x wordmark width, scaling with screen size. Why: bar was ~2x after the SVG swap.
 2026/10/01: added tools/make_dark_mockup.py (Printify mockup -> charcoal studio backdrop, option A). Why: unify product photos on a dark backdrop.
+2026/10/01: added handoff/MANUS_BRIEF_MOCKUPS_2026-10-01.md (read-only Printify mockup download brief). Why: source images for real-looking product photos.

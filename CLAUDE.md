@@ -25,7 +25,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   an earlier version of this line wrongly said Instrument Serif). Line 1
   is 100% size, line 2 is 75-85% of line 1. Bar is 1.35x the wordmark's
   width wherever the wordmark prints (stickers, cap, standalone logo);
-  apparel has no wordmark, so its bar stays tied to the phrase width.
+  the apparel front print has no wordmark, so its bar stays tied to the
+  phrase width. Tees carry a small FÆBRIQ wordmark on the sleeve
+  (wordmark-faebriq-sleeve.png, kept by Maurice 2026-10-01).
   One pride-circuit accent per product.
 - Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
   marketing copy, avatar/video persona, or promotional content still needs

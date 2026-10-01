@@ -163,3 +163,5 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 
 2026-10-01: added assets/mockups/2026-10-01/ (27 Printify mockups + REPORT.md from Manus).
 2026-10-01: Shopify: added 15 new-angle mockups (tee collar+folded x6, hoodie collar+folded, crewneck folded) with alt text; skipped fronts/cap/tote as duplicates of existing images.
+2026-10-01: Shopify apparel+tote galleries rebuilt on charcoal (#0d0d0d, 4:5) via tools/mockup_to_charcoal.py; all white-ground and duplicate images deleted; 09-24 on-model shots back as slot 2 on 404 and Code It tees. Why: Maurice, no white backgrounds, no filler.
+2026-10-01: Added 404-straight-not-found-tote-4500.png (tools/make_404_tote.py, sticker lockup with sans FÆBRIQ) and handoff/MANUS_BRIEF_TOTE_PRINT_SWAP_2026-10-01.md. Why: live tote prints a serif FÆBRIQ and a full-width bar.

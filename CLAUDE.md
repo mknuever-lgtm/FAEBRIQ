@@ -43,10 +43,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Live catalog (repriced in Shopify 2026-10-01, cheapest with reasonable
   profit): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock, Please
   Hold) $30; crewneck $42; hoodie $54; cap $32; ONE price for every size,
-  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34; 5 single stickers
+  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (Liberty canvas, switched from AS Colour 2026-10-01); 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft).
   A Printify publish resets Shopify prices, images and copy.
-- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
+- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = production candidate.

@@ -18,8 +18,8 @@
         "subheading": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
         "cta_label": "Shop the Drop",
         "cta_url": "/collections/all-products",
-        "price_note": "$4-$68 USD · Free shipping to the US & Canada · Printed to order",
-        "hero_product": "error-404-straight-not-found-tee",
+        "price_note": "$4-$54 USD · Free US & Canada shipping on apparel · Printed to order",
+        "hero_product": "its-not-a-bug-its-me-tee",
         "media_tag": "The Flagship"
       }
     },
@@ -27,7 +27,7 @@
       "type": "trust-row",
       "settings": {
         "item_1_title": "Free shipping",
-        "item_1_text": "To the US and Canada. Built into the price, no threshold to hit.",
+        "item_1_text": "On apparel, caps and totes, US and Canada. No threshold. Stickers ship separately.",
         "item_2_title": "Made to order",
         "item_2_text": "Printed after you buy it, not before. No warehouse of unsold guesses.",
         "item_3_title": "2 to 7 days to print",
@@ -55,5 +55,10 @@
       }
     }
   },
-  "order": ["hero", "trust-row", "featured-collection", "brand-statement"]
+  "order": [
+    "hero",
+    "trust-row",
+    "featured-collection",
+    "brand-statement"
+  ]
 }

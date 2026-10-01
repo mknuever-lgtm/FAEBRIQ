@@ -159,3 +159,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
 - 2026/10/01: added Error State 4:5 feed post (post-error-state-1080x1350.png) via render.py post(), Step 2b social set.
+- 2026/10/01: added CAPTIONS.md (feed + story copy) to awareness-2026-10 campaign.

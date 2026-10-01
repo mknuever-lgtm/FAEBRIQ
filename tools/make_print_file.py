@@ -169,11 +169,12 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
     f_l1 = _fit(ImageFont, serif, line1, src["l1_w"] * L, "w")
     f_l2 = ImageFont.truetype(serif, max(1, round(f_l1.size * l2_ratio)))
     # A long line2 at the target ratio can render wider than the canvas (e.g.
-    # "I'M REBRANDING MY IDENTITY" at 80% of "PLEASE HOLD"'s size) -- the
-    # ratio is a target, not a licence to run off the print area, so fall
-    # back to width-fit (matching line1's own width target) only when needed.
+    # "I'M REBRANDING MY IDENTITY" at 80% of "PLEASE HOLD"'s size). Fit line2
+    # to the width and shrink line1 to keep the ratio, so the 75-85% rule
+    # holds; shrinking line2 instead dropped it to ~45% of line1.
     if f_l2.getlength(line2) > src["l1_w"] * L:
         f_l2 = _fit(ImageFont, serif, line2, src["l1_w"] * L, "w")
+        f_l1 = ImageFont.truetype(serif, max(1, round(f_l2.size / l2_ratio)))
     # Label is fitted by cap height, not width, so it stays a consistent size
     # regardless of how long the label text is ("404" vs "ERROR 404").
     f_lab = _fit(ImageFont, serif, label, src["label_h"] * L, "h") if label else None

@@ -43,7 +43,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = production candidate.
   `faebriqtheme-launch-2026-08-06-review` = LIVE. Never publish themes
-  without an explicit instruction.
+  without an explicit instruction. `faebriqtheme-launch-fix` (Shopify id
+  145284005955) is the ONLY theme Claude may edit; never write to any other
+  theme (Maurice, 2026-10-01).
 
 ## Output style
 - No em dashes and no en dashes in any output: chat replies, reports,

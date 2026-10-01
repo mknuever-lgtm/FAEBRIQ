@@ -7,6 +7,9 @@ apparel print files in it:
   apparel  ->  phrase + pride-circuit bar.   NO FÆBRIQ wordmark.
   sticker  ->  phrase + bar + FÆBRIQ wordmark.
 
+The wordmark is the approved SANS mark, cut straight from the founder's
+reference image (WORDMARK_REF below), never set in the phrase serif.
+
 The wordmark is a sticker/cap element only — the apparel print files in the
 handoff ("Code It. Serve It. - White (Print)", "Off The Clock...") carry no
 wordmark at all.
@@ -72,6 +75,26 @@ DILATE_RADIUS_PX = 4
 
 FONT_CSS = "https://fonts.googleapis.com/css?family={}"
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".fontcache")
+
+
+WORDMARK_REF = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                            "assets/print-art/reference/wordmark-reference-2026-09-23.jpg")
+
+
+def wordmark_mask(width, color):
+    """The approved sans wordmark cut from the founder's reference, as a solid-color RGBA at `width`."""
+    import numpy as np
+    from PIL import Image
+    ref = np.array(Image.open(WORDMARK_REF).convert("L")).astype(float)
+    top, bottom, left, right = 570, 800, 490, 1516  # crop box for the middle (approved) wordmark
+    a = np.clip((ref[top:bottom, left:right] - 16) / (232 - 16), 0, 1) * 255
+    cols = np.where((a > 40).any(0))[0]
+    rows = np.where((a > 40).any(1))[0]
+    a = a[rows[0]:rows[-1] + 1, cols[0]:cols[-1] + 1]
+    im = Image.new("RGBA", a.shape[::-1], color)
+    im.putalpha(Image.fromarray(a.astype("uint8")))
+    k = width / im.width
+    return im.resize((round(width), round(im.height * k)), Image.LANCZOS)
 
 
 def font_path(family, weight, filename):
@@ -223,7 +246,12 @@ def build(line1, line2, out, label=None, width=4500, margin_frac=0.045,
         d.rectangle([x0, by, x0 + sw, by + bar_h], fill=c)
 
     if wordmark:
-        line("mark_y", "FÆBRIQ", f_mark, col["mark"])
+        # f_mark only sizes the mark (so the bar's 1.35x ratio and the layout
+        # stay put); the pixels come from the approved sans reference.
+        mb = f_mark.getbbox("FÆBRIQ")
+        mark = wordmark_mask(mark_w_px, col["mark"] + (255,))
+        my = top + src["mark_y"] * L + mb[1] + ((mb[3] - mb[1]) - mark.height) / 2
+        im.alpha_composite(mark, (round(cx - mark.width / 2), round(my)))
 
     im.save(out, "PNG", dpi=(300, 300))
     return im.size

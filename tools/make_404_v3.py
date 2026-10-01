@@ -4,17 +4,17 @@ import make_print_file as m
 from PIL import Image, ImageFont, ImageDraw
 # Proportions measured off Maurice's 2026-09-23 reference, as fractions of bar width B.
 R=dict(n404_w=0.2799, l2_w=0.7732, gap1=0.0642, gap2=0.0216, bar_h=0.0166, gap_mark=0.0510, mark_w=0.140)
-def build(out,width,sticker,tote=False):
+def build(out,width,sticker,tote=False,ink='light'):
     serif=m.font_path("Bodoni Moda",None,"BodoniModa-Regular.ttf")
-    col={k:tuple(int(v.lstrip('#')[i:i+2],16) for i in (0,2,4)) for k,v in m.INK_LIGHT.items()}
+    col={k:tuple(int(v.lstrip('#')[i:i+2],16) for i in (0,2,4)) for k,v in (m.INK_LIGHT if ink=='light' else m.INK_DARK).items()}
     pad=width*0.045; B=width-2*pad
     f1=m._fit(ImageFont,serif,"404",R['n404_w']*B,'w'); f2=m._fit(ImageFont,serif,"STRAIGHT NOT FOUND",R['l2_w']*B,'w')
     h1=f1.getbbox("404"); h1=h1[3]-h1[1]; h2=f2.getbbox("STRAIGHT NOT FOUND"); h2=h2[3]-h2[1]
     y1=pad; y2=y1+h1+R['gap1']*B; yb=y2+h2+R['gap2']*B; bh=R['bar_h']*B
-    fm=None; bottom=yb+bh
+    bottom=yb+bh
     if sticker:
-        fm=m._fit(ImageFont,serif,"FÆBRIQ",R['mark_w']*B,'w')
-        hm=fm.getbbox("FÆBRIQ"); hm=hm[3]-hm[1]
+        # Sans wordmark cut from the founder reference, not set in Bodoni (Maurice, 2026-10-01).
+        wm=m.wordmark_mask(R['mark_w']*B,col['mark']); hm=wm.height
         ym=yb+bh+R['gap_mark']*B; bottom=ym+hm
     if tote:
         # Tote (Maurice, 2026-10-01): sans wordmark underneath, measured off his
@@ -28,13 +28,13 @@ def build(out,width,sticker,tote=False):
     # 1.35x the FÆBRIQ mark's own width, not tied to the full canvas width B.
     # The apparel file (sticker=False) has no mark, so it keeps the old
     # full-width bar -- nothing for it to be 1.35x of.
-    bar_w = m.BAR_TO_MARK_RATIO * fm.getlength("FÆBRIQ") if sticker else B
+    bar_w = m.BAR_TO_MARK_RATIO * wm.width if sticker else B
     sw, gap = m.SRC['stripe_frac']*bar_w, m.SRC['gap_frac']*bar_w
     bx = cx - bar_w/2
     for i,c in enumerate(m.CIRCUIT): x0=bx+i*(sw+gap); d.rectangle([x0,yb,x0+sw,yb+bh],fill=c)
-    if sticker: m._draw_reinforced(im,cx,ym,"FÆBRIQ",fm,col['mark'])
-    if tote: im.alpha_composite(wm,(int(round(cx-wm.width/2)),int(round(ym))))
+    if sticker or tote: im.alpha_composite(wm,(int(round(cx-wm.width/2)),int(round(ym))))
     im.save(out,'PNG',dpi=(300,300)); print(out,im.size)
 build('assets/print-art/404-straight-not-found-v3-light-4500.png',4500,False)
 build('assets/print-art/404-straight-not-found-v3-tote-light-4500.png',4500,False,tote=True)
 build('assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png',2400,True)
+build('assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-dark-2400.png',2400,True,ink='dark')

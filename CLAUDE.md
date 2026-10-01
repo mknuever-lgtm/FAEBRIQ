@@ -40,7 +40,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   baked into listed prices.
 - Live catalog (checked in Shopify 2026-09-29): 5 single stickers
   $4 to $6 plus the sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 still
-  Draft); 5 tees (404, Code It, Not A Bug, Off The Clock, Please Hold) $34, 2XL $36,
+  Draft); 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock, Please Hold) $34, 2XL $36,
   3XL+ $37; crewneck $62, hoodie $68, cap $34, 404 tote $34.
   A Printify publish resets Shopify prices, images and copy.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001

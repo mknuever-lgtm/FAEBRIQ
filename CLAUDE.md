@@ -26,6 +26,8 @@ requests unless explicitly asked. When the assigned task is done, stop.
   is 100% size, line 2 is 75-85% of line 1. Bar is 1.35x the wordmark's
   width wherever the wordmark prints (stickers, cap, standalone logo);
   apparel has no wordmark, so its bar stays tied to the phrase width.
+  Exception: the 404 design (tote + stickers) uses a phrase-width bar
+  with the wordmark underneath (Maurice, 2026-10-01).
   One pride-circuit accent per product.
 - Dry/deadpan = delivery style, NOT low-energy, monotone, or flat. Any
   marketing copy, avatar/video persona, or promotional content still needs

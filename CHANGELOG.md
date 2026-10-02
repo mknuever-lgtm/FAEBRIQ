@@ -165,3 +165,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - 2026/10/01: added 404 v3 tote print file with sans wordmark underneath (make_404_v3.py tote mode), per Maurice: tote always carries the wordmark.
 - 2026/10/01: 404 v3 sticker rebuilt with the sans wordmark (was Bodoni) and bar at 1.35x mark; added black-text (dark ink) sticker for white stock.
 - 2026/10/01: 404 stickers (light + dark) now use the full phrase-width bar, per Maurice; replaces the 1.35x-of-mark sticker bar.
+- 2026/10/02: CLAUDE.md + IMAGERY_SPEC: 404 design exempt from 1.35x bar rule (phrase-width bar, wordmark underneath on tote/stickers).

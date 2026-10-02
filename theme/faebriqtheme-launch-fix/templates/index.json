@@ -36,6 +36,16 @@
         "item_4_text": "Damaged, defective or misprinted: replaced or refunded within 30 days."
       }
     },
+    "fae-intro": {
+      "type": "fae-intro",
+      "settings": {
+        "label": "> fae.exe running",
+        "line": "FÆ searched your wardrobe. Found nothing worth wearing. Fixed that.",
+        "sub": "Black denim, rainbow seams, zero chill. FÆ guards the drop: tees, crewneck, hoodie, cap, tote, stickers.",
+        "cta_label": "See what FÆ picked",
+        "cta_url": "/collections/all-products"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -55,5 +65,5 @@
       }
     }
   },
-  "order": ["hero", "trust-row", "featured-collection", "brand-statement"]
+  "order": ["hero", "trust-row", "fae-intro", "featured-collection", "brand-statement"]
 }

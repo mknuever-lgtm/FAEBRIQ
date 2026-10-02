@@ -1,0 +1,60 @@
+{% comment %}
+  FAEBRIQ: FÆ mascot strip (2026-10-02). Spec: brand/MASCOT_FAE.md.
+
+  The render is uploaded in the theme editor (image_picker), not committed,
+  so the image can change without a code edit. With no image set the
+  section renders nothing, so it is safe to leave in the home order.
+  Copy rules: third person, real products only, no invented features.
+{% endcomment %}
+{%- if section.settings.image != blank -%}
+<section class="fae-intro">
+  <div class="fae-container fae-intro__inner">
+    <div class="fae-intro__media">
+      <img
+        src="{{ section.settings.image | image_url: width: 800 }}"
+        srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
+        sizes="(max-width: 760px) 70vw, 34vw"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        alt="{{ section.settings.image.alt | default: 'FÆ, the FÆBRIQ mascot: a black denim golem with rainbow seams' | escape }}"
+        loading="lazy">
+    </div>
+    <div class="fae-intro__copy">
+      {%- if section.settings.label != blank -%}<p class="fae-intro__label">{{ section.settings.label }}</p>{%- endif -%}
+      {%- if section.settings.line != blank -%}<p class="fae-intro__line">{{ section.settings.line }}</p>{%- endif -%}
+      {%- if section.settings.sub != blank -%}<p class="fae-intro__sub">{{ section.settings.sub }}</p>{%- endif -%}
+      {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+        <a href="{{ section.settings.cta_url }}" class="fae-hero__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+<style>
+  .fae-intro { padding: 72px 0; border-top: 1px solid var(--fae-line-700); }
+  .fae-intro__inner { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+  .fae-intro__media img { display: block; width: 100%; height: auto; }
+  .fae-intro__label { font-family: ui-monospace, 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fae-text-dim); margin: 0 0 16px; }
+  .fae-intro__line { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; color: var(--fae-text); margin: 0 0 16px; }
+  .fae-intro__sub { color: var(--fae-text-dim); max-width: 46ch; margin: 0 0 28px; }
+  @media (max-width: 760px) {
+    .fae-intro { padding: 48px 0; }
+    .fae-intro__inner { grid-template-columns: 1fr; gap: 24px; }
+    .fae-intro__media { max-width: 70%; margin: 0 auto; }
+  }
+</style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FÆ intro",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "FÆ render", "info": "Transparent PNG or WebP on a dark ground. Section stays hidden until this is set." },
+    { "type": "text", "id": "label", "label": "Label", "default": "> fae.exe running" },
+    { "type": "textarea", "id": "line", "label": "Main line", "default": "FÆ searched your wardrobe. Found nothing worth wearing. Fixed that." },
+    { "type": "textarea", "id": "sub", "label": "Sub line", "default": "Black denim, rainbow seams, zero chill. FÆ guards the drop: tees, crewneck, hoodie, cap, tote, stickers." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "See what FÆ picked" },
+    { "type": "url", "id": "cta_url", "label": "Button URL" }
+  ],
+  "presets": [{ "name": "FÆ intro" }]
+}
+{% endschema %}

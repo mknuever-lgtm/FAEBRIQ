@@ -1,23 +1,26 @@
 {% comment %}
   FAEBRIQ: FÆ mascot strip (2026-10-02). Spec: brand/MASCOT_FAE.md.
 
-  The render is uploaded in the theme editor (image_picker), not committed,
-  so the image can change without a code edit. With no image set the
-  section renders nothing, so it is safe to leave in the home order.
+  Default render ships as assets/fae-front.webp (front view, edges faded into
+  the page black). An image set in the theme editor overrides it.
   Copy rules: third person, real products only, no invented features.
 {% endcomment %}
-{%- if section.settings.image != blank -%}
 <section class="fae-intro">
   <div class="fae-container fae-intro__inner">
     <div class="fae-intro__media">
-      <img
-        src="{{ section.settings.image | image_url: width: 800 }}"
-        srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
-        sizes="(max-width: 760px) 70vw, 34vw"
-        width="{{ section.settings.image.width }}"
-        height="{{ section.settings.image.height }}"
-        alt="{{ section.settings.image.alt | default: 'FÆ, the FÆBRIQ mascot: a black denim golem with rainbow seams' | escape }}"
-        loading="lazy">
+      {%- assign fae_alt = 'FÆ, the FÆBRIQ mascot: a black denim golem with rainbow seams and a rainbow grin' -%}
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
+          sizes="(max-width: 760px) 70vw, 34vw"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          alt="{{ section.settings.image.alt | default: fae_alt | escape }}"
+          loading="lazy">
+      {%- else -%}
+        <img src="{{ 'fae-front.webp' | asset_url }}" width="1000" height="1640" alt="{{ fae_alt | escape }}" loading="lazy">
+      {%- endif -%}
     </div>
     <div class="fae-intro__copy">
       {%- if section.settings.label != blank -%}<p class="fae-intro__label">{{ section.settings.label }}</p>{%- endif -%}
@@ -32,6 +35,7 @@
 <style>
   .fae-intro { padding: 72px 0; border-top: 1px solid var(--fae-line-700); }
   .fae-intro__inner { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+  .fae-intro__media { max-width: 380px; margin: 0 auto; width: 100%; }
   .fae-intro__media img { display: block; width: 100%; height: auto; }
   .fae-intro__label { font-family: ui-monospace, 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fae-text-dim); margin: 0 0 16px; }
   .fae-intro__line { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; color: var(--fae-text); margin: 0 0 16px; }
@@ -39,16 +43,15 @@
   @media (max-width: 760px) {
     .fae-intro { padding: 48px 0; }
     .fae-intro__inner { grid-template-columns: 1fr; gap: 24px; }
-    .fae-intro__media { max-width: 70%; margin: 0 auto; }
+    .fae-intro__media { max-width: 62%; }
   }
 </style>
-{%- endif -%}
 
 {% schema %}
 {
   "name": "FÆ intro",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "FÆ render", "info": "Transparent PNG or WebP on a dark ground. Section stays hidden until this is set." },
+    { "type": "image_picker", "id": "image", "label": "FÆ render", "info": "Optional. Overrides the built-in front render (assets/fae-front.webp)." },
     { "type": "text", "id": "label", "label": "Label", "default": "> fae.exe running" },
     { "type": "textarea", "id": "line", "label": "Main line", "default": "FÆ searched your wardrobe. Found nothing worth wearing. Fixed that." },
     { "type": "textarea", "id": "sub", "label": "Sub line", "default": "Black denim, rainbow seams, zero chill. FÆ guards the drop: tees, crewneck, hoodie, cap, tote, stickers." },

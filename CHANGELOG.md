@@ -167,3 +167,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - 2026/10/01: 404 stickers (light + dark) now use the full phrase-width bar, per Maurice; replaces the 1.35x-of-mark sticker bar.
 - 2026/10/02: CLAUDE.md + IMAGERY_SPEC: 404 design exempt from 1.35x bar rule (phrase-width bar, wordmark underneath on tote/stickers).
 - 2026/10/02: launch-fix theme: new fae-intro section (FÆ mascot image slot + third-person line), placed after trust row; hidden until a render is uploaded.
+- 2026/10/02: FÆ front render added as theme asset fae-front.webp (edges faded to page black); fae-intro now shows it by default.

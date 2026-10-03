@@ -13,12 +13,12 @@ You are working in my Printify account (FÆBRIQ store). Goal: replace the print 
 - Do not order samples or open checkout.
 
 ## The new print file
-Download it here (PNG, 4500 x 1877, transparent background):
-https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/ccr-0572707a-269xb2/assets/print-art/404-straight-not-found-tote-4500.png
+Download it here (PNG `404-straight-not-found-v3-tote-light-4500.png`, 4500 x 1951, transparent background):
+https://raw.githubusercontent.com/mknuever-lgtm/FAEBRIQ/claude/faebriq-hero-fixes-02dw1g/assets/print-art/404-straight-not-found-v3-tote-light-4500.png
 
 If that link does not load, tell me and stop. Do not use any other file.
 
-It shows: big "404", "STRAIGHT NOT FOUND" underneath (serif capitals), a short six-color stripe, and a small sans "FÆBRIQ" under the stripe.
+It shows: big "404", "STRAIGHT NOT FOUND" underneath (serif capitals), a full-width six-color stripe as wide as STRAIGHT NOT FOUND, and a small sans "FÆBRIQ" under the stripe.
 
 ## Steps
 1. Open My Products, then the 404 tote above, then Edit design.

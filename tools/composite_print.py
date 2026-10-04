@@ -163,6 +163,7 @@ def main():
     ap.add_argument("--heal-also", action="append", default=[],
                     help="extra x0,y0,x1,y1 box to clean but not print on; repeatable "
                          "(the cap's brim swoosh, for instance)")
+    ap.add_argument("--no-heal", action="store_true", help="blank garment: skip removing an existing print")
     ap.add_argument("--heal-threshold", type=float, default=4.0, help="high-pass sigmas above cloth noise that count as print")
     ap.add_argument("--heal-grow", type=float, default=2.5)
     ap.add_argument("--feather", type=float, default=3.0, help="heal-box edge feather, px; keep the roi wider than this")
@@ -189,8 +190,11 @@ def main():
         roi = (max(0, int(min(xs)) - pad), max(0, int(min(ys)) - pad),
                min(W, int(max(xs)) + pad), min(H, int(max(ys)) + pad))
 
-    healed, _ = heal_existing_print(rgb, roi, args.heal_threshold, args.heal_grow, args.feather)
-    for box in args.heal_also:
+    if args.no_heal:
+        healed = rgb  # blank garment: nothing to remove, keep the real cloth texture
+    else:
+        healed, _ = heal_existing_print(rgb, roi, args.heal_threshold, args.heal_grow, args.feather)
+    for box in ([] if args.no_heal else args.heal_also):
         extra = tuple(int(v) for v in box.split(","))
         healed, _ = heal_existing_print(healed, extra, args.heal_threshold, args.heal_grow, args.feather)
 

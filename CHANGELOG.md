@@ -171,3 +171,4 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026-10-04: Shopify: FÆ stickers moved to Stickers (SPOKE) profile; FÆ collection filled (5); em dashes removed (FÆ sheet title, Sticker Add-Ons, All Products, launch-fix announcement); launch-fix FÆ row subtitle + $3.99 price note.
 2026-10-04: Product galleries re-rendered on the charcoal studio sweep (option 3) via tools/mockup_to_charcoal.py, 25 images replaced; close-ups cropped to 4:5.
 2026-10-04: CLAUDE.md + IMAGERY_SPEC merged with hero-fixes branch (404 bar exception, launch-fix-only theme rule) plus FÆ catalog, photo ground, post-publish shipping-profile rule.
+2026-10-04: Opened PR #42 (CLAUDE.md + IMAGERY_SPEC onto default branch); added handoff/MANUS_BRIEF_REMAINING_2026-10-04.md (tote swap, cap angles, 10 blank-garment model photos).

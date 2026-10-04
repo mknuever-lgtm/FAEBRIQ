@@ -172,3 +172,4 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026-10-04: Product galleries re-rendered on the charcoal studio sweep (option 3) via tools/mockup_to_charcoal.py, 25 images replaced; close-ups cropped to 4:5.
 2026-10-04: CLAUDE.md + IMAGERY_SPEC merged with hero-fixes branch (404 bar exception, launch-fix-only theme rule) plus FÆ catalog, photo ground, post-publish shipping-profile rule.
 2026-10-04: Opened PR #42 (CLAUDE.md + IMAGERY_SPEC onto default branch); added handoff/MANUS_BRIEF_REMAINING_2026-10-04.md (tote swap, cap angles, 10 blank-garment model photos).
+2026-10-04: Rendered the Manus post-swap tote mockup (v3 print) on the charcoal sweep as assets/mockups/2026-10-04-sweep/04-tote-A-v3.jpg; held back from Shopify until Maurice confirms the edited Printify product is the Liberty tote (Manus reported AS Colour 1001). Why: avoid a live image that does not match what ships.

@@ -39,9 +39,9 @@ def square():
     f = mono(24); L = M + 30; R = W - M - 30
     runs(d, L, 90, [('STATUS: UNEXPECTED', NOTE)], f)
     runs(d, 0, 90, [('FAEBRIQ.COM', NOTE)], f, right=R)
-    dialog(d, (M + 20, 130, W - M - 20, 722), 100, 26, square_left=False)
+    dialog(d, (M + 20, 130, W - M - 20, 722), 100, 26, square_left=False, tag=0.40)
     lockup(im, d, W / 2, 930, 380, 24, center=True)
-    runs(d, L, H - M - 50, [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)], f)
+    runs(d, L, H - M - 56, [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)], mono(32))
     runs(d, 0, H - M - 50, [('FIG. 01', NOTE)], f, right=R)
     return im
 
@@ -58,9 +58,9 @@ def slide(n, total):
 def s01():
     """Hook: the dialog, with a swipe cue."""
     im, d, W, H, M, L, R = slide(1, 4)
-    dialog(d, (M + 20, 190, W - M - 20, 930), 118, 28, square_left=False)
+    dialog(d, (M + 20, 190, W - M - 20, 930), 118, 28, square_left=False, tag=0.373)
     lockup(im, d, W / 2, 1200, 400, 24, center=True)
-    runs(d, 0, H - M - 50, [('SWIPE  >', FG)], mono(24), right=R)
+    runs(d, 0, H - M - 56, [('SWIPE  >', FG)], mono(32), right=R)
     return im
 
 
@@ -80,13 +80,14 @@ def s03():
 def s04():
     """CTA: wordmark, the one button, shipping."""
     im, d, W, H, M, L, R = slide(4, 4)
-    lockup(im, d, W / 2, 640, 560, 26, center=True)
-    d.text((W / 2 - d.textlength('Wear it anyway.', font=bod(84)) / 2, 780), 'Wear it anyway.', font=bod(84), fill=FG)
+    lockup(im, d, W / 2, 700, 560, 26, center=True)
+    c = 40; bw = d.textlength('Wear it anyway', font=mono(c)) + c * 2.6
+    button(d, W / 2 - bw / 2, 830, 'Wear it anyway', c)
     f = mono(36); t = 'faebriq.com'
-    d.text((W / 2 - d.textlength(t, font=f) / 2, 930), t, font=f, fill=TAG)
-    f2 = mono(24); parts = [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)]
+    d.text((W / 2 - d.textlength(t, font=f) / 2, 990), t, font=f, fill=TAG)
+    f2 = mono(32); parts = [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)]
     x = W / 2 - sum(d.textlength(p, font=f2) for p, _ in parts) / 2
-    runs(d, x, 1000, parts, f2)
+    runs(d, x, 1070, parts, f2)
     return im
 
 

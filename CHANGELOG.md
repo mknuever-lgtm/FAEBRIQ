@@ -160,3 +160,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
 2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
 Slide 02 (product) held until Manus mockups land.
+2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).

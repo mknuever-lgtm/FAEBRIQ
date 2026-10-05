@@ -179,3 +179,4 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026-10-04: Added handoff/MANUS_BRIEF_MODELS_REMAINING_2026-10-04.md (7 blank-garment model photos incl. a replacement Indigenous model, no cultural-style tattoos). Why: finish the multiracial cast.
 
 2026/10/05: Live model shots swapped for 404, Code It, Off The Clock, Please Hold and Deploying tees, hoodie and cap (multiracial set, real prints composited). Old placeholder model shots deleted.
+2026/10/05: Added handoff/MUSE_BRIEF_CONTINUE_2026-10-05.md (cap angles + Printify shipping costs, the two jobs Manus never finished).

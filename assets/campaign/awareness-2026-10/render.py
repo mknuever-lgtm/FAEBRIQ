@@ -45,7 +45,7 @@ def runs(d, x, y, parts, font, right=None):
         d.text((x, y), t, font=font, fill=c); x += d.textlength(t, font=font)
 
 
-def dialog(d, box, L1, chrome, square_left=True):
+def dialog(d, box, L1, chrome, square_left=True, tag=0.305):
     """system_notice.exe window with the phrase lockup, tagline and two buttons."""
     x0, y0, x1, y1 = box
     off = round(chrome * 0.6)
@@ -70,7 +70,7 @@ def dialog(d, box, L1, chrome, square_left=True):
     # phrase lockup: line 2 at 80% of line 1
     d.text((tx, ty), 'Unexpected', font=bod(L1), fill=FG)
     d.text((tx, ty + L1 * 1.12), 'identity detected.', font=bod(round(L1 * 0.8)), fill=FG)
-    d.text((tx, ty + L1 * 1.12 + L1 * 0.8 * 1.5), 'This is not an error.', font=mono(round(L1 * 0.305)), fill=TAG)
+    d.text((tx, ty + L1 * 1.12 + L1 * 0.8 * 1.5), 'This is not an error.', font=mono(round(L1 * tag)), fill=TAG)
     # buttons, right-aligned
     fb = mono(round(chrome * 1.0)); bh = round(chrome * 2.4); by = y1 - pad - bh
     xr = x1 - pad

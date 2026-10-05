@@ -162,3 +162,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/05 Added handoff/MANUS_BRIEF_CAP_FRONT_2026-10-05.md: front-on cap shot brief (delivered angles clip the lockup).
+2026/10/05 Added cap.py: transparent cap cutouts (front/left/right) and carousel slide 02 (cap on lifted near-black with rim light). Carousel is now 4 of 4.

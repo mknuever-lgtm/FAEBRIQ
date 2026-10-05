@@ -2,8 +2,7 @@
 
     python3 assets/campaign/awareness-2026-10/social.py
 
-Reuses render.py's palette, dialog and lockup. Carousel slide 02 (product) is
-held until the Manus mockups land; files are numbered so it drops straight in.
+Reuses render.py's palette, dialog and lockup. Carousel order: 01 hook, 02 message, 03 product (cap.py), 04 CTA.
 """
 import os
 
@@ -56,17 +55,17 @@ def slide(n, total):
 
 
 def s01():
-    """Hook: the dialog, with a swipe cue."""
+    """Hook: the dialog asks, no answer yet (slide 02 answers), with a swipe cue."""
     im, d, W, H, M, L, R = slide(1, 4)
-    dialog(d, (M + 20, 190, W - M - 20, 930), 118, 28, square_left=False, tag=0.373)
+    dialog(d, (M + 20, 190, W - M - 20, 860), 128, 28, square_left=False, tag=None)
     lockup(im, d, W / 2, 1200, 400, 24, center=True)
     runs(d, 0, H - M - 56, [('SWIPE  >', FG)], mono(32), right=R)
     return im
 
 
-def s03():
-    """Message: the reframe, in terminal output."""
-    im, d, W, H, M, L, R = slide(3, 4)
+def s02():
+    """Message: the answer to slide 01, in terminal output."""
+    im, d, W, H, M, L, R = slide(2, 4)
     d.rectangle([L, 250, L + 56, 306], fill=ACC)
     d.text((L, 360), 'This is', font=bod(150), fill=FG)
     d.text((L, 360 + 150 * 1.12), 'not an error.', font=bod(150), fill=FG)
@@ -80,7 +79,7 @@ def s03():
 def s04():
     """CTA: wordmark, the one button, shipping."""
     im, d, W, H, M, L, R = slide(4, 4)
-    lockup(im, d, W / 2, 700, 560, 26, center=True)
+    lockup(im, d, W / 2, 700, 560, 26, center=True, prompt='> process complete')
     c = 40; bw = d.textlength('Wear it anyway', font=mono(c)) + c * 2.6
     button(d, W / 2 - bw / 2, 830, 'Wear it anyway', c)
     f = mono(36); t = 'faebriq.com'
@@ -88,12 +87,14 @@ def s04():
     f2 = mono(32); parts = [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)]
     x = W / 2 - sum(d.textlength(p, font=f2) for p, _ in parts) / 2
     runs(d, x, 1070, parts, f2)
+    t = '> link in bio'
+    d.text((W / 2 - d.textlength(t, font=f2) / 2, 1140), t, font=f2, fill=FG)
     return im
 
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
     square().save(os.path.join(OUT, 'square-1080x1080.png'), optimize=True)
-    for name, fn in [('carousel-01-hook', s01), ('carousel-03-message', s03), ('carousel-04-cta', s04)]:
+    for name, fn in [('carousel-01-hook', s01), ('carousel-02-message', s02), ('carousel-04-cta', s04)]:
         fn().save(os.path.join(OUT, f'{name}-1080x1350.png'), optimize=True)
     print('ok')

@@ -3,7 +3,7 @@
     python3 assets/campaign/awareness-2026-10/cap.py
 
 Sources live in product/src (front 1600px native, left/right 2048px). Outputs:
-product/cap-{front,left,right}.png (transparent) and social/carousel-02-product-1080x1350.png.
+product/cap-{front,left,right}.png (transparent) and social/carousel-03-product-1080x1350.png.
 """
 import os
 
@@ -11,8 +11,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from scipy import ndimage as ndi
 
-from render import BG, FG, NOTE, TAG, mono, runs
-from social import canvas, slide, OUT
+from render import BG, FG, NOTE, TAG, frame, mono, runs
+from social import OUT
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, 'product', 'src')
@@ -69,27 +69,26 @@ def glow(size, center, radius, color, peak=1.0):
     return Image.fromarray((base + (col - base) * k[..., None]).astype(np.uint8), 'RGB')
 
 
-def s02(front):
+def s03(front):
     """Product slide: cap hero on a lifted near-black, label, shipping line."""
     f = mono(24); W, H, M = 1080, 1350, 60; L = M + 30; R = W - M - 30
-    bg = glow((W, H), (W / 2, 520), 640, (84, 83, 80))
-    im, d = canvas(W, H, M, 40)  # draws grid on a flat BG; re-lay the grid over the glow
-    base = bg.copy(); gd = ImageDraw.Draw(base)
+    base = glow((W, H), (W / 2, 520), 640, (84, 83, 80))
     grid = Image.new('RGBA', (W, H), (0, 0, 0, 0)); gdraw = ImageDraw.Draw(grid)
-    from render import frame
     frame(gdraw, W, H, M, 40)
     base.paste(grid, (0, 0), grid)
     d = ImageDraw.Draw(base)
     runs(d, L, 90, [('STATUS: UNEXPECTED', NOTE)], f)
-    runs(d, 0, 90, [('02 / 04', NOTE)], f, right=R)
+    runs(d, 0, 90, [('03 / 04', NOTE)], f, right=R)
     cap = rim_light(front)
     tw = 700; cap = cap.resize((tw, round(cap.height * tw / cap.width)), Image.LANCZOS)
     # soft contact shadow
     sh = Image.new('RGBA', (W, H), (0, 0, 0, 0)); sd = ImageDraw.Draw(sh)
-    cx, cy = W // 2, 270 + cap.height - 20
+    cx, cy = W // 2, 225 + cap.height - 20
     sd.ellipse([cx - 270, cy - 18, cx + 270, cy + 42], fill=(0, 0, 0, 190))
     base.paste(sh.filter(ImageFilter.GaussianBlur(26)), (0, 0), sh.filter(ImageFilter.GaussianBlur(26)))
-    base.paste(cap, ((W - tw) // 2, 270), cap)
+    base.paste(cap, ((W - tw) // 2, 225), cap)
+    f3 = mono(32); t = '> new hardware detected'
+    d.text(((W - d.textlength(t, font=f3)) / 2, 985), t, font=f3, fill=NOTE)
     ft = mono(54); t = 'FÆBRIQ CAP'
     d.text(((W - d.textlength(t, font=ft)) / 2, 1040), t, font=ft, fill=FG)
     f2 = mono(32); parts = [('US + CA  ·  ', NOTE), ('FREE SHIPPING', FG)]
@@ -104,5 +103,5 @@ if __name__ == '__main__':
     for name in ('front', 'left', 'right'):
         cuts[name] = cutout(os.path.join(SRC, f'cap-{name}.jpg'))
         cuts[name].save(os.path.join(PROD, f'cap-{name}.png'), optimize=True)
-    s02(cuts['front']).save(os.path.join(OUT, 'carousel-02-product-1080x1350.png'), optimize=True)
+    s03(cuts['front']).save(os.path.join(OUT, 'carousel-03-product-1080x1350.png'), optimize=True)
     print('ok')

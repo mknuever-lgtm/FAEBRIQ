@@ -7,7 +7,7 @@ edges melt into the page. The soft drop shadow is kept as a darker tone, and
 the frame is 4:5 (2048x2560) per IMAGERY_SPEC_2026-09-23.md.
 --flat restores the old flat #0d0d0d ground.
 
-Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat]
+Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]]
 """
 import sys
 from pathlib import Path
@@ -20,6 +20,7 @@ GROUND = np.array([13, 13, 13], dtype=float)
 EDGE = np.array([25, 25, 27], dtype=float)
 CENTER = np.array([46, 46, 48], dtype=float)
 OUT_W, OUT_H = 2048, 2560
+LUM_T = 150  # --soft-shadow lowers this so a dark drop shadow melts into the ground
 
 
 def sweep(flat=False):
@@ -42,7 +43,7 @@ def convert(src: Path, flat=False) -> Image.Image:
     sat = a.max(2) - a.min(2)
 
     # Candidate ground: light and unsaturated (white plus its grey shadow).
-    cand = (lum > 150) & (sat < 30)
+    cand = (lum > LUM_T) & (sat < 30)
     labels, n = ndimage.label(cand)
     if n:
         area = ndimage.sum(np.ones_like(lum), labels, index=range(1, n + 1))
@@ -58,7 +59,9 @@ def convert(src: Path, flat=False) -> Image.Image:
             # Enclosed pure-white pockets (inside tote handles). Printed white
             # on fabric never reads this clean, so it stays.
             pocket = mean_l[i - 1] > 247 and area[i - 1] > 0.002 * h * w
-            keep[i] = big or edge_white or pocket
+            # Soft grey shadow pockets under a brim or fold: sizeable, never print.
+            shadow = area[i - 1] > 0.008 * h * w
+            keep[i] = big or edge_white or pocket or shadow
         ground = keep[labels]
     else:
         ground = cand
@@ -95,6 +98,9 @@ def convert(src: Path, flat=False) -> Image.Image:
 if __name__ == "__main__":
     src_dir, out_dir = Path(sys.argv[1]), Path(sys.argv[2])
     flat = "--flat" in sys.argv
+    for a in sys.argv:
+        if a.startswith("--soft-shadow"):
+            LUM_T = float(a.split("=")[1]) if "=" in a else 85
     out_dir.mkdir(parents=True, exist_ok=True)
     for f in sorted(src_dir.glob("*.jpg")):
         convert(f, flat).save(out_dir / f.name, quality=92)

@@ -182,3 +182,4 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026/10/05: Added handoff/MUSE_BRIEF_CONTINUE_2026-10-05.md (cap angles + Printify shipping costs, the two jobs Manus never finished).
 2026/10/06: Cap gallery now front, model, left angle, print close-up, all on the charcoal sweep (angles from the campaign branch). Old flat cap images removed.
 2026/10/06: Added crewneck collar close-up and tote print close-up on the charcoal sweep (crewneck now 4 images, tote 3).
+2026/10/06: Alt text set on all 110 sticker images (11 products). Added handoff/MUSE_BRIEF_SHIPPING_COSTS_2026-10-06.md. Sticker trim not done: images could not be viewed from here.

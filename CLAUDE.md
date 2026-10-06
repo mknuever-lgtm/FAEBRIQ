@@ -80,3 +80,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
 - No new products, price changes, SEO/handle changes, or collection edits
   beyond the scoped task.
+- Every order must clear a profit after Printify item + shipping cost and
+  payment fees (Maurice, 2026/10/06). No discount code, sale or price cut that
+  breaks it. Keep tees out of codes and sales unless the numbers are re-checked
+  (thinnest case: biggest-size tee to Canada, about $0.74).

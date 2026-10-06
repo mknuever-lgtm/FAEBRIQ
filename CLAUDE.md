@@ -35,9 +35,13 @@ requests unless explicitly asked. When the assigned task is done, stop.
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
   baked into listed prices.
-- Live catalog (checked in Shopify 2026-09-27): 6 sticker listings
-  ($4 to $13.99; 3 active, 3 still Draft), tees $34, crewneck $62,
-  hoodie $68, cap $34, 404 tote $34.
+- Live catalog (checked in Shopify 2026-10-06, all USD): 6 tees $30,
+  crewneck $42, hoodie $54, cap (Low Profile) $32, 404 canvas tote $34
+  (older AS Colour tote listing is Draft). Statement stickers from $4
+  (Not a Bug + 404 active; Code It, Please Hold, Deploying still Draft),
+  Full Drop sheet $11.99 to $13.99. FÆ mascot stickers $3.99 to $7.99,
+  FÆ sheet $12.99 to $19.99. 22 active/draft listings. Prices move:
+  re-check Shopify before putting a price in any asset.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.

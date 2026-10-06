@@ -165,3 +165,4 @@ Slide 02 (product) held until Manus mockups land.
 2026/10/05 Added cap.py: transparent cap cutouts (front/left/right) and carousel slide 02 (cap on lifted near-black with rim light). Carousel is now 4 of 4.
 2026/10/05 Carousel critique fixes: reordered to hook/message/cap/CTA, tagline cut from hook (answer lands on 02), cap slide line "> new hardware detected", CTA "> process complete" + "> link in bio".
 2026/10/06 Retouched R render artifact in cap-front mockup (print files are clean); re-rendered cap cutout and carousel slide 03.
+2026/10/06 CLAUDE.md catalog line corrected from live Shopify (cap $32, tees $30, crewneck $42, hoodie $54, sticker lineup); added social/CAPTION.md with "$32 USD, free shipping".

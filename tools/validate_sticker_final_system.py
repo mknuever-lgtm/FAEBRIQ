@@ -18,7 +18,8 @@ for name, text in expected.items():
     if not path.exists():
         raise SystemExit(f"missing: {path}")
     with Image.open(path) as im:
-        colors = set(im.convert("RGBA").getdata())
+        rgba = im.convert("RGBA")
+        colors = {c for _, c in rgba.getcolors(maxcolors=rgba.width * rgba.height)}
         rgb_colors = {(r, g, b) for r, g, b, a in colors if a > 0}
         alpha = im.getchannel("A")
         bbox = alpha.getbbox()

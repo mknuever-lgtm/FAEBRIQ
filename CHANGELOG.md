@@ -158,3 +158,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: added handoff/MANUS_BRIEF_MOCKUPS_2026-10-01.md (read-only Printify mockup download brief). Why: source images for real-looking product photos.
 - 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
+- 2026/10/07: validate_sticker_final_system.py now uses getcolors() instead of set(getdata()). Why: faster, and getdata() is deprecated in Pillow 14.

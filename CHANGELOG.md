@@ -161,3 +161,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
+2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.

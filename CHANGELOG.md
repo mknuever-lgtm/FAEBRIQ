@@ -208,3 +208,6 @@ Slide 02 (product) held until Manus mockups land.
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
 2026/10/07: Sticker galleries trimmed to one image each (5 singles keep their _0-dark shot, matching the Full Drop sheet). FÆ stickers + FÆ sheet reframed on the 4:5 charcoal sweep (sheet stays white).
 2026/10/07: FAE single stickers now die-cut on white sticker paper on the charcoal sweep (visible cut line). Both sheets unchanged.
+
+2026/10/07: FAE single sticker photos re-cut from the FAE sheet (smooth thick white kiss-cut edge, full limbs); 5 text singles rendered on black sheets from the Full Drop.
+Why: old FAE singles came from clipped source cutouts; text singles now match the Full Drop sheet. Shopify swap pending approval.

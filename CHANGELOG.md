@@ -212,3 +212,4 @@ Slide 02 (product) held until Manus mockups land.
 2026/10/07: FAE single sticker photos re-cut from the FAE sheet (smooth thick white kiss-cut edge, full limbs); 5 text singles rendered on black sheets from the Full Drop.
 Why: old FAE singles came from clipped source cutouts; text singles now match the Full Drop sheet. Shopify swap pending approval.
 2026/10/07: FAE singles re-cut again from Maurice's 1403px FAE sheet (sharper, ~1.8x upscale vs ~4x); all 9 single sticker photos (4 FAE, 5 text) swapped live in Shopify, old images removed. Why: Maurice approved.
+2026/10/07: 9 single sticker print files (transparent PNG, 2400px long side, 300dpi) cut from the FAE and Full Drop sheets into assets/print-art/2026-10-07-sticker-singles. Why: Maurice asked for separate files so Printify matches the Shopify photos.

@@ -206,3 +206,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
+2026/10/07: Sticker galleries trimmed to one image each (5 singles keep their _0-dark shot, matching the Full Drop sheet). FÆ stickers + FÆ sheet reframed on the 4:5 charcoal sweep (sheet stays white).

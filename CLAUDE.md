@@ -81,3 +81,8 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
 - No new products, price changes, SEO/handle changes, or collection edits
   beyond the scoped task.
+- Every order must clear a profit, even 70 cents (Maurice, 2026-10-07).
+  Never create a discount code, sale price, bundle or shipping change that
+  can push any size or destination (incl. Canada, largest sizes) below
+  Printify cost + shipping + payment fees. Check Printify costs first
+  (2026-10-06 table: tees $16.48 to $20.34, Canada shipping $9.69).

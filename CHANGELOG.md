@@ -186,3 +186,23 @@ Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4
 2026/10/06: 6 tees repriced $30 to $32 (48 variants) because large-size Canada tees lost money at $30; CLAUDE.md price line updated.
 2026/10/07: Added standing rule to CLAUDE.md: every order must clear a profit, no discounts or price moves that break it.
 2026/10/07: Added handoff/MUSE_BRIEF_FAE_STICKER_FILES_2026-10-07.md (Muse copies the 5 FÆ sticker images to Google Drive; Shopify CDN is blocked here).
+
+2026-09-30 Added brand/MASCOT_FAE.md: locked FÆ mascot look, revised adult/raspy voice direction, mascot content rules.
+Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark tees and a FÄBRIQ typo that break brand rules.
+
+2026/10/01: added assets/campaign/awareness-2026-10 (Error State hero banner, philosophy, render script). Why: Step 2 of the store awareness design workflow.
+2026/10/01: awareness hero now uses the reference sans wordmark (Inter Medium stand-in) and the gapless six-colour circuit bar. Why: match wordmark-reference-2026-09-23.jpg.
+2026/10/01: make_print_file.py now draws the sticker wordmark from the sans reference (no second swap step); --type-wordmark-family now points at the sans token. Why: generator and tokens contradicted the sans wordmark rule.
+2026/10/01: faebriqtheme-launch-fix (draft): header wordmark swapped from Instrument Serif text to inline SVG traced from the sans reference; header.liquid + SVG mirrored into repo. Why: header broke the sans wordmark rule.
+2026/10/01: CLAUDE.md now names faebriqtheme-launch-fix as the only theme Claude may edit. Why: Maurice instruction.
+2026/10/01: launch-fix header wordmark switched to a plain <img> of the SVG (fill baked to #C0C0C0). Why: inline_asset_content rendered nothing in preview.
+2026/10/01: launch-fix hero h1 shows the sans wordmark SVG when the heading is FAEBRIQ (text kept as alt). Why: hero wordmark was serif.
+2026/10/01: launch-fix hero logo is now a lockup with the bar at 1.35x wordmark width, scaling with screen size. Why: bar was ~2x after the SVG swap.
+2026/10/01: added tools/make_dark_mockup.py (Printify mockup -> charcoal studio backdrop, option A). Why: unify product photos on a dark backdrop.
+2026/10/01: added handoff/MANUS_BRIEF_MOCKUPS_2026-10-01.md (read-only Printify mockup download brief). Why: source images for real-looking product photos.
+- 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
+- render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
+2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
+Slide 02 (product) held until Manus mockups land.
+2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
+2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.

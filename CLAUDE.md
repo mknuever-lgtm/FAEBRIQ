@@ -44,9 +44,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   baked into prices for apparel, cap and tote. Stickers + sheet ship separately
   (SPOKE) at a flat $4.99 US / $9.99 CA via the "Stickers (SPOKE)" shipping
   profile (2026-10-01). Never write "free shipping on everything".
-- Live catalog (repriced in Shopify 2026-10-01, cheapest with reasonable
-  profit): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock, Please
-  Hold) $30; crewneck $42; hoodie $54; cap $32; ONE price for every size,
+- Live catalog (repriced in Shopify 2026-10-01; tees raised $30 to $32 on
+  2026-10-06 after Printify costs showed large-size Canada tees losing
+  money at $30): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock,
+  Please Hold) $32; crewneck $42; hoodie $54; cap $32; ONE price for every size,
   never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (Liberty canvas, switched from AS Colour 2026-10-01); 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
@@ -80,3 +81,8 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
 - No new products, price changes, SEO/handle changes, or collection edits
   beyond the scoped task.
+- Every order must clear a profit, even 70 cents (Maurice, 2026-10-07).
+  Never create a discount code, sale price, bundle or shipping change that
+  can push any size or destination (incl. Canada, largest sizes) below
+  Printify cost + shipping + payment fees. Check Printify costs first
+  (2026-10-06 table: tees $16.48 to $20.34, Canada shipping $9.69).

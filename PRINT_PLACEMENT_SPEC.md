@@ -55,3 +55,9 @@ spec; the "too high" look comes from the generated on-model and close-up
 photos. Ground truth before any change: tape-measure collar seam to print top
 on a physical tee. Muse's current values (provider 29, blueprint 6 tees /
 49 crewneck / 77 hoodie): tee y 0.13 to 0.17, scale 0.66 to 0.80.
+
+## Height rule (Maurice, 2026-10-10)
+Print CENTRE at mid rib cage: where a chest logo or a pendant sits, about 0.65
+of the way from collar seam to armpit. Printify's real placement already lands
+here (404 mockup ~0.62), so no Printify change; on-model photos are corrected
+with tools/move_print_on_model.py (default 0.65).

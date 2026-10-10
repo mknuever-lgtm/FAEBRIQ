@@ -1,8 +1,8 @@
 """Move the front print down on a generated on-model photo to where Printify
 actually prints it (and optionally shrink it). Finds the print by its rainbow
 bar, erases it (OpenCV inpaint), re-adds the same print pixels lower.
-Target: print top at FRAC of the way from collar to armpit (Printify 404 mockup
-~0.55; 0.68-0.72 matched the mockups on the 2026-10-10 photos).
+Target: print CENTRE at FRAC of the way from collar to armpit (default 0.65,
+mid rib cage: where a chest logo or pendant sits, Maurice 2026-10-10).
 Not for hoodies: drawstrings hide parts of the print and the gaps travel.
 
 Usage: python3 tools/move_print_on_model.py IN OUT COLLAR_Y ARMPIT_Y [FRAC] [SHRINK]
@@ -10,7 +10,7 @@ Usage: python3 tools/move_print_on_model.py IN OUT COLLAR_Y ARMPIT_Y [FRAC] [SHR
 import sys, numpy as np, cv2
 from PIL import Image
 src, out, collar, armpit = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
-frac = float(sys.argv[5]) if len(sys.argv) > 5 else 0.55
+frac = float(sys.argv[5]) if len(sys.argv) > 5 else 0.65
 shrink = float(sys.argv[6]) if len(sys.argv) > 6 else 1.0
 img = cv2.imread(src).astype(np.float32)
 lum = img.mean(2); sat = img.max(2) - img.min(2)
@@ -38,8 +38,10 @@ x0, x1 = x0 - 40, x1 + 60
 mask = cv2.dilate(mask, np.ones((7, 7), np.uint8))
 clean = cv2.inpaint(img.astype(np.uint8), mask, 9, cv2.INPAINT_TELEA).astype(np.float32)
 layer = np.clip(img - clean, 0, 255)[y0:y1, x0:x1]
-target_top = collar + frac * (armpit - collar)
-dy = int(round(target_top - (ys.min())))
+# frac positions the print's vertical CENTRE (Maurice 2026-10-10: mid rib
+# cage, where a chest logo / pendant sits, ~0.65 of collar-to-armpit)
+target_mid = collar + frac * (armpit - collar)
+dy = int(round(target_mid - (ys.min() + bar1) / 2))
 res = clean.copy()
 if shrink != 1.0:
     h, w = layer.shape[:2]

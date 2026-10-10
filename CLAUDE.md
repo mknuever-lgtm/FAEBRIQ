@@ -55,6 +55,15 @@ requests unless explicitly asked. When the assigned task is done, stop.
   A Printify publish resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.
+- Front-print height LOCKED (Maurice, 2026-10-10): print centre at mid rib
+  cage, 0.65 of the way from collar seam to armpit (chest-logo / pendant
+  height). Applies to every on-model photo and any placement check.
+  Approved references: assets/mockups/2026-10-10-on-model/. Tool:
+  tools/move_print_on_model.py and tools/place_print_on_model.py (default 0.65). Spec: PRINT_PLACEMENT_SPEC.md.
+  MEASURE IT RIGHT: armpit = the underarm crease where the inner arm leaves
+  the torso, NOT the shoulder or sleeve seam (on dropped-shoulder hoodies
+  that seam sits far higher and puts the print too high). Collar = front
+  neckline seam (hoodie: bottom of the hood V).
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
 - Product photos (Maurice, 2026-10-04): charcoal studio sweep, #19191B
@@ -79,6 +88,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
+- No Printify artwork, file, placement or scale changes (swaps, re-uploads,
+  moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:
+  earlier sessions swapped his apparel files without asking).
 - No new products, price changes, SEO/handle changes, or collection edits
   beyond the scoped task.
 - Every order must clear a profit, even 70 cents (Maurice, 2026-10-07).

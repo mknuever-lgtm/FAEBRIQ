@@ -162,3 +162,15 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
+2026-10-10 Added assets/print-art/404-straight-not-found-v3-tote-light-4500.png (tote mode in tools/make_404_v3.py): file was referenced in CLAUDE.md and IMAGERY_SPEC but never committed. Full phrase-width bar + sans FÆBRIQ per the 2026-10-01 rule.
+2026-10-10 make_404_v3.py sticker mode now uses the full phrase-width bar + sans FÆBRIQ (was 1.35x bar + serif mark); 404 v3 sticker file rebuilt. Why: 2026-10-01 404 rule.
+2026-10-10 Full Drop sticker sheet photo on charcoal sweep, 2048x2560 (assets/mockups/2026-10-10-sweep/); added tools/card_on_sweep.py, restored tools/mockup_to_charcoal.py from ccr-0572707a-269xb2. Why: live image was 3:2 flat black.
+2026-10-10 Live phrase sticker singles (2026-10-07, from ccr-0572707a-269xb2) now carry the sans FÆBRIQ mark; on-black previews rebuilt. tools/swap_sticker_singles_wordmark.py. Why: serif mark broke the wordmark rule; Printify still has the old files.
+2026-10-10 Added PRINT_PLACEMENT_SPEC.md + tools/printify_placement.py: fronts 10 in wide, top 3 in below collar (hoodie 3.5). Why: prints sit too high; placement is set in Printify, files unchanged.
+2026-10-10 On-model photos for 5 tees: print centre moved to mid rib cage (0.65 collar-to-armpit, Maurice) (Code It also shrunk 17%), assets/mockups/2026-10-10-on-model/, tools/move_print_on_model.py. Hoodie left: drawstrings break the method. Why: prints looked too high.
+2026-10-10 Locked front-print height in CLAUDE.md: centre at 0.65 collar-to-armpit (mid rib cage). Why: Maurice approved the on-model set.
+2026-10-10 CLAUDE.md hard gate: no Printify artwork/file/placement changes without Maurice's explicit OK. Why: apparel files were swapped without asking (2026-09-26 to 10-01).
+2026-10-10 Sticker photos from the sans-wordmark print files (5 singles + Full Drop sheet B) on charcoal sweep; tools/sticker_card_shots.py. Why: live sticker photos showed the old serif mark.
+2026-10-10 Added tools/place_print_on_model.py: puts the real print on a blank AI garment photo at the locked 0.65 height. Why: AI photos garble print text; hoodie on-model photo is next.
+2026-10-10 Logged how to measure print height (armpit = underarm crease, not shoulder seam) in CLAUDE.md, spec and both tools. Why: hoodie draft placed too high from a shoulder-seam reading.
+2026-10-10 Hoodie on-model at approved height (2048x2560) in assets/mockups/2026-10-10-on-model/. Why: Maurice approved the corrected placement; drawstrings over the text still open.

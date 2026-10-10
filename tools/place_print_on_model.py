@@ -6,6 +6,9 @@ lock: 0.65, mid rib cage). Width = WIDTH_FRAC of the garment's chest width
 (armpit to armpit), ~0.45 for a 10 in print on a size L. The fabric's own
 light and folds are carried into the ink so it reads printed, not pasted.
 
+ARMPIT_Y = underarm crease where the inner arm leaves the torso, NOT the
+shoulder/sleeve seam (see PRINT_PLACEMENT_SPEC.md, How to measure).
+
 Usage: python3 tools/place_print_on_model.py PHOTO PRINT_PNG OUT
        COLLAR_Y ARMPIT_Y CHEST_X0 CHEST_X1 [FRAC=0.65] [WIDTH_FRAC=0.45]
        [STRING_WINDOWS e.g. 590-660,800-870 (hoodie drawstrings, kept on top)]

@@ -59,7 +59,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
   cage, 0.65 of the way from collar seam to armpit (chest-logo / pendant
   height). Applies to every on-model photo and any placement check.
   Approved references: assets/mockups/2026-10-10-on-model/. Tool:
-  tools/move_print_on_model.py (default 0.65). Spec: PRINT_PLACEMENT_SPEC.md.
+  tools/move_print_on_model.py and tools/place_print_on_model.py (default 0.65). Spec: PRINT_PLACEMENT_SPEC.md.
+  MEASURE IT RIGHT: armpit = the underarm crease where the inner arm leaves
+  the torso, NOT the shoulder or sleeve seam (on dropped-shoulder hoodies
+  that seam sits far higher and puts the print too high). Collar = front
+  neckline seam (hoodie: bottom of the hood V).
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
 - Product photos (Maurice, 2026-10-04): charcoal studio sweep, #19191B

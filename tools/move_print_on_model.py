@@ -5,6 +5,9 @@ Target: print CENTRE at FRAC of the way from collar to armpit (default 0.65,
 mid rib cage: where a chest logo or pendant sits, Maurice 2026-10-10).
 Not for hoodies: drawstrings hide parts of the print and the gaps travel.
 
+ARMPIT_Y = underarm crease where the inner arm leaves the torso, NOT the
+shoulder/sleeve seam (see PRINT_PLACEMENT_SPEC.md, How to measure).
+
 Usage: python3 tools/move_print_on_model.py IN OUT COLLAR_Y ARMPIT_Y [FRAC] [SHRINK]
 """
 import sys, numpy as np, cv2

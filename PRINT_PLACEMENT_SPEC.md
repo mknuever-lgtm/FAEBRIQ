@@ -71,3 +71,12 @@ the 2048x2560 source photos):
 | Off The Clock tee | 800 | 1493 | 0.65 | 1.0 |
 | Please Hold tee | 773 | 1493 | 0.65 | 1.0 |
 | Code It tee | 917 | 1600 | 0.65 | 0.83 |
+
+## How to measure (2026-10-10, after a hoodie placed too high)
+- Collar y: front neckline seam at centre front (hoodie: bottom of the hood V).
+- Armpit y: the underarm crease where the inner arm separates from the torso.
+  Never the shoulder or sleeve seam: on dropped-shoulder hoodies and crewnecks
+  it sits much higher and drags the print up toward the neck.
+- Sanity check: the print centre should land level with where a chest logo or
+  a pendant would sit. If it hugs the neckline, the armpit reading is wrong.
+- Hoodie (Off The Clock, 1408x1760 blank): collar 820, armpit 1180, chest x 335 to 1095.

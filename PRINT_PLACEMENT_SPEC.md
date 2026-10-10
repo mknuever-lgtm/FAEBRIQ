@@ -63,7 +63,7 @@ here (404 mockup ~0.62), so no Printify change; on-model photos are corrected
 with tools/move_print_on_model.py (default 0.65).
 Approved by Maurice 2026-10-10 ("perfect"). Inputs used (collar y, armpit y on
 the 2048x2560 source photos):
-below.
+
 | Photo | collar y | armpit y | frac | shrink |
 |---|---|---|---|---|
 | 404 tee | 812 | 1500 | 0.65 | 1.0 |

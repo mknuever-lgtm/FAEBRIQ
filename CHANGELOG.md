@@ -168,3 +168,4 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Live phrase sticker singles (2026-10-07, from ccr-0572707a-269xb2) now carry the sans FÆBRIQ mark; on-black previews rebuilt. tools/swap_sticker_singles_wordmark.py. Why: serif mark broke the wordmark rule; Printify still has the old files.
 2026-10-10 Added PRINT_PLACEMENT_SPEC.md + tools/printify_placement.py: fronts 10 in wide, top 3 in below collar (hoodie 3.5). Why: prints sit too high; placement is set in Printify, files unchanged.
 2026-10-10 On-model photos for 5 tees: print centre moved to mid rib cage (0.65 collar-to-armpit, Maurice) (Code It also shrunk 17%), assets/mockups/2026-10-10-on-model/, tools/move_print_on_model.py. Hoodie left: drawstrings break the method. Why: prints looked too high.
+2026-10-10 Locked front-print height in CLAUDE.md: centre at 0.65 collar-to-armpit (mid rib cage). Why: Maurice approved the on-model set.

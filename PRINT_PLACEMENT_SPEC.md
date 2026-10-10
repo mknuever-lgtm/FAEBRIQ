@@ -61,3 +61,13 @@ Print CENTRE at mid rib cage: where a chest logo or a pendant sits, about 0.65
 of the way from collar seam to armpit. Printify's real placement already lands
 here (404 mockup ~0.62), so no Printify change; on-model photos are corrected
 with tools/move_print_on_model.py (default 0.65).
+Approved by Maurice 2026-10-10 ("perfect"). Inputs used (collar y, armpit y on
+the 2048x2560 source photos):
+below.
+| Photo | collar y | armpit y | frac | shrink |
+|---|---|---|---|---|
+| 404 tee | 812 | 1500 | 0.65 | 1.0 |
+| Deploying tee | 837 | 1547 | 0.65 | 1.0 |
+| Off The Clock tee | 800 | 1493 | 0.65 | 1.0 |
+| Please Hold tee | 773 | 1493 | 0.65 | 1.0 |
+| Code It tee | 917 | 1600 | 0.65 | 0.83 |

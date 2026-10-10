@@ -55,6 +55,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
   A Printify publish resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.
+- Front-print height LOCKED (Maurice, 2026-10-10): print centre at mid rib
+  cage, 0.65 of the way from collar seam to armpit (chest-logo / pendant
+  height). Applies to every on-model photo and any placement check.
+  Approved references: assets/mockups/2026-10-10-on-model/. Tool:
+  tools/move_print_on_model.py (default 0.65). Spec: PRINT_PLACEMENT_SPEC.md.
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
 - Product photos (Maurice, 2026-10-04): charcoal studio sweep, #19191B

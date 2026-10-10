@@ -165,3 +165,4 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Added assets/print-art/404-straight-not-found-v3-tote-light-4500.png (tote mode in tools/make_404_v3.py): file was referenced in CLAUDE.md and IMAGERY_SPEC but never committed. Full phrase-width bar + sans FÆBRIQ per the 2026-10-01 rule.
 2026-10-10 make_404_v3.py sticker mode now uses the full phrase-width bar + sans FÆBRIQ (was 1.35x bar + serif mark); 404 v3 sticker file rebuilt. Why: 2026-10-01 404 rule.
 2026-10-10 Full Drop sticker sheet photo on charcoal sweep, 2048x2560 (assets/mockups/2026-10-10-sweep/); added tools/card_on_sweep.py, restored tools/mockup_to_charcoal.py from ccr-0572707a-269xb2. Why: live image was 3:2 flat black.
+2026-10-10 Live phrase sticker singles (2026-10-07, from ccr-0572707a-269xb2) now carry the sans FÆBRIQ mark; on-black previews rebuilt. tools/swap_sticker_singles_wordmark.py. Why: serif mark broke the wordmark rule; Printify still has the old files.

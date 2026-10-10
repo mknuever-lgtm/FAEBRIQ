@@ -169,3 +169,4 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Added PRINT_PLACEMENT_SPEC.md + tools/printify_placement.py: fronts 10 in wide, top 3 in below collar (hoodie 3.5). Why: prints sit too high; placement is set in Printify, files unchanged.
 2026-10-10 On-model photos for 5 tees: print centre moved to mid rib cage (0.65 collar-to-armpit, Maurice) (Code It also shrunk 17%), assets/mockups/2026-10-10-on-model/, tools/move_print_on_model.py. Hoodie left: drawstrings break the method. Why: prints looked too high.
 2026-10-10 Locked front-print height in CLAUDE.md: centre at 0.65 collar-to-armpit (mid rib cage). Why: Maurice approved the on-model set.
+2026-10-10 CLAUDE.md hard gate: no Printify artwork/file/placement changes without Maurice's explicit OK. Why: apparel files were swapped without asking (2026-09-26 to 10-01).

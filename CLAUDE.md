@@ -84,6 +84,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.
 - No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
+- No Printify artwork, file, placement or scale changes (swaps, re-uploads,
+  moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:
+  earlier sessions swapped his apparel files without asking).
 - No new products, price changes, SEO/handle changes, or collection edits
   beyond the scoped task.
 - Every order must clear a profit, even 70 cents (Maurice, 2026-10-07).

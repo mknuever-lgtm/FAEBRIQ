@@ -80,3 +80,6 @@ the 2048x2560 source photos):
 - Sanity check: the print centre should land level with where a chest logo or
   a pendant would sit. If it hugs the neckline, the armpit reading is wrong.
 - Hoodie (Off The Clock, 1408x1760 blank): collar 820, armpit 1180, chest x 335 to 1095.
+  Approved by Maurice 2026-10-10 ("much better"). At 2048x2560: collar 1193,
+  armpit 1716, chest x 487 to 1593. File: assets/mockups/2026-10-10-on-model/
+  off-the-clock-still-iconic-hoodie.jpg (drawstrings still cross the text).

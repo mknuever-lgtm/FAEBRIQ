@@ -173,3 +173,4 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Sticker photos from the sans-wordmark print files (5 singles + Full Drop sheet B) on charcoal sweep; tools/sticker_card_shots.py. Why: live sticker photos showed the old serif mark.
 2026-10-10 Added tools/place_print_on_model.py: puts the real print on a blank AI garment photo at the locked 0.65 height. Why: AI photos garble print text; hoodie on-model photo is next.
 2026-10-10 Logged how to measure print height (armpit = underarm crease, not shoulder seam) in CLAUDE.md, spec and both tools. Why: hoodie draft placed too high from a shoulder-seam reading.
+2026-10-10 Hoodie on-model at approved height (2048x2560) in assets/mockups/2026-10-10-on-model/. Why: Maurice approved the corrected placement; drawstrings over the text still open.

@@ -45,3 +45,13 @@ Resulting heights at 10 in wide: Code It 3.88 in, 404 v3 2.75 in, Deploying
 4. Verify on the re-rendered size-L front mockup with the check ratios the tool
    prints (tee: design width ~45% of body width, collar gap ~14%).
 5. Re-shoot Shopify front, on-model and close-up images afterwards.
+
+## Status 2026-10-10: do NOT apply yet
+Measured on the Printify front mockups (Shopify front images, made from the
+Printify mockups with geometry kept): collar-to-design-top gap is 0.45 to 0.54x
+the design width on the tees and crewneck, 0.36x on the hoodie. The spec ratio
+is 0.30 (tee) and 0.35 (hoodie). So Printify already prints at or BELOW the
+spec; the "too high" look comes from the generated on-model and close-up
+photos. Ground truth before any change: tape-measure collar seam to print top
+on a physical tee. Muse's current values (provider 29, blueprint 6 tees /
+49 crewneck / 77 hoodie): tee y 0.13 to 0.17, scale 0.66 to 0.80.

@@ -170,3 +170,4 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 On-model photos for 5 tees: print centre moved to mid rib cage (0.65 collar-to-armpit, Maurice) (Code It also shrunk 17%), assets/mockups/2026-10-10-on-model/, tools/move_print_on_model.py. Hoodie left: drawstrings break the method. Why: prints looked too high.
 2026-10-10 Locked front-print height in CLAUDE.md: centre at 0.65 collar-to-armpit (mid rib cage). Why: Maurice approved the on-model set.
 2026-10-10 CLAUDE.md hard gate: no Printify artwork/file/placement changes without Maurice's explicit OK. Why: apparel files were swapped without asking (2026-09-26 to 10-01).
+2026-10-10 Sticker photos from the sans-wordmark print files (5 singles + Full Drop sheet B) on charcoal sweep; tools/sticker_card_shots.py. Why: live sticker photos showed the old serif mark.

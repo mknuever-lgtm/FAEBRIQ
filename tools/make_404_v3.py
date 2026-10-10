@@ -4,7 +4,10 @@ import make_print_file as m
 from PIL import Image, ImageFont, ImageDraw
 # Proportions measured off Maurice's 2026-09-23 reference, as fractions of bar width B.
 R=dict(n404_w=0.2799, l2_w=0.7732, gap1=0.0642, gap2=0.0216, bar_h=0.0166, gap_mark=0.0510, mark_w=0.140)
-def build(out,width,sticker):
+def build(out,width,sticker,tote=False):
+    # tote=True (Maurice, 2026-10-01): full phrase-width bar like apparel, plus
+    # the approved sans FÆBRIQ wordmark underneath.
+    sticker=sticker or tote
     serif=m.font_path("Bodoni Moda",None,"BodoniModa-Regular.ttf")
     col={k:tuple(int(v.lstrip('#')[i:i+2],16) for i in (0,2,4)) for k,v in m.INK_LIGHT.items()}
     pad=width*0.045; B=width-2*pad
@@ -23,11 +26,17 @@ def build(out,width,sticker):
     # 1.35x the FÆBRIQ mark's own width, not tied to the full canvas width B.
     # The apparel file (sticker=False) has no mark, so it keeps the old
     # full-width bar -- nothing for it to be 1.35x of.
-    bar_w = m.BAR_TO_MARK_RATIO * fm.getlength("FÆBRIQ") if sticker else B
+    bar_w = m.BAR_TO_MARK_RATIO * fm.getlength("FÆBRIQ") if sticker and not tote else B
     sw, gap = m.SRC['stripe_frac']*bar_w, m.SRC['gap_frac']*bar_w
     bx = cx - bar_w/2
     for i,c in enumerate(m.CIRCUIT): x0=bx+i*(sw+gap); d.rectangle([x0,yb,x0+sw,yb+bh],fill=c)
-    if sticker: m._draw_reinforced(im,cx,ym,"FÆBRIQ",fm,col['mark'])
+    if tote:
+        mb=fm.getbbox("FÆBRIQ"); mark=m.wordmark_mask(fm.getlength("FÆBRIQ"),col['mark']+(255,))
+        im.alpha_composite(mark,(round(cx-mark.width/2),round(ym+mb[1]+((mb[3]-mb[1])-mark.height)/2)))
+    elif sticker: m._draw_reinforced(im,cx,ym,"FÆBRIQ",fm,col['mark'])
     im.save(out,'PNG',dpi=(300,300)); print(out,im.size)
-build('assets/print-art/404-straight-not-found-v3-light-4500.png',4500,False)
-build('assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png',2400,True)
+# Pass targets (apparel, sticker, tote) to build only those; no args builds all.
+want=set(sys.argv[1:]) or {'apparel','sticker','tote'}
+if 'apparel' in want: build('assets/print-art/404-straight-not-found-v3-light-4500.png',4500,False)
+if 'sticker' in want: build('assets/print-art/sticker-final-system-2026-08-27/404-straight-not-found-v3-sticker-light-2400.png',2400,True)
+if 'tote' in want: build('assets/print-art/404-straight-not-found-v3-tote-light-4500.png',4500,False,tote=True)

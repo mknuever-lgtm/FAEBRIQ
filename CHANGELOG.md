@@ -162,3 +162,4 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
+2026-10-10 Added assets/print-art/404-straight-not-found-v3-tote-light-4500.png (tote mode in tools/make_404_v3.py): file was referenced in CLAUDE.md and IMAGERY_SPEC but never committed. Full phrase-width bar + sans FÆBRIQ per the 2026-10-01 rule.

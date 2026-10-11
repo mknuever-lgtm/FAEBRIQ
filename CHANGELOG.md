@@ -159,3 +159,7 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 - 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
 - 2026/10/07: validate_sticker_final_system.py now uses getcolors() instead of set(getdata()). Why: faster, and getdata() is deprecated in Pillow 14.
+2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
+Slide 02 (product) held until Manus mockups land.
+2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
+2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.

@@ -33,8 +33,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   joke isn't oversold, not that there's no energy behind it. Rendering this
   as a bored technician reciting specs is a bug — always re-read output for
   "does this sound boring" before treating dry/deadpan instructions as done.
-- Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
-  baked into listed prices.
+- Store: Shopify, faebriq.com, USD, ships US + Canada only. Free shipping
+  on apparel to US + Canada (baked into apparel prices). Sticker-only
+  orders pay shipping ($4.99 US / $9.99 CA per Shopify listing,
+  2026-10-11). Never claim blanket free shipping.
 - Live catalog (checked in Shopify 2026-09-27): 6 sticker listings
   ($4 to $13.99; 3 active, 3 still Draft), tees $34, crewneck $62,
   hoodie $68, cap $34, 404 tote $34.

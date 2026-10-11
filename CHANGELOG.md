@@ -139,3 +139,5 @@ Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
 
 2026-09-27 Added ETSY.md placeholder codifying channel rules for a not-yet-live Etsy shop (brand facts carry over, catalog/SEO can differ per channel, same hard gates).
 Why: same brand new channel is coming, future sessions should not improvise brand or gate decisions when it goes live.
+2026-10-11 CLAUDE.md shipping fact corrected: free shipping is apparel only; sticker-only orders pay shipping ($4.99 US / $9.99 CA).
+Why: blanket "free shipping baked into listed prices" line was misleading agents into false shipping claims in scripts.

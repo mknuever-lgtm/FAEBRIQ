@@ -29,12 +29,27 @@
       <p class="fae-hero__eyebrow">{{ section.settings.eyebrow }}</p>
     {%- endif -%}
 
-    <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
+    {%- comment -%} FAEBRIQ 2026-10-01: when the heading is the brand name, render the logo lockup:
+      sans wordmark SVG (same asset as the header) centred over the six-block bar at 1.35x the
+      wordmark's width (CLAUDE.md rule). All sizes are em of .fae-hero__title's responsive clamp, so
+      the ratio holds at every screen width: wordmark 0.72em tall = 3.373em wide (SVG is 3022x645),
+      bar 1.35 x 3.373 = 4.554em, wordmark inset (4.554 - 3.373) / 2 = 0.590em. The h1 + alt keep
+      "FÆBRIQ" for SEO and screen readers. Any other heading falls back to text + the old bar. {%- endcomment -%}
+    {%- if section.settings.heading == 'FÆBRIQ' -%}
+      <div class="fae-hero__title" style="width:4.554em;max-width:100%;line-height:1;">
+        <h1 style="font-size:1em;margin:0;line-height:1;"><img src="{{ 'faebriq-wordmark.svg' | asset_url }}" alt="FÆBRIQ" width="337" height="72" style="display:block;height:0.72em;width:auto;margin:0 0 0.22em 0.59em;"></h1>
+        <div class="fae-circuit" style="height:3px;width:100%;max-width:none;">
+          {%- render 'circuit-rule', id: 'hero' -%}
+        </div>
+      </div>
+    {%- else -%}
+      <h1 class="fae-hero__title" style="text-transform: uppercase; letter-spacing: 0.02em;">{{ section.settings.heading }}</h1>
 
-    <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component), not a gradient line -->
-    <div class="fae-circuit" style="height: 3px; max-width: 360px;">
-      {%- render 'circuit-rule', id: 'hero' -%}
-    </div>
+      <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component), not a gradient line -->
+      <div class="fae-circuit" style="height: 3px; max-width: 360px;">
+        {%- render 'circuit-rule', id: 'hero' -%}
+      </div>
+    {%- endif -%}
 
     {%- if section.settings.tagline != blank -%}
       <p class="fae-hero__eyebrow">{{ section.settings.tagline }}</p>

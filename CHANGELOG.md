@@ -158,6 +158,7 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: added handoff/MANUS_BRIEF_MOCKUPS_2026-10-01.md (read-only Printify mockup download brief). Why: source images for real-looking product photos.
 - 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
+- 2026/10/07: validate_sticker_final_system.py now uses getcolors() instead of set(getdata()). Why: faster, and getdata() is deprecated in Pillow 14.
 2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
@@ -174,3 +175,5 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Added tools/place_print_on_model.py: puts the real print on a blank AI garment photo at the locked 0.65 height. Why: AI photos garble print text; hoodie on-model photo is next.
 2026-10-10 Logged how to measure print height (armpit = underarm crease, not shoulder seam) in CLAUDE.md, spec and both tools. Why: hoodie draft placed too high from a shoulder-seam reading.
 2026-10-10 Hoodie on-model at approved height (2048x2560) in assets/mockups/2026-10-10-on-model/. Why: Maurice approved the corrected placement; drawstrings over the text still open.
+- 2026/10/12: MEMORY.md: added image-gen brief lesson (pixel fidelity vs proportion). Why: saved from stale branch claude/faebriq-launch-stance-ff305l before it is deleted.
+- 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.

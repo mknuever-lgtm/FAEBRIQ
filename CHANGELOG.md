@@ -164,3 +164,4 @@ Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
 - 2026/10/12: MEMORY.md: added image-gen brief lesson (pixel fidelity vs proportion). Why: saved from stale branch claude/faebriq-launch-stance-ff305l before it is deleted.
+- 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.

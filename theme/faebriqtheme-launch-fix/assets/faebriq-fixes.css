@@ -1,0 +1,132 @@
+/* ============================================================
+   FÆBRIQ — audit fixes, 2026-09-07
+   Loaded after faebriq.css so these override it. Kept separate
+   so the 16KB base stylesheet is not rewritten wholesale.
+   Fold into faebriq.css when convenient.
+   ============================================================ */
+
+/* Images letterbox instead of cropping. Safe at 1:1 and 4:5 alike. */
+.fae-card__image img,
+.fae-product__media img,
+.fae-gallery__main img,
+.fae-thumb img { object-fit: contain; }
+
+/* Cart thumbnails keep cover — cropping is correct at that size. */
+.fae-cart-drawer__item img { object-fit: cover; }
+
+/* #5f5f5f on #0a0a0a was ~3:1, below WCAG AA for small text. */
+:root { --fae-text-faint: #8a8a8a; }
+
+/* Mobile: a 60vw-tall box is landscape and ate most of a portrait image. */
+@media (max-width: 768px) {
+  .fae-product__media { position: static; height: auto; }
+}
+
+/* Delivery + returns block on the product page. */
+.fae-product__delivery {
+  border-top: 1px solid var(--fae-line-700);
+  padding-top: 20px;
+}
+.fae-product__delivery ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.fae-product__delivery li {
+  font-size: 0.875rem; color: var(--fae-text-dim); line-height: 1.5;
+}
+.fae-product__delivery a {
+  color: var(--fae-silver);
+  border-bottom: 1px solid var(--fae-line-600);
+}
+
+/* Footer newsletter + link columns. */
+.fae-footer__cols {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;
+}
+.fae-footer__signup { flex: 1 1 260px; max-width: 380px; }
+.fae-footer__signup-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.fae-footer__signup input[type="email"] {
+  flex: 1 1 180px;
+  background: var(--fae-ink-800);
+  border: 1px solid var(--fae-line-700);
+  color: var(--fae-text);
+  font-family: var(--font-body);
+  padding: 10px 12px;
+}
+.fae-footer__signup input[type="email"]:focus {
+  outline: none; border-color: var(--fae-silver-lo);
+}
+.fae-footer__signup button {
+  font-family: var(--font-mono); font-size: 0.7rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fae-black); background: var(--fae-silver);
+  border: none; padding: 10px 20px; cursor: pointer;
+}
+.fae-footer__signup button:hover { background: var(--fae-silver-hi); }
+
+/* ============================================================
+   2026-09-10 — skip link
+   <main id="main-content"> existed with nothing linking to it, so
+   keyboard users had to tab the whole header on every page.
+   Off-screen until focused.
+   ============================================================ */
+.fae-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fae-black);
+  background: var(--fae-silver);
+  padding: 12px 20px;
+}
+.fae-skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* ---- Sticker cross-sell: adds to cart in place, no navigation away ---- */
+.fae-sticker-addon {
+  border-top: 1px solid var(--fae-line-700);
+  padding-top: 24px;
+}
+.fae-sticker-addon__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+  gap: 14px;
+}
+.fae-sticker-addon__item {
+  display: flex; flex-direction: column; gap: 8px;
+  background: var(--fae-ink-800);
+  border: 1px solid var(--fae-line-700);
+  padding: 10px;
+}
+.fae-sticker-addon__image {
+  display: block; aspect-ratio: 1 / 1;
+  background: var(--fae-ink-900); overflow: hidden;
+}
+.fae-sticker-addon__image img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+}
+.fae-sticker-addon__title {
+  font-family: var(--font-display); font-size: 0.85rem;
+  line-height: 1.25; color: var(--fae-silver);
+}
+.fae-sticker-addon__add {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fae-black); background: var(--fae-silver);
+  border: none; padding: 8px 10px; cursor: pointer;
+  width: 100%; margin-top: auto; transition: background 0.15s;
+}
+.fae-sticker-addon__add:hover { background: var(--fae-silver-hi); }
+.fae-sticker-addon__add:focus-visible { outline: 2px solid var(--fae-accent); outline-offset: 2px; }
+.fae-sticker-addon__more {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--fae-text-faint); text-align: center;
+}

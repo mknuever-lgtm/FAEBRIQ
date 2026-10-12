@@ -125,7 +125,12 @@
       <span id="fae-price">{{ current_variant.price | money }}</span>
     </div>
 
-    <p class="fae-product__ship">Free shipping to the US &amp; Canada &middot; Printed to order</p>
+    {%- comment -%} FAEBRIQ 2026-10-01: stickers ship from a separate provider and carry a flat shipping rate (Shopify shipping profile). Everything else ships free. {%- endcomment -%}
+    {%- if product.type == 'Paper products' -%}
+      <p class="fae-product__ship">Shipping $4.99 US &middot; $9.99 Canada &middot; Printed to order</p>
+    {%- else -%}
+      <p class="fae-product__ship">Free shipping to the US &amp; Canada &middot; Printed to order</p>
+    {%- endif -%}
 
     <!-- Variants -->
     {%- unless product.has_only_default_variant -%}
@@ -169,7 +174,11 @@
       <ul>
         <li>Made to order. Printed after you order it, not before</li>
         <li>Production 5 to 7 business days, then shipping</li>
-        <li>Free shipping to the US &amp; Canada</li>
+        {%- if product.type == 'Paper products' -%}
+          <li>Stickers ship separately: $4.99 US, $9.99 Canada</li>
+        {%- else -%}
+          <li>Free shipping to the US &amp; Canada</li>
+        {%- endif -%}
         <li><a href="/policies/refund-policy">Returns &amp; exchanges</a></li>
       </ul>
     </div>
@@ -177,7 +186,12 @@
     <!-- Description -->
     {%- if product.description != blank -%}
       <div class="fae-product__desc">{{ product.description }}</div>
+      {%- assign fae_set_handles = 'its-not-a-bug-its-me-sticker,code-it-serve-it-sticker,404-straight-not-found-sticker,please-hold-sticker,deploying-identity-v2-sticker' | split: ',' -%}
+      {%- if fae_set_handles contains product.handle -%}
+        <p class="fae-product__set-link"><a href="/collections/fae">Complete the FÆ set →</a></p>
+      {%- endif -%}
     {%- endif -%}
+    
 
     <!-- Sticker cross-sell (apparel PDPs only) -->
     {%- render 'sticker-addon' -%}

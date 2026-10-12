@@ -1,0 +1,62 @@
+<!-- FAEBRIQ: launch footer — email capture, nav, legal. The privacy opt-out link was
+     previously unreachable from any page because the footer menu was never rendered. -->
+<footer class="fae-footer">
+  <div class="fae-circuit" style="height:6px; margin-bottom:32px;">
+    {%- render 'circuit-rule', id: 'footer' -%}
+  </div>
+
+  <div class="fae-footer__cols">
+
+    <div class="fae-footer__signup">
+      <p class="fae-footer__heading">Get told when the next drop lands</p>
+      {%- form 'customer' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        {%- if form.posted_successfully? -%}
+          <p class="fae-footer__copy">On the list.</p>
+        {%- else -%}
+          <div class="fae-footer__signup-row">
+            <label for="fae-newsletter-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Email</label>
+            <input type="email" id="fae-newsletter-email" name="contact[email]" placeholder="you@domain.com" required>
+            <button type="submit">Subscribe</button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+
+    <div>
+      <p class="fae-footer__heading">FÆBRIQ</p>
+      <ul class="fae-footer__links">
+        <li><a href="/collections/all-products">Shop</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="fae-footer__heading">Legal</p>
+      <ul class="fae-footer__links">
+        <li><a href="/policies/privacy-policy">Privacy</a></li>
+        <li><a href="/policies/refund-policy">Refund</a></li>
+        <li><a href="/policies/terms-of-service">Terms</a></li>
+        <li><a href="/policies/shipping-policy">Shipping</a></li>
+        <li><a href="/pages/data-sharing-opt-out">Your Privacy Choices</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="fae-footer__bottom">
+    <!-- FAEBRIQ: hardcoded, NOT {{ shop.name }} — see header.liquid. -->
+    <p class="fae-footer__copy">&copy; {{ 'now' | date: '%Y' }} FÆBRIQ</p>
+    <p class="fae-footer__copy">
+      <a href="mailto:support@faebriq.com" style="color:inherit;">support@faebriq.com</a>
+    </p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

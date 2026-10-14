@@ -177,3 +177,5 @@ Slide 02 (product) held until Manus mockups land.
 2026-10-10 Hoodie on-model at approved height (2048x2560) in assets/mockups/2026-10-10-on-model/. Why: Maurice approved the corrected placement; drawstrings over the text still open.
 - 2026/10/12: MEMORY.md: added image-gen brief lesson (pixel fidelity vs proportion). Why: saved from stale branch claude/faebriq-launch-stance-ff305l before it is deleted.
 - 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.
+2026-10-12 Mirrored all 30 live text files of faebriqtheme-launch-fix (now MAIN) into theme/faebriqtheme-launch-fix/, pulled read-only via Admin API.
+Why: repo mirror was partial and older than the published theme; keeps a reviewable copy of what is live.

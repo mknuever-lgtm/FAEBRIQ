@@ -1,0 +1,70 @@
+<!-- FAEBRIQ: full cart page — fallback for no-JS / direct nav / review before checkout. -->
+<div class="fae-collection-section">
+  <div class="fae-container" style="padding:48px 0 96px;">
+
+    <div class="fae-circuit" style="height:28px; margin-bottom:24px;">
+      {%- render 'circuit-rule', id: 'cart-top' -%}
+    </div>
+
+    <h1 style="font-family:var(--font-display);font-size:3rem;color:var(--fae-silver);font-weight:400;line-height:1;margin-bottom:40px;">
+      Your cart
+    </h1>
+
+    {%- if cart.item_count > 0 -%}
+      {%- form 'cart', cart, id: 'fae-cart-form' -%}
+        <div style="display:flex;flex-direction:column;">
+          {%- for item in cart.items -%}
+            <div style="display:grid;grid-template-columns:120px 1fr auto;gap:24px;padding:24px 0;border-bottom:1px solid var(--fae-line-700);align-items:center;">
+              <a href="{{ item.url }}" style="display:block;width:120px;height:120px;background:var(--fae-ink-800);overflow:hidden;">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 240 }}" alt="{{ item.title | escape }}" width="120" height="120" style="width:100%;height:100%;object-fit:cover;">
+                {%- endif -%}
+              </a>
+
+              <div>
+                <a href="{{ item.url }}" style="font-family:var(--font-display);font-size:1.25rem;color:var(--fae-silver);text-decoration:none;">{{ item.product.title }}</a>
+                {%- unless item.variant.title == 'Default Title' -%}
+                  <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--fae-text-faint);margin-top:6px;">{{ item.variant.title }}</p>
+                {%- endunless -%}
+                <div style="display:flex;align-items:center;gap:12px;margin-top:14px;">
+                  <input
+                    type="number"
+                    name="updates[{{ item.key }}]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    class="fae-variant-btn"
+                    style="width:64px;text-align:center;padding:8px;"
+                    data-cart-qty
+                    data-line="{{ forloop.index }}"
+                  >
+                  <button type="submit" name="remove" value="{{ item.key }}" formaction="{{ routes.cart_change_url }}?id={{ item.key }}&quantity=0" class="fae-cart-drawer__item-remove" style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--fae-text-faint);background:none;border:none;cursor:pointer;">Remove</button>
+                </div>
+              </div>
+
+              <div style="font-family:var(--font-mono);font-size:0.95rem;color:var(--fae-text);text-align:right;">
+                {{ item.final_line_price | money }}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;margin-top:32px;">
+          <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:1rem;color:var(--fae-text);text-transform:uppercase;letter-spacing:0.06em;">
+              <span>Subtotal</span>
+              <span>{{ cart.total_price | money }}</span>
+            </div>
+            <button type="submit" name="checkout" class="fae-atc">Checkout</button>
+            <button type="submit" name="update" class="fae-variant-btn" style="width:100%;">Update cart</button>
+          </div>
+        </div>
+      {%- endform -%}
+    {%- else -%}
+      <div style="padding:64px 0;text-align:center;">
+        <p style="font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fae-text-faint);margin-bottom:24px;">Cart is empty</p>
+        <a href="/collections/all" class="fae-variant-btn" style="display:inline-block;">Back to shop &rarr;</a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>

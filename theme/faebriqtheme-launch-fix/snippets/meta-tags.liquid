@@ -1,0 +1,113 @@
+{%- comment -%}
+  FAEBRIQ 2026-09-10: Open Graph, Twitter Card, canonical and JSON-LD.
+
+  None of this existed. content_for_header does NOT emit Open Graph tags — the
+  theme must. Without them every shared link (Instagram, TikTok, Twitter,
+  Discord, iMessage) rendered as a bare URL with no image, title or price.
+  Without Product JSON-LD there are no rich results in Google and the store is
+  ineligible for free Shopping listings.
+{%- endcomment -%}
+
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+{%- liquid
+  assign og_type = 'website'
+  assign og_title = page_title
+  assign og_description = page_description | default: shop.description | default: shop.name
+  assign og_image = blank
+
+  case request.page_type
+    when 'product'
+      assign og_type = 'product'
+      assign og_title = product.title
+      assign og_image = product.featured_image
+      if product.description != blank
+        assign og_description = product.description | strip_html | strip | truncate: 200
+      endif
+    when 'collection'
+      assign og_title = collection.title
+      assign og_image = collection.featured_image
+      if collection.description != blank
+        assign og_description = collection.description | strip_html | strip | truncate: 200
+      endif
+    when 'article'
+      assign og_type = 'article'
+      assign og_image = article.image
+  endcase
+
+  comment
+    Home and static pages have no image of their own. Fall back to the first
+    product so a shared homepage link still previews with artwork.
+  endcomment
+  if og_image == blank
+    assign og_image = collections['all-products'].products.first.featured_image
+  endif
+-%}
+
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ og_title | escape }}">
+<meta property="og:description" content="{{ og_description | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+
+{%- if og_image != blank -%}
+  <meta property="og:image" content="https:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:secure_url" content="https:{{ og_image | image_url: width: 1200 }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="{{ og_image.alt | default: og_title | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https:{{ og_image | image_url: width: 1200 }}">
+{%- else -%}
+  <meta name="twitter:card" content="summary">
+{%- endif -%}
+
+<meta name="twitter:title" content="{{ og_title | escape }}">
+<meta name="twitter:description" content="{{ og_description | escape }}">
+
+{%- if request.page_type == 'product' -%}
+  {%- comment -%} Product schema — one Offer per variant so size/surface pricing is exposed. {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ shop.url | append: product.url | json }},
+    "description": {{ product.description | strip_html | strip | truncate: 400 | json }},
+    "brand": { "@type": "Brand", "name": {{ shop.name | json }} },
+    {%- if product.featured_image != blank -%}
+    "image": [
+      {%- for image in product.images limit: 4 -%}
+        {{ image | image_url: width: 1200 | prepend: 'https:' | json }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ],
+    {%- endif -%}
+    "offers": [
+      {%- for variant in product.variants -%}
+      {
+        "@type": "Offer",
+        "name": {{ variant.title | json }},
+        {%- if variant.sku != blank -%}"sku": {{ variant.sku | json }},{%- endif -%}
+        "price": "{{ variant.price | divided_by: 100.0 }}",
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "url": {{ shop.url | append: variant.url | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+{%- endif -%}
+
+{%- if request.page_type == 'index' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }},
+    "description": {{ shop.description | default: shop.name | json }}
+  }
+  </script>
+{%- endif -%}

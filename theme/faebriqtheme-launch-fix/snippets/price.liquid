@@ -1,0 +1,9 @@
+{%- comment -%}
+  FAEBRIQ 2026-09-10: was `assign target = product | default: product`, which
+  assigned the variable to itself — a no-op that only worked because every caller
+  happens to pass `product:`. Renders the passed product directly instead.
+{%- endcomment -%}
+{%- if product.compare_at_price > product.price -%}
+  <s class="fae-card__compare">{{ product.compare_at_price | money }}</s>
+{%- endif -%}
+<span>{{ product.price | money }}</span>

@@ -1,0 +1,49 @@
+{% assign card_product = card_product | default: product %}
+{% assign card_id = card_id | default: forloop.index %}
+
+<a href="{{ card_product.url }}" class="fae-card" data-fae-card data-type="{{ card_product.type | escape }}" data-price="{{ card_product.price | divided_by: 100.0 }}" data-title="{{ card_product.title | escape }}">
+  <div class="fae-card__image">
+    {%- if card_product.featured_image -%}
+      {%- comment -%}
+        FAEBRIQ 2026-09-10: responsive images. Was a fixed width:800 served to every
+        device including phones. The first row loads eagerly — lazy-loading
+        above-the-fold images delays Largest Contentful Paint.
+      {%- endcomment -%}
+      <img
+        src="{{ card_product.featured_image | image_url: width: 800 }}"
+        srcset="{{ card_product.featured_image | image_url: width: 300 }} 300w,
+                {{ card_product.featured_image | image_url: width: 500 }} 500w,
+                {{ card_product.featured_image | image_url: width: 800 }} 800w,
+                {{ card_product.featured_image | image_url: width: 1200 }} 1200w"
+        sizes="(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw"
+        alt="{{ card_product.featured_image.alt | default: card_product.title | escape }}"
+        width="800"
+        height="800"
+        {% if card_id <= 3 %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+      >
+    {%- else -%}
+      <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+        {%- render 'circuit-rule', id: card_id -%}
+      </div>
+    {%- endif -%}
+
+    {%- if card_product.available == false -%}
+      <span class="fae-card__tag">Sold out</span>
+    {%- elsif card_product.compare_at_price > card_product.price -%}
+      <span class="fae-card__tag">Sale</span>
+    {%- endif -%}
+  </div>
+
+  <div class="fae-card__body">
+    <!-- FAEBRIQ: segmented rainbow bar (matches RainbowBar component in ProductCard), not a gradient SVG trace -->
+    <div class="fae-card__circuit">
+      {%- render 'circuit-rule', id: card_id -%}
+    </div>
+
+    <h3 class="fae-card__title">{{ card_product.title }}</h3>
+
+    <div class="fae-card__price">
+      {%- render 'price', product: card_product -%}
+    </div>
+  </div>
+</a>

@@ -1,0 +1,30 @@
+<!-- FAEBRIQ: short manifesto teaser between hero and featured collection. Links to About. -->
+<div class="fae-collection-section">
+  <div class="fae-container" style="max-width: 680px; text-align: center; padding: 64px 24px;">
+    <div class="fae-circuit" style="height: 20px; max-width: 280px; margin: 0 auto 32px;">
+      {%- render 'circuit-rule', id: 'brand-statement' -%}
+    </div>
+
+    <p style="font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 3.5vw, 2.25rem); line-height: 1.3; color: var(--fae-silver);">
+      {{ section.settings.statement }}
+    </p>
+
+    {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+      <a href="{{ section.settings.link_url }}" style="display:inline-block;margin-top:28px;font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fae-text-dim);border-bottom:1px solid var(--fae-line-600);padding-bottom:2px;">
+        {{ section.settings.link_label }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand statement",
+  "settings": [
+    { "type": "textarea", "id": "statement", "label": "Statement", "default": "Identity is a build process. We print status updates, not slogans." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Read the manifesto →" },
+    { "type": "url", "id": "link_url", "label": "Link URL" }
+  ],
+  "presets": [{ "name": "Brand statement" }]
+}
+{% endschema %}

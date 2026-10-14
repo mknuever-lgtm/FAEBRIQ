@@ -1,0 +1,26 @@
+<!-- FAEBRIQ: slide-in cart drawer. Populated/updated client-side via cart.js (assets/fae-cart.js). -->
+<div id="fae-cart-drawer" class="fae-cart-drawer" aria-hidden="true">
+  <div class="fae-cart-drawer__overlay" data-cart-close></div>
+  <div class="fae-cart-drawer__panel" role="dialog" aria-modal="true" aria-label="Cart">
+
+    <div class="fae-cart-drawer__header">
+      <p class="fae-cart-drawer__title">Cart <span id="fae-cart-drawer-count">(0)</span></p>
+      <button type="button" class="fae-cart-drawer__close" data-cart-close aria-label="Close cart">&#10005;</button>
+    </div>
+
+    <div class="fae-cart-drawer__body" id="fae-cart-drawer-body">
+      <p class="fae-cart-drawer__empty">Cart is empty.</p>
+    </div>
+
+    <div class="fae-cart-drawer__footer">
+      <div class="fae-cart-drawer__subtotal">
+        <span>Subtotal</span>
+        <span id="fae-cart-drawer-subtotal">{{ 0 | money }}</span>
+      </div>
+      <!-- FAEBRIQ FIX: was routes.cart_url — the primary CTA did not check out. -->
+      <a href="/checkout" class="fae-atc" style="text-align:center;" id="fae-cart-drawer-checkout">Checkout</a>
+      <a href="{{ routes.cart_url }}" class="fae-cart-drawer__viewcart">View cart &rarr;</a>
+    </div>
+
+  </div>
+</div>

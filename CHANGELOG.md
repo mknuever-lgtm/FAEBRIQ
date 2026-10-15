@@ -185,3 +185,5 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026/10/06 Retouched R render artifact in cap-front mockup (print files are clean); re-rendered cap cutout and carousel slide 03.
 2026/10/06 CLAUDE.md catalog line corrected from live Shopify (cap $32, tees $30, crewneck $42, hoodie $54, sticker lineup); added social/CAPTION.md with "$32 USD, free shipping".
 2026/10/15: merged the cap carousel work from claude/youthful-ritchie-3hawyo without its CLAUDE.md catalog edit. Why: that edit had tees at $30; tees are $32 now (see the 2026/10/07 line).
+2026/10/15: parked the FÆ intro section (theme/parked/fae-intro/) and added the Error State captions and 4:5 feed post, all from claude/faebriq-hero-fixes-02dw1g. Why: keep the useful pieces on the default branch; the live home page still uses meet-fae.
+2026/10/15: CAPTIONS.md shipping line now says apparel and caps, stickers ship separately. Why: the original said free shipping across the US + Canada, which is wrong for stickers.

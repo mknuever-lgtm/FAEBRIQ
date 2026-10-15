@@ -239,3 +239,4 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026/10/15: merged the cap carousel work from claude/youthful-ritchie-3hawyo without its CLAUDE.md catalog edit. Why: that edit had tees at $30; tees are $32 now (see the 2026/10/07 line).
 2026/10/15: parked the FÆ intro section (theme/parked/fae-intro/) and added the Error State captions and 4:5 feed post, all from claude/faebriq-hero-fixes-02dw1g. Why: keep the useful pieces on the default branch; the live home page still uses meet-fae.
 2026/10/15: CAPTIONS.md shipping line now says apparel and caps, stickers ship separately. Why: the original said free shipping across the US + Canada, which is wrong for stickers.
+2026/10/15: CLAUDE.md rule: every Shopify image upload is saved to imagery/shopify/ with a MANIFEST.csv row the same day. Why: live images kept going up without a repo copy.

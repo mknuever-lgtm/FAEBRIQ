@@ -142,6 +142,50 @@ Why: same brand new channel is coming, future sessions should not improvise bran
 
 2026-09-28 Read-only Shopify Admin verification session, no repo or store changes made. Confirmed live About/Contact pages and theme.liquid all say "United States and Canada" consistently (no meta-description conflict found); shop country is Canada (no false US-presence claim); 241 sessions and 0 orders in the last 30 days; no Etsy app installed in Shopify.
 Why: Maurice asked to verify open questions from a prior store status check before deciding next steps.
+2026-09-29 Shopify cleanup after Printify publish: restored locked prices (tees $34/36/37, crewneck $62, hoodie $68, stickers $4/5/6), archived duplicate Error 404 tee and Liberty tote, rewrote Off The Clock and Please Hold tee copy/tags/SEO (Embroidery tag removed), fixed Not A Bug title, added alt text to 24 apparel images, filled both collections.
+Why: the Printify publish had overwritten Shopify prices, images and copy. Old 4:5 crewneck/hoodie/sticker shots were deleted by that publish, not recoverable from Shopify Files.
+2026-09-30 Restored the 404 tee (reactivated product 10274729820227: locked prices, brand copy, tags, SEO, alt, All Products) and fixed Not A Bug tee SEO. Why: the original 404 listing had been repurposed into the Not A Bug tee, leaving no 404 tee live.
+2026-10-01 Tees keep the sleeve FÆBRIQ wordmark (wordmark-faebriq-sleeve.png): CLAUDE.md apparel rule updated, sleeve line added to the 404 and Code It tee descriptions in Shopify. Why: Maurice chose to keep the sleeve mark found in Printify; front prints still carry no wordmark.
+2026-10-01 Added assets/print-art/please-hold-rebranding-identity-light-4500.png (Bodoni, line2 at 80%, bar spans the wider line2); make_print_file.py now shrinks line1 instead of line2 when line2 overflows. Why: the Printify Please Hold tee used the retired Inter print and no Bodoni apparel master existed; the old fallback broke the 75-85% rule.
+2026-10-01 Locked the apparel bar rule as-is in CLAUDE.md: full print width on every tee front, no resizing. Why: Maurice chose least rework; measured bar/text ratio already varies 1.02 to 1.30 across the six tee masters.
+2026-10-01 Added handoff/MANUS_BRIEF_FONTS_2026-10-01.md: Manus prompt to swap the Please Hold and Deploying tee fronts to the Bodoni masters (mockups-only publish) and report fonts on crewneck, caps, sticker sheet. Why: make tee fonts consistent without more redesign.
+2026-10-01 Sticker sheet: deleted the three 11x8.5 variants in Shopify (6x4 White/Transparent $11.99, Holographic $13.99 remain); 11x8.5 also unticked in Printify by Maurice. Why: the 11x8.5 sheet has four print areas and only one carried art.
+2026-10-01 Please Hold and Deploying tees now serif in Shopify; set both to $34/36/37, gave Deploying tee FÆBRIQ title, copy, tags (Embroidery etc. removed), SEO, alt text; both added to All Products. Why: finish the font fix and match the other tee listings.
+2026-10-01 Not A Bug tee: FÆBRIQ title, house-format copy with size guide and sleeve line, tags, $34/36/37, alt text, All Products. Also restored $34/36/37 on 404 and Code It tees, $62 on crewneck, and alt text on all three. Why: a 06:11 UTC Printify sync reset prices, tags and alt text again.
+2026-10-01 Repriced to the cheapest level with reasonable profit (Printify unit cost + est. shipping + 2.9%+$0.30): tees $30/32/33/34, crewneck $42/44/45, hoodie $54/56/58, cap $32; tote stays $34; stickers unchanged pending real Printify sticker shipping. Why: Maurice wants prices people will pay to get first sales.
+2026-10-01 One price for all sizes: tees $30, crewneck $42, hoodie $54 (2XL+ lowered to base). Why: Maurice/Sarah, size-based upcharges upset customers; rule added to CLAUDE.md.
+2026-10-01 Stickers get a flat shipping rate ($4.99 US / $7.99 CA, profile set up via handoff/MANUS_BRIEF_STICKER_SHIPPING_2026-10-01.md); free-shipping copy narrowed to apparel/cap/tote in launch-fix theme (announcement, trust row, hero note, product template), About page, sticker descriptions, CLAUDE.md. Why: SPOKE sticker shipping (~CAD 13 to Canada) made every sticker-only order a loss.
+2026-10-01 Canada sticker rate $7.99 -> $9.99 (repo, launch-fix product template, About page, 6 sticker descriptions, Manus brief); 404 Cotton Tote set to Draft. Why: SPOKE ships to Canada at ~USD 9.54, and Fulfill Engine shows the AS Colour tote at 0 variants in stock.
+2026-10-01 Moved 62 apparel variants (6 tees, crewneck, hoodie) from Printify-created paid shipping profiles into the free General profile, plus 1 stray sticker variant into Stickers (SPOKE). Why: checkout was charging shipping on "free shipping" apparel. Muse brief for policy + meta + checkout check.
+2026-10-01 Added the Printify location to the "Stickers (SPOKE)" shipping profile (Manus created it with only 164 Finch Ave E). Why: stock lives at Printify, so stickers had no shipping origin and showed Sold out on the storefront.
+2026-10-01 Sticker descriptions (5 singles): size bullet now lists 2" and notes 2" is transparent-only (Deploying has both). Why: copy said 3"/4"/6" but every sticker sells a 2".
+2026-10-01 Tote switched to the Liberty canvas tote (product 10274729852995): unarchived, house title/copy/tags/SEO/alt, $34, All Products, free General shipping profile, handle 404-straight-not-found-tote. AS Colour tote stays Draft, handle now -as-colour. Why: Fulfill Engine shows 0 stock; Liberty costs $9.67 vs $20.44. Manus brief for per-product Printify shipping costs.
+
+2026-10-01: added assets/mockups/2026-10-01/ (27 Printify mockups + REPORT.md from Manus).
+2026-10-01: Shopify: added 15 new-angle mockups (tee collar+folded x6, hoodie collar+folded, crewneck folded) with alt text; skipped fronts/cap/tote as duplicates of existing images.
+2026-10-01: Shopify apparel+tote galleries rebuilt on charcoal (#0d0d0d, 4:5) via tools/mockup_to_charcoal.py; all white-ground and duplicate images deleted; 09-24 on-model shots back as slot 2 on 404 and Code It tees. Why: Maurice, no white backgrounds, no filler.
+2026-10-01: Added 404-straight-not-found-tote-4500.png (tools/make_404_tote.py, sticker lockup with sans FÆBRIQ) and handoff/MANUS_BRIEF_TOTE_PRINT_SWAP_2026-10-01.md. Why: live tote prints a serif FÆBRIQ and a full-width bar.
+2026-10-01: Re-composited correct prints (serif phrase, six-block bar, sans FÆBRIQ) onto existing dark model photos via tools/composite_print.py; 7 on-model shots live as slot 2 (4 tees, hoodie, crewneck, cap; cap alternate view removed). 2 tote shots held in assets/product-images/2026-10-01-model/ until the Printify swap. Why: Maurice, model pictures, dark aesthetic.
+2026-10-01: Fixed old-print specks on the Off The Clock tee model shot (re-healed, re-uploaded). Added handoff/MANUS_BRIEF_MODEL_PHOTOS_2026-10-01.md: 10 multiracial models, blank garments, for compositing with true perspective. Why: Maurice wants a multiracial cast and prints that sit on the fabric.
+2026-10-03: Tote brief now points to 404-straight-not-found-v3-tote-light-4500.png (phrase-width bar + sans FÆBRIQ, rule set 2026-10-01 on hero-fixes branch); removed my short-bar tote file and its 2 model composites. Why: they broke the 404 bar exception.
+2026-10-04: Shopify: FÆ stickers moved to Stickers (SPOKE) profile; FÆ collection filled (5); em dashes removed (FÆ sheet title, Sticker Add-Ons, All Products, launch-fix announcement); launch-fix FÆ row subtitle + $3.99 price note.
+2026-10-04: Product galleries re-rendered on the charcoal studio sweep (option 3) via tools/mockup_to_charcoal.py, 25 images replaced; close-ups cropped to 4:5.
+2026-10-04: CLAUDE.md + IMAGERY_SPEC merged with hero-fixes branch (404 bar exception, launch-fix-only theme rule) plus FÆ catalog, photo ground, post-publish shipping-profile rule.
+2026-10-04: Opened PR #42 (CLAUDE.md + IMAGERY_SPEC onto default branch); added handoff/MANUS_BRIEF_REMAINING_2026-10-04.md (tote swap, cap angles, 10 blank-garment model photos).
+2026-10-04: Rendered the Manus post-swap tote mockup (v3 print) on the charcoal sweep as assets/mockups/2026-10-04-sweep/04-tote-A-v3.jpg; held back from Shopify until Maurice confirms the edited Printify product is the Liberty tote (Manus reported AS Colour 1001). Why: avoid a live image that does not match what ships.
+2026-10-04: Liberty tote image on Shopify replaced with the v3 print mockup on the charcoal sweep. Why: Manus confirmed it edited the in-stock Liberty tote (Printify 6ab7832fd6e3b9312702eb51), so the image now matches what ships.
+2026-10-04: Manus ran out of credits before the cap angles and 10 model photos; added handoff/MODEL_PROMPTS_2026-10-04.md (10 standalone prompts for any free image tool plus manual cap-angle steps). Why: unblock the model photos without Manus credits.
+2026-10-04: Added --no-heal to tools/composite_print.py; composited real prints onto 4 new multiracial blank-garment model photos (Not A Bug tee, Deploying crewneck, 404 tote, Deploying tee); first three live as slot 2 (tote now has a model shot), Deploying tee held. Why: Maurice wants a multiracial cast with prints sitting in the fabric.
+2026-10-04: Added handoff/MANUS_BRIEF_MODELS_REMAINING_2026-10-04.md (7 blank-garment model photos incl. a replacement Indigenous model, no cultural-style tattoos). Why: finish the multiracial cast.
+
+2026/10/05: Live model shots swapped for 404, Code It, Off The Clock, Please Hold and Deploying tees, hoodie and cap (multiracial set, real prints composited). Old placeholder model shots deleted.
+2026/10/05: Added handoff/MUSE_BRIEF_CONTINUE_2026-10-05.md (cap angles + Printify shipping costs, the two jobs Manus never finished).
+2026/10/06: Cap gallery now front, model, left angle, print close-up, all on the charcoal sweep (angles from the campaign branch). Old flat cap images removed.
+2026/10/06: Added crewneck collar close-up and tote print close-up on the charcoal sweep (crewneck now 4 images, tote 3).
+2026/10/06: Alt text set on all 110 sticker images (11 products). Added handoff/MUSE_BRIEF_SHIPPING_COSTS_2026-10-06.md. Sticker trim not done: images could not be viewed from here.
+2026/10/06: 6 tees repriced $30 to $32 (48 variants) because large-size Canada tees lost money at $30; CLAUDE.md price line updated.
+2026/10/07: Added standing rule to CLAUDE.md: every order must clear a profit, no discounts or price moves that break it.
+2026/10/07: Added handoff/MUSE_BRIEF_FAE_STICKER_FILES_2026-10-07.md (Muse copies the 5 FÆ sticker images to Google Drive; Shopify CDN is blocked here).
 
 2026-09-30 Added brand/MASCOT_FAE.md: locked FÆ mascot look, revised adult/raspy voice direction, mascot content rules.
 Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark tees and a FÄBRIQ typo that break brand rules.
@@ -163,6 +207,13 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
 2026/10/07: CLAUDE.md: tees now $32, new rule that every order must clear a profit. Why: Printify costs showed big-size Canada tees losing money at $30.
+2026/10/07: Sticker galleries trimmed to one image each (5 singles keep their _0-dark shot, matching the Full Drop sheet). FÆ stickers + FÆ sheet reframed on the 4:5 charcoal sweep (sheet stays white).
+2026/10/07: FAE single stickers now die-cut on white sticker paper on the charcoal sweep (visible cut line). Both sheets unchanged.
+
+2026/10/07: FAE single sticker photos re-cut from the FAE sheet (smooth thick white kiss-cut edge, full limbs); 5 text singles rendered on black sheets from the Full Drop.
+Why: old FAE singles came from clipped source cutouts; text singles now match the Full Drop sheet. Shopify swap pending approval.
+2026/10/07: FAE singles re-cut again from Maurice's 1403px FAE sheet (sharper, ~1.8x upscale vs ~4x); all 9 single sticker photos (4 FAE, 5 text) swapped live in Shopify, old images removed. Why: Maurice approved.
+2026/10/07: 9 single sticker print files (transparent PNG, 2400px long side, 300dpi) cut from the FAE and Full Drop sheets into assets/print-art/2026-10-07-sticker-singles. Why: Maurice asked for separate files so Printify matches the Shopify photos.
 2026-10-10 Added assets/print-art/404-straight-not-found-v3-tote-light-4500.png (tote mode in tools/make_404_v3.py): file was referenced in CLAUDE.md and IMAGERY_SPEC but never committed. Full phrase-width bar + sans FÆBRIQ per the 2026-10-01 rule.
 2026-10-10 make_404_v3.py sticker mode now uses the full phrase-width bar + sans FÆBRIQ (was 1.35x bar + serif mark); 404 v3 sticker file rebuilt. Why: 2026-10-01 404 rule.
 2026-10-10 Full Drop sticker sheet photo on charcoal sweep, 2048x2560 (assets/mockups/2026-10-10-sweep/); added tools/card_on_sweep.py, restored tools/mockup_to_charcoal.py from ccr-0572707a-269xb2. Why: live image was 3:2 flat black.
@@ -179,6 +230,7 @@ Slide 02 (product) held until Manus mockups land.
 - 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.
 2026-10-12 Mirrored all 30 live text files of faebriqtheme-launch-fix (now MAIN) into theme/faebriqtheme-launch-fix/, pulled read-only via Admin API.
 Why: repo mirror was partial and older than the published theme; keeps a reviewable copy of what is live.
+2026/10/15: merged the default branch into ccr-0572707a-269xb2; sticker singles and theme index.json taken from default. Why: default has the sans wordmark singles (2026/10/10) and the live theme mirror (2026/10/12).
 2026/10/05 Added handoff/MANUS_BRIEF_CAP_FRONT_2026-10-05.md: front-on cap shot brief (delivered angles clip the lockup).
 2026/10/05 Added cap.py: transparent cap cutouts (front/left/right) and carousel slide 02 (cap on lifted near-black with rim light). Carousel is now 4 of 4.
 2026/10/05 Carousel critique fixes: reordered to hook/message/cap/CTA, tagline cut from hook (answer lands on 02), cap slide line "> new hardware detected", CTA "> process complete" + "> link in bio".

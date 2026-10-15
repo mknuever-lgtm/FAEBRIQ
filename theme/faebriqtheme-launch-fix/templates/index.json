@@ -18,7 +18,7 @@
         "subheading": "Premium dark-tech apparel for people who code by day and serve identity by night. Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
         "cta_label": "Shop the Drop",
         "cta_url": "/collections/all-products",
-        "price_note": "$4-$54 USD · Free US & Canada shipping on apparel · Printed to order",
+        "price_note": "$3.99-$54 USD · Free US & Canada shipping on apparel · Printed to order",
         "hero_product": "its-not-a-bug-its-me-tee",
         "media_tag": "The Flagship"
       }
@@ -30,7 +30,7 @@
         "item_1_text": "On apparel, caps and totes, US and Canada. No threshold. Stickers ship separately.",
         "item_2_title": "Made to order",
         "item_2_text": "Printed after you buy it, not before. No warehouse of unsold guesses.",
-        "item_3_title": "2 to 7 days to print",
+        "item_3_title": "5 to 7 days to print",
         "item_3_text": "Then 4 to 8 business days in the US, 7 to 14 to Canada.",
         "item_4_title": "Misprints covered",
         "item_4_text": "Damaged, defective or misprinted: replaced or refunded within 30 days."
@@ -43,6 +43,29 @@
         "subtitle": "Tees, crewneck, hoodie, cap, tote, stickers. All black. All sharp.",
         "collection": "all-products",
         "products_to_show": 6,
+        "show_view_all": true
+      }
+    },
+    "meet-fae": {
+      "type": "meet-fae",
+      "settings": {
+        "eyebrow": "THE MASCOT",
+        "heading": "Meet FÆ.",
+        "text": "Glitch-gremlin. Professional menace. He crawled out of a stack trace, looked at your wardrobe, and called it a bug. FÆ doesn't do cute. He does sharp.",
+        "button_label": "READ THE MANIFESTO",
+        "button_link": "/pages/about",
+        "button_label_2": "SHOP FÆ STICKERS",
+        "button_link_2": "/collections/fae"
+      }
+    },
+    "featured_collection_R9wXAC": {
+      "type": "featured-collection",
+      "name": "Catalog",
+      "settings": {
+        "title": "FÆ STICKERS",
+        "subtitle": "Four poses. One professional menace. Kiss-cut singles and a full sheet.",
+        "collection": "fae",
+        "products_to_show": 12,
         "show_view_all": true
       }
     },
@@ -59,6 +82,8 @@
     "hero",
     "trust-row",
     "featured-collection",
+    "meet-fae",
+    "featured_collection_R9wXAC",
     "brand-statement"
   ]
 }

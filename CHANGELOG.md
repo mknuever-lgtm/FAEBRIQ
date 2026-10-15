@@ -202,6 +202,7 @@ Why: first voice pass came out kids-cartoon, and AI video tests showed wordmark 
 2026/10/01: added handoff/MANUS_BRIEF_MOCKUPS_2026-10-01.md (read-only Printify mockup download brief). Why: source images for real-looking product photos.
 - 2026/10/01: Error State hero critique fixes: tagline 36px and brighter, left column aligned, FREE SHIPPING lifted; added 1080x1920 story/mobile version.
 - render.py now uses repo font cache and the approved wordmark mask so it re-renders in any session.
+- 2026/10/07: validate_sticker_final_system.py now uses getcolors() instead of set(getdata()). Why: faster, and getdata() is deprecated in Pillow 14.
 2026/10/03 Added social.py: square post and carousel (01 hook, 03 message, 04 CTA) for Error State.
 Slide 02 (product) held until Manus mockups land.
 2026/10/04 Social critique fixes: larger shipping/swipe/tagline text, slide 04 CTA now a button; render.py dialog() gained a tag-size option (hero unchanged).
@@ -213,3 +214,20 @@ Slide 02 (product) held until Manus mockups land.
 Why: old FAE singles came from clipped source cutouts; text singles now match the Full Drop sheet. Shopify swap pending approval.
 2026/10/07: FAE singles re-cut again from Maurice's 1403px FAE sheet (sharper, ~1.8x upscale vs ~4x); all 9 single sticker photos (4 FAE, 5 text) swapped live in Shopify, old images removed. Why: Maurice approved.
 2026/10/07: 9 single sticker print files (transparent PNG, 2400px long side, 300dpi) cut from the FAE and Full Drop sheets into assets/print-art/2026-10-07-sticker-singles. Why: Maurice asked for separate files so Printify matches the Shopify photos.
+2026-10-10 Added assets/print-art/404-straight-not-found-v3-tote-light-4500.png (tote mode in tools/make_404_v3.py): file was referenced in CLAUDE.md and IMAGERY_SPEC but never committed. Full phrase-width bar + sans FÆBRIQ per the 2026-10-01 rule.
+2026-10-10 make_404_v3.py sticker mode now uses the full phrase-width bar + sans FÆBRIQ (was 1.35x bar + serif mark); 404 v3 sticker file rebuilt. Why: 2026-10-01 404 rule.
+2026-10-10 Full Drop sticker sheet photo on charcoal sweep, 2048x2560 (assets/mockups/2026-10-10-sweep/); added tools/card_on_sweep.py, restored tools/mockup_to_charcoal.py from ccr-0572707a-269xb2. Why: live image was 3:2 flat black.
+2026-10-10 Live phrase sticker singles (2026-10-07, from ccr-0572707a-269xb2) now carry the sans FÆBRIQ mark; on-black previews rebuilt. tools/swap_sticker_singles_wordmark.py. Why: serif mark broke the wordmark rule; Printify still has the old files.
+2026-10-10 Added PRINT_PLACEMENT_SPEC.md + tools/printify_placement.py: fronts 10 in wide, top 3 in below collar (hoodie 3.5). Why: prints sit too high; placement is set in Printify, files unchanged.
+2026-10-10 On-model photos for 5 tees: print centre moved to mid rib cage (0.65 collar-to-armpit, Maurice) (Code It also shrunk 17%), assets/mockups/2026-10-10-on-model/, tools/move_print_on_model.py. Hoodie left: drawstrings break the method. Why: prints looked too high.
+2026-10-10 Locked front-print height in CLAUDE.md: centre at 0.65 collar-to-armpit (mid rib cage). Why: Maurice approved the on-model set.
+2026-10-10 CLAUDE.md hard gate: no Printify artwork/file/placement changes without Maurice's explicit OK. Why: apparel files were swapped without asking (2026-09-26 to 10-01).
+2026-10-10 Sticker photos from the sans-wordmark print files (5 singles + Full Drop sheet B) on charcoal sweep; tools/sticker_card_shots.py. Why: live sticker photos showed the old serif mark.
+2026-10-10 Added tools/place_print_on_model.py: puts the real print on a blank AI garment photo at the locked 0.65 height. Why: AI photos garble print text; hoodie on-model photo is next.
+2026-10-10 Logged how to measure print height (armpit = underarm crease, not shoulder seam) in CLAUDE.md, spec and both tools. Why: hoodie draft placed too high from a shoulder-seam reading.
+2026-10-10 Hoodie on-model at approved height (2048x2560) in assets/mockups/2026-10-10-on-model/. Why: Maurice approved the corrected placement; drawstrings over the text still open.
+- 2026/10/12: MEMORY.md: added image-gen brief lesson (pixel fidelity vs proportion). Why: saved from stale branch claude/faebriq-launch-stance-ff305l before it is deleted.
+- 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.
+2026-10-12 Mirrored all 30 live text files of faebriqtheme-launch-fix (now MAIN) into theme/faebriqtheme-launch-fix/, pulled read-only via Admin API.
+Why: repo mirror was partial and older than the published theme; keeps a reviewable copy of what is live.
+2026/10/15: merged the default branch into ccr-0572707a-269xb2; sticker singles and theme index.json taken from default. Why: default has the sans wordmark singles (2026/10/10) and the live theme mirror (2026/10/12).

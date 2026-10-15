@@ -1,0 +1,94 @@
+{%- comment -%}
+  FAEBRIQ: "Add a sticker" cross-sell on apparel + accessory PDPs.
+  Previously a row of links that navigated the customer AWAY from the product they
+  were about to buy. Each tile now adds the sticker's cheapest available variant to
+  the cart via AJAX and opens the drawer, so nobody leaves the page. A secondary
+  link preserves the path to other sizes.
+  Sourced from the Stickers — Add-Ons collection so titles and pricing stay live.
+{%- endcomment -%}
+{%- assign fae_addon_types = "T-Shirt,Sweatshirt,Hoodie,Bags,Hats" | split: "," -%}
+{%- if fae_addon_types contains product.type -%}
+  {%- assign fae_stickers = collections['stickers-add-ons'] -%}
+  {%- if fae_stickers != blank and fae_stickers.products.size > 0 -%}
+    <div class="fae-sticker-addon">
+      <p class="fae-section-label" style="margin-bottom:16px;">Add a sticker</p>
+      <div class="fae-sticker-addon__row">
+        {%- for sticker in fae_stickers.products -%}
+
+          {%- comment -%} cheapest AVAILABLE variant, computed live {%- endcomment -%}
+          {%- assign pick_id = 0 -%}
+          {%- assign pick_price = 99999999 -%}
+          {%- for v in sticker.variants -%}
+            {%- if v.available and v.price < pick_price -%}
+              {%- assign pick_id = v.id -%}
+              {%- assign pick_price = v.price -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          <div class="fae-sticker-addon__item">
+            <a href="{{ sticker.url }}" class="fae-sticker-addon__image" aria-label="{{ sticker.title | escape }} — see all sizes">
+              {%- if sticker.featured_image -%}
+                <img src="{{ sticker.featured_image | image_url: width: 240 }}"
+                     alt="{{ sticker.featured_image.alt | default: sticker.title | escape }}"
+                     width="240" height="240" loading="lazy">
+              {%- endif -%}
+            </a>
+            <span class="fae-sticker-addon__title">{{ sticker.title }}</span>
+            {%- if pick_id != 0 -%}
+              <button type="button" class="fae-sticker-addon__add" data-fae-addon="{{ pick_id }}">
+                Add · {{ pick_price | money }}
+              </button>
+              <a href="{{ sticker.url }}" class="fae-sticker-addon__more">Other sizes →</a>
+            {%- else -%}
+              <span class="fae-sticker-addon__more">Sold out</span>
+            {%- endif -%}
+          </div>
+
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <script>
+    (function () {
+      document.addEventListener('click', function (e) {
+        if (!e.target || !e.target.closest) return;
+        var btn = e.target.closest('[data-fae-addon]');
+        if (!btn) return;
+        e.preventDefault();
+        if (btn.dataset.busy === '1') return;
+
+        btn.dataset.busy = '1';
+        var label = btn.textContent;
+        btn.textContent = 'Adding…';
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: btn.dataset.faeAddon, quantity: 1 }] })
+        })
+          .then(function (r) { if (!r.ok) { throw new Error('add failed'); } return r.json(); })
+          .then(function () {
+            btn.textContent = 'Added';
+            // Reuse the existing drawer: clicking any [data-cart-toggle] element makes
+            // fae-cart.js refresh the cart and slide the drawer open. Verified against
+            // assets/fae-cart.js — its handler calls preventDefault(), so the cart link
+            // does not navigate.
+            var toggle = document.querySelector('[data-cart-toggle]');
+            if (toggle) { toggle.click(); }
+            setTimeout(function () {
+              btn.textContent = label;
+              btn.dataset.busy = '0';
+            }, 1600);
+          })
+          .catch(function () {
+            btn.textContent = 'Try again';
+            setTimeout(function () {
+              btn.textContent = label;
+              btn.dataset.busy = '0';
+            }, 1600);
+          });
+      });
+    })();
+    </script>
+  {%- endif -%}
+{%- endif -%}

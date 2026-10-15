@@ -186,7 +186,12 @@
     <!-- Description -->
     {%- if product.description != blank -%}
       <div class="fae-product__desc">{{ product.description }}</div>
+      {%- assign fae_set_handles = 'its-not-a-bug-its-me-sticker,code-it-serve-it-sticker,404-straight-not-found-sticker,please-hold-sticker,deploying-identity-v2-sticker' | split: ',' -%}
+      {%- if fae_set_handles contains product.handle -%}
+        <p class="fae-product__set-link"><a href="/collections/fae">Complete the FÆ set →</a></p>
+      {%- endif -%}
     {%- endif -%}
+    
 
     <!-- Sticker cross-sell (apparel PDPs only) -->
     {%- render 'sticker-addon' -%}

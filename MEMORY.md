@@ -19,5 +19,10 @@ Do NOT reconstruct, resume, or summarize it into new files.
   UNVERIFIED; never claim embroidery.
 - Themes: faebriqtheme-launch-fix = production candidate;
   faebriqtheme-launch-2026-08-06-review = LIVE.
+- Image-gen briefs (Manus etc.): "do not alter the pixels" and "look
+  proportionally correct" are separate constraints. A pixel-fidelity check
+  passes even when a design is scaled wrong (a sticker mockup once filled
+  ~84% of a laptop lid). Brief both: allow uniform scaling only, give
+  real-world size targets, and check the result by eye.
 - Maintenance: update this file in the SAME commit as any real
   catalog/provider/theme change. Never let it drift.

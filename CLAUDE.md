@@ -70,6 +70,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   corners to ~#2E2E30 behind the product, 4:5 at 2048x2560, made with
   tools/mockup_to_charcoal.py. Never white or light backgrounds. Gallery
   order: front, on-model, close-up, folded.
+- Image record (Maurice, 2026-10-15): every Shopify image upload is saved
+  to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day
+  (product, Shopify image ID, gallery position, SHA-256). Replaced or
+  deleted images get their row updated, not left stale.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
   Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.

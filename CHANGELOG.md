@@ -179,3 +179,9 @@ Slide 02 (product) held until Manus mockups land.
 - 2026/10/12: added assets/print-art/wordmark-faebriq-sleeve.png (tee sleeve wordmark named in CLAUDE.md). Why: file existed only on old branches and was missing from the default branch.
 2026-10-12 Mirrored all 30 live text files of faebriqtheme-launch-fix (now MAIN) into theme/faebriqtheme-launch-fix/, pulled read-only via Admin API.
 Why: repo mirror was partial and older than the published theme; keeps a reviewable copy of what is live.
+2026/10/05 Added handoff/MANUS_BRIEF_CAP_FRONT_2026-10-05.md: front-on cap shot brief (delivered angles clip the lockup).
+2026/10/05 Added cap.py: transparent cap cutouts (front/left/right) and carousel slide 02 (cap on lifted near-black with rim light). Carousel is now 4 of 4.
+2026/10/05 Carousel critique fixes: reordered to hook/message/cap/CTA, tagline cut from hook (answer lands on 02), cap slide line "> new hardware detected", CTA "> process complete" + "> link in bio".
+2026/10/06 Retouched R render artifact in cap-front mockup (print files are clean); re-rendered cap cutout and carousel slide 03.
+2026/10/06 CLAUDE.md catalog line corrected from live Shopify (cap $32, tees $30, crewneck $42, hoodie $54, sticker lineup); added social/CAPTION.md with "$32 USD, free shipping".
+2026/10/15: merged the cap carousel work from claude/youthful-ritchie-3hawyo without its CLAUDE.md catalog edit. Why: that edit had tees at $30; tees are $32 now (see the 2026/10/07 line).

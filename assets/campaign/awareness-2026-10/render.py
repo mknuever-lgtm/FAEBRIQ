@@ -70,7 +70,8 @@ def dialog(d, box, L1, chrome, square_left=True, tag=0.305):
     # phrase lockup: line 2 at 80% of line 1
     d.text((tx, ty), 'Unexpected', font=bod(L1), fill=FG)
     d.text((tx, ty + L1 * 1.12), 'identity detected.', font=bod(round(L1 * 0.8)), fill=FG)
-    d.text((tx, ty + L1 * 1.12 + L1 * 0.8 * 1.5), 'This is not an error.', font=mono(round(L1 * tag)), fill=TAG)
+    if tag:  # tag=None leaves the answer for a later slide
+        d.text((tx, ty + L1 * 1.12 + L1 * 0.8 * 1.5), 'This is not an error.', font=mono(round(L1 * tag)), fill=TAG)
     # buttons, right-aligned
     fb = mono(round(chrome * 1.0)); bh = round(chrome * 2.4); by = y1 - pad - bh
     xr = x1 - pad
@@ -84,7 +85,7 @@ def dialog(d, box, L1, chrome, square_left=True, tag=0.305):
         xr = xl - chrome
 
 
-def lockup(im, d, x, baseline_bar, ww, prompt_size, center=False):
+def lockup(im, d, x, baseline_bar, ww, prompt_size, center=False, prompt='> process running'):
     """Prompt + sans wordmark + 1.35x circuit bar. Bar's left edge sits at x (or centered on x)."""
     bw = ww * 1.35
     bx = x - bw / 2 if center else x
@@ -97,7 +98,7 @@ def lockup(im, d, x, baseline_bar, ww, prompt_size, center=False):
     for i, c in enumerate(CIRCUIT):
         d.rectangle([round(bx + i * cw), baseline_bar, round(bx + (i + 1) * cw) - 1, baseline_bar + bh], fill=c)
     # prompt shares the wordmark's left edge
-    d.text((wx, wy - prompt_size * 2.4), '> process running', font=mono(prompt_size), fill=NOTE)
+    d.text((wx, wy - prompt_size * 2.4), prompt, font=mono(prompt_size), fill=NOTE)
 
 
 def desktop():

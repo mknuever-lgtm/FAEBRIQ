@@ -240,3 +240,7 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026/10/15: parked the FÆ intro section (theme/parked/fae-intro/) and added the Error State captions and 4:5 feed post, all from claude/faebriq-hero-fixes-02dw1g. Why: keep the useful pieces on the default branch; the live home page still uses meet-fae.
 2026/10/15: CAPTIONS.md shipping line now says apparel and caps, stickers ship separately. Why: the original said free shipping across the US + Canada, which is wrong for stickers.
 2026/10/15: CLAUDE.md rule: every Shopify image upload is saved to imagery/shopify/ with a MANIFEST.csv row the same day. Why: live images kept going up without a repo copy.
+
+2026-10-18 Narrowed the CLAUDE.md Output style rule to em dashes only, and restored the four en dash ranges in legal/shipping-policy.md (2-7, 4-8, 7-14, 24-48 now use en dashes again).
+Why: Maurice clarified the ban was only ever meant for long em dashes. Hyphens and en dashes are fine.
+Note: the four live Shopify policies still read "2 to 7" and were left alone; the wording is correct either way and re-pasting is not worth the risk.

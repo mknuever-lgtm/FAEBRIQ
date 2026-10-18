@@ -84,10 +84,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   theme (Maurice, 2026-10-01).
 
 ## Output style
-- No em dashes and no en dashes in any output: chat replies, reports,
-  briefs, store copy, theme strings, commit messages. Hyphens are fine
-  (compounds, ranges, handles). Rewrite with commas, colons, or a full
-  stop instead.
+- No em dashes in any output: chat replies, reports, briefs, store copy,
+  theme strings, commit messages. Rewrite with commas, colons, or a full
+  stop instead. Hyphens and en dashes are fine: compounds, number ranges,
+  handles.
 
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.

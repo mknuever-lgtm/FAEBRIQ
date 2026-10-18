@@ -244,3 +244,7 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026-10-18 Narrowed the CLAUDE.md Output style rule to em dashes only, and restored the four en dash ranges in legal/shipping-policy.md (2-7, 4-8, 7-14, 24-48 now use en dashes again).
 Why: Maurice clarified the ban was only ever meant for long em dashes. Hyphens and en dashes are fine.
 Note: the four live Shopify policies still read "2 to 7" and were left alone; the wording is correct either way and re-pasting is not worth the risk.
+
+2026-10-18 Replaced the five em dashes in CLAUDE.md (three headings, the deadpan line, the cap line) with colons, a comma and a full stop.
+Why: the Output style rule bans em dashes and the file itself still broke it.
+Note: wording otherwise unchanged. The cap line still says embroidery is UNVERIFIED.

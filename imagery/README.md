@@ -13,8 +13,10 @@ Date pulled: 2026/10/10 (v2 manifest: 2026/10/10)
   product title, product handle, Printify product ID, Shopify product ID,
   Printify-to-Shopify handle link, Shopify status, image ID, position, dimensions,
   file size, SHA-256, full source URL, and local filename.
-- `shopify/`: The 23 Shopify featured product images as actual files.
-  (Gallery images beyond the featured image are URL-only in the manifest.)
+- `shopify/`: 52 Shopify image files: the 23 featured images plus gallery images
+  of active products. Other gallery images are URL-only in the manifest.
+  The hoodie on-model image swapped on 2026/10/12 (id 46317124321347,
+  gallery 2) has a manifest row but no file or SHA-256 yet.
 - Printify images are NOT committed (202 files, ~92MB). Use the `source_url` column
   in the manifest to fetch them. Note: Printify image URLs require a browser
   User-Agent header; plain curl/wget without one returns 403.
@@ -34,10 +36,10 @@ so all 25 products are represented across the 202 Printify rows.
 - The "FÆ Doll Kiss-Cut Sticker", "FÆ Sticker Sheet: Mascot Poses",
   "Minimal Phrase Sticker Sheets", generic "Kiss-Cut Stickers" (20 variants),
   and duplicate caps have no obvious Shopify match. Likely orphans or drafts.
-- Only Shopify featured images are committed as files. Gallery positions 2+
-  are URL-only.
+- Shopify featured images and active-product gallery images are committed as
+  files (52). Remaining gallery positions are URL-only.
 
 ## Failures
 
 Zero download failures on 2026/10/10. All 202 Printify + 23 Shopify featured
-images downloaded successfully.
+images downloaded successfully (snapshot 2026/10/10; gallery files added later).

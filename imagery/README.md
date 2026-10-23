@@ -37,7 +37,7 @@ so all 25 products are represented across the 202 Printify rows.
   "Minimal Phrase Sticker Sheets", generic "Kiss-Cut Stickers" (20 variants),
   and duplicate caps have no obvious Shopify match. Likely orphans or drafts.
 - Shopify featured images and active-product gallery images are committed as
-  files (52). Remaining gallery positions are URL-only.
+  files (56). Remaining gallery positions are URL-only.
 
 ## Failures
 

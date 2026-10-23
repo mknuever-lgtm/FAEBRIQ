@@ -250,3 +250,5 @@ Why: the rows still pointed at images replaced on 2026/10/10.
 Why: Maurice decision; Printify still holds the publish-era prices and must match Shopify before any future sync.
 2026/10/23: Shopify: FÆ collection refilled (4 FÆ singles + Four Poses sheet) with Printify tags swapped for house tags; OTC and Please Hold tees back in All Products.
 Why: the ~2026/10/19 publish dropped republished products from their collections and added Printify tags ("Bestsellers", "Made in USA").
+2026/10/23: Shopify: Sticker Add-Ons collection refilled (Not A Bug sticker, 404 sticker, Full Drop sheet).
+Why: the publish had emptied it, which hid the "Add a sticker" row on every apparel page.

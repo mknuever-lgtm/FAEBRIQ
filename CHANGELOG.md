@@ -244,3 +244,5 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026/10/23: Undid the ~2026/10/19 Printify publish in Shopify: OTC + Please Hold tees back to $32, phrase stickers $4/$5/$6 (new 2" variants $4), sticker and sheet variants back in Stickers (SPOKE), both tees back in General profile, FÆ Doll + Mascot Poses set to Draft.
 2026/10/23: Restored the 19 original gallery images on 13 products from imagery/shopify/ (Printify mockups detached, not deleted); MANIFEST.csv image IDs updated.
 Why: the publish had synced Printify prices, variants, shipping profiles and mockups over the Shopify listings; the store now matches CLAUDE.md.
+2026/10/23: MANIFEST.csv gallery-2 rows for the Code It, 404 and Deploying tees now carry the live image IDs (uploaded 2026/10/10); file, SHA-256 and size left blank because cdn.shopify.com is blocked here, same as the hoodie row.
+Why: the rows still pointed at images replaced on 2026/10/10.

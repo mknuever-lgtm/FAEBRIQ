@@ -241,3 +241,6 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 2026/10/15: CAPTIONS.md shipping line now says apparel and caps, stickers ship separately. Why: the original said free shipping across the US + Canada, which is wrong for stickers.
 2026/10/15: CLAUDE.md rule: every Shopify image upload is saved to imagery/shopify/ with a MANIFEST.csv row the same day. Why: live images kept going up without a repo copy.
 2026/10/15: imagery/MANIFEST.csv hoodie rows brought in line with live Shopify (new gallery 2 image 46317124321347, others shifted) and imagery/README.md file counts fixed. Why: the 2026/10/10 snapshot had drifted; new image has no file or SHA-256 yet (CDN blocked in this session).
+2026/10/23: Undid the ~2026/10/19 Printify publish in Shopify: OTC + Please Hold tees back to $32, phrase stickers $4/$5/$6 (new 2" variants $4), sticker and sheet variants back in Stickers (SPOKE), both tees back in General profile, FÆ Doll + Mascot Poses set to Draft.
+2026/10/23: Restored the 19 original gallery images on 13 products from imagery/shopify/ (Printify mockups detached, not deleted); MANIFEST.csv image IDs updated.
+Why: the publish had synced Printify prices, variants, shipping profiles and mockups over the Shopify listings; the store now matches CLAUDE.md.

@@ -52,6 +52,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
   $3.99 to $7.99 and FÆ Sticker Sheet: Four Poses $12.99 to $19.99.
+  Parked as Draft for a possible future product line (Maurice, 2026-10-23):
+  FÆ Doll Kiss-Cut Sticker and the FÆ "Mascot Poses" sticker sheet. Not
+  live, prices not set; do not activate or price them without Maurice.
   A Printify publish resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.

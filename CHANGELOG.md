@@ -246,3 +246,5 @@ Why: repo mirror was partial and older than the published theme; keeps a reviewa
 Why: the publish had synced Printify prices, variants, shipping profiles and mockups over the Shopify listings; the store now matches CLAUDE.md.
 2026/10/23: MANIFEST.csv gallery-2 rows for the Code It, 404 and Deploying tees now carry the live image IDs (uploaded 2026/10/10); file, SHA-256 and size left blank because cdn.shopify.com is blocked here, same as the hoodie row.
 Why: the rows still pointed at images replaced on 2026/10/10.
+2026/10/23: CLAUDE.md: FÆ Doll sticker and Mascot Poses sheet recorded as parked Draft for a future line; added handoff/MUSE_BRIEF_PRINTIFY_PRICES_2026-10-23.md.
+Why: Maurice decision; Printify still holds the publish-era prices and must match Shopify before any future sync.

@@ -248,3 +248,5 @@ Why: the publish had synced Printify prices, variants, shipping profiles and moc
 Why: the rows still pointed at images replaced on 2026/10/10.
 2026/10/23: CLAUDE.md: FÆ Doll sticker and Mascot Poses sheet recorded as parked Draft for a future line; added handoff/MUSE_BRIEF_PRINTIFY_PRICES_2026-10-23.md.
 Why: Maurice decision; Printify still holds the publish-era prices and must match Shopify before any future sync.
+2026/10/23: Shopify: FÆ collection refilled (4 FÆ singles + Four Poses sheet) with Printify tags swapped for house tags; OTC and Please Hold tees back in All Products.
+Why: the ~2026/10/19 publish dropped republished products from their collections and added Printify tags ("Bestsellers", "Made in USA").

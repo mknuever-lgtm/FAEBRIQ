@@ -252,3 +252,5 @@ Why: Maurice decision; Printify still holds the publish-era prices and must matc
 Why: the ~2026/10/19 publish dropped republished products from their collections and added Printify tags ("Bestsellers", "Made in USA").
 2026/10/23: Shopify: Sticker Add-Ons collection refilled (Not A Bug sticker, 404 sticker, Full Drop sheet).
 Why: the publish had emptied it, which hid the "Add a sticker" row on every apparel page.
+2026/10/23: imagery/shopify/ gained the 4 missing gallery-2 files (Code It, 404, Deploying tees, hoodie) from Muse via Google Drive; their MANIFEST.csv rows now carry file, size and SHA-256; README count 52 to 56.
+Why: closes the image-record gap left by the 2026/10/10 and 2026/10/15 uploads.

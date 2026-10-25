@@ -136,3 +136,6 @@ Also corrected: the ROYGBIV sweep had missed circuit blue (#4A9EFF -> #1D5BBE) i
 
 2026-09-27 CLAUDE.md catalog line and SOCIAL_LAUNCH_POSTS tote price corrected to match Shopify: tote is $34 (was listed $42), 3 of 6 sticker listings are still Draft.
 Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
+
+2026-10-25 Added FAE_VO_RUNBOOK_2026-10-25.md: recording runbook for the 5 approved FÆ voiceover scripts.
+Why: fixed dashes, labelled the After hours off-mic closer as the one planned setup change, renamed its file to -closer, split best-take into gut pick + playback confirm.

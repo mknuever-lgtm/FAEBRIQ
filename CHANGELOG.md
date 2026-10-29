@@ -139,3 +139,6 @@ Why: synced repo, Notion HQ and To-Do tracker against live Shopify data.
 
 2026-10-25 Added FAE_VO_RUNBOOK_2026-10-25.md: recording runbook for the 5 approved FÆ voiceover scripts.
 Why: fixed dashes, labelled the After hours off-mic closer as the one planned setup change, renamed its file to -closer, split best-take into gut pick + playback confirm.
+
+2026-10-29 CLAUDE.md catalog and store lines synced to live Shopify: tees $32, crewneck $42, hoodie $54, cap $32, 25 products (18 active), store paused.
+Why: old line (checked 2026-09-27) listed prices Shopify no longer carries.

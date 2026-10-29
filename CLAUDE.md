@@ -34,10 +34,14 @@ requests unless explicitly asked. When the assigned task is done, stop.
   as a bored technician reciting specs is a bug — always re-read output for
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
-  baked into listed prices.
-- Live catalog (checked in Shopify 2026-09-27): 6 sticker listings
-  ($4 to $13.99; 3 active, 3 still Draft), tees $34, crewneck $62,
-  hoodie $68, cap $34, 404 tote $34.
+  baked into listed prices. PAUSED on the Pause and Build plan (checkout
+  disabled) until the site is launch-ready; unpause date undecided.
+- Live catalog (checked in Shopify 2026-10-29): 25 products, 18 active,
+  6 draft, 1 archived. Active: 6 tees $32, crewneck $42, hoodie $54,
+  cap $32, 404 tote $34, 8 sticker listings $3.99 to $19.99 (incl. 4 FÆ
+  mascot stickers and the FÆ Four Poses sheet). Drafts: FÆ Doll sticker,
+  FÆ Mascot Poses sheet, Code It / Deploying / Please Hold stickers, a
+  duplicate tote.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.

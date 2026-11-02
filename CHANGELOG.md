@@ -142,3 +142,6 @@ Why: fixed dashes, labelled the After hours off-mic closer as the one planned se
 
 2026-10-29 CLAUDE.md catalog and store lines synced to live Shopify: tees $32, crewneck $42, hoodie $54, cap $32, 25 products (18 active), store paused.
 Why: old line (checked 2026-09-27) listed prices Shopify no longer carries.
+
+2026-11-02 CLAUDE.md: sticker shipping ($4.99 US / $9.99 CA) split from free apparel shipping, contact set to support@faebriq.com, live theme corrected to faebriqtheme-launch-fix.
+Why: old lines contradicted the live About page, Contact page and Shopify theme roles.

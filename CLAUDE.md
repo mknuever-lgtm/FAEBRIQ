@@ -33,8 +33,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   joke isn't oversold, not that there's no energy behind it. Rendering this
   as a bored technician reciting specs is a bug — always re-read output for
   "does this sound boring" before treating dry/deadpan instructions as done.
-- Store: Shopify, faebriq.com, USD, ships US + Canada only, free shipping
-  baked into listed prices. PAUSED on the Pause and Build plan (checkout
+- Store: Shopify, faebriq.com, USD, ships US + Canada only. Free shipping
+  is baked into apparel, cap and tote prices; stickers ship separately at
+  $4.99 US / $9.99 Canada (per the About page, checked 2026-11-02).
+  Customer contact: support@faebriq.com. PAUSED on the Pause and Build plan (checkout
   disabled) until the site is launch-ready; unpause date undecided.
 - Live catalog (checked in Shopify 2026-10-29): 25 products, 18 active,
   6 draft, 1 archived. Active: 6 tees $32, crewneck $42, hoodie $54,
@@ -45,9 +47,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001
   (Fulfill Engine). Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
-- Themes: `faebriqtheme-launch-fix` = production candidate.
-  `faebriqtheme-launch-2026-08-06-review` = LIVE. Never publish themes
-  without an explicit instruction.
+- Themes (checked in Shopify 2026-11-02): `faebriqtheme-launch-fix` = LIVE
+  (MAIN). `faebriqtheme-launch-2026-08-06-review` = unpublished. Never
+  publish themes without an explicit instruction.
 
 ## Output style
 - No em dashes and no en dashes in any output: chat replies, reports,

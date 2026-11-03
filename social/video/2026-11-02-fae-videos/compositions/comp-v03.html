@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ zero results graphics</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    @font-face { font-family: Sans; font-weight: 600; src: url('assets/Inter-SemiBold.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .scene { position: absolute; inset: 0; opacity: 0; }
+
+    #term { padding: 360px 80px 0; }
+    #prompt { font: 400 30px Mono, monospace; color: #6f6c66; margin-bottom: 34px; }
+    #cmd { font: 400 46px/1.3 Mono, monospace; white-space: pre; min-height: 60px; }
+    #list { margin-top: 40px; font: 400 34px/1.75 Mono, monospace; color: #8c8983; }
+    #list div { white-space: pre; }
+    #list div { opacity: 0; }
+    #list b { color: #ff3b30; font-weight: 700; }
+    #bar { margin-top: 44px; width: 920px; height: 22px; border: 2px solid #4a4843; }
+    #fill { height: 100%; width: 100%; background: #e0e0e0; transform-origin: left; }
+    #pct { margin-top: 14px; font: 400 28px Mono, monospace; color: #6f6c66; }
+    #big { position: absolute; left: 80px; right: 80px; top: 1260px; font: 700 150px/1 Mono, monospace; color: #ff3b30; letter-spacing: -4px; opacity: 0; }
+    #big2 { position: absolute; left: 80px; right: 80px; top: 1440px; font: 700 64px Mono, monospace; opacity: 0; }
+
+    #tee img { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); }
+    #teeFlat { opacity: 0; }
+    .cap { position: absolute; left: 60px; right: 60px; top: 1290px; text-align: center; font: 700 72px/1.15 Mono, monospace; color: #fff; opacity: 0; text-shadow: 0 3px 24px rgba(0,0,0,.95), 0 0 6px rgba(0,0,0,.9); }
+    #teeTag { position: absolute; left: 70px; right: 70px; bottom: 150px; font: 600 44px/1.3 Sans, sans-serif; text-shadow: 0 2px 18px rgba(0,0,0,.8); }
+    #teeTag small { display: block; font: 400 30px Mono, monospace; color: #b8b5ae; margin-top: 14px; letter-spacing: 1px; }
+
+    #end { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 52px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 32px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="zero" data-start="0" data-duration="12.5" data-width="1080" data-height="1920">
+    <section class="scene" id="term">
+      <div id="prompt">fae@faebriq:~$</div>
+      <div id="cmd"></div>
+      <div id="list">
+        <div>beige_chinos.jpg ........ <b>skip</b></div>
+        <div>quarter_zip_navy.jpg .... <b>skip</b></div>
+        <div>golf_polo_final.jpg ..... <b>skip</b></div>
+        <div>cargo_shorts_v3.jpg ..... <b>skip</b></div>
+        <div>boat_shoes.jpg .......... <b>skip</b></div>
+      </div>
+      <div id="bar"><div id="fill"></div></div>
+      <div id="pct">scanning...</div>
+      <div id="big">0 RESULTS</div>
+      <div id="big2"></div>
+    </section>
+    <section class="scene" id="tee">
+      <img id="teeModel" src="assets/tee-model.jpg" alt="">
+      <img id="teeFlat" src="assets/tee-flat.jpg" alt="">
+      <div class="cap" id="cap1">1 patch available.</div>
+      <div class="cap" id="cap2">&gt; install 404</div>
+      <div id="teeTag">404 Straight Not Found tee<small>$32 USD · ships US + Canada</small></div>
+    </section>
+    <section class="scene" id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Wear the glitch.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const cmdEl = document.getElementById('cmd');
+    const cmd = '> scan --wardrobe ~/closet';
+    const st = { n: 0 };
+    const big2 = document.getElementById('big2');
+    const pct = document.getElementById('pct');
+
+    // terminal 0 - 6 (voice: Zero results 2.15 / Zero 3.77 / Results 4.93)
+    tl.set('#term', { opacity: 1 }, 0);
+    tl.to(st, { n: cmd.length, duration: 0.5, ease: 'none', onUpdate: () => { cmdEl.textContent = cmd.slice(0, Math.round(st.n)); } }, 0.05);
+    gsap.utils.toArray('#list div').forEach((el, i) => tl.set(el, { opacity: 1 }, 0.65 + i * 0.25));
+    tl.fromTo('#fill', { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: 'none' }, 0.6);
+    tl.call(() => { pct.textContent = 'scanning...'; }, null, 0.6);
+    tl.call(() => { pct.textContent = 'scan complete. 1,204 items.'; }, null, 2.0);
+    tl.set('#big', { opacity: 1 }, 2.15);
+    tl.fromTo('#big', { scale: 1.3 }, { scale: 1, duration: 0.18, ease: 'power4.out', transformOrigin: 'left center' }, 2.15);
+    [[-12, 2.33], [9, 2.39], [-5, 2.45], [0, 2.51]].forEach(([x, t]) => tl.set('#big', { x }, t));
+    tl.call(() => { big2.textContent = ''; }, null, 2.1);
+    tl.call(() => { big2.textContent = 'ZERO.'; }, null, 3.77);
+    tl.set('#big2', { opacity: 1 }, 3.77);
+    tl.call(() => { big2.textContent = 'ZERO. RESULTS.'; }, null, 4.93);
+    tl.set('#term', { opacity: 0 }, 6);
+
+    // tee 6 - 9
+    tl.set('#tee', { opacity: 1 }, 6);
+    tl.fromTo('#teeModel', { scale: 1.0 }, { scale: 1.08, duration: 1.6, ease: 'none' }, 6);
+    tl.set('#cap1', { opacity: 1 }, 6.2);
+    tl.set('#cap1', { opacity: 0 }, 7.55);
+    tl.set('#teeFlat', { opacity: 1 }, 7.6);
+    tl.fromTo('#teeFlat', { scale: 1.25 }, { scale: 1.36, duration: 1.4, ease: 'none' }, 7.6);
+    tl.set('#cap2', { opacity: 1 }, 7.7);
+    tl.fromTo('#teeTag', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, 6.4);
+    tl.set('#tee', { opacity: 0 }, 9);
+
+    // end card 9 - 12.5
+    tl.set('#end', { opacity: 1 }, 9);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 9.05);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 9.8);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 10.3);
+    tl.to({}, { duration: 0.1 }, 12.4);
+    window.__timelines = { zero: tl };
+  </script>
+</body>
+</html>

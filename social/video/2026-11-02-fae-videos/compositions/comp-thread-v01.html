@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ load-bearing thread montage</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .p { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); opacity: 0; }
+    .cap { position: absolute; left: 60px; right: 60px; top: 1440px; text-align: center; font: 700 76px/1.15 Mono, monospace; color: #fff; opacity: 0; text-shadow: 0 3px 24px rgba(0,0,0,.95), 0 0 6px rgba(0,0,0,.9); }
+    #end { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; background: #0f0e0c; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 52px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 32px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="thread" data-start="0" data-duration="6.5" data-width="1080" data-height="1920">
+    <img class="p" src="assets/p/1.jpg" alt=""><img class="p" src="assets/p/2.jpg" alt=""><img class="p" src="assets/p/3.jpg" alt=""><img class="p" src="assets/p/4.jpg" alt=""><img class="p" src="assets/p/5.jpg" alt="">
+    <img class="p" src="assets/p/6.jpg" alt=""><img class="p" src="assets/p/7.jpg" alt=""><img class="p" src="assets/p/8.jpg" alt=""><img class="p" src="assets/p/9.jpg" alt=""><img class="p" src="assets/p/10.jpg" alt="">
+    <div class="cap" id="c1">Several.</div>
+    <div class="cap" id="c2">Strong ones.</div>
+    <section id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Wear the glitch.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const ps = gsap.utils.toArray('.p');
+    ps.forEach((el, i) => {
+      const t = i * 0.3;
+      tl.set(el, { opacity: 1 }, t);
+      tl.fromTo(el, { scale: 1.06 }, { scale: 1.0, duration: 0.3, ease: 'none' }, t);
+      if (i < ps.length - 1) tl.set(el, { opacity: 0 }, t + 0.3);
+    });
+    tl.set('#c1', { opacity: 1 }, 0.225);
+    tl.set('#c1', { opacity: 0 }, 1.1);
+    tl.set('#c2', { opacity: 1 }, 1.175);
+    tl.set('#c2', { opacity: 0 }, 3.0);
+    tl.set('#end', { opacity: 1 }, 3.0);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 3.05);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 3.8);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 4.3);
+    tl.to({}, { duration: 0.1 }, 6.4);
+    window.__timelines = { thread: tl };
+  </script>
+</body>
+</html>

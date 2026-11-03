@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ pride ends graphics</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .scene { position: absolute; inset: 0; opacity: 0; }
+
+    /* calendar */
+    #cal { perspective: 1800px; }
+    #rings { position: absolute; left: 230px; width: 620px; top: 390px; height: 40px; display: flex; justify-content: space-around; z-index: 20; }
+    #rings i { width: 26px; height: 60px; border-radius: 13px; background: #2b2a27; border: 3px solid #4a4843; }
+    .page { position: absolute; left: 210px; top: 420px; width: 660px; height: 780px; background: #e0e0e0; border-radius: 10px; color: #0f0e0c;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; transform-origin: 50% 0; box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+    .page .m { font: 700 150px/1 Mono, monospace; letter-spacing: -4px; }
+    .page .y { margin-top: 18px; font: 400 34px Mono, monospace; color: #6f6c66; letter-spacing: 6px; }
+    .bar { margin-top: 70px; width: 520px; height: 34px; display: flex; }
+    .bar b { flex: 1; }
+    .grey b { background: #8c8983 !important; }
+    .grey b:nth-child(even) { background: #a3a09a !important; }
+    .c1 { background: #e8272a; } .c2 { background: #f47f20; } .c3 { background: #f9d426; } .c4 { background: #2aaa42; } .c5 { background: #1d5bbe; } .c6 { background: #7b3faa; }
+    .gb { position: absolute; inset: 0; display: flex; }
+    .gb b { flex: 1; background: #8c8983; }
+    .gb b:nth-child(even) { background: #a3a09a; }
+    .barwrap { position: relative; margin-top: 70px; width: 520px; height: 34px; }
+    .barwrap .bar { margin-top: 0; position: absolute; inset: 0; }
+
+    /* wordmark */
+    #wmScene { display: flex; align-items: center; justify-content: center; }
+    #wm2 { width: 900px; filter: brightness(1.17); }
+
+    /* tees */
+    .p { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); opacity: 0; }
+
+    /* end */
+    #end { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0f0e0c; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 52px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 32px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="pride" data-start="0" data-duration="17.4" data-width="1080" data-height="1920">
+    <section class="scene" id="cal" data-layout-allow-overlap>
+      <div id="rings"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="page" id="pJul" data-layout-allow-overlap><div class="m">JULY</div><div class="y">2 0 2 6</div>
+        <div class="barwrap"><div class="gb"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+          <div class="bar" id="julBar"><b class="c1"></b><b class="c2"></b><b class="c3"></b><b class="c4"></b><b class="c5"></b><b class="c6"></b></div></div></div>
+      <div class="page" id="pJun" data-layout-allow-overlap><div class="m">JUNE</div><div class="y">2 0 2 6</div>
+        <div class="bar"><b class="c1"></b><b class="c2"></b><b class="c3"></b><b class="c4"></b><b class="c5"></b><b class="c6"></b></div></div>
+      <div class="page" id="pFlip" data-layout-allow-overlap><div class="m" id="flipM">AUG</div><div class="y" id="flipY">2 0 2 6</div>
+        <div class="bar"><b class="c1"></b><b class="c2"></b><b class="c3"></b><b class="c4"></b><b class="c5"></b><b class="c6"></b></div></div>
+    </section>
+    <section class="scene" id="wmScene"><img id="wm2" src="assets/wordmark.png" alt="FÆBRIQ"></section>
+    <section class="scene" id="tees">
+      <img class="p" src="assets/p/1.jpg" alt=""><img class="p" src="assets/p/2.jpg" alt=""><img class="p" src="assets/p/3.jpg" alt="">
+      <img class="p" src="assets/p/4.jpg" alt=""><img class="p" src="assets/p/5.jpg" alt=""><img class="p" src="assets/p/6.jpg" alt="">
+    </section>
+    <section class="scene" id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Wear the glitch.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const flipM = document.getElementById('flipM');
+    const flipY = document.getElementById('flipY');
+
+    // calendar A: 2.85 - 5.0, June rips off on "It ends." (3.45)
+    tl.set('#cal', { opacity: 1 }, 2.85);
+    tl.set('#pFlip', { opacity: 0 }, 0);
+    tl.set('#pJul', { opacity: 0 }, 0);
+    tl.set('#pJul', { opacity: 1 }, 3.45);
+    tl.set('#pJul', { opacity: 0 }, 7.7);
+    tl.set('#julBar b', { scaleY: 0 }, 0);
+    tl.fromTo('#pJun', { rotationX: 0, y: 0, opacity: 1 }, { rotationX: -75, y: -380, rotation: -8, opacity: 0, duration: 0.45, ease: 'power2.in' }, 3.45);
+    tl.set('#cal', { opacity: 0 }, 5.0);
+
+    // calendar B: 6.4 - 9.55, July re-stitches (6.9-7.6), then months flip
+    tl.set('#cal', { opacity: 1 }, 6.4);
+    tl.to('#julBar b', { scaleY: 1, duration: 0.12, stagger: 0.11, ease: 'power2.out' }, 6.95);
+    const months = ['AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN'];
+    months.forEach((m, i) => {
+      const t = 7.7 + i * 0.165;
+      tl.call(() => { flipM.textContent = m; flipY.textContent = i >= 5 ? '2 0 2 7' : '2 0 2 6'; }, null, t);
+      tl.set('#pFlip', { opacity: 1 }, t);
+      tl.fromTo('#pFlip', { rotationX: 35 }, { rotationX: 0, duration: 0.12, ease: 'power2.out', immediateRender: false }, t);
+    });
+    tl.call(() => { flipM.textContent = 'AUG'; flipY.textContent = '2 0 2 6'; }, null, 0);
+    tl.set('#cal', { opacity: 0 }, 9.55);
+
+    // wordmark tries to go grey: 9.55 - 12.1
+    tl.set('#wmScene', { opacity: 1 }, 9.55);
+    tl.fromTo('#wm2', { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.35 }, 9.55);
+    tl.fromTo('#wm2', { filter: 'brightness(1.17) grayscale(0)' }, { filter: 'brightness(1.0) grayscale(1)', duration: 0.5, ease: 'power1.in', immediateRender: false }, 10.55);
+    [[-16, 11.0], [12, 11.06], [-9, 11.12], [7, 11.18], [-4, 11.24], [0, 11.3]].forEach(([x, t]) => tl.set('#wm2', { x }, t));
+    tl.set('#wm2', { filter: 'brightness(1.17) grayscale(0)' }, 11.32);
+    tl.fromTo('#wm2', { scale: 1.08 }, { scale: 1, duration: 0.3, ease: 'power3.out', immediateRender: false }, 11.32);
+    tl.set('#wmScene', { opacity: 0 }, 12.1);
+
+    // tees: 12.1 - 13.9
+    tl.set('#tees', { opacity: 1 }, 12.1);
+    gsap.utils.toArray('.p').forEach((el, i) => {
+      const t = 12.1 + i * 0.3;
+      tl.set(el, { opacity: 1 }, t);
+      tl.fromTo(el, { scale: 1.06 }, { scale: 1.0, duration: 0.3, ease: 'none' }, t);
+      if (i < 5) tl.set(el, { opacity: 0 }, t + 0.3);
+    });
+    tl.set('#tees', { opacity: 0 }, 13.9);
+
+    // end card 13.9 - 17.4
+    tl.set('#end', { opacity: 1 }, 13.9);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 13.95);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 14.7);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 15.2);
+    tl.to({}, { duration: 0.1 }, 17.3);
+    window.__timelines = { pride: tl };
+  </script>
+</body>
+</html>

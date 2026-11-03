@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ 404 teaser graphics</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    @font-face { font-family: Sans; font-weight: 600; src: url('assets/Inter-SemiBold.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .scene { position: absolute; inset: 0; opacity: 0; }
+
+    /* terminal */
+    #term { padding: 0 90px; display: flex; flex-direction: column; justify-content: center; }
+    #prompt { font: 400 30px Mono, monospace; color: #6f6c66; letter-spacing: 1px; margin-bottom: 40px; }
+    #line1 { font: 400 54px/1.3 Mono, monospace; white-space: pre; }
+    #cursor { display: inline-block; width: 30px; height: 60px; background: #e0e0e0; vertical-align: -10px; margin-left: 4px; }
+    #err { margin-top: 90px; font: 700 190px/1 Mono, monospace; color: #ff3b30; letter-spacing: -4px; opacity: 0; }
+    #err2 { margin-top: 30px; font: 700 64px/1.15 Mono, monospace; opacity: 0; }
+    #scan { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: rgba(255,59,48,.55); opacity: 0; }
+
+    /* tee */
+    #tee img { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); }
+    #teeFlat { opacity: 0; }
+    #teeTag { position: absolute; left: 70px; right: 70px; bottom: 150px; font: 600 44px/1.3 Sans, sans-serif; text-shadow: 0 2px 18px rgba(0,0,0,.8); }
+    #teeTag small { display: block; font: 400 30px Mono, monospace; color: #b8b5ae; margin-top: 14px; letter-spacing: 1px; }
+
+    .cap { position: absolute; left: 60px; right: 60px; top: 1290px; text-align: center; font: 700 76px/1.1 Mono, monospace; color: #fff; opacity: 0; text-shadow: 0 3px 24px rgba(0,0,0,.95), 0 0 6px rgba(0,0,0,.9); }
+    /* end card */
+    #end { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 52px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 32px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="teaser" data-start="0" data-duration="12.5" data-width="1080" data-height="1920">
+    <section class="scene" id="term">
+      <div id="prompt">fae@faebriq:~$</div>
+      <div style="white-space:nowrap"><span id="line1"></span><span id="cursor"></span></div>
+      <div id="err">404</div>
+      <div id="err2">STRAIGHT<br>NOT FOUND.</div>
+      <div id="scan"></div>
+    </section>
+    <section class="scene" id="tee">
+      <img id="teeModel" src="assets/tee-model.jpg" alt="">
+      <img id="teeFlat" src="assets/tee-flat.jpg" alt="">
+      <div class="cap" id="cap1">Error is permanent.</div>
+      <div class="cap" id="cap2">Do not refresh.</div>
+      <div id="teeTag">404 Straight Not Found tee<small>$32 USD · ships US + Canada</small></div>
+    </section>
+    <section class="scene" id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Wear the glitch.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const typed = '> searching for: straight';
+    const state = { n: 0 };
+    const line1 = document.getElementById('line1');
+    const render = () => { line1.textContent = typed.slice(0, Math.round(state.n)); };
+
+    // terminal 0 - 4
+    tl.set('#term', { opacity: 1 }, 0);
+    tl.to(state, { n: typed.length, duration: 1.3, ease: 'none', onUpdate: render }, 0.2);
+    // searching dots
+    [1.75, 2.0, 2.25].forEach((t, i) => tl.call(() => { state.n = typed.length; line1.textContent = typed + '.'.repeat(i + 1); }, null, t));
+    tl.call(() => { line1.textContent = typed + '...'; }, null, 2.3);
+    // cursor blink (seek-safe: explicit sets)
+    for (let t = 0; t < 5; t += 0.5) tl.set('#cursor', { opacity: (t * 2) % 2 === 0 ? 1 : 0 }, t);
+    // error hit
+    tl.set('#err', { opacity: 1 }, 2.6);
+    tl.fromTo('#err', { scale: 1.35, x: 0 }, { scale: 1, duration: 0.18, ease: 'power4.out' }, 2.6);
+    [[-14, 2.78], [11, 2.84], [-6, 2.9], [0, 2.96]].forEach(([x, t]) => tl.set('#err', { x }, t));
+    tl.set('#scan', { opacity: 0, y: 700 }, 0);
+    tl.fromTo('#scan', { opacity: 1, y: 700 }, { y: 1300, opacity: 0, duration: 0.35, ease: 'none', immediateRender: false }, 2.6);
+    tl.set('#err2', { opacity: 1 }, 3.68);
+    tl.set('#term', { opacity: 0 }, 5);
+
+    // tee 5 - 9 (voice: Error is permanent / Do not refresh)
+    tl.set('#tee', { opacity: 1 }, 5);
+    tl.fromTo('#teeModel', { scale: 1.0 }, { scale: 1.09, duration: 2.0, ease: 'none' }, 5);
+    tl.set('#teeFlat', { opacity: 1 }, 7.0);
+    tl.fromTo('#teeFlat', { scale: 1.25 }, { scale: 1.38, duration: 2.0, ease: 'none' }, 7.0);
+    tl.fromTo('#teeTag', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35 }, 5.35);
+    tl.set('#cap1', { opacity: 1 }, 5.41);
+    tl.set('#cap1', { opacity: 0 }, 6.95);
+    tl.set('#cap2', { opacity: 1 }, 7.07);
+    tl.set('#cap2', { opacity: 0 }, 8.5);
+    tl.set('#tee', { opacity: 0 }, 9);
+
+    // end card 9 - 12.5
+    tl.set('#end', { opacity: 1 }, 9);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }, 9.05);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4 }, 9.8);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 10.3);
+    tl.to({}, { duration: 0.1 }, 12.4);
+    window.__timelines = { teaser: tl };
+  </script>
+</body>
+</html>

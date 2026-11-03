@@ -254,3 +254,5 @@ Why: the ~2026/10/19 publish dropped republished products from their collections
 Why: the publish had emptied it, which hid the "Add a sticker" row on every apparel page.
 2026/10/23: imagery/shopify/ gained the 4 missing gallery-2 files (Code It, 404, Deploying tees, hoodie) from Muse via Google Drive; their MANIFEST.csv rows now carry file, size and SHA-256; README count 52 to 56.
 Why: closes the image-record gap left by the 2026/10/10 and 2026/10/15 uploads.
+2026/11/02: social/video/2026-11-02-fae-videos/ added: edit sources (compositions, sound scripts, captions, voice transcript, build notes) for 4 FÆ videos.
+Why: the cloud session that made them is temporary; MP4s and raw clips stay out of git.

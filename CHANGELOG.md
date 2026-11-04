@@ -145,3 +145,6 @@ Why: old line (checked 2026-09-27) listed prices Shopify no longer carries.
 
 2026-11-02 CLAUDE.md: sticker shipping ($4.99 US / $9.99 CA) split from free apparel shipping, contact set to support@faebriq.com, live theme corrected to faebriqtheme-launch-fix.
 Why: old lines contradicted the live About page, Contact page and Shopify theme roles.
+
+2026-11-04 Shopify: archived the Liberty 404 tote (Printify Choice, variant unavailable), activated the AS Colour 1001 draft tote and published it to the same 4 channels. Prices unchanged at $34.
+Why: Liberty tote could not be fulfilled; SKU match showed AS Colour is the draft and the intended replacement.

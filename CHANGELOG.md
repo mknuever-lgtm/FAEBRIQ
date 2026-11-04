@@ -151,3 +151,6 @@ Why: Liberty tote could not be fulfilled; SKU match showed AS Colour is the draf
 
 2026-11-04 Shopify: AS Colour tote gallery replaced with the Liberty tote images and alt text (3 images, same order). Old 4 AS Colour images backed up in Files as backup-as-colour-tote-slot1..4.jpg.
 Why: Maurice wants the AS Colour tote listing identical to the old tote except Printify-specific physical specs.
+
+2026-11-04 Shopify: AS Colour tote gallery set to the 3 final images (hero, model, macro) uploaded directly to Shopify Files; Liberty images detached from it only. No Printify publish or sync.
+Why: Maurice approved these exact images for the AS Colour tote; a Printify publish would overwrite Shopify edits.

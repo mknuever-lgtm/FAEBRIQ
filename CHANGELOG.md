@@ -148,3 +148,6 @@ Why: old lines contradicted the live About page, Contact page and Shopify theme 
 
 2026-11-04 Shopify: archived the Liberty 404 tote (Printify Choice, variant unavailable), activated the AS Colour 1001 draft tote and published it to the same 4 channels. Prices unchanged at $34.
 Why: Liberty tote could not be fulfilled; SKU match showed AS Colour is the draft and the intended replacement.
+
+2026-11-04 Shopify: AS Colour tote gallery replaced with the Liberty tote images and alt text (3 images, same order). Old 4 AS Colour images backed up in Files as backup-as-colour-tote-slot1..4.jpg.
+Why: Maurice wants the AS Colour tote listing identical to the old tote except Printify-specific physical specs.

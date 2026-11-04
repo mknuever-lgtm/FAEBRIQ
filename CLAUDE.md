@@ -80,8 +80,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
   Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
-- Themes: `faebriqtheme-launch-fix` = production candidate.
-  `faebriqtheme-launch-2026-08-06-review` = LIVE. Never publish themes
+- Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify
+  2026-11-03): any edit to it is public at once.
+  `faebriqtheme-launch-2026-08-06-review` = unpublished. Never publish themes
   without an explicit instruction. `faebriqtheme-launch-fix` (Shopify id
   145284005955) is the ONLY theme Claude may edit; never write to any other
   theme (Maurice, 2026-10-01).

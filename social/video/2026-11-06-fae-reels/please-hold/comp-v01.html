@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ please hold v01</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    @font-face { font-family: Sans; font-weight: 600; src: url('assets/Inter-SemiBold.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .scene { position: absolute; inset: 0; opacity: 0; }
+
+    #fae { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #hookShade { position: absolute; inset: 0; background: linear-gradient(#0f0e0cee 0%, #0f0e0c00 28%, #0f0e0c00 62%, #0f0e0cee 100%); }
+    #hookTag { position: absolute; left: 80px; top: 230px; font: 400 30px Mono, monospace; color: #b8b5ae; letter-spacing: 1px; }
+    #hook { position: absolute; left: 80px; right: 80px; top: 290px; font: 700 72px/1.14 Mono, monospace; color: #fff; text-shadow: 0 3px 24px rgba(0,0,0,.9); }
+    #hook span { opacity: 0; }
+    #hold { position: absolute; left: 80px; right: 80px; top: 1260px; font: 700 120px/1 Mono, monospace; color: #fff; text-shadow: 0 3px 30px rgba(0,0,0,.95); opacity: 0; }
+
+    #ivr { padding: 260px 70px 0; }
+    #status { display: flex; align-items: center; gap: 24px; font: 700 84px Mono, monospace; color: #fff; }
+    #dot { width: 38px; height: 38px; border-radius: 50%; background: #ff3b30; }
+    #info { margin-top: 30px; font: 400 38px/1.6 Mono, monospace; color: #8c8983; }
+    #info b { color: #e0e0e0; font-weight: 400; }
+    #eq { margin-top: 34px; display: flex; align-items: flex-end; gap: 14px; height: 100px; }
+    #eq div { width: 44px; height: 20px; background: #e0e0e0; }
+    #menu { margin-top: 56px; border: 2px solid #2b2a27; border-radius: 18px; overflow: hidden; }
+    #menuHead { padding: 20px 28px; background: #1a1917; font: 400 34px Mono, monospace; color: #b8b5ae; }
+    .opt { position: relative; display: flex; align-items: center; gap: 30px; padding: 32px 28px; border-top: 2px solid #2b2a27; opacity: 0; }
+    .key { width: 104px; height: 104px; flex: none; border: 3px solid #6f6c66; border-radius: 18px; display: grid; place-items: center; font: 700 60px Mono, monospace; color: #e0e0e0; }
+    .lbl { position: relative; font: 400 52px Mono, monospace; }
+    .strike { position: absolute; left: -6px; right: -6px; top: 52%; height: 6px; background: #ff3b30; transform-origin: left; }
+    .tagx { position: absolute; right: 28px; top: 14px; padding: 6px 16px; border-radius: 10px; background: #2a1513; color: #ff3b30; font: 700 28px/38px Mono, monospace; opacity: 0; }
+    #o3 .lbl { color: #fff; font-weight: 700; }
+    #o3 .key { border-color: #e0e0e0; }
+    #sub { position: absolute; left: 60px; right: 60px; top: 1470px; text-align: center; font: 700 52px/1.25 Sans, sans-serif; color: #fff; opacity: 0; }
+
+    #tee img { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); }
+    #teeFlat { opacity: 0; }
+    .cap { position: absolute; left: 60px; right: 60px; top: 1250px; text-align: center; font: 700 76px/1.15 Mono, monospace; color: #fff; opacity: 0; text-shadow: 0 3px 24px rgba(0,0,0,.95), 0 0 6px rgba(0,0,0,.9); }
+    #teeTag { position: absolute; left: 70px; right: 70px; top: 1440px; text-align: center; font: 600 44px/1.3 Sans, sans-serif; text-shadow: 0 2px 18px rgba(0,0,0,.85); opacity: 0; }
+    #teeTag small { display: block; font: 400 32px Mono, monospace; color: #cfccc5; margin-top: 14px; letter-spacing: 1px; }
+
+    #end { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 54px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 34px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="hold" data-start="0" data-duration="19.5" data-width="1080" data-height="1920">
+
+    <section class="scene" id="s1">
+      <img id="fae" src="assets/fae.jpg" alt="">
+      <div id="hookShade"></div>
+      <div id="hookTag">incoming call · you → your identity</div>
+      <div id="hook"><span>Thank you for calling</span><br><span>your identity.</span></div>
+      <div id="hold">Please<br>hold.</div>
+    </section>
+
+    <section class="scene" id="ivr">
+      <div id="status"><div id="dot"></div>ON HOLD</div>
+      <div id="info">time on hold: <b id="timer">00:00:00</b><br>position in queue: <b>1</b><br>now playing: <b>greensleeves.mid</b></div>
+      <div id="eq"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div id="menu">
+        <div id="menuHead">menu options have changed</div>
+        <div class="opt" id="o1"><div class="key">1</div><div class="lbl">explain yourself<div class="strike"></div></div><div class="tagx">DISCONTINUED</div></div>
+        <div class="opt" id="o2"><div class="key">2</div><div class="lbl">the old you<div class="strike"></div></div><div class="tagx">NOT IN SERVICE</div></div>
+        <div class="opt" id="o3"><div class="key">3</div><div class="lbl">wear the rebrand</div></div>
+      </div>
+      <div id="sub"></div>
+    </section>
+
+    <section class="scene" id="tee">
+      <img id="teeModel" src="assets/tee-model.jpg" alt="">
+      <img id="teeFlat" src="assets/tee-flat.jpg" alt="">
+      <div class="cap" id="cap1">Your rebrand<br>is ready.</div>
+      <div id="teeTag">Please Hold, I'm Rebranding My Identity tee<small>$32 USD · ships US + Canada</small></div>
+    </section>
+
+    <section class="scene" id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Thank you for holding.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // 1 hook 0 - 3.4 (voice l1 0.15-2.09, l2 2.25-3.25)
+    tl.set('#s1', { opacity: 1 }, 0);
+    tl.fromTo('#fae', { scale: 1.0 }, { scale: 1.15, duration: 3.4, ease: 'none', transformOrigin: '50% 35%' }, 0);
+    tl.set('#hook span:nth-of-type(1)', { opacity: 1 }, 0);
+    tl.set('#hook span:nth-of-type(2)', { opacity: 1 }, 1.0);
+    tl.set('#hold', { opacity: 1 }, 2.25);
+    tl.fromTo('#hold', { scale: 1.25 }, { scale: 1, duration: 0.15, ease: 'power4.out', transformOrigin: 'left center' }, 2.25);
+    tl.set('#s1', { opacity: 0 }, 3.4);
+
+    // 2 IVR 3.4 - 14.1
+    tl.set('#ivr', { opacity: 1 }, 3.4);
+    const timer = document.getElementById('timer');
+    const clk = { s: 0 };
+    tl.to(clk, { s: 10.7, duration: 10.7, ease: 'none', onUpdate: () => { const s = Math.floor(clk.s); timer.textContent = '00:00:' + String(s).padStart(2, '0'); } }, 3.4);
+    for (let k = 0; k < 14; k++) tl.to('#dot', { opacity: k % 2 ? 1 : 0.25, duration: 0.01 }, 3.4 + k * 0.75);
+    const bars = gsap.utils.toArray('#eq div');
+    for (let f = 0; f < 64; f++) bars.forEach((b, i) => tl.set(b, { height: 14 + Math.round(76 * Math.abs(Math.sin(f * 0.9 + i * 1.7) * Math.cos(f * 0.37 + i))) }, 3.4 + f * 0.166));
+    tl.fromTo('#menu', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power3.out' }, 3.7);
+    tl.set('#o1 .strike, #o2 .strike', { scaleX: 0 }, 0);
+    tl.set('#o1', { opacity: 1 }, 4.1);
+    tl.set('#o2', { opacity: 1 }, 8.5);
+    const sub = document.getElementById('sub');
+    [['To explain yourself, press one.', 4.1, 5.96], ['That option has been discontinued.', 6.25, 8.23], ['For the old you, press two.', 8.5, 10.1], ['The number you have reached is no longer in service.', 11.1, 13.81]].forEach(([t, a, b]) => {
+      tl.call(() => { sub.textContent = t; }, null, a); tl.set('#sub', { opacity: 1 }, a); tl.set('#sub', { opacity: 0 }, b);
+    });
+    const press = (id, t) => { tl.to(id + ' .key', { backgroundColor: '#e0e0e0', color: '#0f0e0c', scale: 0.9, duration: 0.06 }, t); tl.to(id + ' .key', { backgroundColor: 'rgba(0,0,0,0)', color: '#e0e0e0', scale: 1, duration: 0.15 }, t + 0.12); };
+    press('#o1', 6.05);
+    tl.fromTo('#o1 .strike', { scaleX: 0 }, { scaleX: 1, duration: 0.15, ease: 'power2.out' }, 6.2);
+    tl.to('#o1 .lbl', { color: '#6f6c66', duration: 0.1 }, 6.3);
+    tl.set('#o1 .tagx', { opacity: 1 }, 6.3);
+    press('#o2', 10.2);
+    tl.fromTo('#o2 .strike', { scaleX: 0 }, { scaleX: 1, duration: 0.15, ease: 'power2.out' }, 10.3);
+    tl.to('#o2 .lbl', { color: '#6f6c66', duration: 0.1 }, 10.4);
+    tl.set('#o2 .tagx', { opacity: 1 }, 10.4);
+    tl.fromTo('#o3', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' }, 12.6);
+    press('#o3', 13.85);
+    tl.set('#ivr', { opacity: 0 }, 14.1);
+
+    // 3 tee 14.1 - 16.8 (voice l7 14.2-15.65)
+    tl.set('#tee', { opacity: 1 }, 14.1);
+    tl.fromTo('#teeModel', { scale: 1.0 }, { scale: 1.07, duration: 1.5, ease: 'none' }, 14.1);
+    tl.set('#cap1', { opacity: 1 }, 14.2);
+    tl.set('#cap1', { opacity: 0 }, 15.6);
+    tl.set('#teeFlat', { opacity: 1 }, 15.6);
+    tl.fromTo('#teeFlat', { scale: 1.3 }, { scale: 1.38, duration: 1.2, ease: 'none' }, 15.6);
+    tl.fromTo('#teeTag', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25 }, 15.65);
+    tl.set('#tee', { opacity: 0 }, 16.8);
+
+    // 4 end 16.8 - 19.5 (voice l8 17.0-18.3)
+    tl.set('#end', { opacity: 1 }, 16.8);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'power3.out' }, 16.85);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3 }, 17.0);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.35 }, 17.7);
+    tl.to({}, { duration: 0.1 }, 19.4);
+    window.__timelines = { hold: tl };
+  </script>
+</body>
+</html>

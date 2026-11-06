@@ -258,3 +258,5 @@ Why: closes the image-record gap left by the 2026/10/10 and 2026/10/15 uploads.
 Why: the cloud session that made them is temporary; MP4s and raw clips stay out of git.
 2026/11/03: CLAUDE.md now records faebriqtheme-launch-fix as the LIVE theme; theme mirror hero eyebrow "Now Live" to "Opening soon"; handoff/2026-11-03-audit-verification.md added.
 Why: verified the external audit against Shopify; store is paused, so "Now Live" was false. Live theme not yet edited.
+2026/11/06: social/video/2026-11-06-fae-reels/ added: edit sources (compositions, sound/voice scripts, status, build notes) for 4 tee reels (Deploying, Not A Bug, Please Hold, Off The Clock).
+Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.

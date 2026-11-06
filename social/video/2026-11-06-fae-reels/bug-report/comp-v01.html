@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>FAEBRIQ bug report v01</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: Mono; font-weight: 400; src: url('assets/JetBrainsMono-Regular.ttf'); }
+    @font-face { font-family: Mono; font-weight: 700; src: url('assets/JetBrainsMono-Bold.ttf'); }
+    @font-face { font-family: Sans; font-weight: 500; src: url('assets/Inter-Medium.otf'); }
+    @font-face { font-family: Sans; font-weight: 600; src: url('assets/Inter-SemiBold.otf'); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0f0e0c; }
+    #root { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: #0f0e0c; color: #e0e0e0; }
+    .scene { position: absolute; inset: 0; opacity: 0; }
+
+    #fae { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #hookShade { position: absolute; inset: 0; background: linear-gradient(#0f0e0cee 0%, #0f0e0c00 26%, #0f0e0c00 70%, #0f0e0cdd 100%); }
+    #hookTag { position: absolute; left: 80px; top: 230px; font: 400 30px Mono, monospace; color: #b8b5ae; letter-spacing: 1px; }
+    #hook { position: absolute; left: 80px; right: 80px; top: 290px; font: 700 78px/1.12 Mono, monospace; color: #fff; text-shadow: 0 3px 24px rgba(0,0,0,.9); }
+    #hook span { opacity: 0; }
+
+    #iss { padding: 250px 70px 0; }
+    #meta { font: 400 30px Mono, monospace; color: #6f6c66; }
+    #title { margin-top: 18px; font: 700 66px/1.12 Mono, monospace; color: #fff; }
+    #title .num { color: #6f6c66; font-weight: 400; }
+    #title .bug { color: #ff3b30; }
+    #sub { margin-top: 20px; font: 400 30px/1.45 Mono, monospace; color: #8c8983; }
+    #sub b { color: #ff3b30; font-weight: 700; }
+    #box { margin-top: 36px; border: 2px solid #2b2a27; border-radius: 18px; overflow: hidden; }
+    #boxHead { padding: 18px 26px; background: #1a1917; font: 400 30px Mono, monospace; color: #b8b5ae; }
+    .st { padding: 14px 26px; font: 400 42px/1.3 Mono, monospace; opacity: 0; }
+    .st i { font-style: normal; color: #6f6c66; }
+    #ea { padding: 16px 26px 22px; border-top: 2px solid #2b2a27; font: 700 42px/1.5 Mono, monospace; }
+    #ea div { opacity: 0; }
+    #ea .k { color: #6f6c66; font-weight: 400; }
+    .cmIn { display: flex; align-items: center; gap: 20px; padding: 18px 22px; margin-top: 26px; border-radius: 14px; background: #1d1c1a; border: 2px solid #34322e; opacity: 0; }
+    .av { width: 80px; height: 80px; border-radius: 50%; background: url('assets/fae-avatar.jpg') center/cover; flex: none; border: 3px solid #e0e0e0; filter: brightness(1.7) contrast(1.1); }
+    .who { font: 700 26px Mono, monospace; color: #b8b5ae; }
+    .say { font: 700 44px/1.15 Sans, sans-serif; color: #fff; margin-top: 2px; }
+    #labels { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .lab { padding: 8px 20px; border-radius: 40px; font: 700 30px Mono, monospace; opacity: 0; }
+    #stamp { position: absolute; left: 60px; right: 60px; top: 760px; text-align: center; padding: 22px 0; border: 8px solid #e0e0e0; color: #e0e0e0; font: 700 70px/1.15 Mono, monospace; opacity: 0; transform: rotate(-5deg); background: #0f0e0ce6; }
+    #stamp small { display: block; font: 700 46px Mono, monospace; color: #b8b5ae; }
+    #unsub { position: absolute; left: 70px; right: 70px; top: 1500px; font: 400 36px/1.4 Mono, monospace; color: #cfccc5; opacity: 0; }
+
+    #tee img { position: absolute; left: 50%; top: 50%; height: 1920px; transform: translate(-50%, -50%); }
+    #teeFold { opacity: 0; }
+    .cap { position: absolute; left: 60px; right: 60px; top: 1250px; text-align: center; font: 700 84px/1.15 Mono, monospace; color: #fff; opacity: 0; text-shadow: 0 3px 24px rgba(0,0,0,.95), 0 0 6px rgba(0,0,0,.9); }
+    #teeTag { position: absolute; left: 70px; right: 70px; top: 1440px; text-align: center; font: 600 46px/1.3 Sans, sans-serif; text-shadow: 0 2px 18px rgba(0,0,0,.85); opacity: 0; }
+    #teeTag small { display: block; font: 400 32px Mono, monospace; color: #cfccc5; margin-top: 14px; letter-spacing: 1px; }
+
+    #end { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #wm { width: 900px; filter: brightness(1.17); }
+    #tag { margin-top: 70px; font: 500 54px Sans, sans-serif; letter-spacing: 1px; opacity: 0; }
+    #url { margin-top: 26px; font: 400 34px Mono, monospace; color: #8c8983; opacity: 0; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="bug" data-start="0" data-duration="16" data-width="1080" data-height="1920">
+
+    <section class="scene" id="s1">
+      <img id="fae" src="assets/fae.jpg" alt="">
+      <div id="hookShade"></div>
+      <div id="hookTag">new issue assigned to FÆ</div>
+      <div id="hook"><span>Someone filed</span><br><span>a bug report</span><br><span>about you.</span></div>
+    </section>
+
+    <section class="scene" id="iss">
+      <div id="meta">you/self · issues</div>
+      <div id="title"><span class="num">#2069</span> <span class="bug">[BUG]</span> user is too much</div>
+      <div id="sub">opened by straight_dave<br>severity: <b>critical</b></div>
+      <div id="box">
+        <div id="boxHead">steps to reproduce</div>
+        <div class="st"><i>1.</i> enter any room</div>
+        <div class="st"><i>2.</i> exist</div>
+        <div class="st"><i>3.</i> everyone looks</div>
+        <div id="ea">
+          <div><span class="k">expected:</span> <span style="color:#ff8a80">quieter</span></div>
+          <div><span class="k">actual:</span>   <span style="color:#8be39a">iconic</span></div>
+        </div>
+      </div>
+      <div class="cmIn" id="cm"><div class="av"></div><div><div class="who">FÆ · triage</div><div class="say">can't reproduce the problem.</div></div></div>
+      <div id="labels">
+        <div class="lab" style="background:#1f3a24;color:#4cd964">not-a-bug</div>
+        <div class="lab" style="background:#1c2c45;color:#7fb2ff">working-as-intended</div>
+        <div class="lab" style="background:#3a1f38;color:#e79be0">wontfix</div>
+      </div>
+      <div id="stamp">CLOSED<small>working as intended</small></div>
+      <div id="unsub">straight_dave unsubscribed from this thread.</div>
+    </section>
+
+    <section class="scene" id="tee">
+      <img id="teeModel" src="assets/tee-model.jpg" alt="">
+      <img id="teeFold" src="assets/tee-fold.jpg" alt="">
+      <div class="cap" id="cap1">It's not a bug.</div>
+      <div class="cap" id="cap2" style="top:300px">It's me.</div>
+      <div id="teeTag">It's Not A Bug. It's Me. tee<small>$32 USD · ships US + Canada</small></div>
+    </section>
+
+    <section class="scene" id="end">
+      <img id="wm" src="assets/wordmark.png" alt="FÆBRIQ">
+      <div id="tag">Working as intended.</div>
+      <div id="url">faebriq.com</div>
+    </section>
+  </main>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // 1 hook 0 - 2.6
+    tl.set('#s1', { opacity: 1 }, 0);
+    tl.fromTo('#fae', { scale: 1.0 }, { scale: 1.14, duration: 2.6, ease: 'none', transformOrigin: '50% 35%' }, 0);
+    tl.set('#hook span:nth-of-type(1)', { opacity: 1 }, 0);
+    tl.set('#hook span:nth-of-type(2)', { opacity: 1 }, 0.4);
+    tl.set('#hook span:nth-of-type(3)', { opacity: 1 }, 0.8);
+    [[-10, 2.3], [8, 2.36], [-4, 2.42], [0, 2.48]].forEach(([x, t]) => tl.set('#fae', { x }, t));
+    tl.set('#s1', { opacity: 0 }, 2.6);
+
+    // 2 issue 2.6 - 10.6
+    tl.set('#iss', { opacity: 1 }, 2.6);
+    tl.fromTo('#title', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.25, ease: 'power3.out' }, 2.62);
+    tl.fromTo('#box', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power3.out' }, 2.8);
+    gsap.utils.toArray('.st').forEach((el, i) => tl.set(el, { opacity: 1 }, 3.2 + i * 0.45));
+    tl.set('#ea div:nth-child(1)', { opacity: 1 }, 4.75);
+    tl.set('#ea div:nth-child(2)', { opacity: 1 }, 5.3);
+    tl.fromTo('#cm', { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.18, ease: 'back.out(2)' }, 6.1);
+    gsap.utils.toArray('.lab').forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.15, ease: 'back.out(2.5)' }, 6.9 + i * 0.3));
+    tl.set('#stamp', { opacity: 1 }, 8.2);
+    tl.fromTo('#stamp', { scale: 1.6 }, { scale: 1, duration: 0.14, ease: 'power4.in' }, 8.2);
+    [[-12, 8.35], [9, 8.4], [-5, 8.45], [0, 8.5]].forEach(([x, t]) => tl.set('#iss', { x }, t));
+    tl.fromTo('#unsub', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.25 }, 9.2);
+    tl.set('#iss', { opacity: 0 }, 10.6);
+
+    // 3 tee 10.6 - 13.6
+    tl.set('#tee', { opacity: 1 }, 10.6);
+    tl.fromTo('#teeModel', { scale: 1.0 }, { scale: 1.07, duration: 1.5, ease: 'none' }, 10.6);
+    tl.set('#cap1', { opacity: 1 }, 10.7);
+    tl.set('#cap1', { opacity: 0 }, 12.05);
+    tl.set('#teeFold', { opacity: 1 }, 12.1);
+    tl.fromTo('#teeFold', { scale: 1.0, rotation: -2 }, { scale: 1.1, rotation: 0, duration: 1.5, ease: 'none' }, 12.1);
+    tl.set('#cap2', { opacity: 1 }, 12.1);
+    tl.fromTo('#cap2', { scale: 1.25 }, { scale: 1, duration: 0.15, ease: 'power4.out' }, 12.1);
+    tl.fromTo('#teeTag', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25 }, 12.6);
+    tl.set('#tee', { opacity: 0 }, 13.6);
+
+    // 4 end 13.6 - 16
+    tl.set('#end', { opacity: 1 }, 13.6);
+    tl.fromTo('#wm', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'power3.out' }, 13.65);
+    tl.fromTo('#tag', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.35 }, 14.2);
+    tl.fromTo('#url', { opacity: 0 }, { opacity: 1, duration: 0.35 }, 14.6);
+    tl.to({}, { duration: 0.1 }, 15.9);
+    window.__timelines = { bug: tl };
+  </script>
+</body>
+</html>

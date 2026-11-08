@@ -260,3 +260,5 @@ Why: the cloud session that made them is temporary; MP4s and raw clips stay out 
 Why: verified the external audit against Shopify; store is paused, so "Now Live" was false. Live theme not yet edited.
 2026/11/06: social/video/2026-11-06-fae-reels/ added: edit sources (compositions, sound/voice scripts, status, build notes) for 4 tee reels (Deploying, Not A Bug, Please Hold, Off The Clock).
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
+2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
+Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.

@@ -262,3 +262,5 @@ Why: verified the external audit against Shopify; store is paused, so "Now Live"
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
 2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
+2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
+Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.

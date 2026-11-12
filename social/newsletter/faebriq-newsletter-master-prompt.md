@@ -52,6 +52,11 @@ If any input is missing, stop and ask, do not invent it.
 
 Length: 150-250 words total, excluding footer. One hero, one add-on, one link per block, no more.
 
+## GAY CALENDAR (added by Maiku 2026-11-12)
+- Build it only once an issue has a send date. Cover send date to send date + 14 days. Never list a past event.
+- 3 to 5 queer events or awareness dates, US, Canada or worldwide, each verified on a page that loads. Leave out anything unverified.
+- Leather, fetish and kink events are allowed, as long as they are queer events. Describe them plainly, nothing explicit.
+
 ## CHECKS BEFORE DELIVERY
 - Every price, size, and shipping claim matches live Shopify that day. List the source URL / admin page you checked.
 - Every product named is Active in Shopify, with a live URL that loads.

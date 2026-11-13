@@ -27,6 +27,7 @@ Never present copy in the owner's voice, signed with his name, or stating shop f
 - Products: 18 active products, 6 tees, hoodie, crewneck, AS Colour tote, Printify Choice cap, 4 FÆ singles, 2 phrase singles, 2 sheets. Do NOT add a product that is not live in Shopify. Do NOT publish a product that is Draft or Archived.
 - Never invent: no model size/height stats, no fake fabric macro, no fake reviews, no fake order counts, no fake "best seller" unless Shopify data proves it, no discount, no sale, no bundle, no price cut. Profit gate: every order must clear profit after Printify cost + shipping + payment fees. No discount code, sale, or price cut, ever.
 - Never use: "Coraline", "Other Mother", "Beldam", "Nightmare Before Christmas", or "Sally" in copy.
+- Apparel sizes are S to 3XL only, for every tee, crewneck and hoodie (Maiku, 2026-11-13). Never write 4XL or 5XL. If Shopify shows a variant above 3XL, flag it and do not put it in copy.
 - Sticker sizes are 2, 3, 4, 6 inch. Sticker material is white vinyl, NOT "white backing".
 - Tee backs are blank, only a small sleeve wordmark. Hoodie drawstrings crossing the print is realism, not a defect.
 

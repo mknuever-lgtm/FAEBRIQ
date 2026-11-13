@@ -264,3 +264,4 @@ Why: the cloud session that made them is temporary; MP4s, raw media and voice WA
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
 2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
 Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
+2026/11/13: newsletter Master Prompt: apparel is S to 3XL only. Why: live hoodie shows 4XL/5XL variants, which Maiku does not offer.

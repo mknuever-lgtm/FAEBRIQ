@@ -15,15 +15,24 @@
       : '$' + (cents / 100).toFixed(2);
   }
 
+  // Closed drawer is inert: hidden from screen readers AND unreachable by Tab.
+  var lastFocus = null;
   function openDrawer() {
+    lastFocus = document.activeElement;
+    drawer.removeAttribute('inert');
     drawer.classList.add('is-open');
     drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    var closeBtn = drawer.querySelector('.fae-cart-drawer__close');
+    if (closeBtn) closeBtn.focus();
   }
   function closeDrawer() {
+    if (!drawer.classList.contains('is-open')) return;
     drawer.classList.remove('is-open');
     drawer.setAttribute('aria-hidden', 'true');
+    drawer.setAttribute('inert', '');
     document.body.style.overflow = '';
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
   }
 
   function renderCart(cart) {

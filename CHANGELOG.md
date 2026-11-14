@@ -262,3 +262,5 @@ Why: verified the external audit against Shopify; store is paused, so "Now Live"
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
 2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
+- 2026-11-14: Lighthouse fixes prepared (fonts via head link, homepage cards no longer compete with hero LCP, cart drawer inert when closed). Not live: connector blocks MAIN theme writes; paste guide in LIGHTHOUSE_FIXES_2026-11-14.md.
+- 2026-11-14: Live theme ID is now 189810704451 (not 145284005955); repo theme mirror is stale vs live (missing free-shipping bar, header search).

@@ -5,7 +5,7 @@ Edit sources for four 9:16 reels made with AI Video Studio v0.1.0-beta.6 (github
 - pull-request: "FÆ reviewed your coming out", Deploying Identity v2.0 tee, 16.0s, SFX only.
 - bug-report: "Someone filed a bug report about you", It's Not A Bug. It's Me. tee, 16.0s, SFX only.
 - please-hold: "Your identity put you on hold", Please Hold tee, 19.5s, Kokoro TTS voice + synthesized Greensleeves hold music.
-- off-the-clock: "Logged off at 5", Off The Clock. Still Iconic. tee, 18.5s, FÆ's recorded voice. On-screen script from SOCIAL_LAUNCH_POSTS_2026-09-23.md post 5.
+- off-the-clock: "Logged off at 5", 18.5s, FÆ's recorded voice. On-screen script from SOCIAL_LAUNCH_POSTS_2026-09-23.md post 5. V01 = tee (comp-v01.html); V02 = hoodie on screen all 18.5s (comp-v02.html, assets listed in its STATUS.md, same mix as V01).
 
 ## Composition assets
 

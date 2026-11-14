@@ -262,3 +262,5 @@ Why: verified the external audit against Shopify; store is paused, so "Now Live"
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
 2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
+2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
+Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).

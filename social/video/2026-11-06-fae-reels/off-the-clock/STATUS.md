@@ -1,6 +1,10 @@
 # Logged off at 5
 
-Current: V01 ready for review (exports/faebriq-off-the-clock-v01.mp4, 18.5s, 1080x1920, 24fps, AAC, -14 LUFS target). Not approved. Not published.
+Current: V02 ready for review (exports/faebriq-off-the-clock-v02.mp4, comp-v02.html, 2026/11/14). Not approved. Not published. Logged in Notion Content Library as Drafts.
+
+V02 (hoodie, per Content OS Launch script 5): same timings, voice and mix (mix-v01.wav) as V01. Hoodie on screen all 18.5s: front hero with FÆ inset (0-3.4), on-model below the terminal (3.4-10.8), on-model lock-screen wallpaper (10.8-13.4), push-in on the front print "Off the clock." then print close-up "Still iconic." with "$54 USD · ships US + Canada" (13.4-16.2), folded hoodie over the wordmark end card (16.2-18.5). Assets: hood-front.jpg (and copy hood-front-b.jpg) = Off-The-Clock-Still-Iconic-Heavyweight-Hood, hood-man.jpg = ...Heavyweight-Hood-gallery-2, hood-woman.jpg = ...Hoodie-gallery-2, hood-close.jpg = ...Heavyweight-Hood-gallery-3, hood-fold.jpg = ...Heavyweight-Hood-gallery-4 (imagery/shopify, scaled to 1536x1920).
+
+V01 below (tee), kept for history.
 
 Script source: SOCIAL_LAUNCH_POSTS_2026-09-23.md post 5 (on-screen text). FÆ's recording has no Off The Clock lines, so FÆ speaks unused lines that fit.
 

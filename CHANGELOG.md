@@ -266,3 +266,5 @@ Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds 
 Why: Shopify connector cannot write the live theme, so Maurice applies them in the code editor.
 2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
 Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).
+2026/11/16: CLAUDE.md tote facts corrected: AS Colour 1001 is the Active tote (out of stock in Printify), Liberty is Archived with a publishing error.
+Why: the 2026-11-14 product audit showed CLAUDE.md had it backwards.

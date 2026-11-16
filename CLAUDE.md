@@ -48,7 +48,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   2026-10-06 after Printify costs showed large-size Canada tees losing
   money at $30): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock,
   Please Hold) $32; crewneck $42; hoodie $54; cap $32; ONE price for every size,
-  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (Liberty canvas, switched from AS Colour 2026-10-01); 5 single stickers
+  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (AS Colour 1001 via Fulfill Engine is the Active listing per the 2026-11-14 product audit; see Fulfillment); 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
   $3.99 to $7.99 and FÆ Sticker Sheet: Four Poses $12.99 to $19.99.
@@ -77,7 +77,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day
   (product, Shopify image ID, gallery position, SHA-256). Replaced or
   deleted images get their row updated, not left stale.
-- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
+- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote (corrected 2026-11-14, live Shopify + Printify audit) = AS Colour 1001 via
+  Fulfill Engine: Active in Shopify (inventory shows 9999) but OUT OF STOCK in
+  Printify, so do not relaunch with it listed until stock returns. Liberty
+  canvas tote is Archived in Shopify with a Printify "Publishing error"; do not
+  re-publish it. The 2026-10-01 switch to Liberty did not stick.
   Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify

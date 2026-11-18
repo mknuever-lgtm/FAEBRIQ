@@ -48,13 +48,14 @@ requests unless explicitly asked. When the assigned task is done, stop.
   2026-10-06 after Printify costs showed large-size Canada tees losing
   money at $30): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock,
   Please Hold) $32; crewneck $42; hoodie $54; cap $32; ONE price for every size,
-  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (Liberty canvas, switched from AS Colour 2026-10-01); 5 single stickers
+  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34
+  (Liberty canvas) is DRAFTED since 2026-11-14, out of stock: relist only
+  when Printify shows stock; 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
   $3.99 to $7.99 and FÆ Sticker Sheet: Four Poses $12.99 to $19.99.
-  Parked as Draft for a possible future product line (Maurice, 2026-10-23):
-  FÆ Doll Kiss-Cut Sticker and the FÆ "Mascot Poses" sticker sheet. Not
-  live, prices not set; do not activate or price them without Maurice.
+  FÆ Doll Kiss-Cut Sticker is LIVE on purpose (Maurice kept it live
+  2026-11-17; $4.99 to $5.99). The FÆ "Mascot Poses" sheet is Archived.
   A Printify publish resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.
@@ -69,15 +70,21 @@ requests unless explicitly asked. When the assigned task is done, stop.
   neckline seam (hoodie: bottom of the hood V).
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
-- Product photos (Maurice, 2026-10-04): charcoal studio sweep, #19191B
-  corners to ~#2E2E30 behind the product, 4:5 at 2048x2560, made with
-  tools/mockup_to_charcoal.py. Never white or light backgrounds. Gallery
-  order: front, on-model, close-up, folded.
+- Product photos (Maurice, 2026-11-17, replaces the 2026-10-04 charcoal
+  rule): grey studio, base RGB 81 (#515152, the crewneck flat is the
+  reference) with a soft round spotlight, centre ~95, corners ~65, 4:5 at
+  2048x2560. Charcoal (#19191B) is retired: black tees vanish on it at
+  thumbnail size. tools/mockup_to_charcoal.py still outputs the old
+  charcoal until its targets are retuned; do not use it as-is. Never white
+  or light backgrounds. Model shots: straight-on (no 3/4 turn), print
+  centred, hoodie drawstrings tied clear of the print. Gallery order:
+  front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.
+  Alt text describes the image as it is, never the target spec.
 - Image record (Maurice, 2026-10-15): every Shopify image upload is saved
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day
   (product, Shopify image ID, gallery position, SHA-256). Replaced or
   deleted images get their row updated, not left stale.
-- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
+- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (Draft since 2026-11-14, out of stock; AS Colour 1001 via Fulfill Engine is also Draft)
   Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify

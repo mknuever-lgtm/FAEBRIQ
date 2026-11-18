@@ -6,7 +6,7 @@ Decisions by Maurice. Decision board: https://claude.ai/artifact/9zSaBXjVRRWu1AV
 - **Ratio:** 4:5 for every product image. Make new shots at 2048x2560. The existing 1664x2080 shots stay.
 - **Hero:** a clean studio product shot, with the print readable at thumbnail size (about 170px wide).
 - **Gallery:** exactly 4 shots per product, in the slot order below.
-- **Ground:** the brand's near-black (#0f0e0c family). Dark studio surfaces, dark scenes. Studio product shots (set 2026/10/04) use the charcoal sweep: #19191B corners rising to ~#2E2E30 behind the product, from `tools/mockup_to_charcoal.py`.
+- **Ground:** the brand's near-black (#0f0e0c family). Dark studio surfaces, dark scenes. Studio product shots (set 2026/11/17, replacing the 2026/10/04 charcoal sweep) use a grey studio: base RGB 81 (#515152) with a soft round spotlight, ~95 at the centre to ~65 at the corners, from `tools/mockup_to_charcoal.py`.
 - **Lockup:** serif caps (Bodoni Moda, per `tools/make_print_file.py`; "Instrument Serif" in an earlier draft of this line was wrong), line 1 (the statement) at 100%, line 2 (the footnote) at 75-85% of line 1's size (80% default, set 2026/09/25, `LINE2_RATIO_DEFAULT` in `tools/make_print_file.py`), a flat six-block rainbow stripe underneath. Source: the current masters in `assets/print-art/*-light-4500.png`.
 - **Stickers:** FÆBRIQ small, centered under the stripe. Required on every sticker. All 6 files in `assets/print-art/sticker-final-system-2026-08-27/` have it (checked 2026/09/25), except the retired `error-404-straight-not-found-sticker-light-2400.png`.
 - **Wordmark (set 2026/09/23):** the sans FÆBRIQ, middle version in `assets/print-art/reference/wordmark-reference-2026-09-23.jpg`. Wordmark only: phrase lockups keep their serif.

@@ -268,3 +268,5 @@ Why: Shopify connector cannot write the live theme, so Maurice applies them in t
 Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).
 2026/11/18: CLAUDE.md updated: product photo background is grey 81 with soft spotlight (charcoal retired), FÆ Doll sticker live on purpose, tote drafted 2026-11-14.
 Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines would make the next session undo them.
+2026/11/18: tools/mockup_to_charcoal.py retuned to grey 81 with a round spotlight (centre 95, corners 65, frame mean ~81); also changes tools/card_on_sweep.py, which imports its sweep.
+Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made retired charcoal.

@@ -1,11 +1,13 @@
-"""Turn Printify white-background mockups into charcoal-ground product shots.
+"""Turn Printify white-background mockups into grey-studio product shots.
 
-The white studio ground becomes a charcoal studio sweep (Maurice's pick,
-2026-10-04, option 3): #19191B at the corners rising to about #2E2E30 in an
-oval glow behind the product, so a black garment keeps its silhouette and the
-edges melt into the page. The soft drop shadow is kept as a darker tone, and
-the frame is 4:5 (2048x2560) per IMAGERY_SPEC_2026-09-23.md.
---flat restores the old flat #0d0d0d ground.
+The white studio ground becomes a grey studio (Maurice, 2026-11-17, replaces
+the 2026-10-04 charcoal sweep): base RGB 81 (#515152, the crewneck flat is the
+reference) with a soft round spotlight, about 95 at the centre falling to 65
+at the corners, so a black garment keeps its silhouette at thumbnail size.
+The soft drop shadow is kept as a darker tone, and the frame is 4:5
+(2048x2560) per IMAGERY_SPEC_2026-09-23.md.
+--flat gives a flat #515152 ground with no spotlight.
+The filename stays for compatibility (tools/card_on_sweep.py imports it).
 
 Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]]
 """
@@ -16,19 +18,20 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-GROUND = np.array([13, 13, 13], dtype=float)
-EDGE = np.array([25, 25, 27], dtype=float)
-CENTER = np.array([46, 46, 48], dtype=float)
+GROUND = np.array([81, 81, 82], dtype=float)   # #515152, flat base
+EDGE = np.array([65, 65, 66], dtype=float)     # corners
+CENTER = np.array([95, 95, 96], dtype=float)   # spotlight centre
+SPOT_R = 1400  # spotlight radius in px; frame averages ~81 with corners at 65
 OUT_W, OUT_H = 2048, 2560
 LUM_T = 150  # --soft-shadow lowers this so a dark drop shadow melts into the ground
 
 
 def sweep(flat=False):
-    """Canvas-sized ground: flat #0d0d0d, or the oval charcoal glow."""
+    """Canvas-sized ground: flat #515152, or the round grey spotlight."""
     if flat:
         return np.broadcast_to(GROUND, (OUT_H, OUT_W, 3)).astype(float)
     y, x = np.mgrid[0:OUT_H, 0:OUT_W].astype(float)
-    r = np.hypot((x - OUT_W / 2) / (0.62 * OUT_W), (y - OUT_H * 0.48) / (0.55 * OUT_H))
+    r = np.hypot(x - OUT_W / 2, y - OUT_H * 0.48) / SPOT_R
     t = np.clip(1 - r ** 2, 0, 1)[..., None]
     g = EDGE + (CENTER - EDGE) * t
     # Fine grain so the gradient does not band once Shopify recompresses it.

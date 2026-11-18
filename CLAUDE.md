@@ -74,8 +74,8 @@ requests unless explicitly asked. When the assigned task is done, stop.
   rule): grey studio, base RGB 81 (#515152, the crewneck flat is the
   reference) with a soft round spotlight, centre ~95, corners ~65, 4:5 at
   2048x2560. Charcoal (#19191B) is retired: black tees vanish on it at
-  thumbnail size. tools/mockup_to_charcoal.py still outputs the old
-  charcoal until its targets are retuned; do not use it as-is. Never white
+  thumbnail size. Made with tools/mockup_to_charcoal.py (retuned to grey
+  81 on 2026-11-18; the old filename is kept). Never white
   or light backgrounds. Model shots: straight-on (no 3/4 turn), print
   centred, hoodie drawstrings tied clear of the print. Gallery order:
   front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.

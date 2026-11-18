@@ -270,3 +270,5 @@ Why: V01 broke Content OS rules (apparel half the runtime, punchline on the prin
 Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines would make the next session undo them.
 2026/11/18: tools/mockup_to_charcoal.py retuned to grey 81 with a round spotlight (centre 95, corners 65, frame mean ~81); also changes tools/card_on_sweep.py, which imports its sweep.
 Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made retired charcoal.
+2026/11/18: mockup tool and CLAUDE.md switched to Maurice's pick: dark grey table under one lamp (corners ~42, halo ~140 behind the garment, contact shadow).
+Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-with-a-lamp look.

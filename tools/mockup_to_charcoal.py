@@ -1,12 +1,14 @@
-"""Turn Printify white-background mockups into grey-studio product shots.
+"""Turn Printify white-background mockups into studio-table product shots.
 
-The white studio ground becomes a grey studio (Maurice, 2026-11-17, replaces
-the 2026-10-04 charcoal sweep): base RGB 81 (#515152, the crewneck flat is the
-reference) with a soft round spotlight, about 95 at the centre falling to 65
-at the corners, so a black garment keeps its silhouette at thumbnail size.
-The soft drop shadow is kept as a darker tone, and the frame is 4:5
+The white studio ground becomes a grey studio table under one lamp (Maurice
+picked it 2026-11-18, "pool 140 to 42 + shadow"; replaces the 2026-10-04
+charcoal sweep): a lamp hot spot (RGB ~140) behind the garment that shows as
+a soft light halo around it, falling off to a dark table (~42 at the corners),
+faint table grain, and a soft contact shadow under the garment so it reads
+as lying on the surface.
+The original drop shadow is kept as a darker tone, and the frame is 4:5
 (2048x2560) per IMAGERY_SPEC_2026-09-23.md.
---flat gives a flat #515152 ground with no spotlight.
+--flat gives a flat #515152 ground with no lamp and no contact shadow.
 The filename stays for compatibility (tools/card_on_sweep.py imports it).
 
 Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]]
@@ -18,25 +20,31 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-GROUND = np.array([81, 81, 82], dtype=float)   # #515152, flat base
-EDGE = np.array([65, 65, 66], dtype=float)     # corners
-CENTER = np.array([95, 95, 96], dtype=float)   # spotlight centre
-SPOT_R = 1400  # spotlight radius in px; frame averages ~81 with corners at 65
+GROUND = np.array([81, 81, 82], dtype=float)   # #515152, flat base (--flat)
+EDGE = np.array([42, 42, 42], dtype=float)     # table outside the lamp
+CENTER = np.array([140, 140, 141], dtype=float)  # lamp hot spot, behind the garment
+POOL_R = 1350    # px: lamp pool radius
+POOL_POW = 2.2   # falloff steepness; the light hugs the garment as a halo
+POOL_CY = 0.46   # pool centre height as a share of the frame
+SHADOW = 0.35                 # contact shadow strength under the garment
 OUT_W, OUT_H = 2048, 2560
 LUM_T = 150  # --soft-shadow lowers this so a dark drop shadow melts into the ground
 
 
 def sweep(flat=False):
-    """Canvas-sized ground: flat #515152, or the round grey spotlight."""
+    """Canvas-sized ground: flat #515152, or the lamp pool on a grey table."""
     if flat:
         return np.broadcast_to(GROUND, (OUT_H, OUT_W, 3)).astype(float)
     y, x = np.mgrid[0:OUT_H, 0:OUT_W].astype(float)
-    r = np.hypot(x - OUT_W / 2, y - OUT_H * 0.48) / SPOT_R
-    t = np.clip(1 - r ** 2, 0, 1)[..., None]
+    r = np.hypot(x - OUT_W / 2, (y - OUT_H * POOL_CY) * 0.92) / POOL_R
+    t = np.clip(1 - r, 0, 1) ** POOL_POW
+    t = ndimage.gaussian_filter(t, 60)[..., None]  # soft edge, no ring
     g = EDGE + (CENTER - EDGE) * t
-    # Fine grain so the gradient does not band once Shopify recompresses it.
-    g += np.random.default_rng(7).normal(0, 0.8, (OUT_H, OUT_W, 1))
-    return g
+    # Faint table grain: reads as a surface and stops banding after Shopify
+    # recompresses the file.
+    grain = ndimage.gaussian_filter(
+        np.random.default_rng(7).normal(0, 1, (OUT_H, OUT_W)), 1.5) * 1.6
+    return g + grain[..., None]
 
 
 def convert(src: Path, flat=False) -> Image.Image:
@@ -92,6 +100,12 @@ def convert(src: Path, flat=False) -> Image.Image:
     shade_c = fit(np.clip(lum, 0, 255))[..., None] / 255
 
     g = sweep(flat).copy()
+    if not flat:
+        # Soft contact shadow: the garment blocks the lamp just below itself.
+        garment = np.zeros((OUT_H, OUT_W))
+        garment[top:top + nh] = 1 - alpha_c[..., 0]
+        s = ndimage.shift(ndimage.gaussian_filter(garment, 45), (30, 0), order=1)
+        g *= (1 - SHADOW * s)[..., None]
     band = g[top:top + nh]
     # Shadow keeps its relative depth: pure white -> ground, grey -> darker.
     band[:] = alpha_c * band * (0.55 + 0.45 * shade_c) + (1 - alpha_c) * src_c

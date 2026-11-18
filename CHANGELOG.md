@@ -274,3 +274,5 @@ Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made ret
 Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-with-a-lamp look.
 2026/11/18: mockup tool ground cutoff now 85 by default, so the grey drop shadow under the cap brim no longer shows.
 Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups, no print lost.
+2026/11/18: mockup tool zooms full product shots ~12% (garment fills more of the frame) and adds --print-closeup (whole front print, max 2x zoom); CLAUDE.md close-up rule added.
+Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.

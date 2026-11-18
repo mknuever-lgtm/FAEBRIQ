@@ -12,7 +12,10 @@ The original drop shadow is kept as a darker tone, and the frame is 4:5
 --soft-shadow=LUM sets the ground cutoff (default 85).
 The filename stays for compatibility (tools/card_on_sweep.py imports it).
 
-Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]]
+Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]] [--print-closeup]
+--print-closeup: feed it front flats (the -A mockups); writes NAME-print.jpg,
+a close-up framing the whole front print (replaces Printify's collar close-ups,
+which cut the slogan off).
 """
 import sys
 from pathlib import Path
@@ -28,6 +31,7 @@ POOL_R = 1350    # px: lamp pool radius
 POOL_POW = 2.2   # falloff steepness; the light hugs the garment as a halo
 POOL_CY = 0.46   # pool centre height as a share of the frame
 SHADOW = 0.35                 # contact shadow strength under the garment
+SCALE = 1.12  # full product shots: garment ~12% bigger in frame (2026-11-18)
 OUT_W, OUT_H = 2048, 2560
 LUM_T = 85  # ground cutoff. 85 (default since 2026-11-18) also clears the dark
 # drop shadow under a cap brim; checked on all 27 mockups in
@@ -93,6 +97,18 @@ def convert(src: Path, flat=False) -> Image.Image:
         crop = lambda arr: arr[:, x0:x0 + cw]
         a, alpha, lum = crop(a), crop(alpha), crop(lum)
         h, w = a.shape[:2]
+    else:
+        # Full product shot: zoom in by SCALE so the garment fills more of the
+        # frame (thumbnails), by trimming empty ground off the sides. Never
+        # trim into the garment: keep at least 40px of ground beside it.
+        cols = np.where((alpha[..., 0] < 0.5).any(axis=0))[0]
+        if cols.size:
+            room = min(cols[0], w - 1 - cols[-1]) - 40
+            x0 = int(max(0, min((w - round(w / SCALE)) // 2, room)))
+            if x0:
+                crop = lambda arr: arr[:, x0:w - x0]
+                a, alpha, lum = crop(a), crop(alpha), crop(lum)
+                h, w = a.shape[:2]
     # Place source, its ground alpha and its shading on the 4:5 canvas.
     nh = min(round(h * OUT_W / w), OUT_H)
     top = (OUT_H - nh) // 2
@@ -116,6 +132,30 @@ def convert(src: Path, flat=False) -> Image.Image:
     return Image.fromarray(np.clip(g, 0, 255).astype(np.uint8))
 
 
+def print_closeup(src: Path, flat=False) -> Image.Image:
+    """Close-up on the front print, cut from a full front flat.
+
+    Printify's own close-ups crop the slogan off, so this frames the whole
+    print instead: about 62% of the width, never zoomed past 2x (sharpness).
+    """
+    im = convert(src, flat)
+    a = np.asarray(im).astype(float)
+    H, W = a.shape[:2]
+    lum = a @ [0.299, 0.587, 0.114]
+    mid = np.zeros_like(lum, bool)
+    mid[:, int(W * .25):int(W * .75)] = True   # skip the sleeve wordmark
+    ys, xs = np.where((lum > 170) & mid)
+    if xs.size < 500:
+        raise ValueError(f"{src.name}: no front print found")
+    x0, x1 = np.percentile(xs, [1, 99])
+    y0, y1 = np.percentile(ys, [1, 99])
+    ww = max((x1 - x0) / 0.62, W / 2.0)
+    wh = ww * H / W
+    L = int(np.clip((x0 + x1) / 2 - ww / 2, 0, W - ww))
+    T = int(np.clip((y0 + y1) / 2 - wh * 0.45, 0, H - wh))
+    return im.crop((L, T, int(L + ww), int(T + wh))).resize((W, H), Image.LANCZOS)
+
+
 if __name__ == "__main__":
     src_dir, out_dir = Path(sys.argv[1]), Path(sys.argv[2])
     flat = "--flat" in sys.argv
@@ -123,6 +163,12 @@ if __name__ == "__main__":
         if a.startswith("--soft-shadow"):
             LUM_T = float(a.split("=")[1]) if "=" in a else 85
     out_dir.mkdir(parents=True, exist_ok=True)
+    closeup = "--print-closeup" in sys.argv
     for f in sorted(src_dir.glob("*.jpg")):
-        convert(f, flat).save(out_dir / f.name, quality=92)
-        print(f.name)
+        if closeup:
+            name = f.stem + "-print.jpg"
+            print_closeup(f, flat).save(out_dir / name, quality=92)
+        else:
+            name = f.name
+            convert(f, flat).save(out_dir / name, quality=92)
+        print(name)

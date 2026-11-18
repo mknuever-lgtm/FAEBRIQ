@@ -80,6 +80,8 @@ requests unless explicitly asked. When the assigned task is done, stop.
   or light backgrounds. Model shots: straight-on (no 3/4 turn), print
   centred, hoodie drawstrings tied clear of the print. Gallery order:
   front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.
+  Close-up = the full front print (tool flag --print-closeup on the front
+  flat), never Printify's collar close-up that cuts the slogan off.
   Alt text describes the image as it is, never the target spec.
 - Image record (Maurice, 2026-10-15): every Shopify image upload is saved
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day

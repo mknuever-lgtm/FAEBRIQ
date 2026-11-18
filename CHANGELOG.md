@@ -276,3 +276,5 @@ Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-wit
 Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups, no print lost.
 2026/11/18: mockup tool zooms full product shots ~12% (garment fills more of the frame) and adds --print-closeup (whole front print, max 2x zoom); CLAUDE.md close-up rule added.
 Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.
+2026/11/18: regenerated 27 studio images (front, print close-up, folded, hoodie back) into assets/mockups/2026-11-18-studio/; not uploaded.
+Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.

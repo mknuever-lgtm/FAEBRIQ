@@ -266,3 +266,5 @@ Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds 
 Why: Shopify connector cannot write the live theme, so Maurice applies them in the code editor.
 2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
 Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).
+2026/11/18: CLAUDE.md updated: product photo background is grey 81 with soft spotlight (charcoal retired), FÆ Doll sticker live on purpose, tote drafted 2026-11-14.
+Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines would make the next session undo them.

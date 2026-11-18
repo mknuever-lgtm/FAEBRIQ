@@ -9,6 +9,7 @@ as lying on the surface.
 The original drop shadow is kept as a darker tone, and the frame is 4:5
 (2048x2560) per IMAGERY_SPEC_2026-09-23.md.
 --flat gives a flat #515152 ground with no lamp and no contact shadow.
+--soft-shadow=LUM sets the ground cutoff (default 85).
 The filename stays for compatibility (tools/card_on_sweep.py imports it).
 
 Usage: python3 tools/mockup_to_charcoal.py IN_DIR OUT_DIR [--flat] [--soft-shadow[=LUM]]
@@ -28,7 +29,10 @@ POOL_POW = 2.2   # falloff steepness; the light hugs the garment as a halo
 POOL_CY = 0.46   # pool centre height as a share of the frame
 SHADOW = 0.35                 # contact shadow strength under the garment
 OUT_W, OUT_H = 2048, 2560
-LUM_T = 150  # --soft-shadow lowers this so a dark drop shadow melts into the ground
+LUM_T = 85  # ground cutoff. 85 (default since 2026-11-18) also clears the dark
+# drop shadow under a cap brim; checked on all 27 mockups in
+# assets/mockups/2026-10-01 with no white print lost. --soft-shadow=150
+# restores the old cutoff.
 
 
 def sweep(flat=False):

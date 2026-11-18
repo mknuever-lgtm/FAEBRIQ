@@ -272,3 +272,5 @@ Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines woul
 Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made retired charcoal.
 2026/11/18: mockup tool and CLAUDE.md switched to Maurice's pick: dark grey table under one lamp (corners ~42, halo ~140 behind the garment, contact shadow).
 Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-with-a-lamp look.
+2026/11/18: mockup tool ground cutoff now 85 by default, so the grey drop shadow under the cap brim no longer shows.
+Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups, no print lost.

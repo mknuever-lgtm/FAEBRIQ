@@ -290,3 +290,5 @@ Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a fol
 Why: Maurice approved the reference-look tee set and asked to upload.
 2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
+2026/11/19: Deploying tee on-model image made by swapping the real Deploying print onto the approved straight-on Off The Clock model photo (same top, width scaled by Printify ratio); not uploaded yet.
+Why: the Deploying tee had no usable on-model shot after the 3/4-pose photo was dropped.

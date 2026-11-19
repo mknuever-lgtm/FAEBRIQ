@@ -292,3 +292,5 @@ Why: Maurice approved the reference-look tee set and asked to upload.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
 2026/11/19: Deploying tee on-model image made by swapping the real Deploying print onto the approved straight-on Off The Clock model photo (same top, width scaled by Printify ratio); not uploaded yet.
 Why: the Deploying tee had no usable on-model shot after the 3/4-pose photo was dropped.
+2026/11/19: removed the Deploying on-model swap (reused the Off The Clock model's face); never uploaded.
+Why: Maurice: the same model on two products is never OK; a new model photo will come from Nano Banana.

@@ -298,3 +298,5 @@ Why: Maurice: the same model on two products is never OK; a new model photo will
 Why: Maurice ruled reusing a model on two products is never OK.
 2026/11/19: Deploying tee on-model from a new Nano Banana model (blank tee, real print placed: centre 0.65 collar to armpit, width 43.9% of chest); blanks saved in model-blanks/ (second man reserved for the 404 tee).
 Why: every product needs its own model; the reused-face version was removed.
+2026/11/19: Deploying on-model print moved up to the flats' collar gap (top 18% of chest width below the collar seam, about 4.2 in); the first placement used a hidden armpit and sat about 8 in low.
+Why: Maurice: needs to be way higher; photo must match the flat and the printed shirt.

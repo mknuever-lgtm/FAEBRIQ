@@ -294,3 +294,5 @@ Why: it no longer matched the new reference look; Maurice asked to fix it.
 Why: the Deploying tee had no usable on-model shot after the 3/4-pose photo was dropped.
 2026/11/19: removed the Deploying on-model swap (reused the Off The Clock model's face); never uploaded.
 Why: Maurice: the same model on two products is never OK; a new model photo will come from Nano Banana.
+2026/11/19: CLAUDE.md rule added: every product gets its own model, never reuse a face across products; model photos generated blank, real print placed after.
+Why: Maurice ruled reusing a model on two products is never OK.

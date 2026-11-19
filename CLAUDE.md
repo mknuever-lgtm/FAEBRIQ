@@ -78,7 +78,11 @@ requests unless explicitly asked. When the assigned task is done, stop.
   tools/mockup_to_charcoal.py (old filename kept). A flat gradient with no
   visible lamp is a bug, not the look. Never white
   or light backgrounds. Model shots: straight-on (no 3/4 turn), print
-  centred, hoodie drawstrings tied clear of the print. Gallery order:
+  centred, hoodie drawstrings tied clear of the print. Every product gets
+  its own model: NEVER reuse a person (face) across products, not even by
+  swapping prints on an existing model photo (Maurice, 2026-11-19: "never
+  OK"). New model photos are generated blank (no text on the shirt) and
+  the real print is placed afterwards. Gallery order:
   front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.
   Close-up = the full front print (tool flag --print-closeup on the front
   flat), never Printify's collar close-up that cuts the slogan off.

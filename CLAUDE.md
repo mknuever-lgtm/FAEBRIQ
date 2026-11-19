@@ -105,7 +105,17 @@ requests unless explicitly asked. When the assigned task is done, stop.
 
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.
-- No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
+- Printify→Shopify publishes are allowed (Maurice, 2026-11-19) only with
+  this checklist, because a publish can overwrite Shopify edits:
+  1. Before: snapshot from Shopify the title, description, SEO title and
+     description, handle, tags, product type, collections, every variant
+     price, gallery order, alt text and the on-model images.
+  2. In the publish dialog, publish only what the task needs (e.g. mockups);
+     untick title, description, prices, tags and shipping where possible.
+  3. After: every size at the one locked price (tees $32), copy/SEO/handle
+     match the snapshot, variants back in "General profile" (stickers in
+     "Stickers (SPOKE)"), gallery order and on-model images restored, alt
+     text redone. Any price drop must still clear the profit rule below.
 - No Printify artwork, file, placement or scale changes (swaps, re-uploads,
   moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:
   earlier sessions swapped his apparel files without asking).

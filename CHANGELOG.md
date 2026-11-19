@@ -278,3 +278,5 @@ Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups,
 Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.
 2026/11/18: regenerated 27 studio images (front, print close-up, folded, hoodie back) into assets/mockups/2026-11-18-studio/; not uploaded.
 Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.
+2026/11/19: CLAUDE.md hard gate changed: Printify to Shopify publishes allowed with a snapshot, publish-only-what-is-needed, restore checklist.
+Why: Maurice wants Muse to publish the new images through Printify.

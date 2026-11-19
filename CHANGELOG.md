@@ -288,3 +288,5 @@ Why: Maurice ruled out the 3-inch standard; photos must match the approved posit
 Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a folded reference photo.
 2026/11/19: uploaded 12 tee images to Shopify (front + print close-up per tee), gallery front/on-model/close-up, old fronts detached not deleted; files in imagery/shopify/, 20 MANIFEST rows.
 Why: Maurice approved the reference-look tee set and asked to upload.
+2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
+Why: it no longer matched the new reference look; Maurice asked to fix it.

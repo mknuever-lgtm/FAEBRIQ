@@ -286,3 +286,5 @@ Why: the 2026-11-18 set had too little table/fabric separation; Maurice supplied
 Why: Maurice ruled out the 3-inch standard; photos must match the approved position, Printify placement is a separate pre-launch call.
 2026/11/19: 6 tee print close-ups rendered from the reference (tools/flat_from_reference.py --closeup, print placed at close-up resolution from the 4500px files).
 Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a folded reference photo.
+2026/11/19: uploaded 12 tee images to Shopify (front + print close-up per tee), gallery front/on-model/close-up, old fronts detached not deleted; files in imagery/shopify/, 20 MANIFEST rows.
+Why: Maurice approved the reference-look tee set and asked to upload.

@@ -278,3 +278,15 @@ Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups,
 Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.
 2026/11/18: regenerated 27 studio images (front, print close-up, folded, hoodie back) into assets/mockups/2026-11-18-studio/; not uploaded.
 Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.
+2026/11/19: CLAUDE.md hard gate changed: Printify to Shopify publishes allowed with a snapshot, publish-only-what-is-needed, restore checklist.
+Why: Maurice wants Muse to publish the new images through Printify.
+2026/11/19: Deploying tee front flat made from Maurice's reference photo with the real print file at Printify size (assets/mockups/2026-11-19-studio/, tools/flat_from_reference.py); other 8 wait for approval.
+Why: the 2026-11-18 set had too little table/fabric separation; Maurice supplied a reference look.
+2026/11/19: 6 tee front flats rendered at the approved reference position (print top 34.9% of body width below the top of the back collar), widths from each tee's Printify scale; tool now anchors on the print top.
+Why: Maurice ruled out the 3-inch standard; photos must match the approved position, Printify placement is a separate pre-launch call.
+2026/11/19: 6 tee print close-ups rendered from the reference (tools/flat_from_reference.py --closeup, print placed at close-up resolution from the 4500px files).
+Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a folded reference photo.
+2026/11/19: uploaded 12 tee images to Shopify (front + print close-up per tee), gallery front/on-model/close-up, old fronts detached not deleted; files in imagery/shopify/, 20 MANIFEST rows.
+Why: Maurice approved the reference-look tee set and asked to upload.
+2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
+Why: it no longer matched the new reference look; Maurice asked to fix it.

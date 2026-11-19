@@ -306,3 +306,5 @@ Why: Maurice asked for it a little higher; now about 0.9 in above the flat's gap
 Why: the Deploying tee was the only tee missing an on-model image.
 2026/11/19: 404 tee on-model: Nano Banana pick (unique model), its redrawn print removed and the real 404 file placed at 48.2% of chest, top 14% of chest width below the collar seam; not uploaded yet.
 Why: Nano Banana's print was about a third too small and broke the full-width bar rule.
+2026/11/19: 404 tee on-model uploaded to Shopify at position 2 (gallery front, on-model, close-up); MANIFEST updated. All 6 tees now have complete galleries.
+Why: Maurice approved the corrected 404 on-model image.

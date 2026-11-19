@@ -268,3 +268,13 @@ Why: Shopify connector cannot write the live theme, so Maurice applies them in t
 Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).
 2026/11/18: CLAUDE.md updated: product photo background is grey 81 with soft spotlight (charcoal retired), FÆ Doll sticker live on purpose, tote drafted 2026-11-14.
 Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines would make the next session undo them.
+2026/11/18: tools/mockup_to_charcoal.py retuned to grey 81 with a round spotlight (centre 95, corners 65, frame mean ~81); also changes tools/card_on_sweep.py, which imports its sweep.
+Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made retired charcoal.
+2026/11/18: mockup tool and CLAUDE.md switched to Maurice's pick: dark grey table under one lamp (corners ~42, halo ~140 behind the garment, contact shadow).
+Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-with-a-lamp look.
+2026/11/18: mockup tool ground cutoff now 85 by default, so the grey drop shadow under the cap brim no longer shows.
+Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups, no print lost.
+2026/11/18: mockup tool zooms full product shots ~12% (garment fills more of the frame) and adds --print-closeup (whole front print, max 2x zoom); CLAUDE.md close-up rule added.
+Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.
+2026/11/18: regenerated 27 studio images (front, print close-up, folded, hoodie back) into assets/mockups/2026-11-18-studio/; not uploaded.
+Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.

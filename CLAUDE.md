@@ -70,15 +70,18 @@ requests unless explicitly asked. When the assigned task is done, stop.
   neckline seam (hoodie: bottom of the hood V).
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
-- Product photos (Maurice, 2026-11-17, replaces the 2026-10-04 charcoal
-  rule): grey studio, base RGB 81 (#515152, the crewneck flat is the
-  reference) with a soft round spotlight, centre ~95, corners ~65, 4:5 at
-  2048x2560. Charcoal (#19191B) is retired: black tees vanish on it at
-  thumbnail size. tools/mockup_to_charcoal.py still outputs the old
-  charcoal until its targets are retuned; do not use it as-is. Never white
+- Product photos (Maurice, 2026-11-18, replaces the 2026-11-17 grey 81
+  and 2026-10-04 charcoal rules): real studio look, the garment lying on a
+  dark grey table under one lamp. Table ~42 at the corners, a soft lamp
+  halo around the garment (hot spot ~140 behind it), a soft contact shadow
+  under the hem, faint table grain, 4:5 at 2048x2560. Made with
+  tools/mockup_to_charcoal.py (old filename kept). A flat gradient with no
+  visible lamp is a bug, not the look. Never white
   or light backgrounds. Model shots: straight-on (no 3/4 turn), print
   centred, hoodie drawstrings tied clear of the print. Gallery order:
   front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.
+  Close-up = the full front print (tool flag --print-closeup on the front
+  flat), never Printify's collar close-up that cuts the slogan off.
   Alt text describes the image as it is, never the target spec.
 - Image record (Maurice, 2026-10-15): every Shopify image upload is saved
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day

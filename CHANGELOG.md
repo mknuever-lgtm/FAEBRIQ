@@ -282,3 +282,5 @@ Why: Maurice started the regeneration after the tool retune; Shopify upload is a
 Why: Maurice wants Muse to publish the new images through Printify.
 2026/11/19: Deploying tee front flat made from Maurice's reference photo with the real print file at Printify size (assets/mockups/2026-11-19-studio/, tools/flat_from_reference.py); other 8 wait for approval.
 Why: the 2026-11-18 set had too little table/fabric separation; Maurice supplied a reference look.
+2026/11/19: 6 tee front flats rendered at the approved reference position (print top 34.9% of body width below the top of the back collar), widths from each tee's Printify scale; tool now anchors on the print top.
+Why: Maurice ruled out the 3-inch standard; photos must match the approved position, Printify placement is a separate pre-launch call.

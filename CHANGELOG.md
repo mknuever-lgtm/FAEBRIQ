@@ -302,3 +302,5 @@ Why: every product needs its own model; the reused-face version was removed.
 Why: Maurice: needs to be way higher; photo must match the flat and the printed shirt.
 2026/11/19: Deploying on-model print raised again to a 14% collar gap (about 3.3 in below the collar seam, the 3-inch industry standard area).
 Why: Maurice asked for it a little higher; now about 0.9 in above the flat's gap.
+2026/11/19: Deploying tee on-model (Maurice's chosen version, new unique model) uploaded to Shopify at position 2; gallery front, on-model, close-up; MANIFEST updated.
+Why: the Deploying tee was the only tee missing an on-model image.

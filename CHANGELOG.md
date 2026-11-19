@@ -300,3 +300,5 @@ Why: Maurice ruled reusing a model on two products is never OK.
 Why: every product needs its own model; the reused-face version was removed.
 2026/11/19: Deploying on-model print moved up to the flats' collar gap (top 18% of chest width below the collar seam, about 4.2 in); the first placement used a hidden armpit and sat about 8 in low.
 Why: Maurice: needs to be way higher; photo must match the flat and the printed shirt.
+2026/11/19: Deploying on-model print raised again to a 14% collar gap (about 3.3 in below the collar seam, the 3-inch industry standard area).
+Why: Maurice asked for it a little higher; now about 0.9 in above the flat's gap.

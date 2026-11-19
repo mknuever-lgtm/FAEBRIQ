@@ -296,3 +296,5 @@ Why: the Deploying tee had no usable on-model shot after the 3/4-pose photo was 
 Why: Maurice: the same model on two products is never OK; a new model photo will come from Nano Banana.
 2026/11/19: CLAUDE.md rule added: every product gets its own model, never reuse a face across products; model photos generated blank, real print placed after.
 Why: Maurice ruled reusing a model on two products is never OK.
+2026/11/19: Deploying tee on-model from a new Nano Banana model (blank tee, real print placed: centre 0.65 collar to armpit, width 43.9% of chest); blanks saved in model-blanks/ (second man reserved for the 404 tee).
+Why: every product needs its own model; the reused-face version was removed.

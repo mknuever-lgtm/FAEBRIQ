@@ -280,3 +280,5 @@ Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cu
 Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.
 2026/11/19: CLAUDE.md hard gate changed: Printify to Shopify publishes allowed with a snapshot, publish-only-what-is-needed, restore checklist.
 Why: Maurice wants Muse to publish the new images through Printify.
+2026/11/19: Deploying tee front flat made from Maurice's reference photo with the real print file at Printify size (assets/mockups/2026-11-19-studio/, tools/flat_from_reference.py); other 8 wait for approval.
+Why: the 2026-11-18 set had too little table/fabric separation; Maurice supplied a reference look.

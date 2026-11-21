@@ -265,3 +265,5 @@ Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds 
 2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
 Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
 2026/11/13: newsletter Master Prompt: apparel is S to 3XL only. Why: live hoodie shows 4XL/5XL variants, which Maiku does not offer.
+2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
+Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.

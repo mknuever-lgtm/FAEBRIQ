@@ -55,7 +55,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   Parked as Draft for a possible future product line (Maurice, 2026-10-23):
   FÆ Doll Kiss-Cut Sticker and the FÆ "Mascot Poses" sticker sheet. Not
   live, prices not set; do not activate or price them without Maurice.
-  A Printify publish resets Shopify prices, images and copy, and drops new
+  A Printify publish with those boxes ticked resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.
 - Front-print height LOCKED (Maurice, 2026-10-10): print centre at mid rib
@@ -95,7 +95,12 @@ requests unless explicitly asked. When the assigned task is done, stop.
 
 ## Hard gates
 - No purchases or sample orders without checkout-screen confirmation.
-- No Printify→Shopify publishes or syncs (they overwrite Shopify edits).
+- Printify is the source of truth and publishing is how changes reach Shopify
+  (Maurice, 2026-11-21: what Printify makes must match what the site shows).
+  Publish only when Maurice has approved that exact change in that session, and
+  in the publish dialog tick ONLY the boxes for that change; leave title,
+  description, images and tags unticked unless they are the change. If the
+  dialog is unclear, stop and report. Check Shopify afterwards.
 - No Printify artwork, file, placement or scale changes (swaps, re-uploads,
   moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:
   earlier sessions swapped his apparel files without asking).

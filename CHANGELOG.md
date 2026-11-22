@@ -292,3 +292,5 @@ Why: Maurice approved the reference-look tee set and asked to upload.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
 2026/11/22: CLAUDE.md cap line: embroidery verified not applicable (Duplium offers DTF only for OTTO 18-253); 15 new imagery files added (v2 models, approved references, archived drops).
 Why: Maurice pushed last night's imagery bundle; zip text files left out because they were older than the repo.
+2026/11/22: CLAUDE.md tote and sticker shipping lines corrected to live Shopify: AS Colour tote is the Draft, Liberty is Archived; stickers ship via "Stickers and Sheets" (free at $50+), not SPOKE.
+Why: read-only Shopify check showed both lines were out of date.

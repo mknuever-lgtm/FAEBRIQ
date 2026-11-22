@@ -88,8 +88,9 @@ requests unless explicitly asked. When the assigned task is done, stop.
   (product, Shopify image ID, gallery position, SHA-256). Replaced or
   deleted images get their row updated, not left stale.
 - Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (Draft since 2026-11-14, out of stock; AS Colour 1001 via Fulfill Engine is also Draft)
-  Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
-  is UNVERIFIED; never claim embroidery anywhere.
+  Cap = OTTO 18-253 via Printify Choice, DTF. Embroidery verified not
+  applicable (2026-11-19): Duplium offers DTF only for this blank; never
+  claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify
   2026-11-03): any edit to it is public at once.
   `faebriqtheme-launch-2026-08-06-review` = unpublished. Never publish themes

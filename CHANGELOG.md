@@ -290,3 +290,5 @@ Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a fol
 Why: Maurice approved the reference-look tee set and asked to upload.
 2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
+2026/11/22: CLAUDE.md cap line: embroidery verified not applicable (Duplium offers DTF only for OTTO 18-253); 15 new imagery files added (v2 models, approved references, archived drops).
+Why: Maurice pushed last night's imagery bundle; zip text files left out because they were older than the repo.

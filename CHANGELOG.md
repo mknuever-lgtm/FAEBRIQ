@@ -268,3 +268,4 @@ Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
 2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
 Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.
 2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.
+2026/11/22: Added 3 generated apparel model shots (hoodie, cap, tote) to assets/mockups/canva-sync-2026-11-21/, 928x1152, via Figma AI on existing credits. Why: finish Canva-sync gap; sizes follow Printify print specs.

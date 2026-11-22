@@ -48,13 +48,14 @@ requests unless explicitly asked. When the assigned task is done, stop.
   2026-10-06 after Printify costs showed large-size Canada tees losing
   money at $30): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock,
   Please Hold) $32; crewneck $42; hoodie $54; cap $32; ONE price for every size,
-  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34 (Liberty canvas, switched from AS Colour 2026-10-01); 5 single stickers
+  never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34
+  (Liberty canvas) is DRAFTED since 2026-11-14, out of stock: relist only
+  when Printify shows stock; 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
   $3.99 to $7.99 and FÆ Sticker Sheet: Four Poses $12.99 to $19.99.
-  Parked as Draft for a possible future product line (Maurice, 2026-10-23):
-  FÆ Doll Kiss-Cut Sticker and the FÆ "Mascot Poses" sticker sheet. Not
-  live, prices not set; do not activate or price them without Maurice.
+  FÆ Doll Kiss-Cut Sticker is LIVE on purpose (Maurice kept it live
+  2026-11-17; $4.99 to $5.99). The FÆ "Mascot Poses" sheet is Archived.
   A Printify publish with those boxes ticked resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
   "Stickers (SPOKE)" and apparel into "General profile" after every publish.
@@ -69,15 +70,24 @@ requests unless explicitly asked. When the assigned task is done, stop.
   neckline seam (hoodie: bottom of the hood V).
 - FÆ = the locked promoter mascot (Notion: FÆBRIQ Content OS). Apparel is
   the hero, FÆ presents.
-- Product photos (Maurice, 2026-10-04): charcoal studio sweep, #19191B
-  corners to ~#2E2E30 behind the product, 4:5 at 2048x2560, made with
-  tools/mockup_to_charcoal.py. Never white or light backgrounds. Gallery
-  order: front, on-model, close-up, folded.
+- Product photos (Maurice, 2026-11-18, replaces the 2026-11-17 grey 81
+  and 2026-10-04 charcoal rules): real studio look, the garment lying on a
+  dark grey table under one lamp. Table ~42 at the corners, a soft lamp
+  halo around the garment (hot spot ~140 behind it), a soft contact shadow
+  under the hem, faint table grain, 4:5 at 2048x2560. Made with
+  tools/mockup_to_charcoal.py (old filename kept). A flat gradient with no
+  visible lamp is a bug, not the look. Never white
+  or light backgrounds. Model shots: straight-on (no 3/4 turn), print
+  centred, hoodie drawstrings tied clear of the print. Gallery order:
+  front, on-model, close-up, folded; 4:5 only, no banner crops in galleries.
+  Close-up = the full front print (tool flag --print-closeup on the front
+  flat), never Printify's collar close-up that cuts the slogan off.
+  Alt text describes the image as it is, never the target spec.
 - Image record (Maurice, 2026-10-15): every Shopify image upload is saved
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day
   (product, Shopify image ID, gallery position, SHA-256). Replaced or
   deleted images get their row updated, not left stale.
-- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (AS Colour 1001 via Fulfill Engine is Draft, out of stock)
+- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (Draft since 2026-11-14, out of stock; AS Colour 1001 via Fulfill Engine is also Draft)
   Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
   is UNVERIFIED; never claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify
@@ -100,7 +110,15 @@ requests unless explicitly asked. When the assigned task is done, stop.
   Publish only when Maurice has approved that exact change in that session, and
   in the publish dialog tick ONLY the boxes for that change; leave title,
   description, images and tags unticked unless they are the change. If the
-  dialog is unclear, stop and report. Check Shopify afterwards.
+  dialog is unclear, stop and report. Check Shopify afterwards. Checklist
+  (Maurice, 2026-11-19), because a publish can overwrite Shopify edits:
+  1. Before: snapshot from Shopify the title, description, SEO title and
+     description, handle, tags, product type, collections, every variant
+     price, gallery order, alt text and the on-model images.
+  2. After: every size at the one locked price (tees $32), copy/SEO/handle
+     match the snapshot, variants back in "General profile" (stickers in
+     "Stickers (SPOKE)"), gallery order and on-model images restored, alt
+     text redone. Any price drop must still clear the profit rule below.
 - No Printify artwork, file, placement or scale changes (swaps, re-uploads,
   moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:
   earlier sessions swapped his apparel files without asking).

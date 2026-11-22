@@ -265,6 +265,34 @@ Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds 
 2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
 Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
 2026/11/13: newsletter Master Prompt: apparel is S to 3XL only. Why: live hoodie shows 4XL/5XL variants, which Maiku does not offer.
+2026/11/14: Lighthouse fixes prepared (fonts via head link, homepage cards stop competing with hero image, cart drawer inert when closed); paste guide LIGHTHOUSE_FIXES_2026-11-14.md. Live theme ID is now 189810704451; repo theme mirror is stale vs live.
+Why: Shopify connector cannot write the live theme, so Maurice applies them in the code editor.
+2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
+Why: V01 broke Content OS rules (apparel half the runtime, punchline on the print, hoodie product).
+2026/11/18: CLAUDE.md updated: product photo background is grey 81 with soft spotlight (charcoal retired), FÆ Doll sticker live on purpose, tote drafted 2026-11-14.
+Why: Maurice's 2026-11-17 decisions; the old charcoal and Doll-parked lines would make the next session undo them.
+2026/11/18: tools/mockup_to_charcoal.py retuned to grey 81 with a round spotlight (centre 95, corners 65, frame mean ~81); also changes tools/card_on_sweep.py, which imports its sweep.
+Why: CLAUDE.md now sets grey 81 as the photo background; the tool still made retired charcoal.
+2026/11/18: mockup tool and CLAUDE.md switched to Maurice's pick: dark grey table under one lamp (corners ~42, halo ~140 behind the garment, contact shadow).
+Why: the grey 81 retune was a flat gradient; Maurice wants the real tabletop-with-a-lamp look.
+2026/11/18: mockup tool ground cutoff now 85 by default, so the grey drop shadow under the cap brim no longer shows.
+Why: Maurice flagged the grey crescent under the cap; checked on all 27 mockups, no print lost.
+2026/11/18: mockup tool zooms full product shots ~12% (garment fills more of the frame) and adds --print-closeup (whole front print, max 2x zoom); CLAUDE.md close-up rule added.
+Why: Maurice asked to scale up and fix close-ups; Printify's collar close-ups cut the slogan off in the source files.
+2026/11/18: regenerated 27 studio images (front, print close-up, folded, hoodie back) into assets/mockups/2026-11-18-studio/; not uploaded.
+Why: Maurice started the regeneration after the tool retune; Shopify upload is a separate step.
+2026/11/19: CLAUDE.md hard gate changed: Printify to Shopify publishes allowed with a snapshot, publish-only-what-is-needed, restore checklist.
+Why: Maurice wants Muse to publish the new images through Printify.
+2026/11/19: Deploying tee front flat made from Maurice's reference photo with the real print file at Printify size (assets/mockups/2026-11-19-studio/, tools/flat_from_reference.py); other 8 wait for approval.
+Why: the 2026-11-18 set had too little table/fabric separation; Maurice supplied a reference look.
+2026/11/19: 6 tee front flats rendered at the approved reference position (print top 34.9% of body width below the top of the back collar), widths from each tee's Printify scale; tool now anchors on the print top.
+Why: Maurice ruled out the 3-inch standard; photos must match the approved position, Printify placement is a separate pre-launch call.
+2026/11/19: 6 tee print close-ups rendered from the reference (tools/flat_from_reference.py --closeup, print placed at close-up resolution from the 4500px files).
+Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a folded reference photo.
+2026/11/19: uploaded 12 tee images to Shopify (front + print close-up per tee), gallery front/on-model/close-up, old fronts detached not deleted; files in imagery/shopify/, 20 MANIFEST rows.
+Why: Maurice approved the reference-look tee set and asked to upload.
+2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
+Why: it no longer matched the new reference look; Maurice asked to fix it.
 2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
 Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.
 2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.

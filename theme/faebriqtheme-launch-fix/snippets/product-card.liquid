@@ -15,11 +15,12 @@
                 {{ card_product.featured_image | image_url: width: 500 }} 500w,
                 {{ card_product.featured_image | image_url: width: 800 }} 800w,
                 {{ card_product.featured_image | image_url: width: 1200 }} 1200w"
-        sizes="(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw"
+        sizes="(min-width: 769px) 33vw, (min-width: 481px) 50vw, 100vw"
         alt="{{ card_product.featured_image.alt | default: card_product.title | escape }}"
         width="800"
         height="800"
-        {% if card_id <= 3 %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+        {%- comment -%} FAEBRIQ 2026-11-14: on the homepage the hero image is the LCP; cards sit below it and must not compete for bandwidth. {%- endcomment -%}
+        {% if card_id <= 3 and template.name != 'index' %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
       >
     {%- else -%}
       <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">

@@ -2,7 +2,7 @@
    FÆBRIQ — Shopify Theme Stylesheet
    Dark editorial. Flat. Sharp. No gradients.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@600&family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Google Fonts load from layout/theme.liquid <head> (preconnect + link), not @import: an @import waits for this file first. */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

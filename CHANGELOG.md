@@ -262,6 +262,9 @@ Why: verified the external audit against Shopify; store is paused, so "Now Live"
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
 2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
+2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
+Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
+2026/11/13: newsletter Master Prompt: apparel is S to 3XL only. Why: live hoodie shows 4XL/5XL variants, which Maiku does not offer.
 2026/11/14: Lighthouse fixes prepared (fonts via head link, homepage cards stop competing with hero image, cart drawer inert when closed); paste guide LIGHTHOUSE_FIXES_2026-11-14.md. Live theme ID is now 189810704451; repo theme mirror is stale vs live.
 Why: Shopify connector cannot write the live theme, so Maurice applies them in the code editor.
 2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
@@ -294,5 +297,9 @@ Why: it no longer matched the new reference look; Maurice asked to fix it.
 Why: Maurice pushed last night's imagery bundle; zip text files left out because they were older than the repo.
 2026/11/22: CLAUDE.md tote and sticker shipping lines corrected to live Shopify: AS Colour tote is the Draft, Liberty is Archived; stickers ship via "Stickers and Sheets" (free at $50+), not SPOKE.
 Why: read-only Shopify check showed both lines were out of date.
+2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
+Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.
+2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.
+2026/11/22: Added 3 generated apparel model shots (hoodie, cap, tote) to assets/mockups/canva-sync-2026-11-21/, 928x1152, via Figma AI on existing credits. Why: finish Canva-sync gap; sizes follow Printify print specs.
 2026/11/22: Full Drop front image file replaced with the live one (ID 46780667560003, white sheet, four stickers) and its MANIFEST row updated; the copy is 1600x2000 (the live original is 2048x2560).
 Why: repo file was the stale 2026/10/10 landscape; Maurice supplied the live image.

@@ -293,6 +293,10 @@ Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a fol
 Why: Maurice approved the reference-look tee set and asked to upload.
 2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
+2026/11/22: CLAUDE.md cap line: embroidery verified not applicable (Duplium offers DTF only for OTTO 18-253); 15 new imagery files added (v2 models, approved references, archived drops).
+Why: Maurice pushed last night's imagery bundle; zip text files left out because they were older than the repo.
+2026/11/22: CLAUDE.md tote and sticker shipping lines corrected to live Shopify: AS Colour tote is the Draft, Liberty is Archived; stickers ship via "Stickers and Sheets" (free at $50+), not SPOKE.
+Why: read-only Shopify check showed both lines were out of date.
 2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
 Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.
 2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.

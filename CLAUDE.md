@@ -41,16 +41,20 @@ requests unless explicitly asked. When the assigned task is done, stop.
   as a bored technician reciting specs is a bug — always re-read output for
   "does this sound boring" before treating dry/deadpan instructions as done.
 - Store: Shopify, faebriq.com, USD, ships US + Canada only. Free shipping
-  baked into prices for apparel, cap and tote. Stickers + sheet ship separately
-  (SPOKE) at a flat $4.99 US / $9.99 CA via the "Stickers (SPOKE)" shipping
-  profile (2026-10-01). Never write "free shipping on everything".
+  baked into prices for apparel, cap and tote. Stickers + sheets ship via the
+  "Stickers and Sheets" shipping profile: $4.99 US / $9.99 CA under $50,
+  free at $50 and over (verified in Shopify 2026-11-22; the SPOKE profile
+  holds only the Archived "Kiss-Cut Stickers"). Never write "free shipping
+  on everything".
 - Live catalog (repriced in Shopify 2026-10-01; tees raised $30 to $32 on
   2026-10-06 after Printify costs showed large-size Canada tees losing
   money at $30): 6 tees (404, Code It, Deploying, Not A Bug, Off The Clock,
   Please Hold) $32; crewneck $42; hoodie $54; cap $32; ONE price for every size,
   never charge more for bigger sizes (Maurice, 2026-10-01); 404 tote $34
-  (Liberty canvas) is DRAFTED since 2026-11-14, out of stock: relist only
-  when Printify shows stock; 5 single stickers
+  (AS Colour, handle 404-straight-not-found-tote-as-colour) is DRAFTED since
+  2026-11-14, out of stock: relist only when Printify shows stock; the
+  Liberty canvas tote (handle 404-straight-not-found-tote) is ARCHIVED
+  (verified in Shopify 2026-11-22); 5 single stickers
   $4 to $6 and sticker sheet $11.99 to $13.99 (6x4 only) (3 active, 3 Draft);
   FÆ mascot stickers (added 2026-10-03, collection `fae`): 4 kiss-cut
   $3.99 to $7.99 and FÆ Sticker Sheet: Four Poses $12.99 to $19.99.
@@ -58,7 +62,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
   2026-11-17; $4.99 to $5.99). The FÆ "Mascot Poses" sheet is Archived.
   A Printify publish with those boxes ticked resets Shopify prices, images and copy, and drops new
   variants into Printify-made shipping profiles: move sticker variants into
-  "Stickers (SPOKE)" and apparel into "General profile" after every publish.
+  "Stickers and Sheets" and apparel into "General profile" after every publish.
 - Front-print height LOCKED (Maurice, 2026-10-10): print centre at mid rib
   cage, 0.65 of the way from collar seam to armpit (chest-logo / pendant
   height). Applies to every on-model photo and any placement check.
@@ -87,9 +91,10 @@ requests unless explicitly asked. When the assigned task is done, stop.
   to imagery/shopify/ with a row in imagery/MANIFEST.csv the same day
   (product, Shopify image ID, gallery position, SHA-256). Replaced or
   deleted images get their row updated, not left stale.
-- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = Liberty canvas tote 15x16 (Draft since 2026-11-14, out of stock; AS Colour 1001 via Fulfill Engine is also Draft)
-  Cap = OTTO 18-253 via Printify Choice, DTF — embroidery
-  is UNVERIFIED; never claim embroidery anywhere.
+- Fulfillment: Printify. Stickers = SPOKE kiss-cut. Tote = AS Colour 1001 via Fulfill Engine (Draft since 2026-11-14, out of stock); Liberty canvas tote 15x16 is Archived (verified in Shopify 2026-11-22)
+  Cap = OTTO 18-253 via Printify Choice, DTF. Embroidery verified not
+  applicable (2026-11-19): Duplium offers DTF only for this blank; never
+  claim embroidery anywhere.
 - Themes: `faebriqtheme-launch-fix` = LIVE (MAIN, verified in Shopify
   2026-11-03): any edit to it is public at once.
   `faebriqtheme-launch-2026-08-06-review` = unpublished. Never publish themes
@@ -117,7 +122,7 @@ requests unless explicitly asked. When the assigned task is done, stop.
      price, gallery order, alt text and the on-model images.
   2. After: every size at the one locked price (tees $32), copy/SEO/handle
      match the snapshot, variants back in "General profile" (stickers in
-     "Stickers (SPOKE)"), gallery order and on-model images restored, alt
+     "Stickers and Sheets"), gallery order and on-model images restored, alt
      text redone. Any price drop must still clear the profit rule below.
 - No Printify artwork, file, placement or scale changes (swaps, re-uploads,
   moves) without Maurice's explicit OK in that session (Maurice, 2026-10-10:

@@ -305,3 +305,5 @@ Why: Maurice's call; Printify must match what the website shows. Old gate said n
 Why: repo file was the stale 2026/10/10 landscape; Maurice supplied the live image.
 2026/11/22: Full Drop front image replaced with the full-res 2048x2560 live file (ID 46780667560003); MANIFEST size, file size and SHA-256 updated.
 Why: the earlier copy was a 1600x2000 chat-resized version.
+2026/11/22: Deleted the PR #69 hoodie, cap and tote model PNGs from assets/mockups/canva-sync-2026-11-21/; the v2 JPGs stay as the live published models.
+Why: Maurice confirmed the PNGs are a superseded set.

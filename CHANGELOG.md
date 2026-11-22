@@ -303,3 +303,5 @@ Why: Maurice's call; Printify must match what the website shows. Old gate said n
 2026/11/22: Added 3 generated apparel model shots (hoodie, cap, tote) to assets/mockups/canva-sync-2026-11-21/, 928x1152, via Figma AI on existing credits. Why: finish Canva-sync gap; sizes follow Printify print specs.
 2026/11/22: Full Drop front image file replaced with the live one (ID 46780667560003, white sheet, four stickers) and its MANIFEST row updated; the copy is 1600x2000 (the live original is 2048x2560).
 Why: repo file was the stale 2026/10/10 landscape; Maurice supplied the live image.
+2026/11/22: Full Drop front image replaced with the full-res 2048x2560 live file (ID 46780667560003); MANIFEST size, file size and SHA-256 updated.
+Why: the earlier copy was a 1600x2000 chat-resized version.

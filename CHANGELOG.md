@@ -302,3 +302,5 @@ Why: Maurice's call; Printify must match what the website shows. Old gate said n
 2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.
 2026/11/22: Added 3 generated apparel model shots (hoodie, cap, tote) to assets/mockups/canva-sync-2026-11-21/, 928x1152, via Figma AI on existing credits. Why: finish Canva-sync gap; sizes follow Printify print specs.
 2026/11/22: Removed my 3 Figma-generated apparel .png shots from canva-sync-2026-11-21; the newer, larger .jpg models from PR 70 stay. Why: Maurice chose the most recent versions.
+2026/11/22: Full Drop front image replaced with the 2048x2560 live file (Shopify ID 46780667560003, white sheet, four stickers); MANIFEST row updated with ID, size, file size and SHA-256.
+Why: repo held the stale 2026/10/10 landscape; this fix missed the PR #70 merge.

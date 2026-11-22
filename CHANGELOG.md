@@ -262,6 +262,9 @@ Why: verified the external audit against Shopify; store is paused, so "Now Live"
 Why: the cloud session that made them is temporary; MP4s, raw media and voice WAVs stay out of git.
 2026/11/08: social/newsletter/ added: newsletter Master Prompt (verbatim from Maurice) and approved hero rotation, issues 1 to 6.
 Why: backup copy for the biweekly newsletter-draft scheduled task; Notion holds the working copy.
+2026/11/12: newsletter Master Prompt gains a Gay calendar section: built only once a send date exists; queer leather, fetish and kink events allowed.
+Why: Maiku's call on the Pig Week question; Issue #1 has no send date yet.
+2026/11/13: newsletter Master Prompt: apparel is S to 3XL only. Why: live hoodie shows 4XL/5XL variants, which Maiku does not offer.
 2026/11/14: Lighthouse fixes prepared (fonts via head link, homepage cards stop competing with hero image, cart drawer inert when closed); paste guide LIGHTHOUSE_FIXES_2026-11-14.md. Live theme ID is now 189810704451; repo theme mirror is stale vs live.
 Why: Shopify connector cannot write the live theme, so Maurice applies them in the code editor.
 2026/11/14: Off The Clock reel V02 (hoodie on screen all 18.5s) source added; 4 reels logged as Drafts in Notion Content Library.
@@ -290,3 +293,7 @@ Why: Phase 2 after Maurice approved the 6 tee flats; folded views wait for a fol
 Why: Maurice approved the reference-look tee set and asked to upload.
 2026/11/19: Deploying tee folded image (old 2026-11-18 style) detached from the gallery, kept in Shopify Files; MANIFEST row updated.
 Why: it no longer matched the new reference look; Maurice asked to fix it.
+2026/11/21: CLAUDE.md Hard gates: Printify publishes to Shopify are now allowed with Maurice's per-change approval, ticking only the boxes for that change.
+Why: Maurice's call; Printify must match what the website shows. Old gate said never publish.
+2026/11/21: Added 9 dark sticker-sheet mockups to assets/mockups/canva-sync-2026-11-21/ (composited from print files, not generated). Why: Canva-sync imagery gap; 3 apparel model shots still missing.
+2026/11/22: Added 3 generated apparel model shots (hoodie, cap, tote) to assets/mockups/canva-sync-2026-11-21/, 928x1152, via Figma AI on existing credits. Why: finish Canva-sync gap; sizes follow Printify print specs.

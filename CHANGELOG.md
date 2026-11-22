@@ -294,3 +294,5 @@ Why: it no longer matched the new reference look; Maurice asked to fix it.
 Why: Maurice pushed last night's imagery bundle; zip text files left out because they were older than the repo.
 2026/11/22: CLAUDE.md tote and sticker shipping lines corrected to live Shopify: AS Colour tote is the Draft, Liberty is Archived; stickers ship via "Stickers and Sheets" (free at $50+), not SPOKE.
 Why: read-only Shopify check showed both lines were out of date.
+2026/11/22: Full Drop front image file replaced with the live one (ID 46780667560003, white sheet, four stickers) and its MANIFEST row updated; the copy is 1600x2000 (the live original is 2048x2560).
+Why: repo file was the stale 2026/10/10 landscape; Maurice supplied the live image.

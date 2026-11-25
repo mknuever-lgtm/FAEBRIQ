@@ -306,3 +306,5 @@ Why: Maurice's call; Printify must match what the website shows. Old gate said n
 Why: repo held the stale 2026/10/10 landscape; this fix missed the PR #70 merge.
 2026/11/25: Added LAUNCH_CHECKLIST.md: pre-launch items doable while the Shopify plan is paused, and launch-day steps after unpausing.
 Why: Maurice keeps the plan paused until the site is fully ready, so unpause day should be one pass through a list.
+2026/11/25: LAUNCH_CHECKLIST.md updated: Content OS and FAE Doll sticker items ticked, Reels section added (save MP4s, V02 review, FAE voice gate), relaunch target noted.
+Why: Content OS session finished item 9; new open items came out of it.

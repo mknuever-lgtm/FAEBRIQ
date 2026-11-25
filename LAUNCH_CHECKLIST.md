@@ -3,6 +3,7 @@
 Written 2026/11/25. The Shopify plan stays **Paused** until every pre-launch item
 is done (Maurice, 2026/11/25: the paid plan is a big monthly cost). The goal is
 that unpause day is one click plus a test order, not a week of fixes.
+Relaunch target: before Christmas, soft (Maurice, 2026/11/25).
 
 Tick items here as they close. Add the date and who closed it.
 
@@ -21,6 +22,8 @@ Tick items here as they close. Add the date and who closed it.
 - [ ] **FÆ Doll Kiss-Cut Sticker copy.** It says "die-cut" (it is kiss-cut), uses
       "He" (house style is "they"), has no SEO title or description, no
       shipping line, and Printify default tags. Rewrite in the house format.
+      Shopify side done 2026/11/25 (description, SEO, tags). Still open:
+      Maurice pastes the same description into Printify (save, no publish).
 - [ ] "White backing" (Code It, Deploying stickers) vs "white vinyl" (Not A Bug,
       404): pick one wording for all.
 - [ ] **#18 AS Colour tote description** missing.
@@ -45,7 +48,17 @@ Tick items here as they close. Add the date and who closed it.
 
 ### Other open
 - [ ] Muse prompt file location (Maurice decides where it lives).
-- [ ] Content OS check: needs Maurice present to tap the approval cards.
+- [x] Content OS check: all 11 D-script rows rewritten (third-person FÆ, spoken
+      prices and CTAs stripped), status block refreshed. Done 2026/11/25 by
+      the Content OS session; reported verified in Notion, not re-checked here.
+
+### Reels (gate production)
+- [ ] **Save the four Reel MP4s** from the cloud chat to Drive. Urgent: cloud
+      sessions are temporary and the files are lost if that container is
+      cleared first.
+- [ ] **V02:** Maurice watches and listens; it is the closest usable Reel.
+- [ ] **FÆ voice in video:** no solution yet. Gates any re-voicing or Reel
+      production.
 
 ### Newsletter send blockers (needed before the first send)
 - [ ] PO box or virtual mailbox address for the CAN-SPAM/CASL footer.

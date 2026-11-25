@@ -19,11 +19,11 @@ Tick items here as they close. Add the date and who closed it.
       finish · indoor use"; the Full Drop sheet says "Weather-resistant vinyl ·
       indoor and short-term outdoor". Check the Printify spec for both blanks,
       then make the copy match the truth.
-- [ ] **FÆ Doll Kiss-Cut Sticker copy.** It says "die-cut" (it is kiss-cut), uses
-      "He" (house style is "they"), has no SEO title or description, no
-      shipping line, and Printify default tags. Rewrite in the house format.
-      Shopify side done 2026/11/25 (description, SEO, tags). Still open:
-      Maurice pastes the same description into Printify (save, no publish).
+- [x] **FÆ Doll Kiss-Cut Sticker copy.** Rewritten in the house format
+      (kiss-cut, "they", shipping line, SEO, FÆ tags). Shopify done
+      2026/11/25; Printify description updated and published description-only
+      the same day. Shopify re-checked after that publish: copy, SEO, tags and
+      all 7 prices intact.
 - [ ] "White backing" (Code It, Deploying stickers) vs "white vinyl" (Not A Bug,
       404): pick one wording for all.
 - [ ] **#18 AS Colour tote description** missing.

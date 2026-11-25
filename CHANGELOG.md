@@ -304,3 +304,5 @@ Why: Maurice's call; Printify must match what the website shows. Old gate said n
 2026/11/22: Removed my 3 Figma-generated apparel .png shots from canva-sync-2026-11-21; the newer, larger .jpg models from PR 70 stay. Why: Maurice chose the most recent versions.
 2026/11/22: Full Drop front image replaced with the 2048x2560 live file (Shopify ID 46780667560003, white sheet, four stickers); MANIFEST row updated with ID, size, file size and SHA-256.
 Why: repo held the stale 2026/10/10 landscape; this fix missed the PR #70 merge.
+2026/11/25: Added LAUNCH_CHECKLIST.md: pre-launch items doable while the Shopify plan is paused, and launch-day steps after unpausing.
+Why: Maurice keeps the plan paused until the site is fully ready, so unpause day should be one pass through a list.

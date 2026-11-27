@@ -5,6 +5,19 @@ Act ONLY on direct instructions given in this session. Do NOT resume prior
 threads, scan for open items, run audits or verifications, or open pull
 requests unless explicitly asked. When the assigned task is done, stop.
 
+## PLATFORM SYNC RULE — Printify is the single source of truth (Maiku's order 2026-11-27, VERY IMPORTANT, one of the most important rules)
+Printify must be FULLY ACCURATE first. Every product change — title,
+description, images, mockups, variants, prices, tags, shipping — goes
+through Printify, then is published FROM Printify to Shopify (and to Etsy
+when it opens). NOTHING is edited directly on Shopify or Etsy. No platform
+may disagree with or contradict another: if Shopify/Etsy and Printify
+differ, Printify is right and the other platform is fixed via a Printify
+publish. MOST IMPORTANTLY: the customer must receive EXACTLY what is shown
+in the Shopify images and descriptions — what they think they are buying
+when they purchase. Any gap between what is shown and what is shipped is a
+failure. After every publish, verify LIVE that the listing matches Printify
+before calling it done.
+
 ## Reads — keep context small
 - Do NOT read MEMORY.md, PRODUCTION_BRIEF.md, .design-sync/, or any archive/
   file unless the task explicitly requires history.

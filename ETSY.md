@@ -7,6 +7,9 @@ and remove this notice once it is.
 
 ## Relationship to Shopify
 Same brand, second channel. Not a separate business, not a rebrand.
+## PLATFORM SYNC RULE — Printify is the single source of truth (Maiku's order 2026-11-27, VERY IMPORTANT, one of the most important rules)
+Printify must be FULLY ACCURATE first. Every product change — title, description, images, mockups, variants, prices, tags, shipping — goes through Printify, then is published FROM Printify to Etsy (and to Shopify). NOTHING is edited directly on Etsy or Shopify. No platform may disagree with or contradict another: if Etsy/Shopify and Printify differ, Printify is right and the other platform is fixed via a Printify publish. MOST IMPORTANTLY: the customer must receive EXACTLY what is shown in the Etsy images and descriptions — what they think they are buying when they purchase. Any gap between what is shown and what is shipped is a failure. After every publish, verify LIVE that the listing matches Printify before calling it done.
+
 
 ## What is allowed to differ by channel
 - Catalog and SKU selection. Etsy rewards long-tail, micro-niche, gift-framed

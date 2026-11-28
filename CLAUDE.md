@@ -18,6 +18,9 @@ when they purchase. Any gap between what is shown and what is shipped is a
 failure. After every publish, verify LIVE that the listing matches Printify
 before calling it done.
 
+## SHIPPING PROFILE RULE — never tick "Shipping profile" on a sticker republish (Maiku's order 2026-11-27, VERY IMPORTANT)
+Printify CANNOT point a product at the Shopify delivery profile "Stickers and Sheets". Its per-product shipping picker lists only Printify's own profiles, and "Stickers and Sheets" is not among them (verified 2026-11-27: 17 options, searching filters to zero). All 11 sticker products sit in "Stickers and Sheets" on Shopify ONLY because they were moved there on the Shopify side, while Printify still holds a Standard profile (SPOKE or Printed Simply, weight-based, no free shipping at $50) as each product's shipping template. NEVER tick "Shipping profile" when publishing ANY sticker product from Printify. A Shipping-ticked publish pulls that product back out of "Stickers and Sheets" into its Printify Standard profile, breaking the $4.99 US / $9.99 Canada / free at $50+ rates the descriptions promise. The Shopify-side move is the operative fix. There is no Printify-side durable route.
+
 ## Reads — keep context small
 - Do NOT read MEMORY.md, PRODUCTION_BRIEF.md, .design-sync/, or any archive/
   file unless the task explicitly requires history.
